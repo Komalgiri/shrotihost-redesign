@@ -8,58 +8,66 @@
 }
 
 body {
-  color: #E2E8F0;
-  background: #0B0F19;
+  color: #1E293B;
+  background-color: #FAFBFD;
   font-family: var(--font-inter);
   overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
-/* Custom crisp scrollbar */
+/* Crisp minimal scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
-  height: 8px;
+  width: 7px;
+  height: 7px;
 }
 ::-webkit-scrollbar-track {
-  background: #0B0F19;
+  background: #F1F5F9;
 }
 ::-webkit-scrollbar-thumb {
-  background: #1E293B;
+  background: #CBD5E1;
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #334155;
+  background: #94A3B8;
 }
 
-/* Glassmorphism helpers */
-.glass-nav {
-  background: rgba(11, 15, 25, 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(51, 65, 85, 0.5);
+/* Subtle architectural patterns */
+.bg-tech-grid {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px);
 }
 
-.glass-card {
-  background: rgba(17, 24, 39, 0.7);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  border: 1px solid rgba(51, 65, 85, 0.6);
+.bg-tech-grid-dark {
+  background-size: 32px 32px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.04) 1px, transparent 1px);
 }
 
-.glass-card-hover {
+/* Layered card styling with crisp borders and subtle shadows */
+.surface-card {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px 0 rgba(15, 23, 42, 0.04), 0 1px 2px -1px rgba(15, 23, 42, 0.03);
   transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
 }
-.glass-card-hover:hover {
+
+.surface-card:hover {
+  border-color: #CBD5E1;
+  box-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.06), 0 8px 10px -6px rgba(15, 23, 42, 0.03);
   transform: translateY(-2px);
-  border-color: rgba(99, 102, 241, 0.5);
-  box-shadow: 0 12px 30px -10px rgba(79, 70, 229, 0.15);
 }
 
-/* Glow effects */
-.glow-indigo {
-  box-shadow: 0 0 40px -10px rgba(79, 70, 229, 0.3);
+/* Technical terminal badge font */
+.font-telemetry {
+  font-family: var(--font-mono);
+  letter-spacing: -0.02em;
 }
 
-.glow-cyan {
-  box-shadow: 0 0 40px -10px rgba(6, 182, 212, 0.25);
+/* Refined text balance */
+.text-balance {
+  text-wrap: balance;
 }
-

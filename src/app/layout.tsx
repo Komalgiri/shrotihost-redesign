@@ -44,11 +44,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className="dark">
-      <body className="min-h-screen bg-[#0B0F19] text-slate-100 antialiased flex flex-col justify-between selection:bg-indigo-500/30 selection:text-indigo-200">
+    <html lang="en">
+      <body className="min-h-screen bg-[#FAFBFD] text-slate-800 antialiased flex flex-col justify-between selection:bg-blue-600/15 selection:text-blue-900">
         <a
           href="#main-content"
-          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-indigo-600 focus:text-white focus:rounded-lg focus:shadow-lg focus:outline-none"
+          className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-50 focus:px-4 focus:py-2 focus:bg-blue-600 focus:text-white focus:rounded-md focus:shadow-md focus:outline-none"
         >
           Skip to main content
         </a>
@@ -62,4 +62,3 @@ export default function RootLayout({
     </html>
   );
 }
-

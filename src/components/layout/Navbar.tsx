@@ -33,54 +33,93 @@ export const Navbar: React.FC = () => {
   const [currency, setCurrency] = useState<"INR" | "USD" | "EUR">("INR");
 
   const getIcon = (name?: string) => {
+    const iconClass = "w-4 h-4 text-blue-600";
     switch (name) {
       case "Server":
-        return <Server className="w-5 h-5 text-indigo-400" />;
+        return <Server className={iconClass} />;
       case "Flame":
-        return <Flame className="w-5 h-5 text-amber-400" />;
+        return <Flame className="w-4 h-4 text-amber-500" />;
       case "Infinity":
-        return <Infinity className="w-5 h-5 text-cyan-400" />;
+        return <Infinity className="w-4 h-4 text-teal-500" />;
       case "Users":
-        return <Users className="w-5 h-5 text-emerald-400" />;
+        return <Users className="w-4 h-4 text-emerald-600" />;
       case "Terminal":
-        return <Terminal className="w-5 h-5 text-violet-400" />;
+        return <Terminal className="w-4 h-4 text-blue-600" />;
       case "Globe":
-        return <Globe className="w-5 h-5 text-indigo-400" />;
+        return <Globe className={iconClass} />;
       case "Smartphone":
-        return <Smartphone className="w-5 h-5 text-cyan-400" />;
+        return <Smartphone className="w-4 h-4 text-teal-600" />;
       case "ShoppingBag":
-        return <ShoppingBag className="w-5 h-5 text-emerald-400" />;
+        return <ShoppingBag className="w-4 h-4 text-emerald-600" />;
       case "Cpu":
-        return <Cpu className="w-5 h-5 text-violet-400" />;
+        return <Cpu className="w-4 h-4 text-purple-600" />;
       case "Puzzle":
-        return <Puzzle className="w-5 h-5 text-amber-400" />;
+        return <Puzzle className="w-4 h-4 text-amber-500" />;
       case "Layers":
-        return <Layers className="w-5 h-5 text-indigo-400" />;
+        return <Layers className={iconClass} />;
       case "Building2":
-        return <Building2 className="w-5 h-5 text-indigo-400" />;
+        return <Building2 className={iconClass} />;
       case "Mail":
-        return <Mail className="w-5 h-5 text-cyan-400" />;
+        return <Mail className="w-4 h-4 text-teal-600" />;
       case "Briefcase":
-        return <Briefcase className="w-5 h-5 text-emerald-400" />;
+        return <Briefcase className="w-4 h-4 text-emerald-600" />;
       default:
-        return <Server className="w-5 h-5 text-indigo-400" />;
+        return <Server className={iconClass} />;
     }
   };
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full glass-nav">
+      <header className="sticky top-0 z-40 w-full bg-white/95 backdrop-blur-md border-b border-slate-200/90 shadow-[0_1px_3px_rgba(15,23,42,0.04)]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
           {/* Brand Logo */}
           <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-indigo-600 via-indigo-500 to-cyan-400 flex items-center justify-center font-extrabold text-white text-lg sm:text-xl shadow-lg shadow-indigo-600/30 group-hover:scale-105 transition-transform duration-200">
-              S
+            {/* Custom Architectural SVG Mark */}
+            <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center p-2 shadow-sm group-hover:border-blue-500 transition-colors">
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+                className="w-full h-full text-blue-500 group-hover:scale-105 transition-transform"
+              >
+                <path
+                  d="M4 14.5C4 12.0147 6.01472 10 8.5 10C8.84752 10 9.18374 10.0394 9.50654 10.1143C10.2312 6.57684 13.3496 4 17 4C21.4183 4 25 7.58172 25 12"
+                  stroke="currentColor"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  className="opacity-40"
+                />
+                <rect
+                  x="3"
+                  y="7"
+                  width="18"
+                  height="5"
+                  rx="1.5"
+                  stroke="#3B82F6"
+                  strokeWidth="2"
+                  fill="#1E293B"
+                />
+                <circle cx="6" cy="9.5" r="1" fill="#38BDF8" />
+                <circle cx="9" cy="9.5" r="1" fill="#34D399" />
+                <rect
+                  x="3"
+                  y="14"
+                  width="18"
+                  height="5"
+                  rx="1.5"
+                  stroke="#60A5FA"
+                  strokeWidth="2"
+                  fill="#1E293B"
+                />
+                <circle cx="6" cy="16.5" r="1" fill="#38BDF8" />
+                <circle cx="9" cy="16.5" r="1" fill="#34D399" />
+              </svg>
             </div>
             <div className="flex flex-col">
-              <span className="font-extrabold text-xl sm:text-2xl text-white tracking-tight leading-none">
-                Shroti<span className="text-indigo-400">Host</span>
+              <span className="font-extrabold text-xl sm:text-2xl text-slate-950 tracking-tight leading-none">
+                Shroti<span className="text-blue-600">Host</span>
               </span>
-              <span className="text-[10px] text-slate-400 font-medium tracking-wide uppercase mt-0.5">
+              <span className="text-[10px] text-slate-500 font-semibold tracking-wider uppercase mt-1">
                 Cloud & Engineering
               </span>
             </div>
@@ -101,16 +140,16 @@ export const Navbar: React.FC = () => {
                     <button
                       type="button"
                       aria-expanded={isOpen}
-                      className={`inline-flex items-center gap-1.5 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
+                      className={`inline-flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
                         isOpen
-                          ? "text-white bg-slate-800/80"
-                          : "text-slate-300 hover:text-white hover:bg-slate-800/40"
+                          ? "text-blue-600 bg-blue-50/80"
+                          : "text-slate-700 hover:text-slate-950 hover:bg-slate-100/70"
                       }`}
                     >
                       <span>{navItem.label}</span>
                       <ChevronDown
                         className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                          isOpen ? "rotate-180 text-indigo-400" : "text-slate-500"
+                          isOpen ? "rotate-180 text-blue-600" : "text-slate-400"
                         }`}
                       />
                     </button>
@@ -118,11 +157,11 @@ export const Navbar: React.FC = () => {
                     {/* MegaMenu Dropdown Surface */}
                     {isOpen && (
                       <div className="absolute top-full left-0 pt-2 w-[620px] -ml-8 animate-in fade-in duration-150 z-50">
-                        <div className="bg-slate-900/98 backdrop-blur-xl border border-slate-800 rounded-2xl shadow-2xl p-5 overflow-hidden">
+                        <div className="bg-white border border-slate-200 rounded-2xl shadow-xl p-5 overflow-hidden">
                           <div className="grid grid-cols-2 gap-6">
                             {navItem.groups.map((group, idx) => (
                               <div key={idx} className="space-y-3">
-                                <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-800/80 pb-2">
+                                <h4 className="text-[11px] font-bold uppercase tracking-wider text-slate-400 border-b border-slate-100 pb-2">
                                   {group.title}
                                 </h4>
                                 <div className="space-y-1">
@@ -131,24 +170,24 @@ export const Navbar: React.FC = () => {
                                       key={item.href}
                                       href={item.href}
                                       onClick={() => setActiveDropdown(null)}
-                                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-800/80 transition-colors group"
+                                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-slate-50 transition-colors group"
                                     >
-                                      <div className="w-9 h-9 rounded-lg bg-slate-800/90 border border-slate-700/80 flex items-center justify-center shrink-0 group-hover:border-indigo-500/50 group-hover:bg-indigo-500/10 transition-colors">
+                                      <div className="w-8 h-8 rounded-lg bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 group-hover:bg-blue-50 group-hover:border-blue-200 transition-colors">
                                         {getIcon(item.iconName)}
                                       </div>
-                                      <div className="flex-1">
+                                      <div className="flex-1 min-w-0">
                                         <div className="flex items-center justify-between">
-                                          <span className="text-sm font-semibold text-white group-hover:text-indigo-300 transition-colors">
+                                          <span className="text-sm font-semibold text-slate-900 group-hover:text-blue-600 transition-colors">
                                             {item.label}
                                           </span>
                                           {item.badge && (
-                                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-indigo-500/15 text-indigo-300 border border-indigo-500/20">
+                                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-blue-50 text-blue-700 border border-blue-200">
                                               {item.badge}
                                             </span>
                                           )}
                                         </div>
                                         {item.description && (
-                                          <p className="text-xs text-slate-400 line-clamp-1 mt-0.5">
+                                          <p className="text-xs text-slate-500 line-clamp-1 mt-0.5">
                                             {item.description}
                                           </p>
                                         )}
@@ -161,15 +200,15 @@ export const Navbar: React.FC = () => {
                           </div>
 
                           {/* Dropdown Banner Footnote */}
-                          <div className="mt-4 pt-3.5 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400 bg-slate-950/40 -mx-5 -mb-5 px-5 py-3">
-                            <span className="inline-flex items-center gap-1.5 text-emerald-400 font-medium">
-                              <ShieldCheck className="w-3.5 h-3.5" />
+                          <div className="mt-4 pt-3 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500 bg-slate-50 -mx-5 -mb-5 px-5 py-3">
+                            <span className="inline-flex items-center gap-1.5 text-emerald-700 font-medium">
+                              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
                               <span>Flat renewal price on all shared hosting plans</span>
                             </span>
                             <Link
                               href="/shared-hosting"
                               onClick={() => setActiveDropdown(null)}
-                              className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center gap-1"
+                              className="text-blue-600 hover:text-blue-700 font-semibold inline-flex items-center gap-1"
                             >
                               <span>View All Plans</span>
                               <ArrowRight className="w-3 h-3" />
@@ -186,11 +225,11 @@ export const Navbar: React.FC = () => {
                 <Link
                   key={navItem.href}
                   href={navItem.href}
-                  className="px-3 py-2 rounded-lg text-sm font-semibold text-slate-300 hover:text-white hover:bg-slate-800/40 transition-colors inline-flex items-center gap-1.5"
+                  className="px-3 py-2 rounded-lg text-sm font-semibold text-slate-700 hover:text-slate-950 hover:bg-slate-100/70 transition-colors inline-flex items-center gap-1.5"
                 >
                   <span>{navItem.label}</span>
                   {navItem.badge && (
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-500/10 text-cyan-400 border border-cyan-500/20">
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-50 text-teal-700 border border-teal-200">
                       {navItem.badge}
                     </span>
                   )}
@@ -202,15 +241,15 @@ export const Navbar: React.FC = () => {
           {/* Desktop Right Actions (Currency + Client Portal + CTA) */}
           <div className="hidden lg:flex items-center gap-3">
             {/* Currency Selector */}
-            <div className="flex items-center bg-slate-900 border border-slate-800 rounded-lg p-0.5 text-xs text-slate-400">
+            <div className="flex items-center bg-slate-100 border border-slate-200/80 rounded-lg p-0.5 text-xs text-slate-600">
               {(["INR", "USD", "EUR"] as const).map((curr) => (
                 <button
                   key={curr}
                   onClick={() => setCurrency(curr)}
-                  className={`px-2 py-1 rounded font-medium transition-colors ${
+                  className={`px-2 py-1 rounded font-semibold transition-all ${
                     currency === curr
-                      ? "bg-indigo-600 text-white shadow-sm"
-                      : "hover:text-white"
+                      ? "bg-white text-slate-900 shadow-sm"
+                      : "hover:text-slate-900"
                   }`}
                 >
                   {curr === "INR" ? "₹ INR" : curr === "USD" ? "$ USD" : "€ EUR"}
@@ -223,6 +262,7 @@ export const Navbar: React.FC = () => {
               size="sm"
               href="https://portal.shrotihost.in"
               isExternal={true}
+              className="text-slate-700 hover:text-slate-950 font-semibold"
             >
               Client Login
             </Button>
@@ -241,10 +281,10 @@ export const Navbar: React.FC = () => {
           <div className="flex items-center gap-2 lg:hidden">
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2.5 rounded-lg text-slate-300 hover:text-white hover:bg-slate-800 transition-colors"
+              className="p-2.5 rounded-lg text-slate-700 hover:text-slate-950 hover:bg-slate-100 transition-colors border border-slate-200"
               aria-label="Open mobile menu"
             >
-              <Menu className="w-6 h-6" />
+              <Menu className="w-5 h-5" />
             </button>
           </div>
         </div>
@@ -258,4 +298,3 @@ export const Navbar: React.FC = () => {
     </>
   );
 };
-

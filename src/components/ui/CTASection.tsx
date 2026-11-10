@@ -1,5 +1,5 @@
 import React from "react";
-import { ShieldCheck, Zap, MessageSquare } from "lucide-react";
+import { ShieldCheck, Zap, MessageSquare, ArrowRight } from "lucide-react";
 import { Button } from "./Button";
 
 interface CTASectionProps {
@@ -24,62 +24,69 @@ export const CTASection: React.FC<CTASectionProps> = ({
   showWhatsApp = true,
 }) => {
   return (
-    <section className="relative py-16 sm:py-20 overflow-hidden">
-      {/* Background ambient gradient */}
-      <div className="absolute inset-0 bg-gradient-to-b from-slate-900/60 via-indigo-950/20 to-slate-950 pointer-events-none" />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-indigo-600/10 blur-[120px] rounded-full pointer-events-none" />
+    <section className="relative px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-slate-950 border border-slate-800 p-8 sm:p-14 text-center relative overflow-hidden shadow-xl text-white">
+        {/* Subtle background grid pattern */}
+        <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
 
-      <div className="relative max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        {eyebrow && (
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 mb-4">
-            <Zap className="w-3.5 h-3.5 text-indigo-400" />
-            {eyebrow}
-          </span>
-        )}
-
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
-          {title}
-        </h2>
-
-        <p className="mt-4 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-          {subtitle}
-        </p>
-
-        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Button variant="primary" size="lg" href={primaryCtaHref}>
-            {primaryCtaText}
-          </Button>
-
-          {showWhatsApp && (
-            <Button
-              variant="whatsapp"
-              size="lg"
-              href={secondaryCtaHref}
-              isExternal={true}
-              leftIcon={<MessageSquare className="w-4 h-4" />}
-            >
-              {secondaryCtaText}
-            </Button>
+        <div className="relative z-10 max-w-3xl mx-auto">
+          {eyebrow && (
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-900/40 text-blue-300 border border-blue-700/50 mb-4">
+              <Zap className="w-3.5 h-3.5 text-blue-400" />
+              {eyebrow}
+            </span>
           )}
-        </div>
 
-        {/* Guarantees strip */}
-        <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
-          <div className="inline-flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-emerald-400" />
-            <span>7-Day Money-Back Guarantee</span>
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+            {title}
+          </h2>
+
+          <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            {subtitle}
+          </p>
+
+          <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
+            <Button
+              variant="dark-primary"
+              size="lg"
+              href={primaryCtaHref}
+              rightIcon={<ArrowRight className="w-4 h-4" />}
+              className="w-full sm:w-auto font-bold"
+            >
+              {primaryCtaText}
+            </Button>
+
+            {showWhatsApp && (
+              <Button
+                variant="whatsapp"
+                size="lg"
+                href={secondaryCtaHref}
+                isExternal={true}
+                leftIcon={<MessageSquare className="w-4 h-4" />}
+                className="w-full sm:w-auto font-bold"
+              >
+                {secondaryCtaText}
+              </Button>
+            )}
           </div>
-          <div className="inline-flex items-center gap-2">
-            <Zap className="w-4 h-4 text-cyan-400" />
-            <span>100% Free Website Migration</span>
-          </div>
-          <div className="inline-flex items-center gap-2">
-            <ShieldCheck className="w-4 h-4 text-indigo-400" />
-            <span>Flat Renewal Guarantee (No Hikes)</span>
+
+          {/* Guarantees strip */}
+          <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+            <div className="inline-flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <span>7-Day Money-Back Guarantee</span>
+            </div>
+            <div className="inline-flex items-center gap-2">
+              <Zap className="w-4 h-4 text-blue-400" />
+              <span>100% Free Website Migration</span>
+            </div>
+            <div className="inline-flex items-center gap-2">
+              <ShieldCheck className="w-4 h-4 text-teal-400" />
+              <span>Flat Renewal Guarantee (No Hikes)</span>
+            </div>
           </div>
         </div>
       </div>
     </section>
   );
 };
-
