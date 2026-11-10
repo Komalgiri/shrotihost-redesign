@@ -537,6 +537,121 @@ export const RESELLER_HOSTING_PLANS: HostingPlan[] = [
   }
 ];
 
+export const MASTER_RESELLER_HOSTING_PLANS: HostingPlan[] = [
+  {
+    id: "master-starter",
+    name: "Master Starter",
+    tierSubtitle: "Empower your agency to sell both Shared Hosting and Reseller WHM accounts",
+    priceMonthly: 599,
+    priceSemiAnnual: 3299,
+    priceAnnual: 5999,
+    renewalPriceSame: true,
+    popular: false,
+    websites: "50 cPanel / 10 WHM Resellers",
+    storage: "60 GB Pure NVMe SSD",
+    ram: "Allocated per account",
+    cpu: "Allocated per account",
+    bandwidth: "Unmetered Bandwidth",
+    emailAccounts: "Unlimited",
+    ctaText: "Order Master Starter",
+    orderUrl: "https://portal.shrotihost.in/index.php?rp=/store/master-reseller/starter",
+    features: [
+      "Create up to 10 Sub-Resellers (WHM Accounts)",
+      "Host up to 50 cPanel Client Accounts",
+      "60 GB Enterprise NVMe SSD Storage",
+      "Alpha / Master Reseller WHM Control Plugin",
+      "Overselling Enabled on Disk & Bandwidth",
+      "Custom Private Nameservers (ns1.yourbrand.com)",
+      "LiteSpeed Enterprise + LSCache Acceleration",
+      "Automated JetBackup Daily Remote Backups",
+      "100% Unbranded White-Label Infrastructure",
+      "Flat Renewal Guarantee: Never increases on renewal"
+    ],
+    specsSummary: {
+      cpanel: true,
+      liteSpeed: true,
+      freeSsl: true,
+      dailyBackups: true,
+      imunify360: true
+    }
+  },
+  {
+    id: "master-pro",
+    name: "Master Pro",
+    tierSubtitle: "Our most popular tier for growing hosting companies and digital agencies",
+    priceMonthly: 999,
+    priceSemiAnnual: 5499,
+    priceAnnual: 9999,
+    renewalPriceSame: true,
+    popular: true,
+    featuredBadge: "Most Popular Master",
+    websites: "150 cPanel / 30 WHM Resellers",
+    storage: "120 GB Pure NVMe SSD",
+    ram: "Allocated per account",
+    cpu: "Allocated per account",
+    bandwidth: "Unmetered Bandwidth",
+    emailAccounts: "Unlimited",
+    ctaText: "Order Master Pro",
+    orderUrl: "https://portal.shrotihost.in/index.php?rp=/store/master-reseller/pro",
+    features: [
+      "Create up to 30 Sub-Resellers (WHM Accounts)",
+      "Host up to 150 cPanel Client Accounts",
+      "120 GB Enterprise NVMe SSD Storage",
+      "Master Reseller Control Plugin with WHM Integration",
+      "Overselling Enabled on Disk & Bandwidth",
+      "Free WHMCS License on Annual Subscriptions",
+      "Custom Private Nameservers with Reverse DNS",
+      "LiteSpeed Enterprise + CloudLinux OS Isolation",
+      "Imunify360 AI-Powered Security Shield",
+      "Priority VIP Hostmaster Support"
+    ],
+    specsSummary: {
+      cpanel: true,
+      liteSpeed: true,
+      freeSsl: true,
+      dailyBackups: true,
+      imunify360: true
+    }
+  },
+  {
+    id: "master-enterprise",
+    name: "Master Enterprise",
+    tierSubtitle: "Maximum capacity for turnkey hosting businesses and established IT firms",
+    priceMonthly: 1699,
+    priceSemiAnnual: 9349,
+    priceAnnual: 16999,
+    renewalPriceSame: true,
+    popular: false,
+    websites: "Unlimited cPanel & Resellers*",
+    storage: "250 GB Pure NVMe SSD",
+    ram: "Allocated per account",
+    cpu: "Allocated per account",
+    bandwidth: "Unmetered Bandwidth",
+    emailAccounts: "Unlimited",
+    ctaText: "Order Master Enterprise",
+    orderUrl: "https://portal.shrotihost.in/index.php?rp=/store/master-reseller/enterprise",
+    features: [
+      "Unlimited Sub-Resellers & cPanel Accounts*",
+      "250 GB Enterprise NVMe SSD Storage",
+      "Unmetered Premium 10 Gbps Bandwidth",
+      "Full WHM Master Control with Sub-Reseller Delegation",
+      "Free WHMCS Automation System License",
+      "Free Dedicated IP Address Included",
+      "White-Label Hostname & Custom SSL on Hostname",
+      "JetBackup Multi-Point Disaster Recovery",
+      "Dedicated WhatsApp Account Manager Escalation",
+      "Zero Renewal Markup: Locked ₹1,699/mo rate"
+    ],
+    specsSummary: {
+      cpanel: true,
+      liteSpeed: true,
+      freeSsl: true,
+      dailyBackups: true,
+      imunify360: true
+    }
+  }
+];
+
 export const VPS_HOSTING_PLANS: HostingPlan[] = [
   {
     id: "vps-spark",

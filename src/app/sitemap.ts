@@ -10,6 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/wordpress-hosting",
     "/unlimited-hosting",
     "/reseller-hosting",
+    "/master-reseller-hosting",
     "/vps",
     "/domains",
     "/services",

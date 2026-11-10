@@ -54,6 +54,13 @@ export const MAIN_NAV_LINKS = [
             iconName: "Users"
           },
           {
+            label: "Master Reseller Hosting",
+            href: "/master-reseller-hosting",
+            badge: "Sub-WHM",
+            description: "Sell both cPanel accounts and WHM Reseller accounts with overselling.",
+            iconName: "Layers"
+          },
+          {
             label: "Cloud VPS Servers",
             href: "/vps",
             badge: "Root Access",
@@ -172,7 +179,8 @@ export const FOOTER_SECTIONS = [
       { label: "NVMe Shared Hosting", href: "/shared-hosting" },
       { label: "Managed WordPress Hosting", href: "/wordpress-hosting" },
       { label: "Unlimited NVMe Hosting", href: "/unlimited-hosting" },
-      { label: "Reseller & Master Reseller", href: "/reseller-hosting" },
+      { label: "Reseller Hosting", href: "/reseller-hosting" },
+      { label: "Master Reseller Hosting", href: "/master-reseller-hosting" },
       { label: "Cloud VPS Hosting", href: "/vps" }
     ]
   },

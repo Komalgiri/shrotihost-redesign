@@ -1,12 +1,15 @@
 import React from "react";
 import Link from "next/link";
-import { Server, Flame, Infinity, Users, Terminal, Globe, ArrowRight } from "lucide-react";
+import { Server, Flame, Infinity, Users, Terminal, Globe, Layers, ArrowRight } from "lucide-react";
 
 interface RelatedHostingProductsProps {
-  currentSlug: string;
+  currentSlug?: string;
+  currentHref?: string;
 }
 
-export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ currentSlug }) => {
+export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ currentSlug, currentHref }) => {
+  const activeIdentifier = currentSlug || (currentHref ? currentHref.replace(/^\//, "") : "");
+
   const allProducts = [
     {
       slug: "shared-hosting",
@@ -37,6 +40,13 @@ export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ 
       icon: <Users className="w-5 h-5 text-emerald-600" />
     },
     {
+      slug: "master-reseller-hosting",
+      title: "Master Reseller Hosting",
+      price: "₹599/mo",
+      description: "Multi-tier WHM authority to sell both cPanel accounts and WHM Reseller packages.",
+      icon: <Layers className="w-5 h-5 text-indigo-600" />
+    },
+    {
       slug: "vps",
       title: "Cloud VPS Servers",
       price: "₹499/mo",
@@ -52,7 +62,7 @@ export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ 
     }
   ];
 
-  const related = allProducts.filter((p) => p.slug !== currentSlug).slice(0, 3);
+  const related = allProducts.filter((p) => p.slug !== activeIdentifier).slice(0, 3);
 
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200/80 bg-slate-50/60">
