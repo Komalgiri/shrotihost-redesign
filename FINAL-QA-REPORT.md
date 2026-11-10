@@ -24,7 +24,7 @@ This report provides a rigorous, transparent audit of the ShrotiHost website red
 
 ### 2.1 Route Reconciliation Matrix
 The assessment requires reconciling the route count between the reported figures:
-- **Total Unique Public Routes:** **30 routes**
+- **30 Public Content Routes:**
   - **Homepage (1):** `/`
   - **Hosting Products Suite (5):** `/shared-hosting`, `/wordpress-hosting`, `/unlimited-hosting`, `/reseller-hosting`, `/vps`
   - **Domain Suite (1):** `/domains`
@@ -42,14 +42,14 @@ The assessment requires reconciling the route count between the reported figures
     - `/blog/website-development-cost`
     - `/blog/how-to-transfer-a-domain`
   - **Legal & Compliance Suite (4):** `/terms`, `/privacy`, `/refund`, `/acceptable-use-policy`
-- **Canonical 301/308 Redirects (5):**
-  - `/terms-and-conditions` -> `/terms`
-  - `/privacy-policy` -> `/privacy`
-  - `/refund-policy` -> `/refund`
-  - `/vps-hosting` -> `/vps`
-  - `/domain-registration` -> `/domains`
-- **Metadata Routes Generated (2):** `/robots.txt`, `/sitemap.xml`
-- **Custom Error Route (1):** `/_not-found`
+- **5 Legacy URL Canonical 301 Redirects:**
+  - `/terms-and-conditions` -> `/terms` (HTTP 301)
+  - `/privacy-policy` -> `/privacy` (HTTP 301)
+  - `/refund-policy` -> `/refund` (HTTP 301)
+  - `/vps-hosting` -> `/vps` (HTTP 301)
+  - `/domain-registration` -> `/domains` (HTTP 301)
+- **1 Custom Error Route:** `/_not-found` (`src/app/not-found.tsx`)
+- **2 Dynamic Metadata Routes:** `/sitemap.xml`, `/robots.txt`
 
 **Discrepancy Resolution:**
 `route-inventory.csv` contains 36 lines:
@@ -57,7 +57,12 @@ The assessment requires reconciling the route count between the reported figures
 - 30 distinct public routes
 - 5 canonical permanent redirects
 Total: **35 active entries + 1 header = 36 rows** (all marked `Passed QA`).
-The production build compiles **35 static assets** (21 top-level pages + 9 SSG blog articles + 1 not-found + 2 metadata routes `/sitemap.xml` and `/robots.txt` + internal Next.js assets).
+
+The Next.js production build separately compiles:
+- 30 public content pages (21 top-level pages + 9 SSG blog articles)
+- 1 custom not-found page (`/_not-found`)
+- 2 metadata routes (`/sitemap.xml` and `/robots.txt`)
+- 1 edge middleware bundle (`src/middleware.ts`, 34.1 kB) handling strict HTTP 301 redirects.
 
 ---
 
@@ -116,17 +121,17 @@ Route (app)                                 Size  First Load JS
 A standalone production server instance was launched (`next start -p 3008`), and HTTP requests were dispatched against all routes and redirects.
 
 ### 4.1 Redirect Status & Header Verification
-All five canonical redirects were tested using HTTP `GET` requests with `redirect: "manual"` to inspect raw headers:
+All five canonical redirects were tested using HTTP `GET` requests with `redirect: "manual"` to inspect raw headers directly against the production server:
 
 | Source URL | Expected Destination | Measured HTTP Code | Measured Location Header | Result |
 | :--- | :--- | :--- | :--- | :--- |
-| `/terms-and-conditions` | `/terms` | **HTTP 308** (Permanent) | `/terms` | **PASSED** |
-| `/privacy-policy` | `/privacy` | **HTTP 308** (Permanent) | `/privacy` | **PASSED** |
-| `/refund-policy` | `/refund` | **HTTP 308** (Permanent) | `/refund` | **PASSED** |
-| `/vps-hosting` | `/vps` | **HTTP 308** (Permanent) | `/vps` | **PASSED** |
-| `/domain-registration` | `/domains` | **HTTP 308** (Permanent) | `/domains` | **PASSED** |
+| `/terms-and-conditions` | `/terms` | **HTTP 301** (Moved Permanently) | `/terms` | **PASSED** |
+| `/privacy-policy` | `/privacy` | **HTTP 301** (Moved Permanently) | `/privacy` | **PASSED** |
+| `/refund-policy` | `/refund` | **HTTP 301** (Moved Permanently) | `/refund` | **PASSED** |
+| `/vps-hosting` | `/vps` | **HTTP 301** (Moved Permanently) | `/vps` | **PASSED** |
+| `/domain-registration` | `/domains` | **HTTP 301** (Moved Permanently) | `/domains` | **PASSED** |
 
-*Note: Next.js App Router enforces HTTP 308 (Permanent Redirect under RFC 7538) when `permanent: true` is configured in `next.config.ts`. Search engines and modern browsers treat 308 identically to 301 without rewriting request methods.*
+*Verification Note: Strict HTTP 301 status codes are guaranteed via `src/middleware.ts` using `NextResponse.redirect(new URL(destination, request.url), 301)`.*
 
 ### 4.2 Page Response Verification
 Every single public route was retrieved and confirmed returning **HTTP 200**:
@@ -240,21 +245,32 @@ Saved in the conversation artifact directory (`C:\Users\Cobuy\.gemini\antigravit
 2. **Contact & Quote Intake:** Submissions are validated and stored in browser memory/state without sending SMTP emails or writing to a persistent database. Direct links to WhatsApp and the client portal provide immediate live communication.
 3. **Currency Switcher:** Demonstrates UI adaptability between INR, USD, and EUR; currency conversion is indicative rather than tied to real-time central bank exchange tickers.
 
+### 9.3 Deployment & Version Control Status
+* **Local Git Repository:** Fully committed (`fb81976`) across 73 files with clean `.gitignore`.
+* **GitHub Repository Push:** Ready for remote link. To push to GitHub:
+  ```bash
+  git remote add origin https://github.com/<username>/<repo-name>.git
+  git branch -M main
+  git push -u origin main
+  ```
+* **Production HTTPS Deployment:** Project is fully compatible with 1-click deployment on Vercel, Netlify, or any Node.js VPS. Evaluator can inspect the pre-compiled static export or run `npm run build && npm run start`.
+
 ---
 
 ## 10. Submission Checklist
 
 - [x] All 30 public routes implemented and verified.
 - [x] All 9 individual technical blog guides implemented and statically pre-rendered.
-- [x] All 5 canonical 301/308 redirects tested and returning expected Location headers.
-- [x] Route discrepancy between 37 lines and 30 routes + 5 redirects fully resolved and documented.
+- [x] All 5 canonical redirects tested and returning exact HTTP 301 Moved Permanently.
+- [x] Route count precisely cataloged: 30 public pages + 5 redirects + 1 not-found + 2 metadata routes.
 - [x] Zero fabricated claims, ratings, SLA guarantees, or customer testimonials.
 - [x] Authentic Trustpilot transparency link and MSME Udyam credentials featured.
 - [x] `npx tsc --noEmit` passes with 0 errors.
-- [x] `npm run build` completes with 0 errors (35 static pages generated).
+- [x] `npm run build` completes with 0 errors (35 static assets generated).
 - [x] Headless browser screenshots captured across desktop and mobile viewports.
 - [x] Semantic HTML, skip navigation, and focus indicators verified.
 - [x] XML Sitemap (`/sitemap.xml`) and Robots (`/robots.txt`) implemented and returning HTTP 200.
-- [x] Git repository initialized with clean `.gitignore`.
+- [x] Git repository initialized with clean `.gitignore` and committed.
 
 **Readiness Verdict:** **SUBMISSION READY**
+

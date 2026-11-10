@@ -95,3 +95,4 @@ Each hosting product page has an intentionally unique layout tailored to its aud
    - Dynamic XML sitemap generated at `/sitemap.xml` via `src/app/sitemap.ts`.
    - Robots file generated at `/robots.txt` via `src/app/robots.ts`.
    - Comprehensive OpenGraph and Twitter card metadata on all routes.
+

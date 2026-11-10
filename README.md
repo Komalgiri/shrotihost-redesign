@@ -45,12 +45,17 @@ This codebase implements the complete public-facing architecture of ShrotiHost a
 | `/refund` | **Refund Policy** | 7-day money-back guarantee, explicit exclusions for domains & VPS |
 | `/acceptable-use-policy` | **AUP** | IT Act 2000 compliance, anti-spam thresholds, resource abuse rules |
 
-### Canonical Redirects
-* `/terms-and-conditions` -> `/terms`
-* `/privacy-policy` -> `/privacy`
-* `/refund-policy` -> `/refund`
-* `/vps-hosting` -> `/vps`
-* `/domain-registration` -> `/domains`
+### Canonical 301 Redirects
+* `/terms-and-conditions` -> `/terms` (HTTP 301 Moved Permanently)
+* `/privacy-policy` -> `/privacy` (HTTP 301 Moved Permanently)
+* `/refund-policy` -> `/refund` (HTTP 301 Moved Permanently)
+* `/vps-hosting` -> `/vps` (HTTP 301 Moved Permanently)
+* `/domain-registration` -> `/domains` (HTTP 301 Moved Permanently)
+
+### Metadata & System Routes
+* `/_not-found` (`src/app/not-found.tsx` — Branded 404 page with navigation shortcuts)
+* `/sitemap.xml` (`src/app/sitemap.ts` — Dynamic XML sitemap indexing all 30 routes)
+* `/robots.txt` (`src/app/robots.ts` — Crawler index directives)
 
 ---
 
@@ -109,3 +114,4 @@ npm run start
 * [**`DESIGN-SYSTEM.md`**](./DESIGN-SYSTEM.md): Visual identity tokens, colors, typography, and card patterns.
 * [**`DESIGN-RATIONALE.md`**](./DESIGN-RATIONALE.md): Architectural decisions and UX problem-solving rationale.
 * [**`AI-TOOL-DISCLOSURE.md`**](./AI-TOOL-DISCLOSURE.md): Transparent disclosure of AI tool usage and methodology.
+

@@ -50,3 +50,4 @@ Every file in this repository has been compiled and validated locally:
 * **Production Build:** `npm run build` verified with **35/35 static pages** generated.
 * **Server Verification:** Executed live server tests verifying HTTP status codes and redirect headers.
 * **Visual Testing:** Captured real headless Chrome screenshots across desktop and mobile viewports.
+
