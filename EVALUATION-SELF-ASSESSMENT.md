@@ -102,3 +102,4 @@ In Section 13, the evaluator will ask you to demonstrate the site, explain the a
 * Tool used: **Antigravity (Google DeepMind)**
 * Method: Pair-programming assistant for rapid boilerplate creation, TypeScript type verification, and route matrix compilation.
 * Governance: Every line of code, price figure, legal clause, and architectural decision was verified and hardened against the live public website [`shrotihost.in`](https://shrotihost.in/) without accessing any private systems or backend APIs.
+

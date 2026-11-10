@@ -81,21 +81,21 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
       />
 
       {/* Drawer Content */}
-      <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-white border-l border-slate-200 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
+      <div className="fixed inset-y-0 right-0 max-w-sm w-full bg-[#0B0F19] border-l border-white/10 shadow-2xl p-6 overflow-y-auto flex flex-col justify-between">
         <div>
           {/* Header */}
-          <div className="flex items-center justify-between pb-5 border-b border-slate-100">
+          <div className="flex items-center justify-between pb-5 border-b border-white/10">
             <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-slate-950 flex items-center justify-center text-blue-500 shadow-sm p-1.5">
+              <div className="w-8 h-8 rounded-lg bg-[#111827] border border-white/10 flex items-center justify-center text-[#06B6D4] shadow-sm p-1.5">
                 <Server className="w-full h-full" />
               </div>
-              <span className="font-extrabold text-lg text-slate-950 tracking-tight">
-                Shroti<span className="text-blue-600">Host</span>
+              <span className="font-extrabold text-lg text-[#F9FAFB] tracking-tight">
+                Shroti<span className="text-[#4F46E5]">Host</span>
               </span>
             </Link>
             <button
               onClick={onClose}
-              className="p-2 rounded-lg text-slate-500 hover:text-slate-900 hover:bg-slate-100 transition-colors border border-slate-200"
+              className="p-2 rounded-lg text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937] transition-colors border border-white/10"
               aria-label="Close menu"
             >
               <X className="w-5 h-5" />
@@ -108,24 +108,24 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
               if (link.hasMegaMenu && link.groups) {
                 const isExpanded = expandedSection === link.label;
                 return (
-                  <div key={link.label} className="border-b border-slate-100 pb-2">
+                  <div key={link.label} className="border-b border-white/5 pb-2">
                     <button
                       onClick={() => toggleSection(link.label)}
-                      className="w-full flex items-center justify-between py-2 text-sm font-bold text-slate-900"
+                      className="w-full flex items-center justify-between py-2 text-sm font-bold text-[#F9FAFB]"
                     >
                       <span>{link.label}</span>
                       <ChevronDown
                         className={`w-4 h-4 transition-transform ${
-                          isExpanded ? "rotate-180 text-blue-600" : "text-slate-400"
+                          isExpanded ? "rotate-180 text-[#06B6D4]" : "text-[#9CA3AF]"
                         }`}
                       />
                     </button>
 
                     {isExpanded && (
-                      <div className="pl-2 pr-1 pt-1 pb-3 space-y-4">
+                      <div className="pl-2 pr-1 pt-1 pb-3 space-y-4 bg-[#111827]/50 rounded-xl p-3 my-1">
                         {link.groups.map((group, gIdx) => (
                           <div key={gIdx} className="space-y-1.5">
-                            <span className="text-[10px] font-bold uppercase tracking-wider text-slate-400">
+                            <span className="text-[10px] font-bold uppercase tracking-wider text-[#9CA3AF]">
                               {group.title}
                             </span>
                             <div className="space-y-1 pl-1">
@@ -134,12 +134,12 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
                                   key={item.href}
                                   href={item.href}
                                   onClick={onClose}
-                                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-semibold text-slate-700 hover:text-blue-600 hover:bg-slate-50 transition-colors"
+                                  className="flex items-center gap-2.5 py-1.5 px-2 rounded-lg text-xs font-semibold text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937] transition-colors"
                                 >
                                   {getIcon(item.iconName)}
                                   <span>{item.label}</span>
                                   {item.badge && (
-                                    <span className="ml-auto text-[9px] font-bold px-1.5 py-0.2 rounded bg-blue-50 text-blue-700">
+                                    <span className="ml-auto text-[9px] font-bold px-1.5 py-0.2 rounded bg-[#4F46E5]/20 text-indigo-300 border border-[#4F46E5]/40">
                                       {item.badge}
                                     </span>
                                   )}
@@ -159,11 +159,11 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
                   key={link.href}
                   href={link.href}
                   onClick={onClose}
-                  className="flex items-center justify-between py-2.5 px-2 rounded-lg text-sm font-bold text-slate-800 hover:text-blue-600 hover:bg-slate-50 transition-colors"
+                  className="flex items-center justify-between py-2.5 px-2 rounded-lg text-sm font-bold text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937] transition-colors"
                 >
                   <span>{link.label}</span>
                   {link.badge && (
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-teal-50 text-teal-700">
+                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
                       {link.badge}
                     </span>
                   )}
@@ -174,12 +174,12 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
         </div>
 
         {/* Footer Actions */}
-        <div className="pt-6 border-t border-slate-100 space-y-3">
+        <div className="pt-6 border-t border-white/10 space-y-3">
           <Button
             variant="primary"
             size="md"
             href="/shared-hosting"
-            className="w-full"
+            className="w-full bg-[#4F46E5] hover:bg-[#4338CA] text-white shadow-lg shadow-indigo-600/20"
             onClick={onClose}
           >
             Explore NVMe Hosting
@@ -190,10 +190,10 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
             size="md"
             href="https://portal.shrotihost.in"
             isExternal={true}
-            className="w-full"
+            className="w-full bg-[#111827] text-[#F9FAFB] border border-white/10 hover:bg-[#1F2937]"
           >
             <span>Client Login</span>
-            <ExternalLink className="w-3.5 h-3.5 ml-1 text-slate-400" />
+            <ExternalLink className="w-3.5 h-3.5 ml-1 text-[#9CA3AF]" />
           </Button>
 
           <a

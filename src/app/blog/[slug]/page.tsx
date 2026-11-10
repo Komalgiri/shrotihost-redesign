@@ -113,7 +113,7 @@ export default async function BlogPostPage({ params }: PageProps) {
         return (
           <h3
             key={idx}
-            className="text-xl sm:text-2xl font-bold text-slate-900 mt-8 mb-4 tracking-tight"
+            className="text-xl sm:text-2xl font-bold text-[#F9FAFB] mt-8 mb-4 tracking-tight"
           >
             {trimmed.replace("### ", "")}
           </h3>
@@ -126,8 +126,8 @@ export default async function BlogPostPage({ params }: PageProps) {
         return (
           <ul key={idx} className="space-y-2.5 my-4">
             {items.map((item, itemIdx) => (
-              <li key={itemIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-slate-700 leading-relaxed">
-                <span className="w-1.5 h-1.5 rounded-full bg-indigo-600 mt-2 shrink-0" />
+              <li key={itemIdx} className="flex items-start gap-2.5 text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
+                <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] mt-2 shrink-0" />
                 <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
               </li>
             ))}
@@ -139,7 +139,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       if (/^\d+\.\s+/.test(trimmed)) {
         const items = trimmed.split("\n").map((line) => line.replace(/^\d+\.\s+/, ""));
         return (
-          <ol key={idx} className="space-y-2.5 my-4 list-decimal list-inside text-sm sm:text-base text-slate-700 leading-relaxed">
+          <ol key={idx} className="space-y-2.5 my-4 list-decimal list-inside text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
             {items.map((item, itemIdx) => (
               <li key={itemIdx} className="pl-1">
                 <span dangerouslySetInnerHTML={{ __html: formatInline(item) }} />
@@ -153,7 +153,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       return (
         <p
           key={idx}
-          className="text-sm sm:text-base text-slate-700 leading-relaxed my-4"
+          className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed my-4"
           dangerouslySetInnerHTML={{ __html: formatInline(trimmed) }}
         />
       );
@@ -163,9 +163,9 @@ export default async function BlogPostPage({ params }: PageProps) {
   // Helper to format inline bold and code tags safely
   const formatInline = (text: string) => {
     return text
-      .replace(/\*\*(.*?)\*\*/g, '<strong class="text-slate-900 font-semibold">$1</strong>')
-      .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded bg-slate-100 border border-slate-200 text-indigo-700 font-mono text-xs">$1</code>')
-      .replace(/\*(.*?)\*/g, '<em class="text-slate-800 italic">$1</em>');
+      .replace(/\*\*(.*?)\*\*/g, '<strong class="text-[#F9FAFB] font-semibold">$1</strong>')
+      .replace(/`([^`]+)`/g, '<code class="px-1.5 py-0.5 rounded bg-[#0B0F19] border border-white/10 text-[#06B6D4] font-mono text-xs">$1</code>')
+      .replace(/\*(.*?)\*/g, '<em class="text-[#F9FAFB] italic">$1</em>');
   };
 
   return (
@@ -182,29 +182,29 @@ export default async function BlogPostPage({ params }: PageProps) {
 
           <div className="mt-6 space-y-4">
             <div className="flex flex-wrap items-center gap-3 text-xs">
-              <span className="font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-3 py-1 rounded-full uppercase tracking-wider">
+              <span className="font-semibold text-[#06B6D4] bg-[#06B6D4]/10 border border-[#06B6D4]/30 px-3 py-1 rounded-full uppercase tracking-wider">
                 {post.category}
               </span>
-              <span className="text-slate-500 flex items-center gap-1.5">
-                <Clock className="w-3.5 h-3.5 text-cyan-600" />
+              <span className="text-[#9CA3AF] flex items-center gap-1.5">
+                <Clock className="w-3.5 h-3.5 text-[#06B6D4]" />
                 {post.readTime}
               </span>
-              <span className="text-slate-500 flex items-center gap-1.5">
-                <Calendar className="w-3.5 h-3.5 text-slate-400" />
+              <span className="text-[#9CA3AF] flex items-center gap-1.5">
+                <Calendar className="w-3.5 h-3.5 text-[#9CA3AF]" />
                 {post.publishDate}
               </span>
             </div>
 
-            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               {post.title}
             </h1>
 
-            <p className="text-base sm:text-lg text-slate-700 leading-relaxed border-l-2 border-indigo-600 pl-4 italic">
+            <p className="text-base sm:text-lg text-[#9CA3AF] leading-relaxed border-l-2 border-[#4F46E5] pl-4 italic">
               {post.excerpt}
             </p>
 
-            <div className="pt-2 flex items-center gap-3 text-xs text-slate-500">
-              <div className="w-7 h-7 rounded-full bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-700 font-bold">
+            <div className="pt-2 flex items-center gap-3 text-xs text-[#9CA3AF]">
+              <div className="w-7 h-7 rounded-full bg-[#4F46E5]/20 border border-[#4F46E5]/40 flex items-center justify-center text-[#06B6D4] font-bold">
                 S
               </div>
               <span>By {post.author}</span>
@@ -217,27 +217,27 @@ export default async function BlogPostPage({ params }: PageProps) {
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="max-w-6xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           {/* Main Article Body */}
-          <article className="lg:col-span-8 bg-white rounded-2xl p-6 sm:p-10 sm:p-12 border border-slate-200/90 shadow-sm">
-            <div className="prose prose-slate max-w-none">
+          <article className="lg:col-span-8 bg-[#111827] rounded-2xl p-6 sm:p-10 sm:p-12 border border-white/10 shadow-card">
+            <div className="prose prose-invert max-w-none text-[#9CA3AF]">
               {renderContent(post.content)}
             </div>
 
-            <div className="mt-12 pt-6 border-t border-slate-100 flex flex-wrap items-center justify-between gap-4">
+            <div className="mt-12 pt-6 border-t border-white/10 flex flex-wrap items-center justify-between gap-4">
               <Link
                 href="/blog"
-                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition-colors"
+                className="inline-flex items-center gap-2 text-xs sm:text-sm font-semibold text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
               >
                 <ArrowLeft className="w-4 h-4" />
                 <span>Back to Knowledgebase</span>
               </Link>
 
               <div className="flex items-center gap-3 text-xs">
-                <span className="text-slate-500">Need help implementing this?</span>
+                <span className="text-[#9CA3AF]">Need help implementing this?</span>
                 <a
                   href="https://wa.me/919582129099"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 font-semibold flex items-center gap-1"
+                  className="text-[#10B981] hover:text-emerald-400 font-semibold flex items-center gap-1"
                 >
                   <MessageSquare className="w-3.5 h-3.5" />
                   <span>WhatsApp Engineer</span>
@@ -249,20 +249,20 @@ export default async function BlogPostPage({ params }: PageProps) {
           {/* Sticky Sidebar */}
           <aside className="lg:col-span-4 space-y-6 lg:sticky lg:top-24">
             {/* Contextual Hosting Recommendation */}
-            <div className="bg-white rounded-2xl p-6 border border-indigo-200 shadow-sm space-y-4">
-              <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
+            <div className="bg-[#111827] rounded-2xl p-6 border border-white/10 shadow-card space-y-4">
+              <span className="text-[11px] font-semibold text-[#06B6D4] bg-[#06B6D4]/10 border border-[#06B6D4]/30 px-2.5 py-0.5 rounded-full uppercase tracking-wider">
                 Recommended Solution
               </span>
 
               <div>
-                <h4 className="text-lg font-bold text-slate-900">{productRecommendation.title}</h4>
-                <p className="text-xs text-slate-500 mt-1">Starting from {productRecommendation.price}</p>
+                <h4 className="text-lg font-bold text-[#F9FAFB]">{productRecommendation.title}</h4>
+                <p className="text-xs text-[#9CA3AF] mt-1">Starting from {productRecommendation.price}</p>
               </div>
 
-              <ul className="space-y-2 text-xs text-slate-700">
+              <ul className="space-y-2 text-xs text-[#9CA3AF]">
                 {productRecommendation.features.map((feat, fIdx) => (
                   <li key={fIdx} className="flex items-center gap-2">
-                    <CheckCircle className="w-3.5 h-3.5 text-cyan-600 shrink-0" />
+                    <CheckCircle className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
                     <span>{feat}</span>
                   </li>
                 ))}
@@ -276,9 +276,9 @@ export default async function BlogPostPage({ params }: PageProps) {
             </div>
 
             {/* Quick Support Card */}
-            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-3">
-              <h4 className="text-sm font-bold text-slate-900">Free Migration Assistance</h4>
-              <p className="text-xs text-slate-600 leading-relaxed">
+            <div className="bg-[#0B0F19] rounded-2xl p-6 border border-white/10 space-y-3">
+              <h4 className="text-sm font-bold text-[#F9FAFB]">Free Migration Assistance</h4>
+              <p className="text-xs text-[#9CA3AF] leading-relaxed">
                 Switching from another provider? Our sysadmins migrate your cPanel accounts, databases, and emails with zero downtime.
               </p>
               <div className="pt-2">
@@ -295,35 +295,35 @@ export default async function BlogPostPage({ params }: PageProps) {
       {relatedPosts.length > 0 && (
         <section className="relative px-4 sm:px-6 lg:px-8">
           <div className="max-w-6xl mx-auto space-y-8">
-            <h3 className="text-xl sm:text-2xl font-bold text-slate-900">Related Technical Guides</h3>
+            <h3 className="text-xl sm:text-2xl font-bold text-[#F9FAFB]">Related Technical Guides</h3>
 
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {relatedPosts.map((relPost) => (
                 <div
                   key={relPost.slug}
-                  className="bg-white rounded-2xl p-6 border border-slate-200/90 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all flex flex-col justify-between group"
+                  className="bg-[#111827] rounded-2xl p-6 border border-white/10 shadow-card hover:bg-[#1F2937] hover:border-white/20 transition-all flex flex-col justify-between group"
                 >
                   <div className="space-y-3">
                     <div className="flex items-center justify-between text-xs">
-                      <span className="font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-2 py-0.5 rounded-full">
+                      <span className="font-semibold text-[#06B6D4] bg-[#06B6D4]/10 border border-[#06B6D4]/30 px-2 py-0.5 rounded-full">
                         {relPost.category}
                       </span>
-                      <span className="text-slate-400">{relPost.readTime}</span>
+                      <span className="text-[#9CA3AF]">{relPost.readTime}</span>
                     </div>
 
-                    <h4 className="text-base font-bold text-slate-900 group-hover:text-indigo-600 transition-colors">
+                    <h4 className="text-base font-bold text-[#F9FAFB] group-hover:text-[#06B6D4] transition-colors">
                       <Link href={`/blog/${relPost.slug}`}>{relPost.title}</Link>
                     </h4>
 
-                    <p className="text-xs text-slate-600 leading-relaxed line-clamp-2">
+                    <p className="text-xs text-[#9CA3AF] leading-relaxed line-clamp-2">
                       {relPost.excerpt}
                     </p>
                   </div>
 
-                  <div className="pt-4 mt-4 border-t border-slate-100">
+                  <div className="pt-4 mt-4 border-t border-white/10">
                     <Link
                       href={`/blog/${relPost.slug}`}
-                      className="text-xs font-semibold text-indigo-600 group-hover:text-indigo-700 inline-flex items-center gap-1"
+                      className="text-xs font-semibold text-[#06B6D4] group-hover:text-[#22D3EE] inline-flex items-center gap-1"
                     >
                       <span>Read Guide</span>
                       <ArrowRight className="w-3.5 h-3.5" />

@@ -33,21 +33,21 @@ export const Button: React.FC<ButtonProps> = ({
 
   const variantStyles = {
     primary:
-      "bg-indigo-600 hover:bg-indigo-700 active:bg-indigo-800 text-white shadow-sm hover:shadow focus-visible:ring-indigo-500 active:scale-[0.99]",
+      "bg-[#4F46E5] hover:bg-indigo-500 active:bg-indigo-700 text-[#F9FAFB] shadow-md hover:shadow-indigo-500/25 focus-visible:ring-[#4F46E5] active:scale-[0.99]",
     secondary:
-      "bg-white hover:bg-slate-50 active:bg-slate-100 text-slate-900 border border-slate-300 shadow-sm focus-visible:ring-slate-400 active:scale-[0.99]",
+      "bg-[#1F2937] hover:bg-[#374151] active:bg-[#111827] text-[#F9FAFB] border border-white/10 shadow-sm focus-visible:ring-slate-400 active:scale-[0.99]",
     accent:
-      "bg-cyan-500 hover:bg-cyan-400 active:bg-cyan-600 text-slate-950 font-semibold shadow-sm focus-visible:ring-cyan-400 active:scale-[0.99]",
+      "bg-[#06B6D4] hover:bg-[#22D3EE] active:bg-[#0891B2] text-[#0B0F19] font-bold shadow-sm focus-visible:ring-[#06B6D4] active:scale-[0.99]",
     outline:
-      "bg-transparent hover:bg-indigo-50 text-indigo-700 hover:text-indigo-800 border border-indigo-200 hover:border-indigo-300 focus-visible:ring-indigo-500",
+      "bg-transparent hover:bg-[#1F2937] text-[#06B6D4] hover:text-[#22D3EE] border border-[#06B6D4]/40 hover:border-[#06B6D4] focus-visible:ring-[#06B6D4]",
     ghost:
-      "bg-transparent hover:bg-slate-100 text-slate-600 hover:text-slate-900 focus-visible:ring-slate-400",
+      "bg-transparent hover:bg-[#1F2937] text-[#9CA3AF] hover:text-[#F9FAFB] focus-visible:ring-slate-400",
     whatsapp:
-      "bg-[#16a34a] hover:bg-[#15803d] active:bg-[#166534] text-white font-medium shadow-sm focus-visible:ring-emerald-500 active:scale-[0.99]",
+      "bg-[#10B981] hover:bg-emerald-600 active:bg-emerald-700 text-white font-semibold shadow-sm focus-visible:ring-[#10B981] active:scale-[0.99]",
     "dark-primary":
-      "bg-indigo-600 hover:bg-indigo-500 active:bg-indigo-700 text-white shadow-sm focus-visible:ring-indigo-400 active:scale-[0.99]",
+      "bg-[#4F46E5] hover:bg-indigo-500 active:bg-indigo-700 text-[#F9FAFB] shadow-md focus-visible:ring-[#4F46E5] active:scale-[0.99]",
     "dark-secondary":
-      "bg-slate-800 hover:bg-slate-700 active:bg-slate-900 text-slate-100 border border-slate-700 hover:border-slate-600 focus-visible:ring-slate-400 active:scale-[0.99]",
+      "bg-[#1F2937] hover:bg-[#374151] active:bg-[#111827] text-[#F9FAFB] border border-white/10 focus-visible:ring-slate-400 active:scale-[0.99]",
   };
 
   const combinedClasses = `${baseStyles} ${sizeStyles[size]} ${variantStyles[variant]} ${className}`;

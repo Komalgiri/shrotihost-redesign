@@ -37,8 +37,8 @@ export default function SharedHostingPage() {
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
-      <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
-        <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
+      <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -49,35 +49,35 @@ export default function SharedHostingPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-xs">
-              <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 mb-4 shadow-card">
+              <Sparkles className="w-3.5 h-3.5 text-[#06B6D4]" />
               <span>NVMe SSDs • LiteSpeed Enterprise • cPanel Latest</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               High-Performance NVMe Shared Hosting with Flat Renewal Pricing
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Deploy your website on enterprise LiteSpeed web servers and PCIe NVMe storage. Enjoy predictable billing with our <strong className="text-slate-950 font-bold">same-price-on-renewal guarantee</strong>.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+              Deploy your website on enterprise LiteSpeed web servers and PCIe NVMe storage. Enjoy predictable billing with our <strong className="text-[#F9FAFB] font-bold">same-price-on-renewal guarantee</strong>.
             </p>
 
             {/* Trust Badges Strip */}
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-700">
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-[#F9FAFB]">
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
                 cPanel + Softaculous
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#06B6D4]" />
                 Imunify360 Security WAF
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#4F46E5]" />
                 Daily JetBackup Restores
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
                 Free Website Migration
               </span>
             </div>
@@ -130,15 +130,15 @@ export default function SharedHostingPage() {
 
       {/* 4. FREE WEBSITE MIGRATION BANNER */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto bg-slate-50 rounded-2xl p-8 sm:p-10 border border-slate-200/90 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
+        <div className="max-w-5xl mx-auto bg-[#111827] rounded-2xl p-8 sm:p-10 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-card">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-700">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
               Zero Downtime Transition
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-slate-950 mt-1">
+            <h3 className="text-2xl sm:text-3xl font-bold text-[#F9FAFB] mt-1">
               Switching from Another Host? We Handle Everything Free.
             </h3>
-            <p className="text-sm text-slate-600 mt-2 max-w-xl leading-relaxed">
+            <p className="text-sm text-[#9CA3AF] mt-2 max-w-xl leading-relaxed">
               Don&apos;t risk losing data or experiencing downtime. Provide your current cPanel backup or access details, and our technical migration specialists will migrate your websites, emails, and databases within hours.
             </p>
           </div>

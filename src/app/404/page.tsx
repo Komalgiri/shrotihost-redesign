@@ -1,4 +1,5 @@
 import React from "react";
+import type { Metadata } from "next";
 import Link from "next/link";
 import {
   Server,
@@ -12,31 +13,36 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
-export default function NotFound() {
+export const metadata: Metadata = {
+  title: "404 - Page Not Found | ShrotiHost",
+  description: "The page you are looking for does not exist. Explore our high-speed NVMe cloud hosting, domains, and developer services.",
+};
+
+export default function Custom404Page() {
   const quickLinks = [
     {
       title: "Shared Hosting",
       description: "Fast LiteSpeed NVMe plans starting from ₹49/month with flat renewals.",
       href: "/shared-hosting",
-      icon: <Server className="w-5 h-5 text-indigo-600" />,
+      icon: <Server className="w-5 h-5 text-[#06B6D4]" />,
     },
     {
       title: "Cloud VPS",
       description: "High-concurrency KVM virtual servers with full root access.",
       href: "/vps",
-      icon: <HardDrive className="w-5 h-5 text-cyan-600" />,
+      icon: <HardDrive className="w-5 h-5 text-[#4F46E5]" />,
     },
     {
       title: "Search Domains",
       description: "Register .in for ₹714/yr or .com for ₹1,169/yr with free DNS management.",
       href: "/domains",
-      icon: <Globe className="w-5 h-5 text-emerald-600" />,
+      icon: <Globe className="w-5 h-5 text-[#10B981]" />,
     },
     {
       title: "Technical Guides",
       description: "Tutorials on DNS configuration, LiteSpeed caching, and WordPress speed.",
       href: "/blog",
-      icon: <BookOpen className="w-5 h-5 text-indigo-600" />,
+      icon: <BookOpen className="w-5 h-5 text-[#06B6D4]" />,
     },
   ];
 
@@ -44,16 +50,16 @@ export default function NotFound() {
     <div className="relative min-h-[75vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 overflow-hidden bg-tech-grid">
       <div className="relative max-w-3xl mx-auto text-center space-y-8">
         <div className="space-y-4">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-sm">
-            <HelpCircle className="w-3.5 h-3.5 text-indigo-600" />
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 shadow-card">
+            <HelpCircle className="w-3.5 h-3.5 text-[#06B6D4]" />
             <span>Error 404 • Resource Not Found</span>
           </span>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
             Lost in the Cloud?
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-[#9CA3AF] max-w-xl mx-auto leading-relaxed">
             The page you are looking for might have been moved, renamed, or doesn&apos;t exist. Explore popular destinations below or return home.
           </p>
         </div>
@@ -74,8 +80,8 @@ export default function NotFound() {
         </div>
 
         {/* Quick Links Grid */}
-        <div className="pt-8 border-t border-slate-200 text-left">
-          <p className="text-xs font-bold uppercase tracking-wider text-slate-500 text-center mb-6">
+        <div className="pt-8 border-t border-white/10 text-left">
+          <p className="text-xs font-bold uppercase tracking-wider text-[#9CA3AF] text-center mb-6">
             Popular Destinations
           </p>
 
@@ -84,17 +90,17 @@ export default function NotFound() {
               <Link
                 key={idx}
                 href={link.href}
-                className="bg-white rounded-xl p-4 border border-slate-200/90 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all flex items-start gap-3.5 group"
+                className="bg-[#111827] rounded-xl p-4 border border-white/10 shadow-card hover:bg-[#1F2937] hover:border-white/20 transition-all flex items-start gap-3.5 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-[#0B0F19] border border-white/10 flex items-center justify-center shrink-0">
                   {link.icon}
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors flex items-center gap-1">
+                  <h3 className="text-sm font-bold text-[#F9FAFB] group-hover:text-[#06B6D4] transition-colors flex items-center gap-1">
                     <span>{link.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-indigo-600" />
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-[#06B6D4]" />
                   </h3>
-                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
+                  <p className="text-xs text-[#9CA3AF] mt-1 leading-relaxed">
                     {link.description}
                   </p>
                 </div>

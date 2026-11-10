@@ -25,29 +25,29 @@ export const CTASection: React.FC<CTASectionProps> = ({
 }) => {
   return (
     <section className="relative px-4 sm:px-6 lg:px-8 py-10 sm:py-16">
-      <div className="max-w-5xl mx-auto rounded-3xl bg-slate-950 border border-slate-800 p-8 sm:p-14 text-center relative overflow-hidden shadow-xl text-white">
+      <div className="max-w-5xl mx-auto rounded-3xl bg-[#111827] border border-white/10 p-8 sm:p-14 text-center relative overflow-hidden shadow-card text-[#F9FAFB]">
         {/* Subtle background grid pattern */}
-        <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
+        <div className="absolute inset-0 bg-tech-grid opacity-20 pointer-events-none" />
 
         <div className="relative z-10 max-w-3xl mx-auto">
           {eyebrow && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-950/60 text-indigo-300 border border-indigo-700/50 mb-4">
-              <Zap className="w-3.5 h-3.5 text-indigo-400" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 mb-4">
+              <Zap className="w-3.5 h-3.5 text-[#06B6D4]" />
               {eyebrow}
             </span>
           )}
 
-          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-white tracking-tight leading-tight">
+          <h2 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
             {title}
           </h2>
 
-          <p className="mt-4 text-sm sm:text-base text-slate-300 max-w-2xl mx-auto leading-relaxed">
+          <p className="mt-4 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
             {subtitle}
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4">
             <Button
-              variant="dark-primary"
+              variant="primary"
               size="lg"
               href={primaryCtaHref}
               rightIcon={<ArrowRight className="w-4 h-4" />}
@@ -71,17 +71,17 @@ export const CTASection: React.FC<CTASectionProps> = ({
           </div>
 
           {/* Guarantees strip */}
-          <div className="mt-10 pt-8 border-t border-slate-800/80 flex flex-wrap items-center justify-center gap-6 text-xs text-slate-400">
+          <div className="mt-10 pt-8 border-t border-white/10 flex flex-wrap items-center justify-center gap-6 text-xs text-[#9CA3AF]">
             <div className="inline-flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-emerald-400" />
+              <ShieldCheck className="w-4 h-4 text-[#10B981]" />
               <span>7-Day Money-Back Guarantee</span>
             </div>
             <div className="inline-flex items-center gap-2">
-              <Zap className="w-4 h-4 text-cyan-400" />
+              <Zap className="w-4 h-4 text-[#06B6D4]" />
               <span>100% Free Website Migration</span>
             </div>
             <div className="inline-flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-indigo-400" />
+              <ShieldCheck className="w-4 h-4 text-[#10B981]" />
               <span>Flat Renewal Guarantee (No Hikes)</span>
             </div>
           </div>

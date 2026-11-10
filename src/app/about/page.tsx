@@ -103,16 +103,16 @@ export default function AboutPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-sm">
-              <ShieldCheck className="w-3.5 h-3.5 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 mb-4 shadow-card">
+              <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" />
               <span>Registered Indian MSME • UDYAM-UP-36-0017127</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Architecting Developer-First Cloud Infrastructure & Software
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
               Founded in 2023 by Priyanshu Shroti, ShrotiHost combines high-performance NVMe cloud infrastructure with honest, predictable pricing and dedicated engineer support.
             </p>
 
@@ -131,44 +131,44 @@ export default function AboutPage() {
       {/* 2. CORE STATS STRIP */}
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="bg-[#111827] rounded-2xl p-6 sm:p-8 border border-white/10 shadow-card grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#4F46E5] shrink-0">
                 <Calendar className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xl font-bold text-slate-900 leading-none">2023</p>
-                <p className="text-xs text-slate-500 mt-1">Year Founded</p>
+                <p className="text-xl font-bold text-[#F9FAFB] leading-none">2023</p>
+                <p className="text-xs text-[#9CA3AF] mt-1">Year Founded</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#10B981] shrink-0">
                 <Building className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xl font-bold text-slate-900 leading-none">MSME</p>
-                <p className="text-xs text-slate-500 mt-1">UDYAM-UP-36-0017127</p>
+                <p className="text-xl font-bold text-[#F9FAFB] leading-none">MSME</p>
+                <p className="text-xs text-[#9CA3AF] mt-1">UDYAM-UP-36-0017127</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#06B6D4] shrink-0">
                 <Server className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xl font-bold text-slate-900 leading-none">PCIe 4.0</p>
-                <p className="text-xs text-slate-500 mt-1">Pure NVMe Storage</p>
+                <p className="text-xl font-bold text-[#F9FAFB] leading-none">PCIe 4.0</p>
+                <p className="text-xs text-[#9CA3AF] mt-1">Pure NVMe Storage</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#4F46E5] shrink-0">
                 <RotateCcw className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-xl font-bold text-slate-900 leading-none">Flat Rate</p>
-                <p className="text-xs text-slate-500 mt-1">Same Price on Renewal</p>
+                <p className="text-xl font-bold text-[#F9FAFB] leading-none">Flat Rate</p>
+                <p className="text-xs text-[#9CA3AF] mt-1">Same Price on Renewal</p>
               </div>
             </div>
           </div>
@@ -178,60 +178,60 @@ export default function AboutPage() {
       {/* 3. FOUNDER & MISSION SECTION */}
       <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
-          <div className="bg-white rounded-2xl p-6 sm:p-12 border border-slate-200/90 shadow-sm grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
+          <div className="bg-[#111827] rounded-2xl p-6 sm:p-12 border border-white/10 shadow-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-700 border border-cyan-200/80">
-                <Users className="w-3.5 h-3.5 text-cyan-600" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30">
+                <Users className="w-3.5 h-3.5 text-[#06B6D4]" />
                 <span>Leadership & Vision</span>
               </div>
 
-              <h2 className="text-2xl sm:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
+              <h2 className="text-2xl sm:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
                 Built to Fix Everything Frustrating About Indian Web Hosting
               </h2>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
                 When Priyanshu Shroti founded ShrotiHost in Hathras, Uttar Pradesh, the Indian hosting market was dominated by massive hosting conglomerates utilizing deceptive introductory pricing: deeply discounted first-year rates that renewed at 4x to 5x higher costs, crammed onto oversubscribed Apache servers with spinning hard drives.
               </p>
 
-              <p className="text-sm sm:text-base text-slate-600 leading-relaxed">
+              <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed">
                 ShrotiHost was founded on the opposite philosophy: complete financial transparency, enterprise PCIe 4.0 NVMe hardware, LiteSpeed web server technology, and direct access to infrastructure engineers rather than automated call centers.
               </p>
 
-              <div className="pt-4 border-t border-slate-100 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-slate-600">
+              <div className="pt-4 border-t border-white/10 flex flex-wrap items-center gap-6 text-xs sm:text-sm text-[#9CA3AF]">
                 <div className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4 text-indigo-600" />
+                  <MapPin className="w-4 h-4 text-[#06B6D4]" />
                   <span>Ruheri, Hathras, Uttar Pradesh</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <ShieldCheck className="w-4 h-4 text-emerald-600" />
+                  <ShieldCheck className="w-4 h-4 text-[#10B981]" />
                   <span>Govt. of India MSME Registered</span>
                 </div>
               </div>
             </div>
 
-            <div className="lg:col-span-5 bg-slate-50 rounded-2xl p-6 sm:p-8 border border-slate-200 space-y-6">
+            <div className="lg:col-span-5 bg-[#0B0F19] rounded-2xl p-6 sm:p-8 border border-white/10 space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-14 h-14 rounded-2xl bg-indigo-600 flex items-center justify-center font-extrabold text-white text-2xl shadow-md">
+                <div className="w-14 h-14 rounded-2xl bg-[#4F46E5] flex items-center justify-center font-extrabold text-white text-2xl shadow-md">
                   PS
                 </div>
                 <div>
-                  <h3 className="text-lg font-bold text-slate-900">Priyanshu Shroti</h3>
-                  <p className="text-xs text-indigo-600 font-medium">Founder & Chief Architect</p>
-                  <p className="text-[11px] text-slate-500">Shroti Enterprises</p>
+                  <h3 className="text-lg font-bold text-[#F9FAFB]">Priyanshu Shroti</h3>
+                  <p className="text-xs text-[#06B6D4] font-medium">Founder & Chief Architect</p>
+                  <p className="text-[11px] text-[#9CA3AF]">Shroti Enterprises</p>
                 </div>
               </div>
 
-              <blockquote className="text-xs sm:text-sm text-slate-700 italic border-l-2 border-indigo-600 pl-4 leading-relaxed">
+              <blockquote className="text-xs sm:text-sm text-[#9CA3AF] italic border-l-2 border-[#4F46E5] pl-4 leading-relaxed">
                 &ldquo;Our promise is simple: the price you pay on your first invoice is the exact price you pay on renewal. We believe long-term customer trust is built through technical excellence and radical transparency.&rdquo;
               </blockquote>
 
-              <div className="pt-4 border-t border-slate-200 flex items-center justify-between text-xs">
-                <span className="text-slate-500">Independent Reviews:</span>
+              <div className="pt-4 border-t border-white/10 flex items-center justify-between text-xs">
+                <span className="text-[#9CA3AF]">Independent Reviews:</span>
                 <a
                   href="https://www.trustpilot.com/review/shrotihost.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-emerald-600 hover:text-emerald-700 flex items-center gap-1 font-semibold"
+                  className="text-[#10B981] hover:text-emerald-400 flex items-center gap-1 font-semibold"
                 >
                   <span>Trustpilot Profile</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -243,7 +243,7 @@ export default function AboutPage() {
       </section>
 
       {/* 4. SELECTIVE DARK SECTION: CORE OPERATING PRINCIPLES */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
         <div className="max-w-7xl mx-auto space-y-12">
           <SectionHeading
             isDark={true}
@@ -256,14 +256,14 @@ export default function AboutPage() {
             {companyPillars.map((pillar, idx) => (
               <div
                 key={idx}
-                className="bg-slate-900/80 rounded-2xl p-6 sm:p-7 flex flex-col justify-between border border-slate-800 hover:border-indigo-500/40 transition-colors"
+                className="bg-[#111827] rounded-2xl p-6 sm:p-7 flex flex-col justify-between border border-white/10 hover:bg-[#1F2937] hover:border-white/20 transition-all shadow-card"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center shrink-0 mb-4">
                     {pillar.icon}
                   </div>
-                  <h3 className="text-lg font-bold text-white mb-2">{pillar.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+                  <h3 className="text-lg font-bold text-[#F9FAFB] mb-2">{pillar.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                     {pillar.description}
                   </p>
                 </div>
@@ -282,16 +282,16 @@ export default function AboutPage() {
             subtitle="From a local hosting initiative to a comprehensive cloud infrastructure and software engineering provider."
           />
 
-          <div className="relative border-l-2 border-indigo-100 ml-4 sm:ml-8 pl-6 sm:pl-8 space-y-10">
+          <div className="relative border-l-2 border-[#4F46E5]/40 ml-4 sm:ml-8 pl-6 sm:pl-8 space-y-10">
             {timelineMilestones.map((item, idx) => (
               <div key={idx} className="relative">
                 {/* Timeline dot */}
-                <div className="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-white border-2 border-indigo-600 shadow-sm" />
-                <span className="text-xs font-mono font-bold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-2.5 py-0.5 rounded-full">
+                <div className="absolute -left-[31px] sm:-left-[39px] top-1 w-4 h-4 rounded-full bg-[#0B0F19] border-2 border-[#06B6D4] shadow-sm" />
+                <span className="text-xs font-mono font-bold text-[#06B6D4] bg-[#06B6D4]/15 border border-[#06B6D4]/30 px-2.5 py-0.5 rounded-full">
                   {item.year}
                 </span>
-                <h3 className="text-lg font-bold text-slate-900 mt-2 mb-1">{item.title}</h3>
-                <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                <h3 className="text-lg font-bold text-[#F9FAFB] mt-2 mb-1">{item.title}</h3>
+                <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                   {item.description}
                 </p>
               </div>

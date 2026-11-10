@@ -74,8 +74,8 @@ export default function UnlimitedHostingPage() {
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
-        <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
+      <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -86,34 +86,34 @@ export default function UnlimitedHostingPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-700 border border-cyan-200/80 mb-4 shadow-xs">
-              <Infinity className="w-3.5 h-3.5 text-cyan-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 mb-4 shadow-card">
+              <Infinity className="w-3.5 h-3.5 text-[#06B6D4]" />
               <span>Unmetered NVMe SSD • Unmetered Bandwidth • Transparent FUP</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               Unlimited NVMe Hosting with Transparent Policies
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-              Grow your web presence without worrying about disk quota overages. Powered by LiteSpeed Enterprise and protected by our <strong className="text-slate-950 font-bold">same renewal price guarantee</strong>.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+              Grow your web presence without worrying about disk quota overages. Powered by LiteSpeed Enterprise and protected by our <strong className="text-[#F9FAFB] font-bold">same renewal price guarantee</strong>.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-700">
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-[#F9FAFB]">
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#06B6D4]" />
                 Unmetered NVMe Disk
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
                 LiteSpeed Enterprise
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#4F46E5]" />
                 cPanel + Softaculous
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
                 Flat Renewal Rates
               </span>
             </div>

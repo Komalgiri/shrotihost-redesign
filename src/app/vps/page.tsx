@@ -90,8 +90,8 @@ export default function VPSHostingPage() {
   return (
     <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
-        <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
+      <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -102,34 +102,34 @@ export default function VPSHostingPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200/80 mb-4 shadow-xs">
-              <Terminal className="w-3.5 h-3.5 text-purple-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 mb-4 shadow-card">
+              <Terminal className="w-3.5 h-3.5 text-[#06B6D4]" />
               <span>Full Root Access • KVM Virtualization • 1 Gbps Port Speed</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               High-Compute Cloud VPS Virtual Private Servers
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Deploy isolated KVM instances with dedicated compute power, NVMe storage, and uncompromised Linux control. Engineered for developers, high-traffic portals, and agency fleets.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-700">
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-purple-600" />
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-[#F9FAFB]">
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#06B6D4]" />
                 Root SSH Access
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981]" />
                 Dedicated vCPU
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#06B6D4]" />
                 1 Gbps Port Speed
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
-                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+              <span className="px-3 py-1.5 rounded-lg bg-[#111827] border border-white/10 flex items-center gap-1.5 shadow-card">
+                <CheckCircle2 className="w-4 h-4 text-[#4F46E5]" />
                 Dedicated Static IPv4
               </span>
             </div>

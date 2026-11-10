@@ -44,10 +44,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" className="dark" suppressHydrationWarning>
       <body
         suppressHydrationWarning
-        className="min-h-screen bg-[#FAFBFD] text-slate-800 antialiased flex flex-col justify-between selection:bg-blue-600/15 selection:text-blue-900"
+        className="min-h-screen bg-[#0B0F19] text-[#F9FAFB] antialiased flex flex-col justify-between selection:bg-indigo-600/30 selection:text-white"
       >
         <a
           href="#main-content"

@@ -173,16 +173,16 @@ export default function CareersPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-sm">
-              <Briefcase className="w-3.5 h-3.5 text-indigo-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/10 text-[#06B6D4] border border-[#06B6D4]/30 mb-4 shadow-card">
+              <Briefcase className="w-3.5 h-3.5 text-[#06B6D4]" />
               <span>We&apos;re Hiring • 100% Remote in India</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Build India&apos;s Most Transparent Cloud Platform
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
               Join an engineering-led team that values craftsmanship, autonomy, and honesty. We are building the next generation of cloud hosting and digital engineering tools.
             </p>
 
@@ -205,14 +205,14 @@ export default function CareersPage() {
             {cultureValues.map((val, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 sm:p-7 flex flex-col justify-between border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
+                className="bg-[#111827] rounded-2xl p-6 sm:p-7 flex flex-col justify-between border border-white/10 shadow-card hover:bg-[#1F2937] hover:border-white/20 transition-all"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0 mb-4">
+                  <div className="w-12 h-12 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center shrink-0 mb-4">
                     {val.icon}
                   </div>
-                  <h3 className="text-base font-bold text-slate-900 mb-2">{val.title}</h3>
-                  <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                  <h3 className="text-base font-bold text-[#F9FAFB] mb-2">{val.title}</h3>
+                  <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                     {val.description}
                   </p>
                 </div>
@@ -235,37 +235,37 @@ export default function CareersPage() {
             {openRoles.map((role) => (
               <div
                 key={role.id}
-                className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start"
+                className="bg-[#111827] rounded-2xl p-6 sm:p-10 border border-white/10 shadow-card hover:border-white/20 transition-all flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start"
               >
                 <div className="space-y-6 flex-1">
                   <div>
                     <div className="flex flex-wrap items-center gap-2 mb-2">
-                      <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[11px] font-semibold text-[#06B6D4] bg-[#06B6D4]/15 border border-[#06B6D4]/30 px-2.5 py-0.5 rounded-full">
                         {role.department}
                       </span>
-                      <span className="text-[11px] font-semibold text-cyan-700 bg-cyan-50 border border-cyan-200/80 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[11px] font-semibold text-[#10B981] bg-emerald-500/10 border border-emerald-500/30 px-2.5 py-0.5 rounded-full">
                         {role.type}
                       </span>
-                      <span className="text-[11px] font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full">
+                      <span className="text-[11px] font-semibold text-[#9CA3AF] bg-[#0B0F19] border border-white/10 px-2.5 py-0.5 rounded-full">
                         {role.location}
                       </span>
                     </div>
 
-                    <h3 className="text-xl sm:text-2xl font-bold text-slate-900">{role.title}</h3>
-                    <p className="text-xs sm:text-sm text-slate-600 mt-2 leading-relaxed">
+                    <h3 className="text-xl sm:text-2xl font-bold text-[#F9FAFB]">{role.title}</h3>
+                    <p className="text-xs sm:text-sm text-[#9CA3AF] mt-2 leading-relaxed">
                       {role.description}
                     </p>
                   </div>
 
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-slate-100">
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6 pt-4 border-t border-white/10">
                     <div className="space-y-3">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#F9FAFB]">
                         What You Will Do:
                       </h4>
                       <ul className="space-y-2">
                         {role.responsibilities.map((item, rIdx) => (
-                          <li key={rIdx} className="flex items-start gap-2 text-xs text-slate-700 leading-relaxed">
-                            <CheckCircle className="w-3.5 h-3.5 text-indigo-600 shrink-0 mt-0.5" />
+                          <li key={rIdx} className="flex items-start gap-2 text-xs text-[#9CA3AF] leading-relaxed">
+                            <CheckCircle className="w-3.5 h-3.5 text-[#06B6D4] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -273,13 +273,13 @@ export default function CareersPage() {
                     </div>
 
                     <div className="space-y-3">
-                      <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700">
+                      <h4 className="text-xs font-bold uppercase tracking-wider text-[#F9FAFB]">
                         What We Are Looking For:
                       </h4>
                       <ul className="space-y-2">
                         {role.requirements.map((item, reqIdx) => (
-                          <li key={reqIdx} className="flex items-start gap-2 text-xs text-slate-700 leading-relaxed">
-                            <CheckCircle className="w-3.5 h-3.5 text-emerald-600 shrink-0 mt-0.5" />
+                          <li key={reqIdx} className="flex items-start gap-2 text-xs text-[#9CA3AF] leading-relaxed">
+                            <CheckCircle className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" />
                             <span>{item}</span>
                           </li>
                         ))}
@@ -289,26 +289,26 @@ export default function CareersPage() {
                 </div>
 
                 {/* Right Application Card */}
-                <div className="w-full lg:w-72 bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col justify-between shrink-0 space-y-6">
+                <div className="w-full lg:w-72 bg-[#0B0F19] rounded-xl p-6 border border-white/10 flex flex-col justify-between shrink-0 space-y-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-2">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-[#F9FAFB] mb-2">
                       Ready to Apply?
                     </h4>
-                    <p className="text-xs text-slate-600 leading-relaxed">
+                    <p className="text-xs text-[#9CA3AF] leading-relaxed">
                       Email your resume or GitHub / portfolio link directly to our engineering leadership.
                     </p>
                   </div>
 
-                  <div className="space-y-3 pt-4 border-t border-slate-200">
+                  <div className="space-y-3 pt-4 border-t border-white/10">
                     <Button
                       href={`mailto:careers@shrotihost.in?subject=Application:%20${encodeURIComponent(role.title)}`}
-                      className="w-full"
+                      className="w-full font-bold"
                       variant="primary"
                       rightIcon={<Send className="w-3.5 h-3.5 ml-2" />}
                     >
                       Apply for Role
                     </Button>
-                    <p className="text-[11px] text-center text-slate-500">
+                    <p className="text-[11px] text-center text-[#9CA3AF]">
                       Response within 48 business hours
                     </p>
                   </div>
@@ -320,7 +320,7 @@ export default function CareersPage() {
       </section>
 
       {/* 4. SELECTIVE DARK SECTION: PERKS & BENEFITS */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
         <div className="max-w-7xl mx-auto space-y-12">
           <SectionHeading
             isDark={true}
@@ -330,23 +330,23 @@ export default function CareersPage() {
           />
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
-            <div className="bg-slate-900/80 rounded-2xl p-6 sm:p-7 border border-slate-800">
-              <h3 className="text-base font-bold text-white mb-2">Competitive Compensation</h3>
-              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            <div className="bg-[#111827] rounded-2xl p-6 sm:p-7 border border-white/10 shadow-card">
+              <h3 className="text-base font-bold text-[#F9FAFB] mb-2">Competitive Compensation</h3>
+              <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                 Fair, transparent salary packages benchmarked against modern Indian tech industry standards with regular performance evaluations.
               </p>
             </div>
 
-            <div className="bg-slate-900/80 rounded-2xl p-6 sm:p-7 border border-slate-800">
-              <h3 className="text-base font-bold text-white mb-2">Free Cloud Infrastructure</h3>
-              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            <div className="bg-[#111827] rounded-2xl p-6 sm:p-7 border border-white/10 shadow-card">
+              <h3 className="text-base font-bold text-[#F9FAFB] mb-2">Free Cloud Infrastructure</h3>
+              <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                 Every team member receives complimentary high-tier NVMe web hosting, Cloud VPS instances, and domain credits for personal side-projects.
               </p>
             </div>
 
-            <div className="bg-slate-900/80 rounded-2xl p-6 sm:p-7 border border-slate-800">
-              <h3 className="text-base font-bold text-white mb-2">Flexible Asynchronous Work</h3>
-              <p className="text-xs sm:text-sm text-slate-400 leading-relaxed">
+            <div className="bg-[#111827] rounded-2xl p-6 sm:p-7 border border-white/10 shadow-card">
+              <h3 className="text-base font-bold text-[#F9FAFB] mb-2">Flexible Asynchronous Work</h3>
+              <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                 We respect your personal time and focus hours. No unnecessary marathon meetings—we communicate clearly through written tickets and Slack.
               </p>
             </div>

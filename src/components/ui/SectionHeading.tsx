@@ -14,7 +14,7 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
   title,
   subtitle,
   centered = true,
-  isDark = false,
+  isDark = true,
   className = "",
 }) => {
   return (
@@ -25,32 +25,20 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
     >
       {eyebrow && (
         <div
-          className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3.5 ${
-            isDark
-              ? "bg-indigo-950/50 text-indigo-300 border border-indigo-700/50"
-              : "bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-xs"
-          }`}
+          className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3.5 bg-[#4F46E5]/15 text-indigo-300 border border-[#4F46E5]/30 shadow-xs"
         >
-          <span
-            className={`w-1.5 h-1.5 rounded-full ${
-              isDark ? "bg-cyan-400" : "bg-indigo-600"
-            }`}
-          />
+          <span className="w-1.5 h-1.5 rounded-full bg-[#06B6D4] animate-pulse" />
           {eyebrow}
         </div>
       )}
       <h2
-        className={`text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight ${
-          isDark ? "text-white" : "text-slate-950"
-        }`}
+        className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight leading-tight text-[#F9FAFB]"
       >
         {title}
       </h2>
       {subtitle && (
         <p
-          className={`mt-3 text-base sm:text-lg leading-relaxed ${
-            isDark ? "text-slate-400" : "text-slate-600"
-          }`}
+          className="mt-3 text-base sm:text-lg leading-relaxed text-[#9CA3AF]"
         >
           {subtitle}
         </p>

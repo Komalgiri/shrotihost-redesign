@@ -22,7 +22,7 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = "" 
         <li className="inline-flex items-center">
           <Link
             href="/"
-            className="inline-flex items-center gap-1 hover:text-indigo-600 transition-colors text-slate-500"
+            className="inline-flex items-center gap-1 hover:text-[#06B6D4] transition-colors text-[#9CA3AF]"
           >
             <Home className="w-3.5 h-3.5" />
             <span>Home</span>
@@ -32,15 +32,15 @@ export const Breadcrumbs: React.FC<BreadcrumbsProps> = ({ items, className = "" 
           const isLast = index === items.length - 1;
           return (
             <li key={index} className="inline-flex items-center gap-1.5 sm:gap-2">
-              <ChevronRight className="w-3.5 h-3.5 text-slate-400 shrink-0" />
+              <ChevronRight className="w-3.5 h-3.5 text-slate-600 shrink-0" />
               {isLast || !item.href ? (
-                <span className="text-slate-900 font-semibold truncate max-w-[200px] sm:max-w-none">
+                <span className="text-[#F9FAFB] font-semibold truncate max-w-[200px] sm:max-w-none">
                   {item.label}
                 </span>
               ) : (
                 <Link
                   href={item.href}
-                  className="hover:text-indigo-600 transition-colors truncate max-w-[150px] sm:max-w-none font-medium"
+                  className="hover:text-[#06B6D4] text-[#9CA3AF] transition-colors truncate max-w-[150px] sm:max-w-none font-medium"
                 >
                   {item.label}
                 </Link>

@@ -65,18 +65,18 @@ export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ 
   const related = allProducts.filter((p) => p.slug !== activeIdentifier).slice(0, 3);
 
   return (
-    <section className="relative px-4 sm:px-6 lg:px-8 py-16 border-t border-slate-200/80 bg-slate-50/60">
+    <section className="relative px-4 sm:px-6 lg:px-8 py-16 border-t border-white/10 bg-[#0B0F19]">
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-indigo-700">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
               Explore More Infrastructure
             </span>
-            <h3 className="text-2xl font-bold text-slate-950 mt-1">Related Hosting Solutions</h3>
+            <h3 className="text-2xl font-bold text-[#F9FAFB] mt-1">Related Hosting Solutions</h3>
           </div>
           <Link
             href="/"
-            className="mt-2 sm:mt-0 text-xs font-bold text-slate-600 hover:text-indigo-600 inline-flex items-center gap-1 transition-colors"
+            className="mt-2 sm:mt-0 text-xs font-bold text-[#9CA3AF] hover:text-[#06B6D4] inline-flex items-center gap-1 transition-colors"
           >
             <span>Compare All Products</span>
             <ArrowRight className="w-3.5 h-3.5" />
@@ -88,26 +88,26 @@ export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ 
             <Link
               key={prod.slug}
               href={`/${prod.slug}`}
-              className="bg-white rounded-2xl border border-slate-200/90 p-6 flex flex-col justify-between group shadow-sm hover:shadow-md hover:border-slate-300 transition-all"
+              className="bg-[#111827] rounded-2xl border border-white/10 p-6 flex flex-col justify-between group shadow-card hover:bg-[#1F2937] hover:border-white/20 transition-all"
             >
               <div>
                 <div className="flex items-center justify-between mb-4">
-                  <div className="w-10 h-10 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
+                  <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center shrink-0">
                     {prod.icon}
                   </div>
-                  <span className="text-xs font-bold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-2.5 py-1 rounded-full font-mono">
+                  <span className="text-xs font-bold text-[#06B6D4] bg-[#06B6D4]/10 border border-[#06B6D4]/30 px-2.5 py-1 rounded-full font-mono">
                     {prod.price}
                   </span>
                 </div>
-                <h4 className="text-base font-bold text-slate-950 group-hover:text-indigo-600 transition-colors mb-1.5">
+                <h4 className="text-base font-bold text-[#F9FAFB] group-hover:text-[#06B6D4] transition-colors mb-1.5">
                   {prod.title}
                 </h4>
-                <p className="text-xs text-slate-600 leading-relaxed">
+                <p className="text-xs text-[#9CA3AF] leading-relaxed">
                   {prod.description}
                 </p>
               </div>
 
-              <div className="mt-5 pt-3 border-t border-slate-100 flex items-center justify-between text-xs font-bold text-indigo-600 group-hover:text-indigo-700">
+              <div className="mt-5 pt-3 border-t border-white/10 flex items-center justify-between text-xs font-bold text-[#06B6D4] group-hover:text-[#22D3EE]">
                 <span>View Plans & Specs</span>
                 <ArrowRight className="w-3.5 h-3.5 transition-transform group-hover:translate-x-1" />
               </div>

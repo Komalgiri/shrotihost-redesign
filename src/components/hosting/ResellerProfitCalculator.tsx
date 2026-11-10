@@ -22,14 +22,14 @@ export const ResellerProfitCalculator: React.FC = () => {
   const marginPercent = Math.round((netMonthlyProfit / totalRevenue) * 100);
 
   return (
-    <div className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200/90 shadow-sm max-w-4xl mx-auto">
-      <div className="flex items-center gap-3 mb-6 border-b border-slate-100 pb-5">
-        <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200/80 flex items-center justify-center text-emerald-600 shrink-0">
+    <div className="bg-[#111827] rounded-2xl p-6 sm:p-10 border border-white/10 shadow-card max-w-4xl mx-auto">
+      <div className="flex items-center gap-3 mb-6 border-b border-white/10 pb-5">
+        <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center justify-center text-[#10B981] shrink-0">
           <Calculator className="w-5 h-5" />
         </div>
         <div>
-          <h3 className="text-xl sm:text-2xl font-bold text-slate-950">Agency Reseller Profit Calculator</h3>
-          <p className="text-xs sm:text-sm text-slate-500">See how much recurring revenue you can generate by hosting your clients on ShrotiHost.</p>
+          <h3 className="text-xl sm:text-2xl font-bold text-[#F9FAFB]">Agency Reseller Profit Calculator</h3>
+          <p className="text-xs sm:text-sm text-[#9CA3AF]">See how much recurring revenue you can generate by hosting your clients on ShrotiHost.</p>
         </div>
       </div>
 
@@ -38,10 +38,10 @@ export const ResellerProfitCalculator: React.FC = () => {
         <div className="space-y-6">
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-800">
+              <label className="text-xs sm:text-sm font-semibold text-[#F9FAFB]">
                 Number of Client cPanel Accounts:
               </label>
-              <span className="text-base font-extrabold text-indigo-700 font-mono">
+              <span className="text-base font-extrabold text-[#06B6D4] font-mono">
                 {clientCount} Clients
               </span>
             </div>
@@ -52,9 +52,9 @@ export const ResellerProfitCalculator: React.FC = () => {
               step="5"
               value={clientCount}
               onChange={(e) => setClientCount(Number(e.target.value))}
-              className="w-full accent-indigo-600 cursor-pointer h-2 bg-slate-200 rounded-lg"
+              className="w-full accent-[#4F46E5] cursor-pointer h-2 bg-[#1F2937] rounded-lg"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 mt-1">
+            <div className="flex justify-between text-[11px] text-[#9CA3AF] mt-1">
               <span>5 clients</span>
               <span>50 clients</span>
               <span>100 clients</span>
@@ -64,10 +64,10 @@ export const ResellerProfitCalculator: React.FC = () => {
 
           <div>
             <div className="flex items-center justify-between mb-2">
-              <label className="text-xs sm:text-sm font-semibold text-slate-800">
+              <label className="text-xs sm:text-sm font-semibold text-[#F9FAFB]">
                 Monthly Price You Charge Each Client:
               </label>
-              <span className="text-base font-extrabold text-emerald-700 font-mono">
+              <span className="text-base font-extrabold text-[#10B981] font-mono">
                 ₹{pricePerClient}/mo
               </span>
             </div>
@@ -78,9 +78,9 @@ export const ResellerProfitCalculator: React.FC = () => {
               step="50"
               value={pricePerClient}
               onChange={(e) => setPricePerClient(Number(e.target.value))}
-              className="w-full accent-emerald-600 cursor-pointer h-2 bg-slate-200 rounded-lg"
+              className="w-full accent-[#10B981] cursor-pointer h-2 bg-[#1F2937] rounded-lg"
             />
-            <div className="flex justify-between text-[11px] text-slate-400 mt-1">
+            <div className="flex justify-between text-[11px] text-[#9CA3AF] mt-1">
               <span>₹199/mo (Budget)</span>
               <span>₹499/mo (Standard)</span>
               <span>₹999/mo (Premium)</span>
@@ -88,44 +88,44 @@ export const ResellerProfitCalculator: React.FC = () => {
             </div>
           </div>
 
-          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600">
-            <span className="text-slate-500">Recommended ShrotiHost Plan: </span>
-            <strong className="text-slate-950 font-semibold">{planInfo.name}</strong> (₹{planInfo.cost}/month)
+          <div className="p-3.5 rounded-xl bg-[#0B0F19] border border-white/10 text-xs text-[#9CA3AF]">
+            <span className="text-[#9CA3AF]">Recommended ShrotiHost Plan: </span>
+            <strong className="text-[#F9FAFB] font-semibold">{planInfo.name}</strong> (₹{planInfo.cost}/month)
           </div>
         </div>
 
         {/* Calculation Result Dashboard */}
-        <div className="bg-slate-50 border border-slate-200/90 rounded-2xl p-6 space-y-4">
-          <div className="flex items-baseline justify-between border-b border-slate-200 pb-3">
-            <span className="text-xs text-slate-500">Total Monthly Revenue:</span>
-            <span className="text-lg font-bold text-slate-900 font-mono">₹{totalRevenue.toLocaleString()}</span>
+        <div className="bg-[#0B0F19] border border-white/10 rounded-2xl p-6 space-y-4">
+          <div className="flex items-baseline justify-between border-b border-white/10 pb-3">
+            <span className="text-xs text-[#9CA3AF]">Total Monthly Revenue:</span>
+            <span className="text-lg font-bold text-[#F9FAFB] font-mono">₹{totalRevenue.toLocaleString()}</span>
           </div>
 
-          <div className="flex items-baseline justify-between border-b border-slate-200 pb-3">
-            <span className="text-xs text-slate-500">ShrotiHost Infrastructure Cost:</span>
-            <span className="text-sm font-semibold text-slate-700 font-mono">- ₹{planInfo.cost}</span>
+          <div className="flex items-baseline justify-between border-b border-white/10 pb-3">
+            <span className="text-xs text-[#9CA3AF]">ShrotiHost Infrastructure Cost:</span>
+            <span className="text-sm font-semibold text-rose-400 font-mono">- ₹{planInfo.cost}</span>
           </div>
 
           <div className="pt-2">
-            <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 block mb-1">
+            <span className="text-xs font-bold uppercase tracking-wider text-[#10B981] block mb-1">
               Estimated Monthly Net Profit
             </span>
             <div className="flex items-baseline gap-2">
-              <span className="text-3xl sm:text-4xl font-black text-slate-950 font-mono">
+              <span className="text-3xl sm:text-4xl font-black text-[#F9FAFB] font-mono">
                 ₹{netMonthlyProfit.toLocaleString()}
               </span>
-              <span className="text-xs text-slate-500">/month</span>
+              <span className="text-xs text-[#9CA3AF]">/month</span>
             </div>
           </div>
 
-          <div className="p-3 rounded-xl bg-white border border-slate-200 text-xs flex items-center justify-between">
-            <span className="text-slate-600">Annual Profit Potential:</span>
-            <strong className="text-emerald-700 font-bold font-mono">₹{netAnnualProfit.toLocaleString()}/yr</strong>
+          <div className="p-3 rounded-xl bg-[#111827] border border-white/10 text-xs flex items-center justify-between">
+            <span className="text-[#9CA3AF]">Annual Profit Potential:</span>
+            <strong className="text-[#10B981] font-bold font-mono">₹{netAnnualProfit.toLocaleString()}/yr</strong>
           </div>
 
-          <div className="flex items-center gap-1.5 text-[11px] text-slate-500 pt-1">
-            <TrendingUp className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-            <span>Estimated Gross Margin: <strong className="text-slate-900">{marginPercent}%</strong></span>
+          <div className="flex items-center gap-1.5 text-[11px] text-[#9CA3AF] pt-1">
+            <TrendingUp className="w-3.5 h-3.5 text-[#10B981] shrink-0" />
+            <span>Estimated Gross Margin: <strong className="text-[#F9FAFB]">{marginPercent}%</strong></span>
           </div>
         </div>
       </div>

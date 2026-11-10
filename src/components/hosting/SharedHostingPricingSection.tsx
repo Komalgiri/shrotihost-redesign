@@ -13,13 +13,13 @@ export const SharedHostingPricingSection: React.FC = () => {
     <div className="space-y-16">
       {/* Billing Cycle Selector */}
       <div className="flex flex-col items-center justify-center gap-3">
-        <div className="inline-flex items-center p-1.5 rounded-2xl bg-slate-100 border border-slate-200/90 shadow-xs">
+        <div className="inline-flex items-center p-1.5 rounded-2xl bg-[#111827] border border-white/10 shadow-card">
           <button
             onClick={() => setBillingCycle("monthly")}
             className={`px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
               billingCycle === "monthly"
-                ? "bg-white text-slate-950 shadow-sm border border-slate-200/70"
-                : "text-slate-600 hover:text-slate-950"
+                ? "bg-[#1F2937] text-[#F9FAFB] shadow-md border border-white/20 font-bold"
+                : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937]/50"
             }`}
           >
             Monthly Billing
@@ -28,8 +28,8 @@ export const SharedHostingPricingSection: React.FC = () => {
             onClick={() => setBillingCycle("semiAnnual")}
             className={`px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
               billingCycle === "semiAnnual"
-                ? "bg-white text-slate-950 shadow-sm border border-slate-200/70"
-                : "text-slate-600 hover:text-slate-950"
+                ? "bg-[#1F2937] text-[#F9FAFB] shadow-md border border-white/20 font-bold"
+                : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937]/50"
             }`}
           >
             6 Months
@@ -38,19 +38,19 @@ export const SharedHostingPricingSection: React.FC = () => {
             onClick={() => setBillingCycle("annual")}
             className={`px-4 sm:px-6 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all relative ${
               billingCycle === "annual"
-                ? "bg-white text-slate-950 shadow-sm border border-slate-200/70"
-                : "text-slate-600 hover:text-slate-950"
+                ? "bg-[#1F2937] text-[#F9FAFB] shadow-md border border-white/20 font-bold"
+                : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937]/50"
             }`}
           >
             <span>Annual (Best Value)</span>
-            <span className="hidden sm:inline-block ml-1.5 text-[10px] uppercase font-bold bg-cyan-100 text-cyan-800 border border-cyan-200 px-1.5 py-0.5 rounded">
+            <span className="hidden sm:inline-block ml-1.5 text-[10px] uppercase font-bold bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30 px-1.5 py-0.5 rounded">
               Save 15%
             </span>
           </button>
         </div>
 
-        <p className="text-xs text-slate-500">
-          <span className="text-emerald-700 font-semibold">✓ Flat Renewal Rate:</span> Your renewal invoice is calculated at the exact same monthly cost.
+        <p className="text-xs text-[#9CA3AF]">
+          <span className="text-[#10B981] font-semibold">✓ Flat Renewal Rate:</span> Your renewal invoice is calculated at the exact same monthly cost.
         </p>
       </div>
 

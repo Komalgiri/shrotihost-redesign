@@ -71,7 +71,7 @@ export const HostingTabs: React.FC = () => {
     <div>
       {/* Tab Switcher Pills */}
       <div className="flex justify-center mb-8">
-        <div className="bg-slate-100 p-1.5 rounded-2xl border border-slate-200/90 inline-flex flex-wrap justify-center gap-1">
+        <div className="bg-[#111827] p-1.5 rounded-2xl border border-white/10 inline-flex flex-wrap justify-center gap-1 shadow-card">
           {tabs.map((tab) => {
             const isActive = activeTab === tab.id;
             return (
@@ -80,8 +80,8 @@ export const HostingTabs: React.FC = () => {
                 onClick={() => setActiveTab(tab.id)}
                 className={`flex items-center gap-2 px-3.5 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all ${
                   isActive
-                    ? "bg-white text-slate-950 shadow-sm border border-slate-200/80"
-                    : "text-slate-600 hover:text-slate-950 hover:bg-slate-200/50"
+                    ? "bg-[#1F2937] text-[#F9FAFB] shadow-md border border-white/20 font-bold"
+                    : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937]/50"
                 }`}
               >
                 <span>{tab.icon}</span>
@@ -89,8 +89,8 @@ export const HostingTabs: React.FC = () => {
                 <span
                   className={`text-[10px] px-2 py-0.5 rounded-full font-bold ${
                     isActive
-                      ? "bg-blue-50 text-blue-700 border border-blue-200"
-                      : "bg-slate-200/70 text-slate-600"
+                      ? "bg-[#4F46E5]/20 text-indigo-300 border border-[#4F46E5]/40"
+                      : "bg-[#0B0F19] text-[#9CA3AF]"
                   }`}
                 >
                   {tab.startingPrice}
@@ -104,12 +104,12 @@ export const HostingTabs: React.FC = () => {
       {/* Tab Intro Header */}
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 max-w-5xl mx-auto mb-8 px-2 text-center sm:text-left">
         <div>
-          <h3 className="text-lg font-bold text-slate-900">{currentTab.label}</h3>
-          <p className="text-xs sm:text-sm text-slate-500 mt-0.5">{currentTab.description}</p>
+          <h3 className="text-lg font-bold text-[#F9FAFB]">{currentTab.label}</h3>
+          <p className="text-xs sm:text-sm text-[#9CA3AF] mt-0.5">{currentTab.description}</p>
         </div>
         <Link
           href={currentTab.viewAllHref}
-          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors shrink-0"
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-[#06B6D4] hover:text-cyan-300 transition-colors shrink-0"
         >
           <span>View Detailed Specs & Matrix</span>
           <ArrowRight className="w-4 h-4" />
@@ -124,12 +124,12 @@ export const HostingTabs: React.FC = () => {
       </div>
 
       {/* Footnote Banner */}
-      <div className="mt-8 p-4 rounded-xl bg-slate-50 border border-slate-200/80 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-slate-500 max-w-4xl mx-auto">
-        <span className="flex items-center gap-1.5 text-slate-700 font-medium">
-          <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+      <div className="mt-8 p-4 rounded-xl bg-[#111827] border border-white/10 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-[#9CA3AF] max-w-4xl mx-auto">
+        <span className="flex items-center gap-1.5 text-[#F9FAFB] font-medium">
+          <ShieldCheck className="w-4 h-4 text-[#10B981] shrink-0" />
           <span>All plans backed by our 7-day money-back guarantee and flat renewal rates.</span>
         </span>
-        <span className="text-slate-400">All prices exclusive of applicable 18% GST</span>
+        <span className="text-[#9CA3AF]">All prices exclusive of applicable 18% GST</span>
       </div>
     </div>
   );

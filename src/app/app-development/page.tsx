@@ -16,7 +16,6 @@ import {
 } from "lucide-react";
 import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { FeatureCard } from "@/components/ui/FeatureCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CTASection } from "@/components/ui/CTASection";
 import { ContactForm } from "@/components/ui/ContactForm";
@@ -39,22 +38,22 @@ export default function AppDevelopmentPage() {
     {
       title: "Cross-Platform iOS & Android",
       description: "Build once and deploy seamlessly across both Apple App Store and Google Play using React Native or Flutter, cutting engineering overhead by up to 40%.",
-      icon: <Smartphone className="w-6 h-6 text-cyan-600" />
+      icon: <Smartphone className="w-6 h-6 text-[#06B6D4]" />
     },
     {
       title: "Real-Time Push Notifications",
       description: "Direct customer engagement using Firebase Cloud Messaging (FCM) and Apple Push Notification service (APNs) with targeted customer segmentation.",
-      icon: <Bell className="w-6 h-6 text-indigo-600" />
+      icon: <Bell className="w-6 h-6 text-[#4F46E5]" />
     },
     {
       title: "Secure Backend Microservices & APIs",
       description: "High-throughput REST and GraphQL backend APIs built on Node.js and PostgreSQL, deployed on our low-latency cloud infrastructure.",
-      icon: <Cpu className="w-6 h-6 text-indigo-600" />
+      icon: <Cpu className="w-6 h-6 text-[#4F46E5]" />
     },
     {
       title: "Offline-First Data Synchronization",
       description: "Local device storage caching with SQLite or WatermelonDB ensures your app remains functional and fast even in intermittent connectivity.",
-      icon: <ShieldCheck className="w-6 h-6 text-emerald-600" />
+      icon: <ShieldCheck className="w-6 h-6 text-[#10B981]" />
     }
   ];
 
@@ -131,7 +130,7 @@ export default function AppDevelopmentPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16">
+    <div className="space-y-20 sm:space-y-28 pb-16 bg-[#0B0F19] text-[#F9FAFB]">
       {/* 1. HERO SECTION */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -143,16 +142,16 @@ export default function AppDevelopmentPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-50 text-cyan-700 border border-cyan-200/80 mb-4 shadow-sm">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-600" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-[#06B6D4]/10 text-cyan-300 border border-[#06B6D4]/30 mb-4 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-[#06B6D4]" />
               <span>React Native • Flutter • iOS & Android • Cloud APIs</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Cross-Platform Mobile App Engineering
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               We design and build intuitive, fluid mobile applications that delight users on smartphones and tablets. Backed by scalable cloud infrastructure and guaranteed store approval.
             </p>
 
@@ -162,6 +161,7 @@ export default function AppDevelopmentPage() {
                 size="lg"
                 href="#inquiry-form"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
+                className="bg-[#4F46E5] hover:bg-indigo-500 text-white shadow-lg shadow-indigo-600/25"
               >
                 Discuss Your Mobile App
               </Button>
@@ -169,6 +169,7 @@ export default function AppDevelopmentPage() {
                 variant="secondary"
                 size="lg"
                 href="#capabilities"
+                className="bg-[#111827] hover:bg-[#1F2937] text-[#F9FAFB] border border-white/10"
               >
                 Explore App Capabilities
               </Button>
@@ -190,14 +191,14 @@ export default function AppDevelopmentPage() {
             {appCapabilities.map((cap, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-7 sm:p-8 flex items-start gap-5 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-cyan-300 transition-all"
+                className="bg-[#111827] rounded-2xl p-7 sm:p-8 flex items-start gap-5 border border-white/10 shadow-card hover:bg-[#1F2937] hover:border-[#06B6D4]/40 transition-all duration-200"
               >
-                <div className="w-12 h-12 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center shrink-0">
                   {cap.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-slate-900 mb-2">{cap.title}</h3>
-                  <p className="text-sm text-slate-600 leading-relaxed">
+                  <h3 className="text-xl font-bold text-[#F9FAFB] mb-2">{cap.title}</h3>
+                  <p className="text-sm text-[#9CA3AF] leading-relaxed">
                     {cap.description}
                   </p>
                 </div>
@@ -207,8 +208,8 @@ export default function AppDevelopmentPage() {
         </div>
       </section>
 
-      {/* 3. SELECTIVE DARK SECTION: MOBILE TECH STACK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
+      {/* 3. MOBILE TECH STACK */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
         <div className="max-w-7xl mx-auto text-center">
           <SectionHeading
             isDark={true}
@@ -221,7 +222,7 @@ export default function AppDevelopmentPage() {
             {mobileTechStack.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs sm:text-sm font-semibold hover:border-cyan-500/50 hover:text-white transition-all shadow-sm"
+                className="px-4 py-2.5 rounded-xl bg-[#111827] border border-white/10 text-[#F9FAFB] text-xs sm:text-sm font-semibold hover:border-[#06B6D4] hover:text-[#06B6D4] transition-all shadow-sm"
               >
                 {tech}
               </span>
@@ -243,14 +244,14 @@ export default function AppDevelopmentPage() {
             {appProcess.map((step, idx) => (
               <div
                 key={idx}
-                className="bg-white rounded-2xl p-6 relative flex flex-col justify-between border border-slate-200/90 shadow-sm hover:shadow-md hover:border-cyan-300 transition-all"
+                className="bg-[#111827] rounded-2xl p-6 relative flex flex-col justify-between border border-white/10 shadow-card hover:bg-[#1F2937] hover:border-[#06B6D4]/40 transition-all duration-200"
               >
                 <div>
-                  <span className="text-3xl font-extrabold text-cyan-600/30 block mb-3 font-mono">
+                  <span className="text-3xl font-extrabold text-[#06B6D4]/40 block mb-3 font-mono">
                     {step.step}
                   </span>
-                  <h4 className="text-base font-bold text-slate-900 mb-2">{step.title}</h4>
-                  <p className="text-xs text-slate-600 leading-relaxed">
+                  <h4 className="text-base font-bold text-[#F9FAFB] mb-2">{step.title}</h4>
+                  <p className="text-xs text-[#9CA3AF] leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -262,21 +263,21 @@ export default function AppDevelopmentPage() {
 
       {/* 5. DELIVERABLES CHECKLIST */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-8 sm:p-12 border border-slate-200/90 shadow-sm">
+        <div className="max-w-5xl mx-auto bg-[#111827] rounded-2xl p-8 sm:p-12 border border-white/10 shadow-card">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200 flex items-center justify-center text-cyan-600 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#06B6D4] shrink-0">
               <FileCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-slate-900">Your Project Deliverables</h3>
-              <p className="text-xs sm:text-sm text-slate-600">Everything provided upon final deployment and milestone completion.</p>
+              <h3 className="text-2xl font-bold text-[#F9FAFB]">Your Project Deliverables</h3>
+              <p className="text-xs sm:text-sm text-[#9CA3AF]">Everything provided upon final deployment and milestone completion.</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             {deliverables.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-[#F9FAFB]">
+                <CheckCircle2 className="w-4 h-4 text-[#10B981] shrink-0 mt-0.5" />
                 <span>{item}</span>
               </div>
             ))}
@@ -285,7 +286,7 @@ export default function AppDevelopmentPage() {
       </section>
 
       {/* 6. INQUIRY FORM */}
-      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-50 border-y border-slate-200/80">
+      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-[#0B0F19] border-y border-white/10">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             eyebrow="Get Started"
