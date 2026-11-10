@@ -4,9 +4,23 @@
 [![React](https://img.shields.io/badge/React-19.0.0-blue?logo=react&logoColor=white)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.7.2-blue?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4.16-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![License](https://img.shields.io/badge/License-Proprietary-red)](#)
 [![Build Status](https://img.shields.io/badge/Build-Passing-brightgreen)](#)
-[![Deployment](https://img.shields.io/badge/SSG-100%25_Pre--rendered-success)](#)
+[![Deployment](https://img.shields.io/badge/SSG-36%2F36_Pre--rendered-success)](#)
+
+---
+
+### 📋 Assessment Submission Metadata (Section 10A)
+
+| Submission Field | Details |
+| :--- | :--- |
+| **GitHub Repository** | [`https://github.com/Komalgiri/shrotihost-redesign`](https://github.com/Komalgiri/shrotihost-redesign) |
+| **Deployment Branch** | `main` |
+| **Commit Reference** | `8a15624` (and continuous syncs) |
+| **Live Website** | Continuous Git-based Vercel Deployment |
+| **Hosting Provider** | Vercel (Auto-deploys on push to `main`) |
+| **Deployment Evidence** | Next.js production build (`36/36 static pages prerendered`), 0 errors, auto-triggered on Git push |
+
+---
 
 A complete, production-ready redesign and rebuild of the public web presence for **ShrotiHost** ([`shrotihost.in`](https://shrotihost.in/)), engineered from the ground up using **Next.js 15 (App Router)**, **React 19**, **TypeScript**, and **Tailwind CSS**.
 
@@ -152,6 +166,7 @@ shrotihost-redesign/
 | `/wordpress-hosting` | **Managed WordPress** | AccelerateWP, LSCache benchmarks, Redis caching, 1-click staging | `Static` |
 | `/unlimited-hosting` | **Unlimited NVMe Hosting** | Bronze to Diamond tiers, Fair Use Policy (FUP) transparency callout | `Static` |
 | `/reseller-hosting` | **WHM Reseller Hosting** | 4 reseller tiers, white-label WHM, interactive Reseller Profit Calculator | `Static` |
+| `/master-reseller-hosting` | **Master Reseller Hosting** | 3 tiers (₹599-₹1,699), 3-tier hierarchy visualizer, Sub-WHM authority, overselling enabled | `Static` |
 | `/vps` | **Cloud VPS Hosting** | 8 KVM VPS configurations (Spark to Apex), transparent one-time setup fee breakdown | `Static` |
 | `/domains` | **Domain Search & TLDs** | Domain search simulator, 12-TLD live filterable pricing table, ICANN/Registry guide | `Static` |
 | `/services` | **Digital Services Hub** | Engineering process, tech stack badges, flexible engagement models | `Static` |
@@ -204,17 +219,17 @@ Located at `/blog`:
 
 ## 7. Design System & Tokens
 
-The redesign uses an engineered dark-mode visual hierarchy optimized for readability, trust, and enterprise appeal:
+The redesign uses a refined cloud infrastructure visual identity with a warm off-white canvas, deep navy typography, and official brand accents, with selective technical dark surfaces:
 
 | Token | Hex Value | Semantic Role |
 | :--- | :--- | :--- |
-| **Brand Primary** | `#4F46E5` | Indigo — Primary actions, high-intent buttons, key active states |
-| **Brand Accent** | `#06B6D4` | Cyan — Highlights, badges, telemetry callouts, speed indicators |
-| **Background Dark** | `#0B0F19` | Deep Obsidian — Page body background |
-| **Card Surface** | `#111827` | Slate 900 — Elevation layer with `rgba(255,255,255,0.06)` border |
-| **Card Hover** | `#1F2937` | Slate 800 — Interactive elevation response |
-| **Text Primary** | `#F9FAFB` | Gray 50 — High-contrast headlines and primary copy |
-| **Text Muted** | `#9CA3AF` | Gray 400 — Secondary descriptions, captions, and specifications |
+| **Brand Primary** | `#4F46E5` | Cobalt / Indigo — Primary CTA buttons, brand badges, active links (from logo) |
+| **Brand Accent** | `#06B6D4` | Electric Cyan — Telemetry highlights, latency counters, speed indicators (from logo) |
+| **Canvas Background** | `#FAFBFD` | Warm Off-White — Page body canvas with architectural grid overlay |
+| **Card Surface** | `#FFFFFF` | Crisp White — Surface cards with `#E2E8F0` border and layered shadows |
+| **Dark Technical Surface**| `#0B0F19` | Deep Obsidian — Hardware racks, server blueprints, and terminal telemetry |
+| **Typography (Headings)** | `#0F172A` | Deep Navy (Slate 900) — High-contrast editorial titles |
+| **Typography (Body)** | `#334155` | Charcoal (Slate 700) — Legible descriptions, specifications, and long-form prose |
 | **Success / Verified** | `#10B981` | Emerald 500 — Live status, checkmarks, MSME badge |
 
 ---

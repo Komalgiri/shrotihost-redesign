@@ -8,18 +8,20 @@
 
 ## 1. Design Philosophy & Visual Identity
 
-The visual redesign of ShrotiHost moves away from generic, template-heavy hosting themes toward a **modern, developer-first cloud infrastructure** aesthetic.
+The visual redesign of ShrotiHost moves away from generic, dark-only SaaS landing pages toward an **editorial cloud infrastructure and software engineering brand**.
 
 ### 1.1 Color Palette & Contrast
-* **Surface Backgrounds (`#0B0F19` Deep Slate & `#0F172A` Slate 900):**
-  * *Rationale:* High-performance infrastructure developers and tech founders prefer dark, reduced-glare environments. Deep slate provides a calm, focused canvas that makes interactive elements pop.
-  * *Accessibility:* White (`#FFFFFF`) and slate (`#E2E8F0`, `#94A3B8`) typography achieve a contrast ratio exceeding **12:1**, comfortably surpassing WCAG 2.1 AA (4.5:1) standards.
-* **Primary Brand Indigo (`#4F46E5` / Tailwind `indigo-600`):**
-  * *Rationale:* Derived from ShrotiHost's corporate identity. Indigo conveys enterprise stability, modern cloud software, and engineering rigor without the generic feel of standard cyan-only themes.
-* **Accent Cyan (`#06B6D4` / Tailwind `cyan-500`):**
-  * *Rationale:* Used sparingly for badges, speed indicators, and feature highlights (e.g. NVMe throughput, LiteSpeed caching). Evokes raw network speed and optical fiber data transit.
-* **Signal Green (`#22C55E` / `#25D366` WhatsApp):**
-  * *Rationale:* Used for money-back guarantees, MSME verification badges, and direct WhatsApp contact buttons, signaling human availability and trust.
+* **Surface Backgrounds (Warm Off-White Canvas `#FAFBFD` & Crisp `#FFFFFF` Surface Cards):**
+  * *Rationale:* Cloud platforms and technology leaders prioritize high readability, clean spacing, and clear architectural structure. The warm off-white canvas with subtle architectural grid overlays provides an airy, structured foundation.
+  * *Accessibility:* Deep navy headings (`#0F172A`) and charcoal body text (`#334155`) achieve a contrast ratio exceeding **13:1**, well above WCAG 2.1 AA (4.5:1) standards.
+* **Primary Brand Indigo (`#4F46E5` / Tailwind `brand-600`):**
+  * *Rationale:* Derived directly from ShrotiHost's official SVG logo mark. Conveys enterprise reliability, modern cloud infrastructure, and technical precision.
+* **Accent Cyan (`#06B6D4` / Tailwind `accent-500`):**
+  * *Rationale:* Derived directly from the cyan highlight of ShrotiHost's logo. Used for telemetry badges, network latency counters, and speed indicators.
+* **Selective Technical Dark Surfaces (`#0B0F19` Deep Obsidian):**
+  * *Rationale:* Used selectively for high-impact technical demonstrations—such as server rack telemetry, terminal commands, and system hierarchy blueprints—creating intentional focal contrast without submerging the whole site in dark mode.
+* **Signal Green (`#10B981` / `#25D366` WhatsApp):**
+  * *Rationale:* Used for operational uptime targets, MSME verification badges, and direct WhatsApp contact routing, communicating transparency and human availability.
 
 ### 1.2 Typography & Hierarchy
 * **Primary Font (`Inter` / System Sans-Serif Fallback):**
@@ -62,6 +64,7 @@ Each hosting product page has an intentionally unique layout tailored to its aud
 * **WordPress Hosting (`/wordpress-hosting`):** Emphasizes technical speed benchmarks (AccelerateWP, LiteSpeed LSCache, Redis object cache) and 1-click staging.
 * **Unlimited Hosting (`/unlimited-hosting`):** Prominently highlights the **Fair Use Policy (FUP)** to prevent customer confusion, clearly disclosing inode and concurrency limits.
 * **Reseller Hosting (`/reseller-hosting`):** Features an interactive **Reseller Profit Calculator** where agencies can test projected monthly revenues based on account counts and retail pricing.
+* **Master Reseller Hosting (`/master-reseller-hosting`):** Visualizes the 3-tier architectural hierarchy (Master Reseller -> Sub-Resellers -> End-Users) and details overselling capabilities, WHM authority, and side-by-side comparison with standard reseller plans.
 * **Cloud VPS (`/vps`):** Focuses on technical hardware specs (vCPU, RAM, dedicated NVMe storage, and setup fees) with clear root access callouts.
 
 ### 3.3 Domain Suite (`/domains`)

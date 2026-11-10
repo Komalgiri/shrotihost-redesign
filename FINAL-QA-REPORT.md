@@ -4,7 +4,7 @@
 **Auditor:** Senior Frontend Engineer, UI/UX Designer & Technical Architect  
 **Project:** ShrotiHost Website Redesign & Frontend Engineering Assessment  
 **Repository Working Directory:** `d:\ShortiHost_Redesign`  
-**Production Build Status:** Passed (`✓ 35/35 static pages generated`)  
+**Production Build Status:** Passed (`✓ 36/36 static pages generated`)  
 **TypeScript Type Check:** Passed (`0 errors`)  
 
 ---
@@ -24,9 +24,9 @@ This report provides a rigorous, transparent audit of the ShrotiHost website red
 
 ### 2.1 Route Reconciliation Matrix
 The assessment requires reconciling the route count between the reported figures:
-- **30 Public Content Routes:**
+- **31 Public Content Routes:**
   - **Homepage (1):** `/`
-  - **Hosting Products Suite (5):** `/shared-hosting`, `/wordpress-hosting`, `/unlimited-hosting`, `/reseller-hosting`, `/vps`
+  - **Hosting Products Suite (6):** `/shared-hosting`, `/wordpress-hosting`, `/unlimited-hosting`, `/reseller-hosting`, `/master-reseller-hosting`, `/vps`
   - **Domain Suite (1):** `/domains`
   - **Software & Digital Services (6):** `/services`, `/web-development`, `/app-development`, `/ecommerce-development`, `/saas-development`, `/whmcs-modules`
   - **Company & Support (3):** `/about`, `/contact`, `/careers`
@@ -52,11 +52,11 @@ The assessment requires reconciling the route count between the reported figures
 - **2 Dynamic Metadata Routes:** `/sitemap.xml`, `/robots.txt`
 
 **Discrepancy Resolution:**
-`route-inventory.csv` contains 36 lines:
+`route-inventory.csv` contains 37 lines:
 - 1 header row
-- 30 distinct public routes
+- 31 distinct public routes
 - 5 canonical permanent redirects
-Total: **35 active entries + 1 header = 36 rows** (all marked `Passed QA`).
+Total: **36 active entries + 1 header = 37 rows** (all marked `Passed QA`).
 
 The Next.js production build separately compiles:
 - 30 public content pages (21 top-level pages + 9 SSG blog articles)
