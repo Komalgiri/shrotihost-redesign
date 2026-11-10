@@ -26,8 +26,8 @@ export const DomainSearchBar: React.FC = () => {
       {/* Outer Card with Crisp Border and Layered Surface */}
       <div className="bg-white rounded-2xl border border-slate-200/90 p-6 sm:p-8 shadow-sm">
         <div className="max-w-3xl mx-auto text-center mb-6">
-          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-blue-700 bg-blue-50 border border-blue-200/60 mb-2">
-            <Sparkles className="w-3.5 h-3.5 text-blue-600" />
+          <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200/80 mb-2">
+            <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
             <span>Instant Domain Registration</span>
           </span>
           <h3 className="text-xl sm:text-2xl font-bold text-slate-950 tracking-tight">
@@ -41,7 +41,7 @@ export const DomainSearchBar: React.FC = () => {
         {/* Search Input Box */}
         <form
           onSubmit={handleSearch}
-          className="relative max-w-3xl mx-auto bg-slate-50 border-2 border-slate-200 hover:border-blue-400 focus-within:border-blue-600 rounded-xl p-2 transition-all flex flex-col sm:flex-row items-center gap-2"
+          className="relative max-w-3xl mx-auto bg-slate-50 border-2 border-slate-200 hover:border-indigo-400 focus-within:border-indigo-600 rounded-xl p-2 transition-all flex flex-col sm:flex-row items-center gap-2"
         >
           <div className="flex items-center gap-3 w-full px-3 py-1 flex-1">
             <Search className="w-5 h-5 text-slate-400 shrink-0" />
@@ -58,7 +58,7 @@ export const DomainSearchBar: React.FC = () => {
             <select
               value={selectedTld}
               onChange={(e) => setSelectedTld(e.target.value)}
-              className="bg-white border border-slate-300 text-slate-900 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-blue-500"
+              className="bg-white border border-slate-300 text-slate-900 rounded-lg px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
             >
               <option value=".in">.in (₹714/yr)</option>
               <option value=".com">.com (₹1,169/yr)</option>
@@ -92,14 +92,14 @@ export const DomainSearchBar: React.FC = () => {
               onClick={() => setSelectedTld(item.tld)}
               className={`px-3 py-1.5 rounded-lg border transition-all flex items-center gap-1.5 text-xs ${
                 selectedTld === item.tld
-                  ? "bg-blue-50 border-blue-300 text-blue-700 font-bold shadow-xs"
+                  ? "bg-indigo-50 border-indigo-300 text-indigo-700 font-bold shadow-xs"
                   : "bg-slate-50/70 border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-100/70"
               }`}
             >
               <span className="font-bold text-slate-900">{item.tld}</span>
               <span className="text-slate-500 font-mono">₹{item.registerPrice}/yr</span>
               {item.sale && (
-                <span className="text-[9px] uppercase font-bold text-teal-700 bg-teal-50 px-1 py-0.2 rounded border border-teal-200">
+                <span className="text-[9px] uppercase font-bold text-cyan-700 bg-cyan-50 px-1 py-0.2 rounded border border-cyan-200">
                   Sale
                 </span>
               )}
@@ -115,12 +115,12 @@ export const DomainSearchBar: React.FC = () => {
           </span>
           <span className="text-slate-300 hidden sm:inline">•</span>
           <span className="inline-flex items-center gap-1 text-slate-600">
-            <Check className="w-4 h-4 text-blue-600" />
+            <Check className="w-4 h-4 text-indigo-600" />
             <span>Instant Cart Provisioning via WHMCS</span>
           </span>
           <span className="text-slate-300 hidden sm:inline">•</span>
           <span className="inline-flex items-center gap-1 text-slate-600">
-            <Check className="w-4 h-4 text-blue-600" />
+            <Check className="w-4 h-4 text-indigo-600" />
             <span>Flat Renewal Price Guarantee</span>
           </span>
         </div>

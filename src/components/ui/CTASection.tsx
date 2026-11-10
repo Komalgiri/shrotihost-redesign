@@ -31,8 +31,8 @@ export const CTASection: React.FC<CTASectionProps> = ({
 
         <div className="relative z-10 max-w-3xl mx-auto">
           {eyebrow && (
-            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-blue-900/40 text-blue-300 border border-blue-700/50 mb-4">
-              <Zap className="w-3.5 h-3.5 text-blue-400" />
+            <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-indigo-950/60 text-indigo-300 border border-indigo-700/50 mb-4">
+              <Zap className="w-3.5 h-3.5 text-indigo-400" />
               {eyebrow}
             </span>
           )}
@@ -77,11 +77,11 @@ export const CTASection: React.FC<CTASectionProps> = ({
               <span>7-Day Money-Back Guarantee</span>
             </div>
             <div className="inline-flex items-center gap-2">
-              <Zap className="w-4 h-4 text-blue-400" />
+              <Zap className="w-4 h-4 text-cyan-400" />
               <span>100% Free Website Migration</span>
             </div>
             <div className="inline-flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-teal-400" />
+              <ShieldCheck className="w-4 h-4 text-indigo-400" />
               <span>Flat Renewal Guarantee (No Hikes)</span>
             </div>
           </div>

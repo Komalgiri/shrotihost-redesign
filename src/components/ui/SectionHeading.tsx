@@ -27,13 +27,13 @@ export const SectionHeading: React.FC<SectionHeadingProps> = ({
         <div
           className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider mb-3.5 ${
             isDark
-              ? "bg-blue-900/40 text-blue-300 border border-blue-700/50"
-              : "bg-blue-50 text-blue-700 border border-blue-200/80 shadow-xs"
+              ? "bg-indigo-950/50 text-indigo-300 border border-indigo-700/50"
+              : "bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-xs"
           }`}
         >
           <span
             className={`w-1.5 h-1.5 rounded-full ${
-              isDark ? "bg-blue-400" : "bg-blue-600"
+              isDark ? "bg-cyan-400" : "bg-indigo-600"
             }`}
           />
           {eyebrow}

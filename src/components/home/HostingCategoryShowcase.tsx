@@ -26,11 +26,11 @@ export const HostingCategoryShowcase: React.FC = () => {
           <div className="relative z-10">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div className="flex items-center gap-2.5">
-                <div className="w-10 h-10 rounded-xl bg-blue-50 border border-blue-200/70 flex items-center justify-center text-blue-600">
+                <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200/70 flex items-center justify-center text-indigo-600">
                   <Server className="w-5 h-5" />
                 </div>
                 <div>
-                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600">
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-indigo-600">
                     Flagship Infrastructure
                   </span>
                   <h3 className="text-xl sm:text-2xl font-bold text-slate-950">
@@ -119,19 +119,19 @@ export const HostingCategoryShowcase: React.FC = () => {
 
             <ul className="space-y-2.5 mb-6 text-xs text-slate-700">
               <li className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <Check className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
                 <span>AccelerateWP Smart PHP Optimization</span>
               </li>
               <li className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <Check className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
                 <span>Dedicated Redis Object Cache Instance</span>
               </li>
               <li className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <Check className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
                 <span>1-Click Safe Staging & Cloning Tools</span>
               </li>
               <li className="flex items-center gap-2">
-                <Check className="w-3.5 h-3.5 text-blue-600 shrink-0" />
+                <Check className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
                 <span>Automatic WordPress Core & Plugin Patching</span>
               </li>
             </ul>
@@ -141,7 +141,7 @@ export const HostingCategoryShowcase: React.FC = () => {
             <span className="text-xs text-slate-400">Pre-tuned WooCommerce stack</span>
             <Link
               href="/wordpress-hosting"
-              className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+              className="text-xs font-bold text-indigo-600 hover:text-indigo-700 inline-flex items-center gap-1"
             >
               <span>View WP Plans</span>
               <ArrowRight className="w-3 h-3" />
@@ -191,7 +191,7 @@ export const HostingCategoryShowcase: React.FC = () => {
               </div>
               <div>
                 <span className="text-slate-400 block text-[11px]">Calculator</span>
-                <strong className="text-blue-600">Interactive Profit Tool</strong>
+                <strong className="text-indigo-600">Interactive Profit Tool</strong>
               </div>
             </div>
           </div>
@@ -259,4 +259,3 @@ export const HostingCategoryShowcase: React.FC = () => {
     </div>
   );
 };
-

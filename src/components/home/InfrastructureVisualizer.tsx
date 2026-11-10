@@ -91,7 +91,7 @@ export const InfrastructureVisualizer: React.FC = () => {
               onClick={() => setActiveProfile(key)}
               className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-all ${
                 activeProfile === key
-                  ? "bg-blue-600 text-white shadow-sm"
+                  ? "bg-indigo-600 text-white shadow-sm"
                   : "bg-slate-800/80 text-slate-400 hover:text-white hover:bg-slate-800"
               }`}
             >
@@ -107,14 +107,14 @@ export const InfrastructureVisualizer: React.FC = () => {
             <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
               <div className="flex items-center justify-between text-slate-400 mb-1.5">
                 <span className="text-[11px] font-medium flex items-center gap-1">
-                  <Cpu className="w-3.5 h-3.5 text-blue-400" />
+                  <Cpu className="w-3.5 h-3.5 text-indigo-400" />
                   CPU Load
                 </span>
                 <span className="text-xs font-mono text-emerald-400 font-bold">{current.cpuLoad}%</span>
               </div>
               <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
                 <div
-                  className="bg-blue-500 h-full rounded-full transition-all duration-500"
+                  className="bg-indigo-500 h-full rounded-full transition-all duration-500"
                   style={{ width: `${current.cpuLoad}%` }}
                 />
               </div>
@@ -124,13 +124,13 @@ export const InfrastructureVisualizer: React.FC = () => {
             <div className="p-3 rounded-xl bg-slate-900/90 border border-slate-800">
               <div className="flex items-center justify-between text-slate-400 mb-1.5">
                 <span className="text-[11px] font-medium flex items-center gap-1">
-                  <HardDrive className="w-3.5 h-3.5 text-teal-400" />
+                  <HardDrive className="w-3.5 h-3.5 text-cyan-400" />
                   NVMe I/O
                 </span>
-                <span className="text-xs font-mono text-teal-400 font-bold">{current.ioSpeed.split(" ")[0]}</span>
+                <span className="text-xs font-mono text-cyan-400 font-bold">{current.ioSpeed.split(" ")[0]}</span>
               </div>
               <div className="w-full bg-slate-800 h-1.5 rounded-full overflow-hidden">
-                <div className="bg-teal-400 h-full rounded-full w-[82%]" />
+                <div className="bg-cyan-400 h-full rounded-full w-[82%]" />
               </div>
               <p className="text-[10px] text-slate-500 mt-1">PCIe Gen4 Direct</p>
             </div>
@@ -154,7 +154,7 @@ export const InfrastructureVisualizer: React.FC = () => {
           <div className="space-y-2 bg-slate-900/60 p-3 rounded-xl border border-slate-800/80">
             <div className="flex items-center justify-between text-[11px] text-slate-400 font-mono pb-1 border-b border-slate-800">
               <span className="flex items-center gap-1.5">
-                <Server className="w-3 h-3 text-blue-400" />
+                <Server className="w-3 h-3 text-indigo-400" />
                 Physical Blade Topology (Tier-IV Noida DC)
               </span>
               <span className="text-emerald-400 flex items-center gap-1">
@@ -168,10 +168,10 @@ export const InfrastructureVisualizer: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <div className="flex gap-1">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                  <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+                  <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
                 </div>
                 <span className="font-mono text-slate-300 font-medium">L1-WEB-PROC-01</span>
-                <span className="text-[10px] bg-blue-950/80 text-blue-400 border border-blue-800 px-1.5 py-0.2 rounded font-mono">
+                <span className="text-[10px] bg-indigo-950/80 text-indigo-300 border border-indigo-800 px-1.5 py-0.2 rounded font-mono">
                   LiteSpeed 6.2
                 </span>
               </div>
@@ -186,7 +186,7 @@ export const InfrastructureVisualizer: React.FC = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-400" />
                 </div>
                 <span className="font-mono text-slate-300 font-medium">L2-NVME-ARRAY-01</span>
-                <span className="text-[10px] bg-teal-950/80 text-teal-400 border border-teal-800 px-1.5 py-0.2 rounded font-mono">
+                <span className="text-[10px] bg-cyan-950/80 text-cyan-300 border border-cyan-800 px-1.5 py-0.2 rounded font-mono">
                   RAID-10 Protected
                 </span>
               </div>
@@ -201,7 +201,7 @@ export const InfrastructureVisualizer: React.FC = () => {
                   <span className="w-1.5 h-1.5 rounded-full bg-indigo-400" />
                 </div>
                 <span className="font-mono text-slate-300 font-medium">L3-SECURITY-ISOL</span>
-                <span className="text-[10px] bg-indigo-950/80 text-indigo-400 border border-indigo-800 px-1.5 py-0.2 rounded font-mono">
+                <span className="text-[10px] bg-indigo-950/80 text-indigo-300 border border-indigo-800 px-1.5 py-0.2 rounded font-mono">
                   CageFS + Imunify
                 </span>
               </div>
@@ -212,14 +212,14 @@ export const InfrastructureVisualizer: React.FC = () => {
           {/* Active Profile Summary */}
           <div className="pt-2 flex items-center justify-between text-xs text-slate-400 border-t border-slate-800/80">
             <div className="flex items-center gap-2">
-              <Shield className="w-4 h-4 text-blue-400" />
+              <Shield className="w-4 h-4 text-indigo-400" />
               <span>
                 Isolation Engine: <strong className="text-white font-medium">{current.isolation}</strong>
               </span>
             </div>
             <Link
               href={activeProfile === "shared" ? "/shared-hosting" : activeProfile === "vps" ? "/vps" : "/reseller-hosting"}
-              className="text-blue-400 hover:text-blue-300 font-medium inline-flex items-center gap-1"
+              className="text-indigo-400 hover:text-indigo-300 font-medium inline-flex items-center gap-1"
             >
               <span>Explore Specs</span>
               <ArrowRight className="w-3 h-3" />
@@ -230,7 +230,7 @@ export const InfrastructureVisualizer: React.FC = () => {
         {/* Bottom Conceptual Disclaimer Bar */}
         <div className="px-4 py-2 bg-slate-900/90 border-t border-slate-800 text-[10px] text-slate-500 flex items-center justify-between">
           <span className="flex items-center gap-1">
-            <span className="w-1.5 h-1.5 rounded-full bg-blue-500" />
+            <span className="w-1.5 h-1.5 rounded-full bg-indigo-500" />
             Simulated Infrastructure Telemetry — Conceptual Node Preview
           </span>
           <span className="hidden sm:inline">Tier-IV Datacenter • India</span>
@@ -239,4 +239,3 @@ export const InfrastructureVisualizer: React.FC = () => {
     </div>
   );
 };
-

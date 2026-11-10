@@ -48,7 +48,7 @@ export default function HomePage() {
             {/* LEFT COLUMN: Editorial Presentation & Copy */}
             <div className="lg:col-span-6 xl:col-span-7 space-y-6 text-left">
               {/* Refined Announcement Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-blue-50 text-blue-700 border border-blue-200/80 shadow-xs">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-xs">
                 <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
                 <span>Next-Gen NVMe Cloud Infrastructure • India Datacenter</span>
               </div>
@@ -56,7 +56,7 @@ export default function HomePage() {
               {/* Editorial Headline with controlled line breaks */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-[1.12]">
                 Cloud hosting and software engineering,{" "}
-                <span className="text-blue-600">built with purpose.</span>
+                <span className="text-indigo-600">built with purpose.</span>
               </h1>
 
               {/* Convincing Subtitle */}
@@ -80,7 +80,7 @@ export default function HomePage() {
                   variant="secondary"
                   size="lg"
                   href="/services"
-                  leftIcon={<Layers className="w-4 h-4 text-blue-600" />}
+                  leftIcon={<Layers className="w-4 h-4 text-indigo-600" />}
                   className="font-semibold"
                 >
                   Explore Software Solutions
@@ -90,7 +90,7 @@ export default function HomePage() {
               {/* Clean Trust Indicators Strip */}
               <div className="pt-8 border-t border-slate-200/90 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl">
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600 shrink-0">
                     <Zap className="w-4 h-4" />
                   </div>
                   <div>
@@ -110,7 +110,7 @@ export default function HomePage() {
                 </div>
 
                 <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-teal-50 border border-teal-200/80 flex items-center justify-center text-teal-600 shrink-0">
+                  <div className="w-8 h-8 rounded-lg bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600 shrink-0">
                     <RotateCcw className="w-4 h-4" />
                   </div>
                   <div>
@@ -173,7 +173,7 @@ export default function HomePage() {
       </section>
 
       {/* 5. SELECTIVE DARK SECTION: INFRASTRUCTURE & HARDWARE BLUEPRINT */}
-      <section className="relative py-20 sm:py-28 bg-[#090D16] text-white border-y border-slate-800 overflow-hidden">
+      <section className="relative py-20 sm:py-28 bg-[#0B0F19] text-white border-y border-slate-800 overflow-hidden">
         {/* Subtle dark technical grid */}
         <div className="absolute inset-0 bg-tech-grid-dark opacity-35 pointer-events-none" />
 
@@ -201,7 +201,7 @@ export default function HomePage() {
           {/* Integrated Zero-Downtime Migration Banner */}
           <div className="mt-12 rounded-2xl p-6 sm:p-8 bg-slate-900/90 border border-slate-800 flex flex-col md:flex-row items-center justify-between gap-6 shadow-xl">
             <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-blue-500/10 border border-blue-500/30 flex items-center justify-center text-blue-400 shrink-0">
+              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/30 flex items-center justify-center text-indigo-400 shrink-0">
                 <RotateCcw className="w-6 h-6" />
               </div>
               <div>
@@ -232,7 +232,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-teal-50 text-teal-700 border border-teal-200 mb-3">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-cyan-50 text-cyan-700 border border-cyan-200 mb-3">
                 Full-Stack Engineering
               </span>
               <h2 className="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
@@ -245,7 +245,7 @@ export default function HomePage() {
 
             <Link
               href="/services"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-blue-600 hover:text-blue-700 transition-colors"
+              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-indigo-600 hover:text-indigo-700 transition-colors"
             >
               <span>Explore All Engineering Services</span>
               <ArrowRight className="w-4 h-4" />
@@ -260,13 +260,13 @@ export default function HomePage() {
                 className="bg-white rounded-2xl border border-slate-200/90 p-7 shadow-sm hover:shadow-md hover:border-slate-300 transition-all flex flex-col justify-between"
               >
                 <div>
-                  <div className="w-12 h-12 rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 mb-5">
+                  <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600 mb-5">
                     {service.slug === "web-development" && <Globe className="w-6 h-6" />}
                     {service.slug === "app-development" && <Smartphone className="w-6 h-6" />}
                     {service.slug === "ecommerce-development" && <ShoppingBag className="w-6 h-6" />}
                   </div>
                   <h3 className="text-xl font-bold text-slate-950 mb-1">{service.title}</h3>
-                  <p className="text-xs font-semibold text-teal-700 mb-3">{service.tagline}</p>
+                  <p className="text-xs font-semibold text-cyan-700 mb-3">{service.tagline}</p>
                   <p className="text-sm text-slate-600 leading-relaxed mb-6">
                     {service.description}
                   </p>
@@ -285,7 +285,7 @@ export default function HomePage() {
                   <span className="text-xs text-slate-400">Timeline: {service.turnaroundTime}</span>
                   <Link
                     href={`/${service.slug}`}
-                    className="text-xs font-bold text-blue-600 hover:text-blue-700 inline-flex items-center gap-1"
+                    className="text-xs font-bold text-indigo-600 hover:text-indigo-700 inline-flex items-center gap-1"
                   >
                     <span>Learn More</span>
                     <ArrowRight className="w-3 h-3" />
@@ -355,7 +355,7 @@ export default function HomePage() {
                   href="https://www.trustpilot.com/review/shrotihost.in"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-xs font-bold text-blue-600 hover:text-blue-700 transition-colors"
+                  className="inline-flex items-center gap-2 text-xs font-bold text-indigo-600 hover:text-indigo-700 transition-colors"
                 >
                   <span>Read Trustpilot Reviews</span>
                   <ExternalLink className="w-3.5 h-3.5" />
@@ -366,7 +366,7 @@ export default function HomePage() {
             {/* Card 2: MSME Government Verification */}
             <div className="bg-white rounded-2xl p-6 sm:p-7 flex flex-col justify-between border border-slate-200/90 shadow-sm hover:shadow-md transition-all">
               <div>
-                <div className="w-9 h-9 rounded-xl bg-blue-50 border border-blue-200/80 flex items-center justify-center text-blue-600 mb-4">
+                <div className="w-9 h-9 rounded-xl bg-indigo-50 border border-indigo-200/80 flex items-center justify-center text-indigo-600 mb-4">
                   <ShieldCheck className="w-5 h-5" />
                 </div>
                 <h3 className="text-lg font-bold text-slate-950 mb-2">Registered Indian MSME</h3>
@@ -378,7 +378,7 @@ export default function HomePage() {
                 <span className="text-xs font-mono text-slate-600 font-semibold">UDYAM-UP-36-0017127</span>
                 <Link
                   href="/about"
-                  className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-blue-600 transition-colors"
+                  className="inline-flex items-center gap-1 text-xs font-bold text-slate-700 hover:text-indigo-600 transition-colors"
                 >
                   <span>About Us</span>
                   <ArrowRight className="w-3 h-3" />

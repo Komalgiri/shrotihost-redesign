@@ -32,13 +32,13 @@ export const PricingCard: React.FC<PricingCardProps> = ({
     <div
       className={`relative flex flex-col rounded-2xl transition-all duration-200 bg-white ${
         plan.popular
-          ? "border-2 border-blue-600 shadow-xl shadow-blue-900/5 lg:-translate-y-2 z-10"
+          ? "border-2 border-indigo-600 shadow-xl shadow-indigo-900/5 lg:-translate-y-2 z-10"
           : "border border-slate-200/90 hover:border-slate-300 shadow-sm hover:shadow-md"
       } p-6 sm:p-8 ${className}`}
     >
       {/* Featured / Popular Badge */}
       {plan.popular && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-blue-600 text-white shadow-sm">
+        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-indigo-600 text-white shadow-sm">
           <Sparkles className="w-3.5 h-3.5" />
           <span>{plan.featuredBadge || "Most Popular"}</span>
         </div>
@@ -109,7 +109,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({
         <ul className="space-y-2.5">
           {plan.features.map((feature, idx) => (
             <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-slate-700">
-              <Check className="w-4 h-4 text-blue-600 shrink-0 mt-0.5" />
+              <Check className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
               <span>{feature}</span>
             </li>
           ))}

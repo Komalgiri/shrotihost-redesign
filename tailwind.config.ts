@@ -10,52 +10,61 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Refined modern electric blue primary
+        // Official ShrotiHost Logo Derived Brand Primary (Indigo / Cobalt)
         brand: {
-          50: "#EFF6FF",
-          100: "#DBEAFE",
-          200: "#BFDBFE",
-          300: "#93C5FD",
-          400: "#60A5FA",
-          500: "#3B82F6",
-          600: "#2563EB", // Primary Electric Blue
-          700: "#1D4ED8",
-          800: "#1E40AF",
-          900: "#1E3A8A",
-          950: "#172554",
+          50: "#EEF2FF",
+          100: "#E0E7FF",
+          200: "#C7D2FE",
+          300: "#A5B4FC",
+          400: "#818CF8",
+          500: "#6366F1",
+          600: "#4F46E5", // Official ShrotiHost Logo Primary
+          700: "#4338CA",
+          800: "#3730A3",
+          900: "#312E81",
+          950: "#1E1B4B",
         },
-        // Modern cyan/teal accent
+        // Official ShrotiHost Logo Derived Accent (Electric Cyan)
         accent: {
-          50: "#F0FDFA",
-          100: "#CCFBF1",
-          200: "#99F6E4",
-          300: "#5EEAD4",
-          400: "#2DD4BF",
-          500: "#0D9488",
-          600: "#0F766E",
-          700: "#115E59",
+          50: "#ECFEFF",
+          100: "#CFFAFE",
+          200: "#A5F3FC",
+          300: "#67E8F9",
+          400: "#22D3EE",
+          500: "#06B6D4", // Official ShrotiHost Logo Cyan Accent
+          600: "#0891B2",
+          700: "#0E7490",
+          800: "#155E75",
+          900: "#164E63",
         },
-        // Editorial deep navy & charcoal typography
+        // Deep Navy & Charcoal Typography (High Legibility)
         slate: {
           850: "#172033",
           925: "#0B1120",
-          950: "#090D16",
+          950: "#0B0F19",
         },
-        // Selective technical dark mode tokens
+        // Selective Technical Dark Surfaces
         tech: {
-          bg: "#090D16",
-          surface: "#0F172A",
-          card: "#131C31",
-          border: "#1E293B",
-          highlight: "#1E3A8A",
+          bg: "#0B0F19",
+          surface: "#111827",
+          card: "#1E293B",
+          border: "#334155",
+          highlight: "#4F46E5",
           text: "#F8FAFC",
           muted: "#94A3B8",
         },
-        // Warm off-white surfaces
+        // Warm Off-White & Crisp Light Surfaces
         canvas: {
           base: "#FAFBFD",
-          subtle: "#F4F6FA",
-          muted: "#EBF0F5",
+          subtle: "#F8FAFC",
+          muted: "#F1F5F9",
+        },
+        // Semantic status colors from assessment document
+        status: {
+          success: "#10B981",
+          warning: "#F59E0B",
+          danger: "#EF4444",
+          info: "#3B82F6",
         }
       },
       fontFamily: {
