@@ -304,7 +304,8 @@ This project is optimized for 1-click deployment on [Vercel](https://vercel.com/
 For in-depth architectural audits and evaluation rubrics, refer to the included companion documentation:
 
 * [**`FINAL-QA-REPORT.md`**](./FINAL-QA-REPORT.md) — Comprehensive QA verification matrix, production build analysis, and route audit log.
-* [**`route-inventory.csv`**](./route-inventory.csv) — 35-item route inventory cataloging routes, page types, primary CTAs, and QA verification.
+* [**`EVALUATION-SELF-ASSESSMENT.md`**](./EVALUATION-SELF-ASSESSMENT.md) — 100-point rubric breakdown and candidate guide for the 30-minute live review and change request.
+* [**`route-inventory.csv`**](./route-inventory.csv) — 37-row route inventory cataloging routes, page types, primary CTAs, and QA verification.
 * [**`CONTENT-VERIFICATION.md`**](./CONTENT-VERIFICATION.md) — Source-of-truth register cross-verifying pricing, specs, and business credentials.
 * [**`INFORMATION-ARCHITECTURE.md`**](./INFORMATION-ARCHITECTURE.md) — Global sitemap, navigation taxonomy, and user journeys.
 * [**`UX-AUDIT.md`**](./UX-AUDIT.md) — Heuristic UX evaluation, conversion blockers, and architectural solutions.
