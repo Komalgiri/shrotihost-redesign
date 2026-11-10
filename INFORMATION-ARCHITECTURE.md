@@ -28,7 +28,8 @@ https://shrotihost.in/
 │   ├── /shared-hosting (NVMe Shared Hosting - Launch, Grow, Turbo, Infinity)
 │   ├── /wordpress-hosting (Managed WordPress Hosting - Starter, Business, Performance, Ultimate)
 │   ├── /unlimited-hosting (Unlimited NVMe Hosting - Bronze, Gold, Platinum, Diamond)
-│   ├── /reseller-hosting (Reseller & Master Reseller Hosting - 25 to Unlimited cPanel)
+│   ├── /reseller-hosting (Reseller Hosting - 25 to Unlimited cPanel Accounts)
+│   ├── /master-reseller-hosting (Master Reseller Hosting - Sub-WHM Reseller Authority & Overselling)
 │   └── /vps (Cloud VPS Virtual Private Servers - Spark through Apex)
 │
 ├── Domains (Category: Domain Registration & Management)
@@ -86,7 +87,8 @@ graph TD
     NavHosting --> H2["Managed WordPress Hosting (from ₹69/mo)"]
     NavHosting --> H3["Unlimited NVMe Hosting (from ₹69/mo)"]
     NavHosting --> H4["Reseller Hosting (from ₹299/mo)"]
-    NavHosting --> H5["Cloud VPS Hosting (from ₹499/mo)"]
+    NavHosting --> H5["Master Reseller Hosting (from ₹599/mo)"]
+    NavHosting --> H6["Cloud VPS Hosting (from ₹499/mo)"]
 
     NavServices --> S1["Custom Web Development"]
     NavServices --> S2["Mobile App Development"]
