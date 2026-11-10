@@ -88,10 +88,10 @@ export default function WordPressHostingPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16">
+    <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-amber-600/15 via-indigo-500/10 to-transparent blur-[130px] pointer-events-none" />
+      <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -102,34 +102,34 @@ export default function WordPressHostingPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-500/10 text-amber-400 border border-amber-500/25 mb-4">
-              <Flame className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-amber-50 text-amber-700 border border-amber-200/80 mb-4 shadow-xs">
+              <Flame className="w-3.5 h-3.5 text-amber-600" />
               <span>LiteSpeed LSCache • AccelerateWP • Redis Object Cache</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
               Managed WordPress Hosting Tuned for Raw Speed
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Accelerate your blog, business portal, or WooCommerce storefront with LiteSpeed Enterprise and server-level Redis object caching. Guaranteed <strong className="text-white font-semibold">same renewal price forever</strong>.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Accelerate your blog, business portal, or WooCommerce storefront with LiteSpeed Enterprise and server-level Redis object caching. Guaranteed <strong className="text-slate-950 font-bold">same renewal price forever</strong>.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-300">
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-700">
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
                 Redis Object Cache
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" />
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-amber-600" />
                 LSCache Pre-Configured
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
                 1-Click Staging & Cloning
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400" />
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
                 Flat Renewal Guarantee
               </span>
             </div>
@@ -154,10 +154,11 @@ export default function WordPressHostingPage() {
         </div>
       </section>
 
-      {/* 3. WORDPRESS SPEED & ARCHITECTURE HIGHLIGHTS */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 3. WORDPRESS SPEED & ARCHITECTURE HIGHLIGHTS (Selective Dark Section) */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
+            isDark={true}
             eyebrow="Platform Features"
             title="Built Exclusively for Modern WordPress & WooCommerce"
             subtitle="Eliminate slow plugins and server bottlenecks with our pre-tuned WordPress infrastructure stack."
@@ -167,6 +168,7 @@ export default function WordPressHostingPage() {
             {wpFeatures.map((feat, idx) => (
               <FeatureCard
                 key={idx}
+                isDark={true}
                 iconName={feat.iconName}
                 title={feat.title}
                 description={feat.description}
@@ -178,21 +180,21 @@ export default function WordPressHostingPage() {
 
       {/* 4. FREE WORDPRESS MIGRATION BANNER */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto glass-card rounded-2xl p-8 sm:p-10 border border-amber-500/30 flex flex-col md:flex-row items-center justify-between gap-8">
+        <div className="max-w-5xl mx-auto bg-slate-50 rounded-2xl p-8 sm:p-10 border border-slate-200/90 flex flex-col md:flex-row items-center justify-between gap-8 shadow-sm">
           <div>
-            <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
+            <span className="text-xs font-bold uppercase tracking-wider text-amber-700">
               Zero Downtime Transition
             </span>
-            <h3 className="text-2xl sm:text-3xl font-bold text-white mt-1">
+            <h3 className="text-2xl sm:text-3xl font-bold text-slate-950 mt-1">
               Migrate Your WordPress Site to ShrotiHost For Free
             </h3>
-            <p className="text-sm text-slate-300 mt-2 max-w-xl leading-relaxed">
+            <p className="text-sm text-slate-600 mt-2 max-w-xl leading-relaxed">
               Our WordPress engineers will migrate your full database, theme files, uploads, and WooCommerce store seamlessly. We configure LSCache and Redis so your site flies from day one.
             </p>
           </div>
 
           <Button
-            variant="accent"
+            variant="primary"
             size="lg"
             href="https://wa.me/919582129099?text=Hello%20ShrotiHost%20team,%20I%20want%20to%20migrate%20my%20WordPress%20site."
             isExternal={true}

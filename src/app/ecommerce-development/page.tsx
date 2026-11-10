@@ -39,22 +39,22 @@ export default function EcommerceDevelopmentPage() {
     {
       title: "Frictionless UPI & Card Checkout",
       description: "Direct integrations with Razorpay, Cashfree, PhonePe, and Paytm, enabling instant one-click UPI checkout, card tokenization, and Net Banking.",
-      icon: <CreditCard className="w-6 h-6 text-emerald-400" />
+      icon: <CreditCard className="w-6 h-6 text-emerald-600" />
     },
     {
       title: "Automated GST Invoicing & Compliance",
       description: "Auto-generate B2B and B2C tax invoices with customer GSTIN validation, HSN/SAC code mapping, and integrated state-wise tax breakdown.",
-      icon: <Percent className="w-6 h-6 text-indigo-400" />
+      icon: <Percent className="w-6 h-6 text-indigo-600" />
     },
     {
       title: "Shipping & Courier Logistics Integration",
       description: "Automate order dispatch, AWB tracking generation, and live shipping rate calculators with Shiprocket, Delhivery, Bluedart, and India Post.",
-      icon: <Truck className="w-6 h-6 text-cyan-400" />
+      icon: <Truck className="w-6 h-6 text-cyan-600" />
     },
     {
       title: "WhatsApp Abandoned Cart Recovery",
       description: "Recover up to 25% of abandoned carts with automated WhatsApp alerts and reminders directly to prospective buyers.",
-      icon: <MessageSquare className="w-6 h-6 text-[#25D366]" />
+      icon: <MessageSquare className="w-6 h-6 text-emerald-600" />
     }
   ];
 
@@ -105,9 +105,7 @@ export default function EcommerceDevelopmentPage() {
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-emerald-600/20 via-indigo-500/10 to-transparent blur-[130px] pointer-events-none" />
-
+      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -117,16 +115,16 @@ export default function EcommerceDevelopmentPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 mb-4 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-emerald-600" />
               <span>WooCommerce • UPI Gateways • Automated GST Invoicing • Fast Checkout</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               High-Converting E-Commerce Store Engineering
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Build an online storefront tuned for Indian shoppers. Seamless UPI and card checkouts, automated GST compliance, courier integration, and sub-second catalog speeds on LiteSpeed NVMe cloud.
             </p>
 
@@ -164,14 +162,14 @@ export default function EcommerceDevelopmentPage() {
             {ecommerceCapabilities.map((cap, idx) => (
               <div
                 key={idx}
-                className="glass-card glass-card-hover rounded-2xl p-7 sm:p-8 flex items-start gap-5"
+                className="bg-white rounded-2xl p-7 sm:p-8 flex items-start gap-5 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-emerald-300 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center shrink-0">
                   {cap.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{cap.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{cap.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {cap.description}
                   </p>
                 </div>
@@ -181,16 +179,17 @@ export default function EcommerceDevelopmentPage() {
         </div>
       </section>
 
-      {/* 3. TECH STACK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 3. SELECTIVE DARK SECTION: E-COMMERCE GATEWAYS & SECURITY */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <SectionHeading
+            isDark={true}
             eyebrow="E-Commerce Stack"
             title="Reliable Commerce & Payment Gateways"
             subtitle="Built on industry-proven platforms, RBI-compliant payment gateways, and automated logistics networks."
           />
 
-          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto mt-10">
             {ecommerceTech.map((tech, idx) => (
               <span
                 key={idx}
@@ -205,21 +204,21 @@ export default function EcommerceDevelopmentPage() {
 
       {/* 4. DELIVERABLES */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto glass-card rounded-2xl p-8 sm:p-12 border border-slate-800">
+        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-8 sm:p-12 border border-slate-200/90 shadow-sm">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
               <FileCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white">Included With Every E-Commerce Build</h3>
-              <p className="text-xs sm:text-sm text-slate-400">Complete setup from product catalog to bank account disbursement.</p>
+              <h3 className="text-2xl font-bold text-slate-900">Included With Every E-Commerce Build</h3>
+              <p className="text-xs sm:text-sm text-slate-600">Complete setup from product catalog to bank account disbursement.</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             {deliverables.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </div>
             ))}
@@ -228,7 +227,7 @@ export default function EcommerceDevelopmentPage() {
       </section>
 
       {/* 5. INQUIRY FORM */}
-      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8">
+      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-50 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             eyebrow="Launch Your Store"
@@ -264,4 +263,3 @@ export default function EcommerceDevelopmentPage() {
     </div>
   );
 }
-

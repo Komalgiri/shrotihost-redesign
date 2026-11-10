@@ -88,10 +88,10 @@ export default function VPSHostingPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16">
+    <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-violet-600/15 via-indigo-500/10 to-transparent blur-[130px] pointer-events-none" />
+      <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
@@ -102,48 +102,48 @@ export default function VPSHostingPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/25 mb-4">
-              <Terminal className="w-3.5 h-3.5" />
-              <span>Full Root Access • KVM Hypervisor • 1 Gbps Port Speed</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-purple-50 text-purple-700 border border-purple-200/80 mb-4 shadow-xs">
+              <Terminal className="w-3.5 h-3.5 text-purple-600" />
+              <span>Full Root Access • KVM Virtualization • 1 Gbps Port Speed</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
               High-Compute Cloud VPS Virtual Private Servers
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Dedicated virtual compute instances engineered for production APIs, SaaS backends, Docker containers, and high-traffic databases. Guaranteed <strong className="text-white font-semibold">same renewal price</strong>.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Deploy isolated KVM instances with dedicated compute power, NVMe storage, and uncompromised Linux control. Engineered for developers, high-traffic portals, and agency fleets.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-300">
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-violet-400" />
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-700">
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-purple-600" />
                 Root SSH Access
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                1 Gbps Port Uplink
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                Dedicated vCPU
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                Dedicated IPv4
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
+                1 Gbps Port Speed
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400" />
-                Weekly Backups
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
+                Dedicated Static IPv4
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. COMPLETE 8-TIER VPS PRICING GRID */}
+      {/* 2. PRICING GRID */}
       <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Compute Tiers"
-            title="Scalable Cloud VPS Instances"
-            subtitle="From the entry-level Spark instance to high-concurrency 8 vCPU Titan and Apex servers."
+            eyebrow="VPS Configurations"
+            title="KVM Cloud Compute Tiers"
+            subtitle="Transparent pricing from 1 vCPU / 2GB RAM up to 16 vCPU / 64GB RAM. Select the ideal capacity for your workload."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
@@ -154,19 +154,21 @@ export default function VPSHostingPage() {
         </div>
       </section>
 
-      {/* 3. HARDWARE & VIRTUALIZATION ARCHITECTURE */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 3. HARDWARE & VIRTUALIZATION BLUEPRINT (Selective Dark Section) */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Virtualization Stack"
-            title="Built on High-Performance Enterprise Hypervisors"
-            subtitle="Strict resource reservation guarantees your instance always receives 100% of its rated compute."
+            isDark={true}
+            eyebrow="Virtualization Engine"
+            title="Dedicated Hardware Isolation & Full Linux Sovereignty"
+            subtitle="No CPU throttling or memory ballooning. Experience reliable bare-metal-like compute for critical applications."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {vpsFeatures.map((feat, idx) => (
               <FeatureCard
                 key={idx}
+                isDark={true}
                 iconName={feat.iconName}
                 title={feat.title}
                 description={feat.description}
@@ -180,9 +182,9 @@ export default function VPSHostingPage() {
       <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Technical Details"
-            title="Cloud VPS FAQs"
-            subtitle="Everything you need to know about root access, IP management, and setup procedures."
+            eyebrow="Got Questions?"
+            title="Cloud VPS Hosting FAQs"
+            subtitle="Technical specifics regarding root access, operating system choices, and setup fees."
           />
 
           <FAQAccordion items={vpsFaqs} />
@@ -194,11 +196,11 @@ export default function VPSHostingPage() {
 
       {/* 6. BOTTOM CTA */}
       <CTASection
-        eyebrow="Deploy in Minutes"
-        title="Ready to Deploy Your Dedicated Cloud VPS?"
-        subtitle="Choose from our 8 pre-configured virtual server tiers starting from ₹499/mo. 1 Gbps port and root access included."
-        primaryCtaText="Deploy VPS Core (₹1,199/mo)"
-        primaryCtaHref="#vps-core"
+        eyebrow="Dedicated Power"
+        title="Deploy Your Dedicated KVM VPS in Minutes"
+        subtitle="Full root access, 1 Gbps port speed, and high-frequency NVMe compute starting from ₹499/month."
+        primaryCtaText="Deploy Cloud VPS"
+        primaryCtaHref="#vps-spark"
       />
     </div>
   );

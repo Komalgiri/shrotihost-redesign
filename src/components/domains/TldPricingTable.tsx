@@ -38,8 +38,8 @@ export const TldPricingTable: React.FC = () => {
               onClick={() => setActiveCategory(cat.id)}
               className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all border ${
                 activeCategory === cat.id
-                  ? "bg-indigo-600 text-white border-indigo-500 shadow-md shadow-indigo-600/30"
-                  : "bg-slate-900/60 text-slate-400 border-slate-800 hover:border-slate-700 hover:text-white"
+                  ? "bg-white text-slate-950 border-slate-200/80 shadow-sm font-bold"
+                  : "bg-slate-100 text-slate-600 border-slate-200 hover:text-slate-900"
               }`}
             >
               {cat.label}
@@ -49,92 +49,96 @@ export const TldPricingTable: React.FC = () => {
 
         {/* Quick Search */}
         <div className="relative w-full sm:w-64">
-          <Search className="w-4 h-4 text-slate-500 absolute left-3 top-1/2 -translate-y-1/2" />
+          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
           <input
             type="text"
             value={searchFilter}
             onChange={(e) => setSearchFilter(e.target.value)}
             placeholder="Filter extension (e.g. .in)"
-            className="w-full bg-slate-900/80 border border-slate-800 rounded-xl pl-9 pr-4 py-1.5 text-xs text-white placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="w-full bg-white border border-slate-200 rounded-xl pl-9 pr-4 py-1.5 text-xs text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 shadow-xs"
           />
         </div>
       </div>
 
-      {/* Table Container */}
-      <div className="overflow-x-auto rounded-2xl border border-slate-800 bg-slate-900/60 shadow-xl">
+      {/* TLD Table Wrapper */}
+      <div className="overflow-x-auto rounded-2xl border border-slate-200/90 bg-white shadow-sm">
         <table className="w-full text-left border-collapse min-w-[650px]">
           <thead>
-            <tr className="border-b border-slate-800 bg-slate-950 text-slate-200 text-xs sm:text-sm">
-              <th className="py-4 px-6 font-bold">Extension</th>
-              <th className="py-4 px-4 font-bold">Purpose / Target Audience</th>
-              <th className="py-4 px-4 font-bold text-center">Registration (1 Yr)</th>
-              <th className="py-4 px-4 font-bold text-center">Renewal (1 Yr)</th>
-              <th className="py-4 px-4 font-bold text-center">Transfer</th>
-              <th className="py-4 px-6 font-bold text-right">Action</th>
+            <tr className="border-b border-slate-200 bg-slate-50 text-slate-900 text-xs sm:text-sm">
+              <th className="py-4 px-6 font-bold">Extension (TLD)</th>
+              <th className="py-4 px-4 font-bold text-center">Registration (1st Year)</th>
+              <th className="py-4 px-4 font-bold text-center">Annual Renewal</th>
+              <th className="py-4 px-4 font-bold text-center">Transfer Price</th>
+              <th className="py-4 px-6 text-right font-bold">Action</th>
             </tr>
           </thead>
           <tbody>
-            {filteredTlds.length > 0 ? (
+            {filteredTlds.length === 0 ? (
+              <tr>
+                <td colSpan={5} className="py-12 text-center text-slate-500 text-sm">
+                  No extensions matched your filter &ldquo;{searchFilter}&rdquo;. Try another term.
+                </td>
+              </tr>
+            ) : (
               filteredTlds.map((item) => (
                 <tr
                   key={item.tld}
-                  className="border-b border-slate-800/60 hover:bg-slate-800/30 transition-colors text-xs sm:text-sm text-slate-300"
+                  className="border-b border-slate-100 hover:bg-slate-50/60 transition-colors text-xs sm:text-sm"
                 >
                   <td className="py-4 px-6">
                     <div className="flex items-center gap-2">
-                      <span className="font-extrabold text-white text-base font-mono">
+                      <span className="font-extrabold text-slate-950 font-mono text-base">
                         {item.tld}
                       </span>
                       {item.sale && (
-                        <span className="text-[10px] uppercase font-bold text-cyan-400 bg-cyan-500/10 px-1.5 py-0.5 rounded border border-cyan-500/20">
-                          Sale
+                        <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase tracking-wider bg-cyan-50 text-cyan-700 border border-cyan-200 px-2 py-0.5 rounded-full">
+                          <Tag className="w-3 h-3" />
+                          <span>Promo</span>
                         </span>
                       )}
                     </div>
+                    <span className="text-xs text-slate-500 block mt-0.5">{item.description}</span>
                   </td>
-                  <td className="py-4 px-4 text-xs text-slate-400 max-w-xs">
-                    {item.description}
+
+                  <td className="py-4 px-4 text-center font-bold text-slate-950 font-mono">
+                    ₹{item.registerPrice}/yr
                   </td>
-                  <td className="py-4 px-4 text-center font-bold text-white font-mono">
-                    ₹{item.registerPrice.toLocaleString()}
+
+                  <td className="py-4 px-4 text-center text-slate-600 font-mono">
+                    ₹{item.renewPrice}/yr
                   </td>
-                  <td className="py-4 px-4 text-center text-slate-300 font-mono">
-                    ₹{item.renewPrice.toLocaleString()}
+
+                  <td className="py-4 px-4 text-center text-slate-600 font-mono">
+                    ₹{item.transferPrice}
                   </td>
-                  <td className="py-4 px-4 text-center text-slate-400 font-mono">
-                    ₹{item.transferPrice.toLocaleString()}
-                  </td>
+
                   <td className="py-4 px-6 text-right">
                     <Button
-                      variant="outline"
+                      variant="secondary"
                       size="sm"
-                      href={`https://portal.shrotihost.in/cart.php?a=add&domain=register&tld=${item.tld.replace(
-                        ".",
-                        ""
-                      )}`}
+                      href={`https://portal.shrotihost.in/cart.php?a=add&domain=register&tld=${item.tld.replace(/^\./, "")}`}
                       isExternal={true}
-                      rightIcon={<ExternalLink className="w-3 h-3" />}
+                      className="text-xs font-semibold"
                     >
-                      Register
+                      <span>Register</span>
+                      <ExternalLink className="w-3 h-3 ml-1 text-slate-400" />
                     </Button>
                   </td>
                 </tr>
               ))
-            ) : (
-              <tr>
-                <td colSpan={6} className="py-8 text-center text-slate-500 text-xs">
-                  No domain extensions match your search filter.
-                </td>
-              </tr>
             )}
           </tbody>
         </table>
       </div>
 
-      <p className="text-[11px] text-slate-500 text-center">
-        * All prices exclude applicable taxes (such as GST) calculated during checkout on the client portal. Multi-year registration discounts available.
-      </p>
+      {/* Footnote Disclosures */}
+      <div className="p-4 rounded-xl bg-slate-50 border border-slate-200/90 text-xs text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-3">
+        <span className="flex items-center gap-1.5 text-slate-700 font-medium">
+          <ShieldCheck className="w-4 h-4 text-emerald-600 shrink-0" />
+          <span>All domain registrations include free DNS Zone Management and Email Forwarding.</span>
+        </span>
+        <span className="text-slate-400">All prices exclusive of applicable 18% GST</span>
+      </div>
     </div>
   );
 };
-

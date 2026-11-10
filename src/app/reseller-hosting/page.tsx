@@ -89,69 +89,62 @@ export default function ResellerHostingPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16">
+    <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-emerald-600/15 via-indigo-500/10 to-transparent blur-[130px] pointer-events-none" />
+      <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
+        <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Hosting", href: "/shared-hosting" },
-              { label: "Reseller Hosting" },
+              { label: "WHM Reseller Hosting" },
             ]}
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-400 border border-emerald-500/25 mb-4">
-              <Users className="w-3.5 h-3.5" />
-              <span>WHM Admin • White-Label Nameservers • Free WHMCS on Annual</span>
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 mb-4 shadow-xs">
+              <Users className="w-3.5 h-3.5 text-emerald-600" />
+              <span>White-Label WHM • Free WHMCS on Annual • Overselling Enabled</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
-              Launch & Scale Your White-Label Web Hosting Business
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-slate-950 tracking-tight leading-tight">
+              White-Label Linux Reseller Hosting Powered by WHM & NVMe
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
-              Create and manage isolated cPanel accounts for your clients. Earn high-margin monthly recurring revenue with our <strong className="text-white font-semibold">same renewal price guarantee</strong>.
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
+              Launch your own profitable hosting brand or manage client accounts under one master control panel. Includes LiteSpeed servers, 100% white-label nameservers, and guaranteed <strong className="text-slate-950 font-bold">flat renewal rates</strong>.
             </p>
 
-            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-300">
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400" />
-                100% White-Label
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-3 sm:gap-4 text-xs font-medium text-slate-700">
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                WHM Control Panel
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-cyan-400" />
-                WHM Master Control
-              </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-amber-400" />
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-indigo-600" />
                 Free WHMCS License
               </span>
-              <span className="px-3 py-1.5 rounded-lg bg-slate-900 border border-slate-800 flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-indigo-400" />
-                Daily JetBackups
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-cyan-600" />
+                Overselling Enabled
+              </span>
+              <span className="px-3 py-1.5 rounded-lg bg-slate-50 border border-slate-200 flex items-center gap-1.5 shadow-xs">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                Flat Renewal Guarantee
               </span>
             </div>
           </div>
         </div>
       </section>
 
-      {/* 2. PROFIT CALCULATOR SECTION */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
-          <ResellerProfitCalculator />
-        </div>
-      </section>
-
-      {/* 3. PRICING GRID */}
+      {/* 2. PRICING GRID */}
       <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Reseller Packages"
-            title="Linux Reseller Hosting Plans"
-            subtitle="All plans feature unlimited NVMe storage (FUP), unmetered bandwidth, LiteSpeed Enterprise, and free WHMCS on annual billing."
+            eyebrow="Reseller Plans"
+            title="White-Label Reseller Packages"
+            subtitle="Choose your cPanel account allocation. Upgrade or scale your limits at any time with zero downtime."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
@@ -162,19 +155,34 @@ export default function ResellerHostingPage() {
         </div>
       </section>
 
-      {/* 4. RESELLER ARCHITECTURE FEATURES */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 3. INTERACTIVE RESELLER PROFIT CALCULATOR */}
+      <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Reseller Infrastructure"
-            title="Everything You Need to Run an Agency Hosting Fleet"
-            subtitle="Built on robust enterprise hardware with automated billing and security tools."
+            eyebrow="Revenue Modeling"
+            title="Calculate Your Agency Hosting Profits"
+            subtitle="Model your recurring hosting revenue based on client account counts and retail pricing."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+          <ResellerProfitCalculator />
+        </div>
+      </section>
+
+      {/* 4. PLATFORM ARCHITECTURE HIGHLIGHTS (Selective Dark Section) */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
+        <div className="max-w-7xl mx-auto">
+          <SectionHeading
+            isDark={true}
+            eyebrow="Enterprise Reseller Architecture"
+            title="Everything You Need to Run an Agency Hosting Fleet"
+            subtitle="Manage multi-tenant workloads with carrier-grade isolation, automated billing, and NVMe throughput."
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
             {resellerFeatures.map((feat, idx) => (
               <FeatureCard
                 key={idx}
+                isDark={true}
                 iconName={feat.iconName}
                 title={feat.title}
                 description={feat.description}
@@ -188,9 +196,9 @@ export default function ResellerHostingPage() {
       <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Common Questions"
+            eyebrow="Got Questions?"
             title="Reseller Hosting FAQs"
-            subtitle="Learn about nameserver configuration, WHMCS activation, and account isolation."
+            subtitle="Common questions about white-label nameservers, WHMCS licensing, and technical support."
           />
 
           <FAQAccordion items={resellerFaqs} />
@@ -202,10 +210,10 @@ export default function ResellerHostingPage() {
 
       {/* 7. BOTTOM CTA */}
       <CTASection
-        eyebrow="Start Your Agency Fleet"
-        title="Ready to Build Your Recurring Hosting Revenue?"
-        subtitle="Sign up for Reseller Starter at ₹299/mo or Reseller Growth at ₹499/mo. Risk-free 7-day money-back guarantee."
-        primaryCtaText="Start Reselling Now"
+        eyebrow="Start Your Hosting Agency"
+        title="Launch Your Branded Hosting Business Today"
+        subtitle="Get instant WHM setup from ₹299/month with our flat renewal price guarantee and 7-day money-back assurance."
+        primaryCtaText="Deploy Reseller Plan"
         primaryCtaHref="#reseller-starter"
       />
     </div>

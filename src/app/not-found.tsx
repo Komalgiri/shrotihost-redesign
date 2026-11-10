@@ -18,45 +18,42 @@ export default function NotFound() {
       title: "Shared Hosting",
       description: "Fast LiteSpeed NVMe plans starting from ₹49/month with flat renewals.",
       href: "/shared-hosting",
-      icon: <Server className="w-5 h-5 text-indigo-400" />,
+      icon: <Server className="w-5 h-5 text-indigo-600" />,
     },
     {
       title: "Cloud VPS",
       description: "High-concurrency KVM virtual servers with full root access.",
       href: "/vps",
-      icon: <HardDrive className="w-5 h-5 text-cyan-400" />,
+      icon: <HardDrive className="w-5 h-5 text-cyan-600" />,
     },
     {
       title: "Search Domains",
       description: "Register .in for ₹714/yr or .com for ₹1,169/yr with free DNS management.",
       href: "/domains",
-      icon: <Globe className="w-5 h-5 text-emerald-400" />,
+      icon: <Globe className="w-5 h-5 text-emerald-600" />,
     },
     {
       title: "Technical Guides",
       description: "Tutorials on DNS configuration, LiteSpeed caching, and WordPress speed.",
       href: "/blog",
-      icon: <BookOpen className="w-5 h-5 text-purple-400" />,
+      icon: <BookOpen className="w-5 h-5 text-indigo-600" />,
     },
   ];
 
   return (
-    <div className="relative min-h-[75vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 overflow-hidden">
-      {/* Ambient background glow */}
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-b from-indigo-600/15 via-cyan-500/10 to-transparent blur-[140px] pointer-events-none" />
-
+    <div className="relative min-h-[75vh] flex items-center justify-center px-4 sm:px-6 lg:px-8 py-16 overflow-hidden bg-tech-grid">
       <div className="relative max-w-3xl mx-auto text-center space-y-8">
         <div className="space-y-4">
-          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/25">
-            <HelpCircle className="w-3.5 h-3.5 text-indigo-400" />
+          <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 shadow-sm">
+            <HelpCircle className="w-3.5 h-3.5 text-indigo-600" />
             <span>Error 404 • Resource Not Found</span>
           </span>
 
-          <h1 className="text-4xl sm:text-6xl font-extrabold text-white tracking-tight leading-tight">
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
             Lost in the Cloud?
           </h1>
 
-          <p className="text-base sm:text-lg text-slate-300 max-w-xl mx-auto leading-relaxed">
+          <p className="text-base sm:text-lg text-slate-600 max-w-xl mx-auto leading-relaxed">
             The page you are looking for might have been moved, renamed, or doesn&apos;t exist. Explore popular destinations below or return home.
           </p>
         </div>
@@ -69,7 +66,7 @@ export default function NotFound() {
             href="https://wa.me/919582129099"
             isExternal
             size="lg"
-            variant="outline"
+            variant="secondary"
             leftIcon={<MessageSquare className="w-4 h-4" />}
           >
             Ask on WhatsApp
@@ -77,8 +74,8 @@ export default function NotFound() {
         </div>
 
         {/* Quick Links Grid */}
-        <div className="pt-8 border-t border-slate-800 text-left">
-          <p className="text-xs font-bold uppercase tracking-wider text-slate-400 text-center mb-6">
+        <div className="pt-8 border-t border-slate-200 text-left">
+          <p className="text-xs font-bold uppercase tracking-wider text-slate-500 text-center mb-6">
             Popular Destinations
           </p>
 
@@ -87,17 +84,17 @@ export default function NotFound() {
               <Link
                 key={idx}
                 href={link.href}
-                className="glass-card rounded-xl p-4 border border-slate-800 hover:border-indigo-500/40 transition-colors flex items-start gap-3.5 group"
+                className="bg-white rounded-xl p-4 border border-slate-200/90 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all flex items-start gap-3.5 group"
               >
-                <div className="w-10 h-10 rounded-lg bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0">
                   {link.icon}
                 </div>
                 <div>
-                  <h3 className="text-sm font-bold text-white group-hover:text-indigo-300 transition-colors flex items-center gap-1">
+                  <h3 className="text-sm font-bold text-slate-900 group-hover:text-indigo-600 transition-colors flex items-center gap-1">
                     <span>{link.title}</span>
-                    <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-indigo-400" />
+                    <ArrowRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 group-hover:translate-x-0.5 transition-all text-indigo-600" />
                   </h3>
-                  <p className="text-xs text-slate-400 mt-1 leading-relaxed">
+                  <p className="text-xs text-slate-600 mt-1 leading-relaxed">
                     {link.description}
                   </p>
                 </div>
@@ -109,4 +106,3 @@ export default function NotFound() {
     </div>
   );
 }
-

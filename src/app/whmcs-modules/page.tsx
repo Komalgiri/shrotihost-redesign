@@ -43,7 +43,6 @@ interface WhmcsModuleItem {
   badge: string;
   description: string;
   icon: React.ReactNode;
-  accentColor: string;
   features: string[];
   specs: { label: string; value: string }[];
   orderUrl: string;
@@ -58,8 +57,7 @@ export default function WhmcsModulesPage() {
       badge: "Best Seller",
       description:
         "Keep hosting clients instantly informed on their preferred messaging channel. Automatically dispatch WhatsApp alerts when invoices are generated, payments are received, service details are provisioned, or support tickets are updated.",
-      icon: <MessageSquare className="w-6 h-6 text-emerald-400" />,
-      accentColor: "border-emerald-500/40",
+      icon: <MessageSquare className="w-6 h-6 text-emerald-600" />,
       features: [
         "Automated triggers: Invoice Created, Payment Received, Ticket Opened & Service Provisioned",
         "Supports Official Meta WhatsApp Cloud API and standard QR-based web gateways",
@@ -83,8 +81,7 @@ export default function WhmcsModulesPage() {
       badge: "Essential Utility",
       description:
         "Stop letting payment gateway transaction charges (Razorpay, Cashfree, PayPal, Stripe) eat into razor-thin shared hosting margins. Automatically add transparent percentage fees or fixed surcharges at checkout with granular exemptions.",
-      icon: <CreditCard className="w-6 h-6 text-cyan-400" />,
-      accentColor: "border-cyan-500/40",
+      icon: <CreditCard className="w-6 h-6 text-indigo-600" />,
       features: [
         "Granular fee rules: configure Percentage Fee (e.g. 2%) + Fixed Fee (e.g. ₹5) per gateway",
         "Granular product exemptions: exempt enterprise VPS or high-margin servers from fees",
@@ -108,8 +105,7 @@ export default function WhmcsModulesPage() {
       badge: "Conversion Booster",
       description:
         "Build trust and trigger FOMO on your WHMCS order forms. Display subtle, attractive real-time notification popups highlighting recent hosting orders, domain registrations, and client signups.",
-      icon: <TrendingUp className="w-6 h-6 text-indigo-400" />,
-      accentColor: "border-indigo-500/40",
+      icon: <TrendingUp className="w-6 h-6 text-cyan-600" />,
       features: [
         "Displays real recent orders (e.g., 'A customer from Pune just bought Shared Hosting')",
         "Option to configure simulated social proof during initial launch campaigns",
@@ -158,10 +154,7 @@ export default function WhmcsModulesPage() {
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        {/* Ambient background glow */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-indigo-600/20 via-cyan-500/10 to-transparent blur-[130px] pointer-events-none" />
-
+      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -171,16 +164,16 @@ export default function WhmcsModulesPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/25 mb-4">
-              <Puzzle className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-sm">
+              <Puzzle className="w-3.5 h-3.5 text-indigo-600" />
               <span>WHMCS v8.x & PHP 8.2 Compatible Addons</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               WHMCS Modules & Hosting Automation Built by Hosters
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
               Streamline customer billing, automate instant WhatsApp transaction notifications, and recover payment gateway processing surcharges legally with production-tested WHMCS addons.
             </p>
 
@@ -188,7 +181,7 @@ export default function WhmcsModulesPage() {
               <Button href="#modules" size="lg" variant="primary" rightIcon={<ArrowRight className="w-4 h-4" />}>
                 Explore Modules
               </Button>
-              <Button href="#custom-modules" size="lg" variant="outline">
+              <Button href="#custom-modules" size="lg" variant="secondary">
                 Request Custom Module
               </Button>
             </div>
@@ -199,44 +192,44 @@ export default function WhmcsModulesPage() {
       {/* 2. SPECIFICATION & COMPATIBILITY PILLARS */}
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
         <div className="max-w-7xl mx-auto">
-          <div className="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800 bg-slate-950/60 grid grid-cols-2 md:grid-cols-4 gap-6">
+          <div className="bg-white rounded-2xl p-6 sm:p-8 border border-slate-200/90 shadow-sm grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-indigo-500/10 border border-indigo-500/20 flex items-center justify-center text-indigo-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
                 <Terminal className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">WHMCS 8.5 to 8.10+</p>
-                <p className="text-xs text-slate-400">Strict standard hook API</p>
+                <p className="text-sm font-bold text-slate-900">WHMCS 8.5 to 8.10+</p>
+                <p className="text-xs text-slate-600">Strict standard hook API</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-100 flex items-center justify-center text-emerald-600 shrink-0">
                 <Code2 className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">PHP 8.1 & 8.2</p>
-                <p className="text-xs text-slate-400">IonCube v12+ compiled</p>
+                <p className="text-sm font-bold text-slate-900">PHP 8.1 & 8.2</p>
+                <p className="text-xs text-slate-600">IonCube v12+ compiled</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center text-cyan-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-100 flex items-center justify-center text-cyan-600 shrink-0">
                 <Zap className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Instant Provisioning</p>
-                <p className="text-xs text-slate-400">Keys generated on payment</p>
+                <p className="text-sm font-bold text-slate-900">Instant Provisioning</p>
+                <p className="text-xs text-slate-600">Keys generated on payment</p>
               </div>
             </div>
 
             <div className="flex items-center gap-3">
-              <div className="w-10 h-10 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center text-purple-400 shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center text-indigo-600 shrink-0">
                 <Headphones className="w-5 h-5" />
               </div>
               <div>
-                <p className="text-sm font-bold text-white">Direct Engineer Help</p>
-                <p className="text-xs text-slate-400">Free installation assistance</p>
+                <p className="text-sm font-bold text-slate-900">Direct Engineer Help</p>
+                <p className="text-xs text-slate-600">Free installation assistance</p>
               </div>
             </div>
           </div>
@@ -256,34 +249,34 @@ export default function WhmcsModulesPage() {
             {modules.map((mod) => (
               <div
                 key={mod.id}
-                className={`glass-card rounded-2xl p-6 sm:p-10 border ${mod.accentColor} bg-slate-900/60 flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start`}
+                className="bg-white rounded-2xl p-6 sm:p-10 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start"
               >
                 <div className="space-y-6 flex-1">
                   <div className="flex flex-wrap items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
                       {mod.icon}
                     </div>
                     <div>
                       <div className="flex items-center gap-2">
-                        <h3 className="text-xl sm:text-2xl font-bold text-white">{mod.name}</h3>
-                        <span className="text-[11px] font-semibold text-indigo-300 bg-indigo-500/10 border border-indigo-500/25 px-2.5 py-0.5 rounded-full">
+                        <h3 className="text-xl sm:text-2xl font-bold text-slate-900">{mod.name}</h3>
+                        <span className="text-[11px] font-semibold text-indigo-700 bg-indigo-50 border border-indigo-200/80 px-2.5 py-0.5 rounded-full">
                           {mod.badge}
                         </span>
                       </div>
-                      <p className="text-xs sm:text-sm text-slate-400 mt-0.5">{mod.tagline}</p>
+                      <p className="text-xs sm:text-sm text-slate-500 mt-0.5">{mod.tagline}</p>
                     </div>
                   </div>
 
-                  <p className="text-sm text-slate-300 leading-relaxed">
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {mod.description}
                   </p>
 
                   <div className="space-y-3">
-                    <p className="text-xs font-bold uppercase tracking-wider text-slate-400">Key Features & Automation:</p>
+                    <p className="text-xs font-bold uppercase tracking-wider text-slate-900">Key Features & Automation:</p>
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-2.5">
                       {mod.features.map((feat, fIdx) => (
-                        <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-300">
-                          <CheckCircle className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+                        <div key={fIdx} className="flex items-start gap-2.5 text-xs text-slate-700">
+                          <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                           <span>{feat}</span>
                         </div>
                       ))}
@@ -292,22 +285,22 @@ export default function WhmcsModulesPage() {
                 </div>
 
                 {/* Right Specification & CTA Card */}
-                <div className="w-full lg:w-72 bg-slate-950/80 rounded-xl p-6 border border-slate-800 flex flex-col justify-between shrink-0 space-y-6">
+                <div className="w-full lg:w-72 bg-slate-50 rounded-xl p-6 border border-slate-200 flex flex-col justify-between shrink-0 space-y-6">
                   <div>
-                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-400 mb-4 pb-2 border-b border-slate-800">
+                    <h4 className="text-xs font-bold uppercase tracking-wider text-slate-700 mb-4 pb-2 border-b border-slate-200">
                       Technical Profile
                     </h4>
                     <div className="space-y-3">
                       {mod.specs.map((spec, sIdx) => (
                         <div key={sIdx} className="flex flex-col text-xs">
                           <span className="text-slate-500">{spec.label}</span>
-                          <span className="text-white font-medium">{spec.value}</span>
+                          <span className="text-slate-900 font-semibold">{spec.value}</span>
                         </div>
                       ))}
                     </div>
                   </div>
 
-                  <div className="space-y-3 pt-4 border-t border-slate-800">
+                  <div className="space-y-3 pt-4 border-t border-slate-200">
                     <Button
                       href={mod.orderUrl}
                       isExternal
@@ -328,10 +321,11 @@ export default function WhmcsModulesPage() {
         </div>
       </section>
 
-      {/* 4. CUSTOM WHMCS DEVELOPMENT */}
-      <section id="custom-modules" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 4. SELECTIVE DARK SECTION: CUSTOM WHMCS DEVELOPMENT */}
+      <section id="custom-modules" className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
         <div className="max-w-7xl mx-auto space-y-12">
           <SectionHeading
+            isDark={true}
             eyebrow="Bespoke Engineering"
             title="Custom WHMCS Module Development"
             subtitle="Need a proprietary server provisioning addon, custom payment gateway, or client portal integration? Our team engineers secure, ionCube-ready WHMCS plugins."
@@ -341,10 +335,10 @@ export default function WhmcsModulesPage() {
             {customServices.map((svc, idx) => (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-800"
+                className="bg-slate-900/80 rounded-2xl p-6 flex flex-col justify-between border border-slate-800 hover:border-indigo-500/40 transition-colors"
               >
                 <div>
-                  <div className="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0 mb-4">
+                  <div className="w-10 h-10 rounded-xl bg-slate-800 border border-slate-700 flex items-center justify-center shrink-0 mb-4">
                     {svc.icon}
                   </div>
                   <h3 className="text-base font-bold text-white mb-2">{svc.title}</h3>
@@ -352,7 +346,7 @@ export default function WhmcsModulesPage() {
                     {svc.description}
                   </p>
                 </div>
-                <div className="pt-3 border-t border-slate-800/80">
+                <div className="pt-3 border-t border-slate-800">
                   <span className="text-xs text-indigo-400 font-medium flex items-center gap-1">
                     <span>1 to 2 week delivery</span>
                   </span>
@@ -364,7 +358,7 @@ export default function WhmcsModulesPage() {
       </section>
 
       {/* 5. INQUIRY FORM */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-50 border-b border-slate-200/80">
         <div className="max-w-4xl mx-auto">
           <SectionHeading
             eyebrow="Custom Project Scope"
@@ -372,9 +366,7 @@ export default function WhmcsModulesPage() {
             subtitle="Share your integration requirements or technical architecture specifications for a free feasibility estimate."
           />
 
-          <div className="glass-card rounded-2xl p-6 sm:p-10 border border-slate-800">
-            <ContactForm initialService="WHMCS Modules" />
-          </div>
+          <ContactForm initialService="WHMCS Custom Modules" />
         </div>
       </section>
 
@@ -404,4 +396,3 @@ export default function WhmcsModulesPage() {
     </div>
   );
 }
-

@@ -40,22 +40,22 @@ export default function SaasDevelopmentPage() {
     {
       title: "Multi-Tenant Cloud Architecture",
       description: "Secure database tenancy models (schema-per-tenant or isolated row keys) guaranteeing complete customer data privacy, GDPR, and DPDP Act compliance.",
-      icon: <Database className="w-6 h-6 text-violet-400" />
+      icon: <Database className="w-6 h-6 text-indigo-600" />
     },
     {
       title: "Automated Subscription Billing & Dunning",
       description: "Integrations with Stripe and Razorpay Subscriptions handling recurring invoicing, multi-tier plan upgrades, prorated billing, and automated dunning recovery.",
-      icon: <Repeat className="w-6 h-6 text-indigo-400" />
+      icon: <Repeat className="w-6 h-6 text-indigo-600" />
     },
     {
       title: "Role-Based Access Control (RBAC)",
       description: "Granular permission hierarchies (Owner, Admin, Manager, Member, Viewer) with multi-user team invites, activity audit logs, and SSO capabilities.",
-      icon: <Users className="w-6 h-6 text-cyan-400" />
+      icon: <Users className="w-6 h-6 text-cyan-600" />
     },
     {
       title: "API-First Architecture & Webhooks",
       description: "Comprehensive RESTful and GraphQL endpoints with HMAC-signed webhooks, enabling your customers to build custom third-party integrations.",
-      icon: <Cpu className="w-6 h-6 text-emerald-400" />
+      icon: <Cpu className="w-6 h-6 text-emerald-600" />
     }
   ];
 
@@ -134,9 +134,7 @@ export default function SaasDevelopmentPage() {
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-violet-600/20 via-indigo-500/10 to-transparent blur-[130px] pointer-events-none" />
-
+      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -146,16 +144,16 @@ export default function SaasDevelopmentPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-violet-500/10 text-violet-400 border border-violet-500/25 mb-4">
-              <Sparkles className="w-3.5 h-3.5" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
               <span>Multi-Tenant Architecture • Subscription Billing • Cloud Provisioning</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               SaaS & Custom Cloud Software Engineering
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               We architect, engineer, and deploy scalable multi-tenant web applications from MVP to cloud production. High-concurrency database schemas, recurring billing, and automated infrastructure.
             </p>
 
@@ -166,14 +164,14 @@ export default function SaasDevelopmentPage() {
                 href="#inquiry-form"
                 rightIcon={<ArrowRight className="w-4 h-4" />}
               >
-                Book Architecture Consultation
+                Schedule SaaS Technical Discovery
               </Button>
               <Button
                 variant="secondary"
                 size="lg"
                 href="#roadmap"
               >
-                Explore Sprint Roadmap
+                View 5-Sprint Roadmap
               </Button>
             </div>
           </div>
@@ -181,26 +179,26 @@ export default function SaasDevelopmentPage() {
       </section>
 
       {/* 2. CAPABILITIES MATRIX */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
+      <section id="capabilities" className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Core Architecture"
-            title="Engineered for Scalability & Multi-Tenancy"
-            subtitle="Built on modern cloud design patterns to support thousands of concurrent business accounts."
+            eyebrow="Enterprise Foundations"
+            title="SaaS Architecture Engineered for Scale"
+            subtitle="Built on modern multi-tenant patterns that scale effortlessly as your user base expands."
           />
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             {saasCapabilities.map((cap, idx) => (
               <div
                 key={idx}
-                className="glass-card glass-card-hover rounded-2xl p-7 sm:p-8 flex items-start gap-5"
+                className="bg-white rounded-2xl p-7 sm:p-8 flex items-start gap-5 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0">
                   {cap.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{cap.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{cap.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {cap.description}
                   </p>
                 </div>
@@ -210,20 +208,21 @@ export default function SaasDevelopmentPage() {
         </div>
       </section>
 
-      {/* 3. TECH STACK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 3. SELECTIVE DARK SECTION: PRODUCTION TECH STACK */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <SectionHeading
-            eyebrow="SaaS Tech Stack"
-            title="Battle-Tested Full-Stack Cloud Stack"
-            subtitle="Strict type-safety, robust ORMs, and containerized microservices."
+            isDark={true}
+            eyebrow="Modern Stack"
+            title="Enterprise Cloud & Backend Runtimes"
+            subtitle="Engineered with TypeScript, Next.js, and containerized Docker microservices for maximum throughput."
           />
 
-          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto mt-10">
             {techStack.map((tech, idx) => (
               <span
                 key={idx}
-                className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs sm:text-sm font-semibold hover:border-violet-500/50 hover:text-white transition-all shadow-sm"
+                className="px-4 py-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-200 text-xs sm:text-sm font-semibold hover:border-indigo-500/50 hover:text-white transition-all shadow-sm"
               >
                 {tech}
               </span>
@@ -232,27 +231,27 @@ export default function SaasDevelopmentPage() {
         </div>
       </section>
 
-      {/* 4. SPRINT ROADMAP */}
+      {/* 4. 5-SPRINT ROADMAP */}
       <section id="roadmap" className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Agile Delivery"
-            title="5-Sprint SaaS Development Roadmap"
-            subtitle="How we structure multi-week engineering sprints to take your product from requirements to production launch."
+            eyebrow="Agile Execution"
+            title="Structured 5-Sprint SaaS Lifecycle"
+            subtitle="Transparent two-week sprint cycles with live staging demos and milestone check-ins."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {sprintRoadmap.map((sprint, idx) => (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-6 relative flex flex-col justify-between border-slate-800 hover:border-violet-500/40 transition-colors"
+                className="bg-white rounded-2xl p-6 relative flex flex-col justify-between border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
               >
                 <div>
-                  <span className="text-2xl font-extrabold text-violet-400/50 block mb-3 font-mono">
+                  <span className="text-3xl font-extrabold text-indigo-600/30 block mb-3 font-mono">
                     {sprint.step}
                   </span>
-                  <h4 className="text-base font-bold text-white mb-2">{sprint.title}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <h4 className="text-base font-bold text-slate-900 mb-2">{sprint.title}</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {sprint.description}
                   </p>
                 </div>
@@ -264,21 +263,21 @@ export default function SaasDevelopmentPage() {
 
       {/* 5. DELIVERABLES */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto glass-card rounded-2xl p-8 sm:p-12 border border-slate-800">
+        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-8 sm:p-12 border border-slate-200/90 shadow-sm">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center text-violet-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-indigo-50 border border-indigo-200 flex items-center justify-center text-indigo-600 shrink-0">
               <FileCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white">Your SaaS Deliverables & Guarantee</h3>
-              <p className="text-xs sm:text-sm text-slate-400">Written contractual commitments backed by complete IP handover.</p>
+              <h3 className="text-2xl font-bold text-slate-900">Included With Every SaaS Build</h3>
+              <p className="text-xs sm:text-sm text-slate-600">Enterprise deliverables and 100% intellectual property handover.</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             {deliverables.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-violet-400 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </div>
             ))}
@@ -287,12 +286,12 @@ export default function SaasDevelopmentPage() {
       </section>
 
       {/* 6. INQUIRY FORM */}
-      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8">
+      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-50 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Architectural Intake"
+            eyebrow="Start Discovery"
             title="Start Your SaaS Discovery"
-            subtitle="Tell us about your multi-tenant product concept, target market, and timeline. Our technical architect will review your requirements within 24 hours."
+            subtitle="Share your target audience, core product workflows, and monetization model. We will provide an architectural breakdown and sprint estimation."
           />
 
           <ContactForm initialService="SaaS & Custom Software" />
@@ -303,9 +302,9 @@ export default function SaasDevelopmentPage() {
       <section className="relative px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
-            eyebrow="Common Inquiries"
-            title="SaaS Development FAQs"
-            subtitle="Clear answers on tenancy isolation, infrastructure hosting, and IP protection."
+            eyebrow="Questions & Answers"
+            title="SaaS Engineering FAQs"
+            subtitle="Straightforward answers about sprint timelines, cloud maintenance, and multi-tenant security."
           />
 
           <FAQAccordion items={saasFaqs} />
@@ -314,13 +313,12 @@ export default function SaasDevelopmentPage() {
 
       {/* 8. BOTTOM CTA */}
       <CTASection
-        eyebrow="From Concept to Scale"
-        title="Ready to Architect Your Cloud SaaS Platform?"
-        subtitle="Schedule a free technical architecture consultation with ShrotiHost software leads today."
-        primaryCtaText="Book Architecture Call"
+        eyebrow="Build Your SaaS Platform"
+        title="Ready to Build Scalable Cloud Software?"
+        subtitle="Schedule a free technical architecture consultation with our engineering leads today."
+        primaryCtaText="Schedule Discovery Call"
         primaryCtaHref="#inquiry-form"
       />
     </div>
   );
 }
-

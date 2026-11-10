@@ -36,7 +36,7 @@ export default function ContactPage() {
       title: "WhatsApp Direct Chat",
       value: "+91 95821 29099",
       description: "Quick pre-sales questions, renewal inquiries, and fast migration coordination.",
-      icon: <MessageSquare className="w-6 h-6 text-[#25D366]" />,
+      icon: <MessageSquare className="w-6 h-6 text-emerald-600" />,
       actionText: "Chat on WhatsApp",
       actionUrl: "https://wa.me/919582129099",
       badge: "Instant Human Replies",
@@ -46,7 +46,7 @@ export default function ContactPage() {
       title: "24/7 Support Portal",
       value: "portal.shrotihost.in",
       description: "Open official technical tickets for DNS, cPanel, email configs, or VPS management.",
-      icon: <LifeBuoy className="w-6 h-6 text-indigo-400" />,
+      icon: <LifeBuoy className="w-6 h-6 text-indigo-600" />,
       actionText: "Open Ticket in Portal",
       actionUrl: "https://portal.shrotihost.in/submitticket.php",
       badge: "< 15m Avg Response",
@@ -56,7 +56,7 @@ export default function ContactPage() {
       title: "Official Email Inboxes",
       value: "support@shrotihost.in",
       description: "Direct email for general inquiries, formal RFPs, and corporate communications.",
-      icon: <Mail className="w-6 h-6 text-cyan-400" />,
+      icon: <Mail className="w-6 h-6 text-cyan-600" />,
       actionText: "Send Email",
       actionUrl: "mailto:support@shrotihost.in",
       badge: "Sales & Support",
@@ -66,7 +66,7 @@ export default function ContactPage() {
       title: "Registered Head Office",
       value: "Hathras, Uttar Pradesh",
       description: "Shroti Enterprises, Ruheri, Hathras, UP 204101, India. Registered MSME Enterprise.",
-      icon: <MapPin className="w-6 h-6 text-emerald-400" />,
+      icon: <MapPin className="w-6 h-6 text-indigo-600" />,
       actionText: "View MSME Registration",
       actionUrl: "/about",
       badge: "UDYAM-UP-36-0017127",
@@ -77,10 +77,7 @@ export default function ContactPage() {
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        {/* Ambient lighting */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-indigo-600/20 via-cyan-500/10 to-transparent blur-[130px] pointer-events-none" />
-
+      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -90,16 +87,16 @@ export default function ContactPage() {
           />
 
           <div className="text-center max-w-3xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-500/10 text-emerald-300 border border-emerald-500/25 mb-4">
-              <Clock className="w-3.5 h-3.5 text-emerald-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200/80 mb-4 shadow-sm">
+              <Clock className="w-3.5 h-3.5 text-emerald-600" />
               <span>24/7 Human Technical Support Active</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Get in Touch with the ShrotiHost Team
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Have questions about hosting plans, website migrations, or custom software projects? Connect directly with our team across WhatsApp, tickets, or email.
             </p>
           </div>
@@ -113,33 +110,33 @@ export default function ContactPage() {
             {contactChannels.map((channel, idx) => (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-6 flex flex-col justify-between border-slate-800"
+                className="bg-white rounded-2xl p-6 flex flex-col justify-between border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
               >
                 <div className="space-y-4">
                   <div className="flex items-center justify-between">
-                    <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                    <div className="w-12 h-12 rounded-xl bg-slate-50 border border-slate-200 flex items-center justify-center shrink-0">
                       {channel.icon}
                     </div>
-                    <span className="text-[11px] font-semibold text-slate-300 bg-slate-900 border border-slate-800 px-2 py-0.5 rounded">
+                    <span className="text-[11px] font-semibold text-slate-600 bg-slate-100 border border-slate-200 px-2.5 py-0.5 rounded-full">
                       {channel.badge}
                     </span>
                   </div>
 
                   <div>
-                    <h3 className="text-base font-bold text-white">{channel.title}</h3>
-                    <p className="text-sm font-semibold text-indigo-400 mt-0.5">{channel.value}</p>
-                    <p className="text-xs text-slate-400 leading-relaxed mt-2">
+                    <h3 className="text-base font-bold text-slate-900">{channel.title}</h3>
+                    <p className="text-sm font-semibold text-indigo-600 mt-0.5">{channel.value}</p>
+                    <p className="text-xs text-slate-600 leading-relaxed mt-2">
                       {channel.description}
                     </p>
                   </div>
                 </div>
 
-                <div className="pt-4 mt-6 border-t border-slate-800/80">
+                <div className="pt-4 mt-6 border-t border-slate-100">
                   <a
                     href={channel.actionUrl}
                     target={channel.external ? "_blank" : undefined}
                     rel={channel.external ? "noopener noreferrer" : undefined}
-                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-white hover:text-indigo-400 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-semibold text-slate-900 hover:text-indigo-600 transition-colors"
                   >
                     <span>{channel.actionText}</span>
                     <ExternalLink className="w-3.5 h-3.5 text-slate-400" />
@@ -156,55 +153,53 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 items-start">
           <div className="lg:col-span-7 space-y-6">
             <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-400 border border-indigo-500/25 mb-3">
-                <Mail className="w-3.5 h-3.5" />
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-3">
+                <Mail className="w-3.5 h-3.5 text-indigo-600" />
                 <span>Direct Message Form</span>
               </div>
-              <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight">
+              <h2 className="text-2xl sm:text-3xl font-extrabold text-slate-900 tracking-tight">
                 Send Us a Detailed Message
               </h2>
-              <p className="text-sm text-slate-400 mt-2">
+              <p className="text-sm text-slate-600 mt-2">
                 Fill out the form below. Our team reviews every submission and routes it to the designated department specialist within 1 to 2 business hours.
               </p>
             </div>
 
-            <div className="glass-card rounded-2xl p-6 sm:p-8 border border-slate-800">
-              <ContactForm initialService="General Inquiry" />
-            </div>
+            <ContactForm initialService="General Inquiry" />
           </div>
 
           <div className="lg:col-span-5 space-y-6">
             {/* Quick Department Routing Card */}
-            <div className="glass-card rounded-2xl p-6 sm:p-7 border border-slate-800 space-y-5">
-              <h3 className="text-base font-bold text-white border-b border-slate-800 pb-3">
+            <div className="bg-white rounded-2xl p-6 sm:p-7 border border-slate-200/90 shadow-sm space-y-5">
+              <h3 className="text-base font-bold text-slate-900 border-b border-slate-100 pb-3">
                 Department Routing Guide
               </h3>
 
               <div className="space-y-4 text-xs">
                 <div>
-                  <p className="font-semibold text-white">Pre-Sales & Migration</p>
-                  <p className="text-slate-400 mt-0.5">
+                  <p className="font-semibold text-slate-900">Pre-Sales & Migration</p>
+                  <p className="text-slate-600 mt-0.5">
                     Questions on selecting the right hosting plan, domain transfer timelines, and zero-downtime website migrations.
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80">
-                  <p className="font-semibold text-white">Technical Support</p>
-                  <p className="text-slate-400 mt-0.5">
+                <div className="pt-3 border-t border-slate-100">
+                  <p className="font-semibold text-slate-900">Technical Support</p>
+                  <p className="text-slate-600 mt-0.5">
                     Assistance with DNS records, SSL certificates, cPanel configurations, and PHP version switches. Best submitted via the client portal.
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80">
-                  <p className="font-semibold text-white">Billing & Invoicing</p>
-                  <p className="text-slate-400 mt-0.5">
+                <div className="pt-3 border-t border-slate-100">
+                  <p className="font-semibold text-slate-900">Billing & Invoicing</p>
+                  <p className="text-slate-600 mt-0.5">
                     GST invoice generation, renewal receipts, payment method updates, and refund inquiries.
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-slate-800/80">
-                  <p className="font-semibold text-white">Custom Software Projects</p>
-                  <p className="text-slate-400 mt-0.5">
+                <div className="pt-3 border-t border-slate-100">
+                  <p className="font-semibold text-slate-900">Custom Software Projects</p>
+                  <p className="text-slate-600 mt-0.5">
                     Scoping custom Next.js web applications, mobile apps, e-commerce stores, and WHMCS module integrations.
                   </p>
                 </div>
@@ -212,22 +207,22 @@ export default function ContactPage() {
             </div>
 
             {/* Enterprise Legal & Entity Details */}
-            <div className="glass-card rounded-2xl p-6 border border-slate-800 space-y-3 text-xs">
-              <div className="flex items-center gap-2 text-indigo-400 font-semibold">
-                <ShieldCheck className="w-4 h-4" />
+            <div className="bg-slate-50 rounded-2xl p-6 border border-slate-200 space-y-3 text-xs">
+              <div className="flex items-center gap-2 text-indigo-700 font-semibold">
+                <ShieldCheck className="w-4 h-4 text-indigo-600" />
                 <span>Legal Business Information</span>
               </div>
-              <p className="text-slate-300">
-                <span className="text-slate-400">Trading Name:</span> ShrotiHost
+              <p className="text-slate-700">
+                <span className="text-slate-500 font-medium">Trading Name:</span> ShrotiHost
               </p>
-              <p className="text-slate-300">
-                <span className="text-slate-400">Legal Entity:</span> Shroti Enterprises
+              <p className="text-slate-700">
+                <span className="text-slate-500 font-medium">Legal Entity:</span> Shroti Enterprises
               </p>
-              <p className="text-slate-300">
-                <span className="text-slate-400">MSME Registration:</span> UDYAM-UP-36-0017127
+              <p className="text-slate-700">
+                <span className="text-slate-500 font-medium">MSME Registration:</span> UDYAM-UP-36-0017127
               </p>
-              <p className="text-slate-300">
-                <span className="text-slate-400">Registered Office:</span> Ruheri, Hathras, Uttar Pradesh 204101, India
+              <p className="text-slate-700">
+                <span className="text-slate-500 font-medium">Registered Office:</span> Ruheri, Hathras, Uttar Pradesh 204101, India
               </p>
             </div>
           </div>
@@ -247,4 +242,3 @@ export default function ContactPage() {
     </div>
   );
 }
-

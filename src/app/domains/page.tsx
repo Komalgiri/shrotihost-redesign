@@ -105,9 +105,7 @@ export default function DomainsPage() {
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & SEARCH MANAGER */}
-      <section className="relative pt-6 sm:pt-10 pb-12 overflow-hidden">
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-indigo-600/20 via-cyan-500/10 to-transparent blur-[130px] pointer-events-none" />
-
+      <section className="relative pt-6 sm:pt-10 pb-12 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -117,16 +115,16 @@ export default function DomainsPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6 mb-10">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-500/10 text-indigo-300 border border-indigo-500/25 mb-4">
-              <Globe className="w-3.5 h-3.5 text-indigo-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-sm">
+              <Globe className="w-3.5 h-3.5 text-indigo-600" />
               <span>Instant Registration • Free DNS Tools • Transparent Pricing</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Find and Secure Your Ideal Domain Name
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               Register .in, .com, .org, and modern extensions with upfront renewal rates, zero hidden transfer penalties, and free DNS management.
             </p>
           </div>
@@ -150,7 +148,7 @@ export default function DomainsPage() {
       </section>
 
       {/* 3. DOMAIN INCLUSIONS & FEATURES */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-slate-50 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             eyebrow="Included with Every Domain"
@@ -180,18 +178,18 @@ export default function DomainsPage() {
             subtitle="Switching registrars is simple, keeps your website live, and adds a full additional year of registration."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-6 max-w-5xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {transferSteps.map((step, idx) => (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-6 relative flex flex-col justify-between border-slate-800 hover:border-indigo-500/40 transition-colors"
+                className="bg-white rounded-2xl p-6 relative flex flex-col justify-between border border-slate-200/80 shadow-sm hover:border-indigo-300 hover:shadow-md transition-all"
               >
                 <div>
-                  <span className="text-3xl font-extrabold text-indigo-400/40 block mb-3 font-mono">
+                  <span className="text-3xl font-extrabold text-indigo-600/30 block mb-3 font-mono">
                     {step.step}
                   </span>
-                  <h4 className="text-base font-bold text-white mb-2">{step.title}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <h4 className="text-base font-bold text-slate-900 mb-2">{step.title}</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -240,4 +238,3 @@ export default function DomainsPage() {
     </div>
   );
 }
-

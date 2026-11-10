@@ -79,10 +79,10 @@ export const DomainSearchManager: React.FC = () => {
       {/* Search Input Box */}
       <form
         onSubmit={handleSearch}
-        className="relative bg-slate-900/90 border-2 border-indigo-500/50 hover:border-indigo-500 rounded-2xl p-2.5 sm:p-3 shadow-2xl shadow-indigo-950/50 backdrop-blur-md transition-all flex flex-col sm:flex-row items-center gap-2.5"
+        className="relative bg-white border-2 border-slate-200 hover:border-indigo-400 focus-within:border-indigo-600 rounded-2xl p-2.5 sm:p-3 shadow-sm transition-all flex flex-col sm:flex-row items-center gap-2.5"
       >
         <div className="flex items-center gap-3 w-full px-3 py-1 flex-1">
-          <Search className="w-5 h-5 text-indigo-400 shrink-0" />
+          <Search className="w-5 h-5 text-slate-400 shrink-0" />
           <input
             type="text"
             value={searchTerm}
@@ -91,7 +91,7 @@ export const DomainSearchManager: React.FC = () => {
               if (searchError) setSearchError(null);
             }}
             placeholder="Search your brand name (e.g. yourstartup)"
-            className="w-full bg-transparent text-white placeholder:text-slate-500 text-sm sm:text-base focus:outline-none"
+            className="w-full bg-transparent text-slate-900 placeholder:text-slate-400 text-sm sm:text-base focus:outline-none"
           />
         </div>
 
@@ -99,7 +99,7 @@ export const DomainSearchManager: React.FC = () => {
           <select
             value={selectedTld}
             onChange={(e) => setSelectedTld(e.target.value)}
-            className="bg-slate-800 border border-slate-700 text-white rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
+            className="bg-slate-50 border border-slate-200 text-slate-900 rounded-xl px-3 py-2 text-xs sm:text-sm font-semibold focus:outline-none focus:ring-2 focus:ring-indigo-500"
           >
             <option value=".in">.in (₹714)</option>
             <option value=".com">.com (₹1,169)</option>
@@ -107,27 +107,25 @@ export const DomainSearchManager: React.FC = () => {
             <option value=".org">.org (₹1,039)</option>
             <option value=".net">.net (₹1,689)</option>
             <option value=".xyz">.xyz (₹259)</option>
-            <option value=".store">.store (₹299)</option>
-            <option value=".tech">.tech (₹399)</option>
           </select>
 
           <Button
             type="submit"
-            variant="accent"
+            variant="primary"
             size="md"
             disabled={isSearching}
-            className="w-full sm:w-auto font-bold min-w-[110px]"
+            className="w-full sm:w-auto font-bold shrink-0 min-w-[120px]"
           >
             {isSearching ? (
-              <span className="flex items-center gap-2">
+              <>
                 <Loader2 className="w-4 h-4 animate-spin" />
-                <span>Checking...</span>
-              </span>
+                <span>Searching...</span>
+              </>
             ) : (
-              <span className="flex items-center gap-1.5">
-                <span>Check Domain</span>
-                <ArrowRight className="w-4 h-4" />
-              </span>
+              <>
+                <span>Search</span>
+                <ArrowRight className="w-4 h-4 ml-1" />
+              </>
             )}
           </Button>
         </div>
@@ -135,55 +133,70 @@ export const DomainSearchManager: React.FC = () => {
 
       {/* Validation Error Message */}
       {searchError && (
-        <div className="p-4 rounded-xl bg-rose-500/10 border border-rose-500/30 text-rose-300 text-xs sm:text-sm flex items-start gap-2.5 animate-in fade-in duration-150">
-          <AlertCircle className="w-4 h-4 shrink-0 mt-0.5 text-rose-400" />
+        <div className="p-3.5 rounded-xl bg-rose-50 border border-rose-200 text-xs text-rose-700 flex items-center gap-2">
+          <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{searchError}</span>
         </div>
       )}
 
-      {/* Search Result Banner (Clearly Marked as Demo Simulation with Live Registry Deep Link) */}
+      {/* Search Result Card (Demo Simulated State) */}
       {searchResult && (
-        <div className="p-6 rounded-2xl bg-slate-900 border border-emerald-500/40 shadow-xl space-y-4 animate-in fade-in duration-200">
-          {/* Demo Notice Disclaimer */}
-          <div className="flex items-center gap-2 text-xs text-amber-300 bg-amber-500/10 border border-amber-500/20 px-3 py-1.5 rounded-lg">
-            <Info className="w-4 h-4 shrink-0 text-amber-400" />
-            <span>
-              <strong>Simulated Demo Result:</strong> Live registry availability is verified directly at checkout. Click below to verify in real-time.
-            </span>
-          </div>
-
-          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pt-1">
-            <div className="space-y-1">
+        <div className="bg-white border border-slate-200/90 rounded-2xl p-6 sm:p-7 shadow-sm space-y-4 animate-in fade-in duration-200">
+          <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-slate-100 pb-5">
+            <div>
               <div className="flex items-center gap-2">
-                <CheckCircle2 className="w-5 h-5 text-emerald-400 shrink-0" />
-                <span className="text-xl sm:text-2xl font-extrabold text-white font-mono">
+                <span className="w-2.5 h-2.5 rounded-full bg-emerald-500" />
+                <span className="text-xl sm:text-2xl font-bold text-slate-950 font-mono">
                   {searchResult.domain}
                 </span>
-                <span className="text-xs font-semibold px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400 border border-emerald-500/20">
-                  Ready to Register
+                <span className="text-xs font-bold uppercase tracking-wider text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded border border-emerald-200">
+                  Available (Demo)
                 </span>
               </div>
-              <p className="text-xs text-slate-400">
-                1st Year Registration: <strong className="text-white font-mono">₹{searchResult.price}</strong> • Renewal Rate: <span className="font-mono">₹{searchResult.renewPrice}/yr</span>
+              <p className="text-xs text-slate-500 mt-1">
+                Renewable annually at ₹{searchResult.renewPrice}/year with free DNS management.
               </p>
             </div>
 
-            <Button
-              variant="primary"
-              size="lg"
-              onClick={() => handlePortalRedirect(searchResult.domain)}
-              rightIcon={<ExternalLink className="w-4 h-4" />}
-              className="shrink-0 font-bold"
-            >
-              Verify & Register on Portal
-            </Button>
+            <div className="flex items-center gap-4">
+              <div className="text-right">
+                <span className="text-xs text-slate-400 block">Registration:</span>
+                <span className="text-2xl font-black text-slate-950 font-mono">
+                  ₹{searchResult.price}
+                </span>
+                <span className="text-xs text-slate-500">/1st yr</span>
+              </div>
+
+              <Button
+                variant="primary"
+                size="md"
+                onClick={() => handlePortalRedirect(searchResult.domain)}
+                className="font-bold"
+              >
+                <span>Order on Portal</span>
+                <ExternalLink className="w-3.5 h-3.5 ml-1.5" />
+              </Button>
+            </div>
+          </div>
+
+          {/* Honest Demo State Disclosure Notice */}
+          <div className="p-3.5 rounded-xl bg-slate-50 border border-slate-200 text-xs text-slate-600 flex items-start gap-2.5">
+            <Info className="w-4 h-4 text-indigo-600 shrink-0 mt-0.5" />
+            <div>
+              <strong className="text-slate-900 font-semibold">Simulated Search Demonstration: </strong>
+              <span>
+                This frontend simulation does not query the live EPP domain registry API directly. Clicking &ldquo;Order on Portal&rdquo; checks real-time global availability and completes registration on the live WHMCS client portal.
+              </span>
+            </div>
           </div>
         </div>
       )}
 
       {/* Popular Extensions Quick Filter Ribbon */}
       <div className="flex flex-wrap items-center justify-center gap-2.5 text-xs">
-        <span className="text-slate-500 font-medium mr-1 hidden sm:inline">Popular Extensions:</span>
+        <span className="text-slate-400 font-medium mr-1 hidden sm:inline text-[11px] uppercase tracking-wider">
+          Top Extensions:
+        </span>
         {DOMAIN_TLD_LIST.slice(0, 6).map((item) => (
           <button
             key={item.tld}
@@ -195,34 +208,22 @@ export const DomainSearchManager: React.FC = () => {
                 setSearchTerm(base);
               }
             }}
-            className={`px-3 py-1.5 rounded-lg border transition-all flex items-center gap-2 ${
+            className={`px-3 py-1.5 rounded-lg border transition-all flex items-center gap-1.5 text-xs ${
               selectedTld === item.tld
-                ? "bg-indigo-600/20 border-indigo-500 text-white font-semibold"
-                : "bg-slate-900/60 border-slate-800 hover:border-slate-700 text-slate-300"
+                ? "bg-indigo-50 border-indigo-300 text-indigo-700 font-bold shadow-xs"
+                : "bg-slate-50 border-slate-200 hover:border-slate-300 text-slate-700 hover:bg-slate-100"
             }`}
           >
-            <span className="font-bold text-white">{item.tld}</span>
-            <span className="text-slate-400">₹{item.registerPrice}/yr</span>
+            <span className="font-bold text-slate-900">{item.tld}</span>
+            <span className="text-slate-500 font-mono">₹{item.registerPrice}/yr</span>
             {item.sale && (
-              <span className="text-[10px] uppercase font-bold text-cyan-400 bg-cyan-500/10 px-1 py-0.2 rounded">
+              <span className="text-[9px] uppercase font-bold text-cyan-700 bg-cyan-50 px-1 py-0.2 rounded border border-cyan-200">
                 Sale
               </span>
             )}
           </button>
         ))}
       </div>
-
-      <div className="flex items-center justify-center gap-4 text-xs text-slate-400 pt-1">
-        <span className="inline-flex items-center gap-1.5">
-          <ShieldCheck className="w-4 h-4 text-emerald-400" />
-          <span>Free DNS Records Management</span>
-        </span>
-        <span>•</span>
-        <span>Free Privacy WHOIS Guard</span>
-        <span>•</span>
-        <span>Instant Activation</span>
-      </div>
     </div>
   );
 };
-

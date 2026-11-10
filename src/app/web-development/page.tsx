@@ -40,22 +40,22 @@ export default function WebDevelopmentPage() {
     {
       title: "Corporate & Brand Websites",
       description: "Polished, authoritative websites that communicate company credibility, convert prospects, and reflect brand identity with precision typography and micro-interactions.",
-      icon: <Laptop className="w-6 h-6 text-indigo-400" />
+      icon: <Laptop className="w-6 h-6 text-indigo-600" />
     },
     {
       title: "High-Speed Landing Pages",
       description: "Conversion-optimized landing pages built for performance marketing campaigns, delivering sub-second load times and frictionless lead generation forms.",
-      icon: <Zap className="w-6 h-6 text-cyan-400" />
+      icon: <Zap className="w-6 h-6 text-cyan-600" />
     },
     {
       title: "Headless Web Portals & Dashboards",
       description: "Dynamic React and Next.js customer portals integrated with secure REST and GraphQL APIs, authentication, and role-based data permissions.",
-      icon: <Code2 className="w-6 h-6 text-emerald-400" />
+      icon: <Code2 className="w-6 h-6 text-emerald-600" />
     },
     {
       title: "Core Web Vitals Optimization",
       description: "Comprehensive audits and re-architecting of sluggish legacy websites to pass Google Core Web Vitals (LCP < 2.5s, CLS < 0.1, INP < 200ms).",
-      icon: <Cpu className="w-6 h-6 text-amber-400" />
+      icon: <Cpu className="w-6 h-6 text-amber-600" />
     }
   ];
 
@@ -115,10 +115,7 @@ export default function WebDevelopmentPage() {
   return (
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
-      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden">
-        {/* Ambient lighting */}
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[700px] h-[350px] bg-gradient-to-b from-indigo-600/20 via-cyan-500/10 to-transparent blur-[130px] pointer-events-none" />
-
+      <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
@@ -128,16 +125,16 @@ export default function WebDevelopmentPage() {
           />
 
           <div className="text-center max-w-4xl mx-auto mt-6">
-            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-cyan-500/10 text-cyan-300 border border-cyan-500/25 mb-4">
-              <Sparkles className="w-3.5 h-3.5 text-cyan-400" />
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-indigo-50 text-indigo-700 border border-indigo-200/80 mb-4 shadow-sm">
+              <Sparkles className="w-3.5 h-3.5 text-indigo-600" />
               <span>Next.js • React • TypeScript • Performance-Optimized</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-tight">
+            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Custom Web Design & Frontend Engineering That Scales
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
               We engineer bespoke, lightning-fast websites that turn visitors into paying customers. Deployed directly on our high-performance cloud hosting for maximum uptime and zero latency.
             </p>
 
@@ -175,14 +172,14 @@ export default function WebDevelopmentPage() {
             {capabilities.map((cap, idx) => (
               <div
                 key={idx}
-                className="glass-card glass-card-hover rounded-2xl p-7 sm:p-8 flex items-start gap-5"
+                className="bg-white rounded-2xl p-7 sm:p-8 flex items-start gap-5 border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-slate-900 border border-slate-800 flex items-center justify-center shrink-0">
+                <div className="w-12 h-12 rounded-xl bg-indigo-50 border border-indigo-100 flex items-center justify-center shrink-0">
                   {cap.icon}
                 </div>
                 <div>
-                  <h3 className="text-xl font-bold text-white mb-2">{cap.title}</h3>
-                  <p className="text-sm text-slate-400 leading-relaxed">
+                  <h3 className="text-xl font-bold text-slate-900 mb-2">{cap.title}</h3>
+                  <p className="text-sm text-slate-600 leading-relaxed">
                     {cap.description}
                   </p>
                 </div>
@@ -192,16 +189,17 @@ export default function WebDevelopmentPage() {
         </div>
       </section>
 
-      {/* 3. PRODUCTION TECH STACK */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-950/60 border-y border-slate-900">
+      {/* 3. SELECTIVE DARK SECTION: PRODUCTION TECH STACK */}
+      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
         <div className="max-w-7xl mx-auto text-center">
           <SectionHeading
+            isDark={true}
             eyebrow="Modern Tech Stack"
             title="Battle-Tested Technologies, Zero Outdated Bloat"
             subtitle="We build exclusively with modern frameworks that provide superior developer velocity, long-term maintainability, and sub-second page rendering."
           />
 
-          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto">
+          <div className="flex flex-wrap items-center justify-center gap-3 max-w-4xl mx-auto mt-10">
             {techStackBadges.map((tech, idx) => (
               <span
                 key={idx}
@@ -223,18 +221,18 @@ export default function WebDevelopmentPage() {
             subtitle="How we take your idea from initial napkin wireframe to high-traffic production reality."
           />
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-6">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-6">
             {developmentProcess.map((step, idx) => (
               <div
                 key={idx}
-                className="glass-card rounded-2xl p-6 relative flex flex-col justify-between border-slate-800 hover:border-indigo-500/40 transition-colors"
+                className="bg-white rounded-2xl p-6 relative flex flex-col justify-between border border-slate-200/90 shadow-sm hover:shadow-md hover:border-indigo-300 transition-all"
               >
                 <div>
-                  <span className="text-3xl font-extrabold text-indigo-400/40 block mb-3 font-mono">
+                  <span className="text-3xl font-extrabold text-indigo-600/30 block mb-3 font-mono">
                     {step.step}
                   </span>
-                  <h4 className="text-base font-bold text-white mb-2">{step.title}</h4>
-                  <p className="text-xs text-slate-400 leading-relaxed">
+                  <h4 className="text-base font-bold text-slate-900 mb-2">{step.title}</h4>
+                  <p className="text-xs text-slate-600 leading-relaxed">
                     {step.description}
                   </p>
                 </div>
@@ -246,21 +244,21 @@ export default function WebDevelopmentPage() {
 
       {/* 5. DELIVERABLES & GUARANTEES CHECKLIST */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-5xl mx-auto glass-card rounded-2xl p-8 sm:p-12 border border-slate-800">
+        <div className="max-w-5xl mx-auto bg-white rounded-2xl p-8 sm:p-12 border border-slate-200/90 shadow-sm">
           <div className="flex items-center gap-3 mb-6">
-            <div className="w-10 h-10 rounded-xl bg-emerald-500/10 border border-emerald-500/20 flex items-center justify-center text-emerald-400 shrink-0">
+            <div className="w-10 h-10 rounded-xl bg-emerald-50 border border-emerald-200 flex items-center justify-center text-emerald-600 shrink-0">
               <FileCheck className="w-5 h-5" />
             </div>
             <div>
-              <h3 className="text-2xl font-bold text-white">What You Receive on Every Project</h3>
-              <p className="text-xs sm:text-sm text-slate-400">Strict quality commitments backed by written contractual deliverables.</p>
+              <h3 className="text-2xl font-bold text-slate-900">What You Receive on Every Project</h3>
+              <p className="text-xs sm:text-sm text-slate-600">Strict quality commitments backed by written contractual deliverables.</p>
             </div>
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-6">
             {deliverables.map((item, idx) => (
-              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-300">
-                <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0 mt-0.5" />
+              <div key={idx} className="flex items-start gap-3 text-xs sm:text-sm text-slate-700">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
                 <span>{item}</span>
               </div>
             ))}
@@ -269,7 +267,7 @@ export default function WebDevelopmentPage() {
       </section>
 
       {/* 6. INTERACTIVE PROJECT INQUIRY FORM */}
-      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8">
+      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-slate-50 border-y border-slate-200/80">
         <div className="max-w-7xl mx-auto">
           <SectionHeading
             eyebrow="Get In Touch"
@@ -305,4 +303,3 @@ export default function WebDevelopmentPage() {
     </div>
   );
 }
-
