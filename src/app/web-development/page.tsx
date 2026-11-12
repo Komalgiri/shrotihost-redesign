@@ -116,7 +116,7 @@ export default function WebDevelopmentPage() {
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Services", href: "/services" },
@@ -161,7 +161,7 @@ export default function WebDevelopmentPage() {
 
       {/* 2. ENGINEERING CAPABILITIES MATRIX */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="What We Build"
             title="Engineered for Performance, Security and Growth"
@@ -191,7 +191,7 @@ export default function WebDevelopmentPage() {
 
       {/* 3. SELECTIVE DARK SECTION: PRODUCTION TECH STACK */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-[1720px] mx-auto text-center">
           <SectionHeading
             isDark={true}
             eyebrow="Modern Tech Stack"
@@ -214,7 +214,7 @@ export default function WebDevelopmentPage() {
 
       {/* 4. 5-STAGE ENGINEERING PROCESS */}
       <section id="process" className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Our Methodology"
             title="Transparent 5-Stage Engineering Lifecycle"
@@ -268,7 +268,7 @@ export default function WebDevelopmentPage() {
 
       {/* 6. INTERACTIVE PROJECT INQUIRY FORM */}
       <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-[#0B0F19] border-y border-white/10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Get In Touch"
             title="Start Your Project Discovery"
@@ -281,7 +281,7 @@ export default function WebDevelopmentPage() {
 
       {/* 7. FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Common Inquiries"
             title="Web Development FAQs"

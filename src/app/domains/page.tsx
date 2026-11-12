@@ -106,7 +106,7 @@ export default function DomainsPage() {
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & SEARCH MANAGER */}
       <section className="relative pt-6 sm:pt-10 pb-12 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Domains", href: "/domains" },
@@ -136,7 +136,7 @@ export default function DomainsPage() {
 
       {/* 2. COMPREHENSIVE TLD PRICING TABLE */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="TLD Directory"
             title="Domain Registration & Renewal Pricing Matrix"
@@ -149,7 +149,7 @@ export default function DomainsPage() {
 
       {/* 3. DOMAIN INCLUSIONS & FEATURES */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] border-y border-white/10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Included with Every Domain"
             title="Everything You Need to Manage Your Web Identity"
@@ -171,7 +171,7 @@ export default function DomainsPage() {
 
       {/* 4. DOMAIN TRANSFER GUIDE */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Zero Downtime"
             title="How to Transfer Your Domain to ShrotiHost"
@@ -213,7 +213,7 @@ export default function DomainsPage() {
 
       {/* 5. DOMAIN FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Common Inquiries"
             title="Domain Registration & Transfer FAQs"

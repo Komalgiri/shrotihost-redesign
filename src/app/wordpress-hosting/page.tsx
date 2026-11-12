@@ -93,7 +93,7 @@ export default function WordPressHostingPage() {
       <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Hosting", href: "/shared-hosting" },
@@ -139,7 +139,7 @@ export default function WordPressHostingPage() {
 
       {/* 2. PRICING GRID */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="WordPress Plans"
             title="Managed WordPress Hosting Tiers"
@@ -156,7 +156,7 @@ export default function WordPressHostingPage() {
 
       {/* 3. WORDPRESS SPEED & ARCHITECTURE HIGHLIGHTS (Selective Dark Section) */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             isDark={true}
             eyebrow="Platform Features"
@@ -207,7 +207,7 @@ export default function WordPressHostingPage() {
 
       {/* 5. WORDPRESS FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Frequently Asked Questions"
             title="WordPress Hosting FAQs"

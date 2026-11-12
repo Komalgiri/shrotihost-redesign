@@ -23,7 +23,7 @@ export default function BlogIndexPage() {
     <div className="space-y-16 sm:space-y-24 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Resources", href: "/blog" },
@@ -50,7 +50,7 @@ export default function BlogIndexPage() {
 
       {/* 2. INTERACTIVE DIRECTORY & SEARCH */}
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <BlogDirectory posts={BLOG_POSTS} />
         </div>
       </section>

@@ -16,7 +16,7 @@ export const Footer: React.FC = () => {
     <footer className="bg-[#0B0F19] border-t border-white/10 text-[#9CA3AF] text-sm">
       {/* Top Value Strip */}
       <div className="border-b border-white/10 bg-[#111827]/40">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-8">
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-xs sm:text-sm">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#4F46E5]/10 border border-[#4F46E5]/30 flex items-center justify-center text-[#06B6D4] shrink-0">
@@ -62,7 +62,7 @@ export const Footer: React.FC = () => {
       </div>
 
       {/* Main Footer Directory Columns */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-14 lg:py-16">
+      <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12 py-14 lg:py-16">
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 lg:gap-6">
           {/* Brand Info (2 columns on large) */}
           <div className="col-span-2 space-y-4">

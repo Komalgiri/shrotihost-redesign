@@ -164,7 +164,7 @@ export default function CareersPage() {
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Company", href: "/about" },
@@ -200,7 +200,7 @@ export default function CareersPage() {
 
       {/* 2. CULTURE & VALUES PILLARS */}
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
             {cultureValues.map((val, idx) => (
               <div
@@ -224,7 +224,7 @@ export default function CareersPage() {
 
       {/* 3. OPEN POSITIONS DIRECTORY */}
       <section id="open-roles" className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-[1720px] mx-auto space-y-12">
           <SectionHeading
             eyebrow="Opportunities"
             title="Current Open Positions"
@@ -321,7 +321,7 @@ export default function CareersPage() {
 
       {/* 4. SELECTIVE DARK SECTION: PERKS & BENEFITS */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-[1720px] mx-auto space-y-12">
           <SectionHeading
             isDark={true}
             eyebrow="Benefits & Perks"

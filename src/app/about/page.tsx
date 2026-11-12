@@ -94,7 +94,7 @@ export default function AboutPage() {
     <div className="space-y-20 sm:space-y-28 pb-16">
       {/* 1. HERO SECTION & BREADCRUMBS */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Company", href: "/about" },
@@ -130,7 +130,7 @@ export default function AboutPage() {
 
       {/* 2. CORE STATS STRIP */}
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <div className="bg-[#111827] rounded-2xl p-6 sm:p-8 border border-white/10 shadow-card grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#4F46E5] shrink-0">
@@ -177,7 +177,7 @@ export default function AboutPage() {
 
       {/* 3. FOUNDER & MISSION SECTION */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <div className="bg-[#111827] rounded-2xl p-6 sm:p-12 border border-white/10 shadow-card grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-6">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30">
@@ -244,7 +244,7 @@ export default function AboutPage() {
 
       {/* 4. SELECTIVE DARK SECTION: CORE OPERATING PRINCIPLES */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-[1720px] mx-auto space-y-12">
           <SectionHeading
             isDark={true}
             eyebrow="Our Guiding Values"

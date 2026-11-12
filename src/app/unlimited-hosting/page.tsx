@@ -77,7 +77,7 @@ export default function UnlimitedHostingPage() {
       <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Hosting", href: "/shared-hosting" },
@@ -123,7 +123,7 @@ export default function UnlimitedHostingPage() {
 
       {/* 2. PRICING GRID */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Unlimited Plans"
             title="Unmetered Storage Packages"
@@ -169,7 +169,7 @@ export default function UnlimitedHostingPage() {
 
       {/* 4. UNLIMITED FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Got Questions?"
             title="Unlimited Hosting FAQs"

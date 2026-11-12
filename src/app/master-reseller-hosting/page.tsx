@@ -155,7 +155,7 @@ export default function MasterResellerHostingPage() {
       <section className="relative pt-6 sm:pt-10 pb-8 bg-white border-b border-slate-200/80 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-50 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Hosting", href: "/shared-hosting" },
@@ -288,7 +288,7 @@ export default function MasterResellerHostingPage() {
       </section>
 
       {/* 2. PRICING SECTION */}
-      <section id="plans" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
+      <section id="plans" className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8 scroll-mt-24">
         <SectionHeading
           eyebrow="Transparent Pricing"
           title="Master Reseller Hosting Plans"
@@ -309,7 +309,7 @@ export default function MasterResellerHostingPage() {
       </section>
 
       {/* 3. ARCHITECTURE & WHY MASTER RESELLER */}
-      <section id="architecture" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="architecture" className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
         <div className="bg-slate-900 rounded-3xl p-8 sm:p-12 text-white border border-slate-800 shadow-xl overflow-hidden relative">
           <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
 
@@ -354,7 +354,7 @@ export default function MasterResellerHostingPage() {
       </section>
 
       {/* 4. COMPARISON TABLE */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Product Breakdown"
           title="Standard Reseller vs. Master Reseller"
@@ -387,7 +387,7 @@ export default function MasterResellerHostingPage() {
       </section>
 
       {/* 5. CORE FEATURES GRID */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
         <SectionHeading
           eyebrow="Enterprise Capabilities"
           title="Engineered for turn-key hosting businesses"

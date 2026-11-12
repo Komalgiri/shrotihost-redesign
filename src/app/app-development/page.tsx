@@ -133,7 +133,7 @@ export default function AppDevelopmentPage() {
     <div className="space-y-20 sm:space-y-28 pb-16 bg-[#0B0F19] text-[#F9FAFB]">
       {/* 1. HERO SECTION */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Services", href: "/services" },
@@ -180,7 +180,7 @@ export default function AppDevelopmentPage() {
 
       {/* 2. CAPABILITIES MATRIX */}
       <section id="capabilities" className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="What We Deliver"
             title="Engineered for Native Fluidity & Scale"
@@ -210,7 +210,7 @@ export default function AppDevelopmentPage() {
 
       {/* 3. MOBILE TECH STACK */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
-        <div className="max-w-7xl mx-auto text-center">
+        <div className="max-w-[1720px] mx-auto text-center">
           <SectionHeading
             isDark={true}
             eyebrow="Mobile Tech Stack"
@@ -233,7 +233,7 @@ export default function AppDevelopmentPage() {
 
       {/* 4. 5-STAGE DEVELOPMENT PROCESS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Our Process"
             title="From Idea to App Store Launch"
@@ -287,7 +287,7 @@ export default function AppDevelopmentPage() {
 
       {/* 6. INQUIRY FORM */}
       <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-[#0B0F19] border-y border-white/10">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Get Started"
             title="Start Your Mobile App Discovery"
@@ -300,7 +300,7 @@ export default function AppDevelopmentPage() {
 
       {/* 7. FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Questions & Answers"
             title="Mobile Development FAQs"

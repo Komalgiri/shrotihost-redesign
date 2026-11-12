@@ -3,8 +3,8 @@ import { MessageSquare, ArrowUpRight } from "lucide-react";
 
 export const AnnouncementBar: React.FC = () => {
   return (
-    <div className="bg-[#0B0F19] border-b border-white/5 text-[#9CA3AF] text-xs py-2 px-4 sm:px-6 lg:px-8 select-none">
-      <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
+    <div className="bg-[#0B0F19] border-b border-white/5 text-[#9CA3AF] text-xs py-2 px-4 sm:px-6 lg:px-10 xl:px-12 select-none">
+      <div className="w-full max-w-[1720px] mx-auto flex items-center justify-between gap-4">
         {/* Left: Value Proposition Strip */}
         <div className="flex items-center gap-2.5 overflow-hidden truncate text-[11px] sm:text-xs">
           <span className="w-2 h-2 rounded-full bg-[#10B981] shrink-0" />

@@ -155,7 +155,7 @@ export default function WhmcsModulesPage() {
     <div className="space-y-20 sm:space-y-28 pb-16 bg-[#0B0F19] text-[#F9FAFB]">
       {/* 1. HERO SECTION & BREADCRUMBS */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Services", href: "/services" },
@@ -202,7 +202,7 @@ export default function WhmcsModulesPage() {
 
       {/* 2. SPECIFICATION & COMPATIBILITY PILLARS */}
       <section className="relative px-4 sm:px-6 lg:px-8 -mt-6">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <div className="bg-[#111827] rounded-2xl p-6 sm:p-8 border border-white/10 shadow-card grid grid-cols-2 md:grid-cols-4 gap-6">
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#4F46E5] shrink-0">
@@ -249,7 +249,7 @@ export default function WhmcsModulesPage() {
 
       {/* 3. FLAGSHIP WHMCS MODULES */}
       <section id="modules" className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-[1720px] mx-auto space-y-12">
           <SectionHeading
             eyebrow="Commercial Modules"
             title="Production-Tested WHMCS Automation Addons"
@@ -334,7 +334,7 @@ export default function WhmcsModulesPage() {
 
       {/* 4. CUSTOM WHMCS DEVELOPMENT */}
       <section id="custom-modules" className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-[#F9FAFB] border-y border-white/10">
-        <div className="max-w-7xl mx-auto space-y-12">
+        <div className="max-w-[1720px] mx-auto space-y-12">
           <SectionHeading
             isDark={true}
             eyebrow="Bespoke Engineering"
@@ -383,7 +383,7 @@ export default function WhmcsModulesPage() {
 
       {/* 6. WHMCS FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Compatibility & Licensing"
             title="WHMCS Modules FAQ"

@@ -94,7 +94,7 @@ export default function ResellerHostingPage() {
       <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
           <Breadcrumbs
             items={[
               { label: "Hosting", href: "/shared-hosting" },
@@ -140,7 +140,7 @@ export default function ResellerHostingPage() {
 
       {/* 2. PRICING GRID */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Reseller Plans"
             title="White-Label Reseller Packages"
@@ -157,7 +157,7 @@ export default function ResellerHostingPage() {
 
       {/* 3. INTERACTIVE RESELLER PROFIT CALCULATOR */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Revenue Modeling"
             title="Calculate Your Agency Hosting Profits"
@@ -170,7 +170,7 @@ export default function ResellerHostingPage() {
 
       {/* 4. PLATFORM ARCHITECTURE HIGHLIGHTS (Selective Dark Section) */}
       <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             isDark={true}
             eyebrow="Enterprise Reseller Architecture"
@@ -194,7 +194,7 @@ export default function ResellerHostingPage() {
 
       {/* 5. RESELLER FAQS */}
       <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-7xl mx-auto">
+        <div className="max-w-[1720px] mx-auto">
           <SectionHeading
             eyebrow="Got Questions?"
             title="Reseller Hosting FAQs"

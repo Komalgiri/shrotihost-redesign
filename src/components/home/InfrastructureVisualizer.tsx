@@ -48,7 +48,7 @@ export const InfrastructureVisualizer: React.FC = () => {
   const current = profileSpecs[activeProfile];
 
   return (
-    <div className="relative w-full max-w-lg lg:max-w-none mx-auto select-none">
+    <div className="relative w-full max-w-lg lg:max-w-[580px] lg:ml-auto select-none">
       {/* 1. TOP-RIGHT FLOATING LATENCY PILL */}
       <div className="flex justify-end mb-3 pr-2">
         <div className="inline-flex items-center gap-3 bg-[#111827]/90 border border-white/10 rounded-2xl px-4 py-2.5 shadow-xl backdrop-blur-md">

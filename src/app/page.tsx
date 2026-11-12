@@ -44,7 +44,7 @@ export default function HomePage() {
         {/* Subtle background technical grid */}
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* LEFT COLUMN: Editorial Presentation & Copy */}
             <div className="lg:col-span-6 xl:col-span-7 space-y-6 text-left">
@@ -130,14 +130,14 @@ export default function HomePage() {
 
       {/* 2. INTEGRATED DOMAIN DISCOVERY SUITE */}
       <section className="relative py-12 sm:py-16 bg-[#0B0F19] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <DomainSearchBar />
         </div>
       </section>
 
       {/* 3. HOSTING CATEGORY SHOWCASE (Architectural Feature Grid) */}
       <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <SectionHeading
             eyebrow="Comprehensive Cloud Portfolio"
             title="Engineered for Raw Speed, Priced for Long-Term Growth"
@@ -150,7 +150,7 @@ export default function HomePage() {
 
       {/* 4. FEATURED HOSTING PLANS & INTERACTIVE MATRIX */}
       <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <SectionHeading
             eyebrow="Transparent Tiered Plans"
             title="Compare Plans & Select Your Cloud Environment"
@@ -166,7 +166,7 @@ export default function HomePage() {
         {/* Subtle dark technical grid */}
         <div className="absolute inset-0 bg-tech-grid-dark opacity-35 pointer-events-none" />
 
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="relative w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <SectionHeading
             isDark={true}
             eyebrow="Under The Hood"
@@ -218,7 +218,7 @@ export default function HomePage() {
 
       {/* 6. SOFTWARE & DIGITAL ENGINEERING SERVICES (Editorial Showcase) */}
       <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
               <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-cyan-950 text-cyan-400 border border-cyan-800 mb-3">
@@ -317,7 +317,7 @@ export default function HomePage() {
 
       {/* 7. RADICAL TRANSPARENCY & WHY SHROTIHOST */}
       <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <SectionHeading
             eyebrow="Radical Transparency"
             title="Independent Reviews & Verified Business Credentials"
@@ -404,7 +404,7 @@ export default function HomePage() {
 
       {/* 8. FREQUENTLY ASKED QUESTIONS - MATCHING REFERENCE SCREENSHOT */}
       <section className="relative py-20 lg:py-28 bg-[#0B0F19] border-b border-white/5">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Editorial Header & Support Anchor */}
             <div className="lg:col-span-5 text-left space-y-4 lg:sticky lg:top-28">
@@ -458,13 +458,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 9. BOTTOM CONVERSION CTA BANNER */}
+      {/* 9. BOTTOM CONVERSION CTA BANNER - MATCHING EXACT REFERENCE SCREENSHOT */}
       <CTASection
-        eyebrow="7-Day Risk-Free Guarantee"
-        title="Ready to Launch on India's Fastest NVMe Cloud?"
-        subtitle="Sign up for our NVMe Shared Hosting starting at ₹49/month with our flat renewal guarantee. We migrate your site for free."
-        primaryCtaText="Get Started Now"
+        eyebrow="YOUR NEXT CHAPTER STARTS HERE"
+        title="Let's build something"
+        highlightText="worth remembering."
+        subtitle="Hosting a new idea or engineering what comes next? We're ready when you are."
+        primaryCtaText="Explore hosting"
         primaryCtaHref="/shared-hosting"
+        secondaryCtaText="Start a WhatsApp chat"
+        secondaryCtaHref="https://wa.me/919582129099"
+        phoneNote="+91 95821 29099 · Real people, real answers"
       />
     </div>
   );
