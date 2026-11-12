@@ -5,7 +5,15 @@ import { Navbar } from "@/components/layout/Navbar";
 import { Footer } from "@/components/layout/Footer";
 
 export const metadata: Metadata = {
-  title: "ShrotiHost | High-Performance NVMe Cloud Hosting & Custom Software",
+  title: {
+    default: "ShrotiHost | High-Performance NVMe Cloud Hosting & Custom Software",
+    template: "%s | ShrotiHost",
+  },
+  icons: {
+    icon: "/icon.svg",
+    shortcut: "/icon.svg",
+    apple: "/icon.svg",
+  },
   description:
     "Fast, reliable NVMe cloud hosting powered by LiteSpeed, cPanel, and Imunify360. Flat-rate renewals with zero price hikes. Custom web and app engineering by Shroti Enterprises.",
   keywords: [

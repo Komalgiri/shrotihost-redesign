@@ -86,11 +86,16 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
           {/* Header */}
           <div className="flex items-center justify-between pb-5 border-b border-white/10">
             <Link href="/" onClick={onClose} className="flex items-center gap-2.5">
-              <div className="w-8 h-8 rounded-lg bg-[#111827] border border-white/10 flex items-center justify-center text-[#06B6D4] shadow-sm p-1.5">
-                <Server className="w-full h-full" />
+              <div className="w-8 h-8 rounded-xl bg-[#111827] border border-white/15 flex items-center justify-center p-1.5 shadow-sm">
+                <div className="flex items-end gap-0.5 h-4">
+                  <span className="w-1 h-1.5 rounded-full bg-[#818CF8]" />
+                  <span className="w-1 h-2.5 rounded-full bg-[#6366F1]" />
+                  <span className="w-1 h-4 rounded-full bg-[#4F46E5]" />
+                  <span className="w-1 h-2.5 rounded-full bg-[#06B6D4]" />
+                </div>
               </div>
               <span className="font-extrabold text-lg text-[#F9FAFB] tracking-tight">
-                Shroti<span className="text-[#4F46E5]">Host</span>
+                shrotihost<span className="text-[#06B6D4]">.in</span>
               </span>
             </Link>
             <button
