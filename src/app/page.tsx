@@ -402,16 +402,59 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* 8. FREQUENTLY ASKED QUESTIONS */}
-      <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
+      {/* 8. FREQUENTLY ASKED QUESTIONS - MATCHING REFERENCE SCREENSHOT */}
+      <section className="relative py-20 lg:py-28 bg-[#0B0F19] border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <SectionHeading
-            eyebrow="Got Questions?"
-            title="Frequently Asked Questions"
-            subtitle="Everything you need to know about our cloud hosting, renewal policies, and migrations."
-          />
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+            {/* Left Column: Editorial Header & Support Anchor */}
+            <div className="lg:col-span-5 text-left space-y-4 lg:sticky lg:top-28">
+              {/* Eyebrow Line */}
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#06B6D4]">
+                <span className="w-5 h-0.5 bg-[#06B6D4]" />
+                <span>GOOD QUESTIONS, CLEAR ANSWERS</span>
+              </div>
 
-          <FAQAccordion items={HOMEPAGE_FAQS} />
+              {/* Exact Headline from screenshot */}
+              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+                Nothing hidden.{" "}
+                <br />
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] via-[#6366F1] to-[#A5B4FC]">
+                  Just the details.
+                </span>
+              </h2>
+
+              {/* Subtitle */}
+              <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed max-w-sm pt-2">
+                Still wondering about something? Talk to a real person who knows the answer.
+              </p>
+
+              {/* Action CTA Link */}
+              <div className="pt-2">
+                <a
+                  href="https://wa.me/919582129099"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 text-sm font-semibold text-[#F9FAFB] hover:text-[#06B6D4] transition-colors group"
+                >
+                  <span>Chat with our team</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </a>
+              </div>
+
+              {/* Bottom Reassurance */}
+              <div className="pt-10 mt-10 border-t border-white/5 flex items-center gap-2.5 text-xs text-[#9CA3AF]">
+                <div className="w-5 h-5 rounded-full border border-white/20 flex items-center justify-center text-[#818CF8] text-[11px] font-bold">
+                  ?
+                </div>
+                <span>We believe clarity is part of good service.</span>
+              </div>
+            </div>
+
+            {/* Right Column: Numbered Accordion List */}
+            <div className="lg:col-span-7">
+              <FAQAccordion items={HOMEPAGE_FAQS} />
+            </div>
+          </div>
         </div>
       </section>
 

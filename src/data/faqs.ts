@@ -6,28 +6,24 @@ export interface FAQItem {
 
 export const HOMEPAGE_FAQS: FAQItem[] = [
   {
-    question: "What does your 'Same Price on Renewal' guarantee mean?",
-    answer: "Most traditional web hosts attract customers with steep introductory discounts (e.g. 70% off) and then charge 300% to 500% more when the subscription renews. At ShrotiHost, the price you sign up for is the exact price you pay on renewal—month after month, year after year. There are zero surprise rate hikes."
+    question: "How does the flat renewal price guarantee work?",
+    answer: "The price you choose at signup is the price you pay at renewal for the same plan. No introductory-rate surprises and no price hikes. Any optional add-ons are always shown separately."
   },
   {
-    question: "Do you offer free website migration from my current host?",
-    answer: "Yes! All Shared, WordPress, and Unlimited hosting plans include 100% free website migration. Once you place an order, simply submit your cPanel login or full website backup archive to our technical team via ticket or WhatsApp. Our engineers will migrate your files, databases, and emails with zero downtime."
+    question: "Do you offer free website migration from other web hosts?",
+    answer: "Yes, we handle complete website, database, and email migrations from your previous host with zero downtime at no extra cost. Our technical engineers perform end-to-end testing before switching DNS."
   },
   {
-    question: "What is your 7-Day Money-Back Guarantee policy?",
-    answer: "We offer a risk-free 7-day money-back guarantee on eligible first-time purchases of Shared Hosting, WordPress Hosting, Unlimited Hosting, and Reseller Hosting. If you are not satisfied within 7 days of signing up, request a refund via support ticket. Note that domain registrations, renewals, and VPS servers are non-refundable as they incur non-recoverable direct infrastructure costs."
+    question: "Where are your hosting servers physically located?",
+    answer: "Our servers are physically deployed in enterprise Tier-IV datacenter facilities in Noida (Delhi-NCR), delivering sub-15ms domestic ping times and ultra-low latency routing across India."
   },
   {
-    question: "How fast is NVMe storage compared to standard SSDs?",
-    answer: "Our PCIe NVMe solid-state drives deliver read/write throughput exceeding 3,500 MB/s—up to 6 times faster than standard SATA SSDs and up to 30 times faster than mechanical HDDs. This significantly accelerates MySQL database queries, PHP execution, and overall website page rendering."
+    question: "Which payment methods are accepted?",
+    answer: "Through our secure client portal, we accept all primary Indian payment methods including instant UPI (Google Pay, PhonePe, Paytm), RuPay, Visa, Mastercard, and Net Banking across 50+ banks."
   },
   {
-    question: "Which Indian payment methods do you accept?",
-    answer: "Through our secure client portal, we accept all primary Indian and international payment methods including UPI (Google Pay, PhonePe, Paytm, BHIM), RuPay, Visa, Mastercard, Net Banking across 50+ Indian banks, and digital wallets. Invoices are generated in INR (₹) with proper GST invoicing."
-  },
-  {
-    question: "How do I reach customer support if I run into an issue?",
-    answer: "We provide multi-channel human support 24 hours a day, 7 days a week. For pre-sales, migrations, and quick inquiries, you can message us directly on WhatsApp (+91 95821 29099). For technical troubleshooting, DNS changes, and billing assistance, you can open a support ticket in the client portal (portal.shrotihost.in) with average response times under 15 minutes."
+    question: "How fast are custom software and mobile app projects delivered?",
+    answer: "Standard MVPs and custom software modules are typically delivered in 4 to 8 weeks, backed by structured 2-week agile sprint cycles, live staging demos, and written milestone deliverables."
   }
 ];
 
