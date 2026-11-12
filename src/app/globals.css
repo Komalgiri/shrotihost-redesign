@@ -103,7 +103,48 @@ html.light body {
   color: #0F172A !important;
 }
 
-/* Background containers */
+/* 1. UNIVERSAL HEADING & BODY TEXT CONTRAST OVERRIDES */
+html.light h1,
+html.light h2,
+html.light h3,
+html.light h4,
+html.light h5,
+html.light h6 {
+  color: #0F172A !important;
+}
+
+html.light p,
+html.light li,
+html.light td,
+html.light th,
+html.light dt,
+html.light dd,
+html.light label {
+  color: #334155 !important;
+}
+
+/* Standard muted / secondary text */
+html.light small,
+html.light .text-muted,
+html.light [class*="text-[#9CA3AF]"],
+html.light [class*="text-[#9ca3af]"],
+html.light [class*="text-slate-400"],
+html.light [class*="text-slate-300"],
+html.light [class*="text-gray-400"],
+html.light [class*="text-gray-300"] {
+  color: #475569 !important;
+}
+
+/* Off-white and white utility classes inverted to deep dark in light mode */
+html.light .text-white,
+html.light [class*="text-white"],
+html.light [class*="text-[#F9FAFB]"],
+html.light [class*="text-[#f9fafb]"],
+html.light [class*="text-text-primary"] {
+  color: #0F172A !important;
+}
+
+/* 2. BACKGROUND CONTAINERS & CARD ELEVATION */
 html.light [class*="bg-[#0B0F19]"],
 html.light [class*="bg-obsidian"],
 html.light [class*="bg-[#060910]"] {
@@ -118,12 +159,14 @@ html.light [class*="bg-[#111827]"],
 html.light [class*="bg-surface-card"],
 html.light .surface-card {
   background-color: #FFFFFF !important;
-  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03) !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.06), 0 2px 6px -1px rgba(15, 23, 42, 0.03) !important;
 }
 
 html.light [class*="bg-[#1F2937]"],
 html.light [class*="bg-surface-hover"] {
   background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
 }
 
 /* Semi-transparent surfaces */
@@ -135,46 +178,110 @@ html.light [class*="bg-[#0B0F19]/"] {
   background-color: #F1F5F9 !important;
 }
 
-/* Header in light mode */
+/* 3. HEADER & NAVIGATION */
 html.light header {
   background-color: rgba(255, 255, 255, 0.95) !important;
-  border-bottom-color: #E2E8F0 !important;
+  border-bottom: 1px solid #E2E8F0 !important;
+  backdrop-filter: blur(12px) !important;
 }
 
-/* Typography overrides */
-html.light [class*="text-[#F9FAFB]"],
-html.light [class*="text-text-primary"] {
+html.light nav a,
+html.light nav button,
+html.light header a:not([class*="bg-[#4F46E5]"]),
+html.light header button:not([class*="bg-[#4F46E5]"]) {
+  color: #1E293B !important;
+}
+
+html.light nav a:hover,
+html.light nav button:hover,
+html.light header a:hover:not([class*="bg-[#4F46E5]"]),
+html.light header button:hover:not([class*="bg-[#4F46E5]"]) {
+  color: #4F46E5 !important;
+}
+
+/* 4. FOOTER */
+html.light footer {
+  background-color: #F1F5F9 !important;
+  border-top: 1px solid #E2E8F0 !important;
+}
+
+html.light footer p,
+html.light footer a,
+html.light footer span {
+  color: #475569 !important;
+}
+
+html.light footer a:hover {
   color: #0F172A !important;
 }
 
-html.light [class*="text-[#9CA3AF]"],
-html.light [class*="text-text-muted"] {
-  color: #64748B !important;
-}
-
-html.light [class*="text-slate-300"],
-html.light [class*="text-slate-400"] {
-  color: #64748B !important;
-}
-
-/* Standalone text-white overrides, but preserving white text in buttons and badges */
-html.light h1.text-white,
-html.light h2.text-white,
-html.light h3.text-white,
-html.light h4.text-white,
-html.light p.text-white,
-html.light span.text-white {
+/* 5. FORM INPUTS & SEARCH BAR */
+html.light input,
+html.light textarea,
+html.light select {
+  background-color: #FFFFFF !important;
   color: #0F172A !important;
+  border-color: #CBD5E1 !important;
 }
 
-/* Keep button and badge text white */
-html.light [class*="bg-[#4F46E5]"],
-html.light [class*="bg-[#4F46E5]"] *,
-html.light [class*="bg-indigo-600"],
-html.light [class*="bg-indigo-600"] *,
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* 6. GRADIENT TEXT & CARD BACKDROP GRADIENTS */
+html.light .bg-clip-text {
+  background-image: linear-gradient(135deg, #4338CA 0%, #4F46E5 50%, #0891B2 100%) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+}
+
+html.light [class*="text-[#818CF8]"] {
+  color: #4F46E5 !important;
+}
+
+/* Hardware showcase backdrop gradients - soft frost instead of dark slate */
+html.light [class*="from-[#111827]"] {
+  --tw-gradient-from: rgba(255, 255, 255, 0.96) var(--tw-gradient-from-position) !important;
+  --tw-gradient-to: rgba(255, 255, 255, 0.6) var(--tw-gradient-to-position) !important;
+  --tw-gradient-stops: rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.85), rgba(255, 255, 255, 0.5) !important;
+}
+
+/* 7. BUTTONS & ACTIVE PILLS */
+/* Explicit primary CTA buttons maintain crisp white text */
+html.light a[class*="bg-[#4F46E5]"],
+html.light a[class*="bg-[#4F46E5]"] *,
+html.light button[class*="bg-[#4F46E5]"],
+html.light button[class*="bg-[#4F46E5]"] *,
+html.light a.bg-indigo-600,
+html.light a.bg-indigo-600 *,
+html.light button.bg-indigo-600,
+html.light button.bg-indigo-600 *,
+html.light a.bg-indigo-500,
+html.light button.bg-indigo-500,
+html.light [class*="bg-emerald-600"],
+html.light [class*="bg-emerald-600"] *,
 html.light [class*="bg-[#10B981]"],
 html.light [class*="bg-[#10B981]"] * {
   color: #FFFFFF !important;
+}
+
+/* Secondary dark buttons invert into clean light outline buttons */
+html.light a[class*="bg-[#111827]"],
+html.light button[class*="bg-[#111827]"],
+html.light a[class*="bg-[#1F2937]"],
+html.light button[class*="bg-[#1F2937]"] {
+  background-color: #F1F5F9 !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light a[class*="bg-[#111827]"]:hover,
+html.light button[class*="bg-[#111827]"]:hover,
+html.light a[class*="bg-[#1F2937]"]:hover,
+html.light button[class*="bg-[#1F2937]"]:hover {
+  background-color: #E2E8F0 !important;
+  color: #0F172A !important;
 }
 
 /* Active purple pill tab */
@@ -184,12 +291,21 @@ html.light [class*="bg-[#3B1F54]"] {
   color: #6B21A8 !important;
 }
 
-/* Borders */
-html.light [class*="border-white/5"],
-html.light [class*="border-white/10"],
-html.light [class*="border-white/15"],
-html.light [class*="border-white/20"],
-html.light [class*="border-white/25"] {
+/* Eyebrow pills with soft tint */
+html.light [class*="bg-[#4F46E5]/"] {
+  background-color: #EEF2FF !important;
+  border-color: #C7D2FE !important;
+  color: #4338CA !important;
+}
+
+html.light [class*="bg-[#4F46E5]/"] * {
+  color: #4338CA !important;
+}
+
+/* 8. BORDERS & GRIDS */
+html.light [class*="border-white/"],
+html.light [class*="border-slate-800"],
+html.light [class*="divide-white/"] > * {
   border-color: #E2E8F0 !important;
 }
 
