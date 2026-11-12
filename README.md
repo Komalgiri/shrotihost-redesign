@@ -159,6 +159,20 @@ shrotihost-redesign/
 
 ## 5. Route Directory & Feature Inventory
 
+### 🗺️ Scope & Route Coverage (Sections 01, 03 & Rubric Dimension 1)
+
+| Page Family | Implemented Routes | Key Features & Implementation Depth |
+| :--- | :--- | :--- |
+| **Core** | `/`, `/about`, `/contact`, `/careers` | Pixel-matched hero, interactive infrastructure telemetry visualizer, verified MSME credential (`UDYAM-UP-36-0017127`), accessible contact form with honest validation/demo states, WhatsApp direct links. |
+| **Hosting Products** | `/shared-hosting`, `/wordpress-hosting`, `/unlimited-hosting`, `/reseller-hosting`, `/master-reseller-hosting`, `/vps`, `/hosting` | Fully typed data structures (`src/data/hosting-plans.ts`), interactive billing cycle toggles (Monthly/Annual), live Reseller Profit Margin calculator, pure NVMe + LiteSpeed specifications, direct WHMCS portal cart links. |
+| **Domains** | `/domains` | Live TLD pricing matrix (.in, .com, .org, .net, .co.in, etc.), instant domain search bar with extension switcher, zero fake availability results, transparent first-year vs renewal pricing. |
+| **Software Services** | `/services`, `/web-development`, `/app-development`, `/ecommerce-development`, `/saas-development`, `/whmcs-modules` | Distinct architectural layouts, technical stack badges, step-by-step engineering workflows, project deliverables, and customized project inquiry CTAs. |
+| **Editorial (Blog)** | `/blog`, `/blog/[slug]` (9 static articles) | Clean long-form editorial typography, reading time estimates, author credits, tag/category filters, dynamic table of contents, related articles, and full SSG pre-rendering. |
+| **Legal & Compliance** | `/terms`, `/privacy`, `/refund`, `/acceptable-use` (and canonical `/legal/*` aliases) | Fully compliant with Indian IT Act 2000 and DPDP Act 2023, Hathras Uttar Pradesh jurisdiction, sticky section jump-navigation, and transparent refund caveat policies. |
+| **System States** | `/404`, Empty/No-result search states | Custom branded 404 page with recovery navigation, active filter reset mechanisms in Domain search and Knowledgebase. |
+
+### 📋 Full Route Directory & Pre-render Status
+
 | Route | Page Name | Primary Focus / Features | Pre-render Mode |
 | :--- | :--- | :--- | :---: |
 | `/` | **Homepage** | Hero domain search, tabbed hosting matrix, value pillars, Trustpilot proof, FAQs | `Static` |
