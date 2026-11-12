@@ -31,6 +31,7 @@ import { CTASection } from "@/components/ui/CTASection";
 import { DomainSearchBar } from "@/components/home/DomainSearchBar";
 import { HostingTabs } from "@/components/home/HostingTabs";
 import { InfrastructureVisualizer } from "@/components/home/InfrastructureVisualizer";
+import { HeroShowcase } from "@/components/home/HeroShowcase";
 import { HostingCategoryShowcase } from "@/components/home/HostingCategoryShowcase";
 import { HOMEPAGE_FAQS } from "@/data/faqs";
 import { INFRASTRUCTURE_PILLARS } from "@/data/hosting-features";
@@ -46,30 +47,35 @@ export default function HomePage() {
 
         <div className="relative w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            {/* LEFT COLUMN: Editorial Presentation & Copy */}
-            <div className="lg:col-span-6 xl:col-span-7 space-y-6 text-left">
-              {/* Eyebrow Tag matching screenshot */}
+            {/* LEFT COLUMN: Editorial Presentation & Copy matching reference */}
+            <div className="lg:col-span-6 xl:col-span-6 space-y-6 text-left">
+              {/* Eyebrow Tag */}
               <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#06B6D4]">
                 <Sparkles className="w-4 h-4 text-[#06B6D4]" />
                 <span>INDIAN CLOUD. ENGINEERED WITH PURPOSE.</span>
               </div>
 
-              {/* Exact Headline from screenshot */}
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.15]">
+              {/* Exact Headline styled with reference decorative accent */}
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
                 Infrastructure that{" "}
                 <br className="hidden sm:inline" />
                 moves you{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] via-[#6366F1] to-[#A5B4FC]">
-                  forward.
+                <span className="inline-block relative">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] via-[#6366F1] to-[#A5B4FC]">
+                    forward
+                  </span>
+                  <span className="absolute -top-1 -right-4 sm:-right-5 text-[#818CF8] font-light text-2xl sm:text-3xl select-none">
+                    ˊ
+                  </span>
                 </span>
               </h1>
 
-              {/* Subtitle Copy matching screenshot */}
-              <div className="space-y-2">
+              {/* Subtitle Copy */}
+              <div className="space-y-2 max-w-xl">
                 <p className="text-sm sm:text-base text-[#F9FAFB] font-normal leading-relaxed">
                   High-speed cloud hosting and custom software engineering, built for businesses that expect more.
                 </p>
-                <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed max-w-xl">
+                <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
                   Enterprise LiteSpeed NVMe servers. Flat-rate renewals, always. Sub-second performance backed by senior engineering support.
                 </p>
               </div>
@@ -78,7 +84,7 @@ export default function HomePage() {
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
                 <Link
                   href="/shared-hosting"
-                  className="bg-[#4F46E5] hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg shadow-indigo-600/25 inline-flex items-center justify-center gap-2 transition-all"
+                  className="bg-[#4F46E5] hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base px-7 py-3.5 rounded-xl shadow-lg shadow-indigo-600/25 inline-flex items-center justify-center gap-2 transition-all"
                 >
                   <span>Explore hosting from ₹49/mo</span>
                   <ArrowRight className="w-4 h-4" />
@@ -93,36 +99,41 @@ export default function HomePage() {
                 </Link>
               </div>
 
-              {/* Clean Trust Indicators Strip matching screenshot */}
-              <div className="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
-                <div>
-                  <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">₹49<span className="text-xs font-normal text-[#9CA3AF]">/mo</span></p>
-                  <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Flat renewal rate</p>
-                </div>
-
-                <div>
-                  <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">99.9%</p>
-                  <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Uptime target</p>
-                </div>
-
-                <div>
-                  <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">7 days</p>
-                  <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Money-back promise</p>
-                </div>
-
-                <div>
-                  <div className="flex items-center gap-1.5">
-                    <CheckCircle className="w-4 h-4 text-[#10B981]" />
-                    <span className="text-xs font-semibold text-[#10B981]">Govt. verified</span>
+              {/* Clean Trust Indicators Strip matching "Trusted by" row */}
+              <div className="pt-8 border-t border-white/10 max-w-2xl">
+                <span className="text-xs uppercase font-bold tracking-wider text-[#9CA3AF] block mb-3.5">
+                  Trusted Platform Guarantees
+                </span>
+                <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
+                  <div>
+                    <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">₹49<span className="text-xs font-normal text-[#9CA3AF]">/mo</span></p>
+                    <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Flat renewal rate</p>
                   </div>
-                  <p className="text-xs text-[#9CA3AF] mt-1 font-medium">MSME registered</p>
+
+                  <div>
+                    <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">99.9%</p>
+                    <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Uptime target</p>
+                  </div>
+
+                  <div>
+                    <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">7 days</p>
+                    <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Money-back promise</p>
+                  </div>
+
+                  <div>
+                    <div className="flex items-center gap-1.5">
+                      <CheckCircle className="w-4 h-4 text-[#10B981]" />
+                      <span className="text-xs font-semibold text-[#10B981]">Govt. verified</span>
+                    </div>
+                    <p className="text-xs text-[#9CA3AF] mt-1 font-medium">MSME registered</p>
+                  </div>
                 </div>
               </div>
             </div>
 
-            {/* RIGHT COLUMN: Interactive Infrastructure & Server Telemetry Visualizer */}
-            <div className="lg:col-span-6 xl:col-span-5">
-              <InfrastructureVisualizer />
+            {/* RIGHT COLUMN: Dual Organic Curved Arches & Floating UI Widgets */}
+            <div className="lg:col-span-6 xl:col-span-6">
+              <HeroShowcase />
             </div>
           </div>
         </div>
