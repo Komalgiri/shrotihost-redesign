@@ -147,24 +147,20 @@ export default function AboutPage() {
 
                 {/* Circular Portal Frame */}
                 <div className="relative w-64 h-64 sm:w-80 sm:h-80 xl:w-96 xl:h-96 rounded-full p-2 bg-gradient-to-b from-white/15 via-white/5 to-transparent border border-white/10 shadow-2xl overflow-hidden flex items-center justify-center">
-                  {/* Inner Dark Chamber with Telemetry Graphic */}
-                  <div className="w-full h-full rounded-full bg-[#111827] flex flex-col items-center justify-center p-6 text-center relative overflow-hidden">
-                    {/* Background grid */}
-                    <div className="absolute inset-0 bg-tech-grid opacity-30" />
-
-                    <div className="relative z-10 space-y-3">
-                      <div className="w-14 h-14 rounded-2xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#06B6D4] mx-auto shadow-inner">
-                        <Server className="w-7 h-7" />
-                      </div>
-                      <h3 className="text-base sm:text-lg font-bold text-[#F9FAFB]">
-                        Tier-IV Noida Datacenter
-                      </h3>
-                      <p className="text-xs text-[#9CA3AF] max-w-[200px] mx-auto">
-                        Ultra-low latency peering across India with LiteSpeed Enterprise clusters.
-                      </p>
-                      <div className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-[#10B981]/15 text-[#10B981] text-[10px] font-bold border border-[#10B981]/30">
-                        <span className="w-1.5 h-1.5 rounded-full bg-[#10B981] animate-pulse" />
-                        <span>All Systems 100% Operational</span>
+                  <div className="w-full h-full rounded-full overflow-hidden relative group">
+                    <img
+                      src="/images/datacenter-portal.jpg"
+                      alt="Tier-IV Noida Datacenter Architecture"
+                      className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/90 via-[#0B0F19]/25 to-transparent flex items-end justify-center pb-6">
+                      <div className="text-center px-4">
+                        <span className="text-xs sm:text-sm font-bold text-[#F9FAFB] tracking-tight block">
+                          Tier-IV Noida Datacenter
+                        </span>
+                        <span className="text-[10px] text-[#06B6D4] font-medium">
+                          Ultra-low latency Indian Cloud
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -201,47 +197,30 @@ export default function AboutPage() {
             {/* Subtle ambient light */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-[#4F46E5]/10 rounded-full blur-3xl pointer-events-none" />
 
-            {/* Left Column: Visual Hardware & Telemetry Box */}
-            <div className="lg:col-span-5 bg-[#0B0F19] rounded-2xl border border-white/10 p-6 sm:p-8 space-y-6 relative overflow-hidden">
-              <div className="flex items-center justify-between border-b border-white/10 pb-4">
-                <div className="flex items-center gap-2.5">
-                  <Activity className="w-5 h-5 text-[#06B6D4]" />
-                  <span className="text-xs font-bold uppercase tracking-wider text-[#F9FAFB]">
-                    Production Hardware Matrix
+            {/* Left Column: Visual Hardware Frame matching reference image */}
+            <div className="lg:col-span-5 rounded-2xl border border-white/10 overflow-hidden relative group min-h-[340px] flex flex-col justify-end shadow-2xl">
+              <img
+                src="/images/nvme-mission.jpg"
+                alt="Pure PCIe Gen4 NVMe Cloud Storage"
+                className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19] via-[#0B0F19]/60 to-transparent" />
+
+              <div className="relative z-10 p-6 space-y-3">
+                <div className="flex items-center gap-2">
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#06B6D4]/20 text-[#06B6D4] border border-[#06B6D4]/30 backdrop-blur-md">
+                    PCIe Gen4 NVMe Fabric
+                  </span>
+                  <span className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30 backdrop-blur-md">
+                    MSME Verified
                   </span>
                 </div>
-                <span className="text-[10px] font-bold uppercase px-2 py-0.5 rounded bg-emerald-500/20 text-[#10B981] border border-emerald-500/30">
-                  Verified
-                </span>
-              </div>
-
-              <div className="space-y-3.5 text-xs">
-                <div className="flex items-center justify-between p-3 rounded-xl bg-[#111827] border border-white/5">
-                  <span className="text-[#9CA3AF]">Storage Fabric</span>
-                  <span className="font-bold text-[#F9FAFB]">PCIe Gen4 NVMe (Direct)</span>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-xl bg-[#111827] border border-white/5">
-                  <span className="text-[#9CA3AF]">Web Server Daemon</span>
-                  <span className="font-bold text-[#06B6D4]">LiteSpeed Enterprise + LSCache</span>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-xl bg-[#111827] border border-white/5">
-                  <span className="text-[#9CA3AF]">Kernel Isolation</span>
-                  <span className="font-bold text-[#818CF8]">CloudLinux OS + CageFS</span>
-                </div>
-                <div className="flex items-center justify-between p-3 rounded-xl bg-[#111827] border border-white/5">
-                  <span className="text-[#9CA3AF]">Renewal Policy</span>
-                  <span className="font-bold text-[#10B981]">Same Price Forever (0% Hike)</span>
-                </div>
-              </div>
-
-              <div className="p-4 rounded-xl bg-[#111827]/70 border border-white/5 flex items-center gap-3">
-                <div className="w-9 h-9 rounded-lg bg-[#4F46E5]/20 border border-[#4F46E5]/30 flex items-center justify-center text-[#818CF8] shrink-0 font-bold text-xs">
-                  MSME
-                </div>
-                <div className="text-[11px] leading-tight">
-                  <p className="font-bold text-[#F9FAFB]">Government of India Registered</p>
-                  <p className="text-[#9CA3AF] mt-0.5">Udyam Registration: UDYAM-UP-36-0017127</p>
-                </div>
+                <h4 className="text-base font-bold text-[#F9FAFB] tracking-tight">
+                  High-Throughput Enterprise Architecture
+                </h4>
+                <p className="text-xs text-[#9CA3AF]">
+                  Direct PCIe Gen4 data lines with automated daily JetBackup snapshots and LiteSpeed HTTP/3.
+                </p>
               </div>
             </div>
 
