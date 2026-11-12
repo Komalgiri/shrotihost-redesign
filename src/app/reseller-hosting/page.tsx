@@ -22,6 +22,7 @@ import { Button } from "@/components/ui/Button";
 import { ResellerProfitCalculator } from "@/components/hosting/ResellerProfitCalculator";
 import { RelatedHostingProducts } from "@/components/hosting/RelatedHostingProducts";
 import { RESELLER_HOSTING_PLANS } from "@/data/hosting-plans";
+import { PageSection } from "@/components/ui/PageSection";
 
 export const metadata: Metadata = {
   title: "Linux Reseller Hosting from ₹299/mo | Free WHMCS License | ShrotiHost",
@@ -89,7 +90,7 @@ export default function ResellerHostingPage() {
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-16">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. HERO SECTION */}
       <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
@@ -138,72 +139,60 @@ export default function ResellerHostingPage() {
         </div>
       </section>
 
-      {/* 2. PRICING GRID */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Reseller Plans"
-            title="White-Label Reseller Packages"
-            subtitle="Choose your cPanel account allocation. Upgrade or scale your limits at any time with zero downtime."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="Reseller Plans"
+          title="White-Label Reseller Packages"
+          subtitle="Choose your cPanel account allocation. Upgrade or scale your limits at any time with zero downtime."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
-            {RESELLER_HOSTING_PLANS.map((plan) => (
-              <PricingCard key={plan.id} plan={plan} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+          {RESELLER_HOSTING_PLANS.map((plan) => (
+            <PricingCard key={plan.id} plan={plan} />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 3. INTERACTIVE RESELLER PROFIT CALCULATOR */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Revenue Modeling"
-            title="Calculate Your Agency Hosting Profits"
-            subtitle="Model your recurring hosting revenue based on client account counts and retail pricing."
-          />
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Revenue Modeling"
+          title="Calculate Your Agency Hosting Profits"
+          subtitle="Model your recurring hosting revenue based on client account counts and retail pricing."
+        />
 
-          <ResellerProfitCalculator />
+        <ResellerProfitCalculator />
+      </PageSection>
+
+      <PageSection tone="alt" border="y" withGrid className="py-20 text-white">
+        <SectionHeading
+          isDark={true}
+          eyebrow="Enterprise Reseller Architecture"
+          title="Everything You Need to Run an Agency Hosting Fleet"
+          subtitle="Manage multi-tenant workloads with carrier-grade isolation, automated billing, and NVMe throughput."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {resellerFeatures.map((feat, idx) => (
+            <FeatureCard
+              key={idx}
+              isDark={true}
+              iconName={feat.iconName}
+              title={feat.title}
+              description={feat.description}
+            />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 4. PLATFORM ARCHITECTURE HIGHLIGHTS (Selective Dark Section) */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            isDark={true}
-            eyebrow="Enterprise Reseller Architecture"
-            title="Everything You Need to Run an Agency Hosting Fleet"
-            subtitle="Manage multi-tenant workloads with carrier-grade isolation, automated billing, and NVMe throughput."
-          />
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Got Questions?"
+          title="Reseller Hosting FAQs"
+          subtitle="Common questions about white-label nameservers, WHMCS licensing, and technical support."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {resellerFeatures.map((feat, idx) => (
-              <FeatureCard
-                key={idx}
-                isDark={true}
-                iconName={feat.iconName}
-                title={feat.title}
-                description={feat.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 5. RESELLER FAQS */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Got Questions?"
-            title="Reseller Hosting FAQs"
-            subtitle="Common questions about white-label nameservers, WHMCS licensing, and technical support."
-          />
-
-          <FAQAccordion items={resellerFaqs} />
-        </div>
-      </section>
+        <FAQAccordion items={resellerFaqs} />
+      </PageSection>
 
       {/* 6. RELATED HOSTING PRODUCTS */}
       <RelatedHostingProducts currentSlug="reseller-hosting" />

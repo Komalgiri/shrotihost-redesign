@@ -19,6 +19,7 @@ import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
 import { RelatedHostingProducts } from "@/components/hosting/RelatedHostingProducts";
 import { UNLIMITED_HOSTING_PLANS } from "@/data/hosting-plans";
+import { PageSection } from "@/components/ui/PageSection";
 
 export const metadata: Metadata = {
   title: "Unlimited NVMe Hosting from ₹69/mo | Unmetered Storage | ShrotiHost",
@@ -72,7 +73,7 @@ export default function UnlimitedHostingPage() {
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-16">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. HERO SECTION */}
       <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
@@ -121,25 +122,21 @@ export default function UnlimitedHostingPage() {
         </div>
       </section>
 
-      {/* 2. PRICING GRID */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Unlimited Plans"
-            title="Unmetered Storage Packages"
-            subtitle="Choose between Bronze, Gold, Platinum, and Diamond tiers based on how many websites you wish to host."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="Unlimited Plans"
+          title="Unmetered Storage Packages"
+          subtitle="Choose between Bronze, Gold, Platinum, and Diamond tiers based on how many websites you wish to host."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
-            {UNLIMITED_HOSTING_PLANS.map((plan) => (
-              <PricingCard key={plan.id} plan={plan} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+          {UNLIMITED_HOSTING_PLANS.map((plan) => (
+            <PricingCard key={plan.id} plan={plan} />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 3. TRANSPARENT FAIR USE POLICY (FUP) CALLOUT BOX */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
+      <PageSection tone="base" border="y">
         <div className="max-w-5xl mx-auto bg-slate-50 rounded-2xl p-8 sm:p-10 border border-slate-200/90 shadow-sm">
           <div className="flex items-center gap-3 mb-6">
             <div className="w-10 h-10 rounded-xl bg-cyan-50 border border-cyan-200/80 flex items-center justify-center text-cyan-600 shrink-0">
@@ -165,20 +162,17 @@ export default function UnlimitedHostingPage() {
             ))}
           </div>
         </div>
-      </section>
+      </PageSection>
 
-      {/* 4. UNLIMITED FAQS */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Got Questions?"
-            title="Unlimited Hosting FAQs"
-            subtitle="Clear answers about storage allowances, inodes, and usage parameters."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="Got Questions?"
+          title="Unlimited Hosting FAQs"
+          subtitle="Clear answers about storage allowances, inodes, and usage parameters."
+        />
 
-          <FAQAccordion items={unlimitedFaqs} />
-        </div>
-      </section>
+        <FAQAccordion items={unlimitedFaqs} />
+      </PageSection>
 
       {/* 5. RELATED HOSTING PRODUCTS */}
       <RelatedHostingProducts currentSlug="unlimited-hosting" />

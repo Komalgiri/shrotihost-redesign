@@ -6,6 +6,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   const coreRoutes = [
     "",
+    "/hosting",
     "/shared-hosting",
     "/wordpress-hosting",
     "/unlimited-hosting",
@@ -27,6 +28,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/privacy",
     "/refund",
     "/acceptable-use-policy",
+    "/offers",
+    "/portfolio",
+    "/custom-software",
   ].map((route) => ({
     url: `${baseUrl}${route}`,
     lastModified: new Date(),

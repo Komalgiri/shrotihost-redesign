@@ -23,6 +23,7 @@ import { Button } from "@/components/ui/Button";
 import { DomainSearchManager } from "@/components/domains/DomainSearchManager";
 import { TldPricingTable } from "@/components/domains/TldPricingTable";
 import { RelatedHostingProducts } from "@/components/hosting/RelatedHostingProducts";
+import { PageSection } from "@/components/ui/PageSection";
 
 export const metadata: Metadata = {
   title: "Domain Name Search & Registration from ₹259 | .in, .com, .org | ShrotiHost",
@@ -103,7 +104,7 @@ export default function DomainsPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. HERO SECTION & SEARCH MANAGER */}
       <section className="relative pt-6 sm:pt-10 pb-12 overflow-hidden bg-tech-grid">
         <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -134,44 +135,36 @@ export default function DomainsPage() {
         </div>
       </section>
 
-      {/* 2. COMPREHENSIVE TLD PRICING TABLE */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="TLD Directory"
-            title="Domain Registration & Renewal Pricing Matrix"
-            subtitle="Transparent first-year, annual renewal, and transfer fees across popular top-level domains."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="TLD Directory"
+          title="Domain Registration & Renewal Pricing Matrix"
+          subtitle="Transparent first-year, annual renewal, and transfer fees across popular top-level domains."
+        />
 
-          <TldPricingTable />
+        <TldPricingTable />
+      </PageSection>
+
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Included with Every Domain"
+          title="Everything You Need to Manage Your Web Identity"
+          subtitle="Zero add-on charges for standard domain controls, security, and DNS mapping."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+          {domainPerks.map((perk, idx) => (
+            <FeatureCard
+              key={idx}
+              iconName={perk.iconName}
+              title={perk.title}
+              description={perk.description}
+            />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 3. DOMAIN INCLUSIONS & FEATURES */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] border-y border-white/10">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Included with Every Domain"
-            title="Everything You Need to Manage Your Web Identity"
-            subtitle="Zero add-on charges for standard domain controls, security, and DNS mapping."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {domainPerks.map((perk, idx) => (
-              <FeatureCard
-                key={idx}
-                iconName={perk.iconName}
-                title={perk.title}
-                description={perk.description}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 4. DOMAIN TRANSFER GUIDE */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
+      <PageSection tone="alt" border="y">
           <SectionHeading
             eyebrow="Zero Downtime"
             title="How to Transfer Your Domain to ShrotiHost"
@@ -208,21 +201,17 @@ export default function DomainsPage() {
               Initiate Domain Transfer on Portal
             </Button>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 5. DOMAIN FAQS */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Common Inquiries"
-            title="Domain Registration & Transfer FAQs"
-            subtitle="Straightforward answers on ICANN regulations, transfer locks, and DNS propagation."
-          />
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Common Inquiries"
+          title="Domain Registration & Transfer FAQs"
+          subtitle="Straightforward answers on ICANN regulations, transfer locks, and DNS propagation."
+        />
 
-          <FAQAccordion items={domainFaqs} />
-        </div>
-      </section>
+        <FAQAccordion items={domainFaqs} />
+      </PageSection>
 
       {/* 6. RELATED HOSTING PRODUCTS */}
       <RelatedHostingProducts currentSlug="domains" />

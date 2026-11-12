@@ -17,7 +17,7 @@ export const SHARED_HOSTING_SPECS: SpecCategory[] = [
     title: "Core Resources & Limits",
     rows: [
       { name: "Websites Hosted", launch: "1 Website", grow: "5 Websites", turbo: "10 Websites", infinity: "25 Websites" },
-      { name: "NVMe SSD Storage", launch: "10 GB NVMe", grow: "25 GB NVMe", turbo: "100 GB NVMe", infinity: "250 GB NVMe" },
+      { name: "NVMe SSD Storage", launch: "10 GB NVMe", grow: "50 GB NVMe", turbo: "100 GB NVMe", infinity: "250 GB NVMe" },
       { name: "Dedicated RAM", launch: "1.5 GB", grow: "2.0 GB", turbo: "3.0 GB", infinity: "4.0 GB" },
       { name: "CPU Allocation", launch: "1.0 Core", grow: "1.5 Cores", turbo: "2.0 Cores", infinity: "3.0 Cores" },
       { name: "Bandwidth", launch: "Unmetered", grow: "Unmetered", turbo: "Unmetered", infinity: "Unmetered" },
@@ -89,7 +89,7 @@ export const INFRASTRUCTURE_PILLARS = [
   {
     iconName: "Clock",
     title: "99.9% Uptime Target",
-    description: "Enterprise hardware housed in Tier-III datacenter facilities with redundant power, multiple transit carriers, and 24/7 proactive monitoring."
+    description: "LiteSpeed Enterprise, CloudLinux, and NVMe storage on redundant infrastructure. We publish a 99.9% uptime target—not a financial SLA."
   }
 ];
 

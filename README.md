@@ -282,6 +282,15 @@ npm install
 npm run dev
 ```
 
+**Important:** Always open **`http://localhost:3000` in Chrome or Edge** (not Cursor’s Simple Browser and not a saved `.html` file). Tailwind loads from `/_next/static/css/…`; without the Next server those URLs 404 and you’ll see unstyled HTML.
+
+If styles suddenly disappear after a failed build, reset the cache:
+
+```bash
+npm run dev:clean
+# or: npm run build:clean && npm run start
+```
+
 ### Linting & Type Checking
 ```bash
 # Run TypeScript compilation check
@@ -319,7 +328,9 @@ For in-depth architectural audits and evaluation rubrics, refer to the included 
 
 * [**`FINAL-QA-REPORT.md`**](./FINAL-QA-REPORT.md) — Comprehensive QA verification matrix, production build analysis, and route audit log.
 * [**`EVALUATION-SELF-ASSESSMENT.md`**](./EVALUATION-SELF-ASSESSMENT.md) — 100-point rubric breakdown and candidate guide for the 30-minute live review and change request.
-* [**`route-inventory.csv`**](./route-inventory.csv) — 37-row route inventory cataloging routes, page types, primary CTAs, and QA verification.
+* [**`route-inventory.csv`**](./route-inventory.csv) — Route inventory cataloging routes, page types, primary CTAs, and QA verification.
+* [**`REDIRECT-MAP.md`**](./REDIRECT-MAP.md) — Live-site URL preservation (`/legal/*`, blog slugs, WHMCS product paths).
+* [**`submission-screenshots/README.md`**](./submission-screenshots/README.md) — Required desktop/mobile capture checklist before final submit.
 * [**`CONTENT-VERIFICATION.md`**](./CONTENT-VERIFICATION.md) — Source-of-truth register cross-verifying pricing, specs, and business credentials.
 * [**`INFORMATION-ARCHITECTURE.md`**](./INFORMATION-ARCHITECTURE.md) — Global sitemap, navigation taxonomy, and user journeys.
 * [**`UX-AUDIT.md`**](./UX-AUDIT.md) — Heuristic UX evaluation, conversion blockers, and architectural solutions.

@@ -15,7 +15,7 @@ export const HOMEPAGE_FAQS: FAQItem[] = [
   },
   {
     question: "Where are your hosting servers physically located?",
-    answer: "Our servers are physically deployed in enterprise Tier-IV datacenter facilities in Noida (Delhi-NCR), delivering sub-15ms domestic ping times and ultra-low latency routing across India."
+    answer: "Hosting and billing run on ShrotiHost's own client portal infrastructure. Operations are based in Ruheri, Hathras, Uttar Pradesh; support is answered by the same team that runs the servers. We do not publish a specific facility address beyond what is listed on our contact page."
   },
   {
     question: "Which payment methods are accepted?",

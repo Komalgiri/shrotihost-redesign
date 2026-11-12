@@ -30,6 +30,7 @@ import { Breadcrumbs } from "@/components/ui/Breadcrumbs";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
+import { PageSection } from "@/components/ui/PageSection";
 
 export const metadata: Metadata = {
   title: "About ShrotiHost | High-Performance Cloud Hosting & Engineering",
@@ -72,7 +73,7 @@ export default function AboutPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16 bg-[#0B0F19] text-[#F9FAFB]">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. TOP HERO BANNER WITH ORGANIC CURVE & CIRCULAR VISUAL PORTAL */}
       <section className="relative pt-6 sm:pt-10 pb-16 lg:pb-24 overflow-hidden bg-gradient-to-b from-[#0F172A] via-[#0B132B]/80 to-[#0B0F19] border-b border-white/5 rounded-b-[36px] sm:rounded-b-[48px] lg:rounded-b-[64px]">
         {/* Subtle background tech grid */}
@@ -150,16 +151,16 @@ export default function AboutPage() {
                   <div className="w-full h-full rounded-full overflow-hidden relative group">
                     <img
                       src="/images/datacenter-portal.jpg"
-                      alt="Tier-IV Noida Datacenter Architecture"
+                      alt="ShrotiHost LiteSpeed and NVMe infrastructure"
                       className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-[#0B0F19]/90 via-[#0B0F19]/25 to-transparent flex items-end justify-center pb-6">
                       <div className="text-center px-4">
                         <span className="text-xs sm:text-sm font-bold text-[#F9FAFB] tracking-tight block">
-                          Tier-IV Noida Datacenter
+                          LiteSpeed + NVMe platform
                         </span>
                         <span className="text-[10px] text-[#06B6D4] font-medium">
-                          Ultra-low latency Indian Cloud
+                          Operated from Hathras, UP · MSME verified
                         </span>
                       </div>
                     </div>
@@ -182,10 +183,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* 2. "OUR MISSION" SECTION MATCHING REFERENCE MOCKUP */}
-      <section id="mission" className="relative px-4 sm:px-6 lg:px-10 xl:px-12 scroll-mt-24">
-        <div className="w-full max-w-[1720px] mx-auto">
-          {/* Centered Heading */}
+      <PageSection id="mission" tone="alt" className="scroll-mt-24" border="y">
           <SectionHeading
             eyebrow="Radical Transparency"
             title="Our Core Mission"
@@ -263,12 +261,9 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 3. CLOUD INFRASTRUCTURE & HARDWARE SOLUTIONS (3 Elevated Cards with Floating Circle Icons) */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
+      <PageSection tone="base" border="y">
           <SectionHeading
             eyebrow="Infrastructure Solutions"
             title="Enterprise Cloud Equipment & Architecture"
@@ -284,10 +279,13 @@ export default function AboutPage() {
               </div>
 
               <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                Tier-IV Noida Datacenter
+                Hosting you can explain
               </h3>
               <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Deployed in premier Noida facilities with <strong className="text-[#F9FAFB]">N+1 redundant power</strong>, multi-carrier network uplinks, and sub-15ms regional latency across India.
+                We run <strong className="text-[#F9FAFB]">LiteSpeed Enterprise</strong> on{" "}
+                <strong className="text-[#F9FAFB]">NVMe storage</strong> with CloudLinux isolation, daily JetBackup
+                snapshots, and a published <strong className="text-[#F9FAFB]">99.9% uptime target</strong> (not a
+                financial SLA). Operations are based in Ruheri, Hathras, Uttar Pradesh.
               </p>
               <div className="mt-6 pt-4 border-t border-white/5">
                 <Link
@@ -348,12 +346,9 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 4. DIGITAL ENGINEERING & CONSULTING SERVICES (3 Dark Elevated Cards) */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12 py-10 bg-[#0B0F19]">
-        <div className="w-full max-w-[1720px] mx-auto">
+      <PageSection tone="alt" size="compact" border="y">
           <SectionHeading
             eyebrow="Consulting Services"
             title="Custom Software & Digital Solutions"
@@ -433,12 +428,9 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 5. FOUNDER LEADERSHIP & VERIFIED CREDENTIALS */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
+      <PageSection tone="base" border="y">
           <div className="bg-[#111827] rounded-3xl p-6 sm:p-10 lg:p-12 border border-white/10 shadow-2xl grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
             <div className="lg:col-span-7 space-y-5 text-left">
               <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-[#06B6D4]/15 text-[#06B6D4] border border-[#06B6D4]/30">
@@ -497,12 +489,9 @@ export default function AboutPage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 6. CHRONOLOGICAL MILESTONES ROADMAP */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
+      <PageSection tone="alt" border="y">
           <SectionHeading
             eyebrow="Milestone Timeline"
             title="Our Evolution & Technical Roadmap"
@@ -533,8 +522,7 @@ export default function AboutPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+      </PageSection>
 
       {/* 7. BOTTOM CTA SECTION */}
       <CTASection

@@ -26,6 +26,8 @@ import { Button } from "@/components/ui/Button";
 import { RelatedHostingProducts } from "@/components/hosting/RelatedHostingProducts";
 import { SharedHostingPricingSection } from "@/components/hosting/SharedHostingPricingSection";
 import { SHARED_HOSTING_FAQS } from "@/data/faqs";
+import { PageSection } from "@/components/ui/PageSection";
+import { PillarCard } from "@/components/ui/PillarCard";
 
 export const metadata: Metadata = {
   title: "NVMe Shared Hosting from ₹49/mo | Same Renewal Price | ShrotiHost",
@@ -41,7 +43,7 @@ export const metadata: Metadata = {
 
 export default function SharedHostingPage() {
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16 bg-[#0B0F19] text-[#F9FAFB]">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. ASYMMETRIC SPLIT HERO WITH LIVE HARDWARE & CONTAINER TELEMETRY */}
       <section className="relative pt-6 sm:pt-10 pb-16 sm:pb-24 bg-[#0B0F19] border-b border-white/5 overflow-hidden">
         {/* Subtle background tech grid */}
@@ -143,10 +145,10 @@ export default function SharedHostingPage() {
                     </div>
                     <div className="flex flex-col text-left">
                       <span className="text-[10px] uppercase font-bold tracking-wider text-[#9CA3AF]">
-                        Noida Cluster Latency
+                        Demo telemetry
                       </span>
                       <span className="text-xs font-bold text-[#F9FAFB] leading-none mt-0.5">
-                        14 ms • Pure NVMe
+                        LiteSpeed · NVMe
                       </span>
                     </div>
                     <span className="bg-[#10B981]/20 text-[#10B981] border border-[#10B981]/30 text-[10px] font-bold px-2 py-0.5 rounded-md ml-1">
@@ -247,83 +249,59 @@ export default function SharedHostingPage() {
         </div>
       </section>
 
-      {/* 2. PRICING & SPEC COMPARISON SECTION */}
-      <section id="plans" className="relative px-4 sm:px-6 lg:px-10 xl:px-12 scroll-mt-24">
-        <div className="w-full max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Tiered Plans"
-            title="Select Your NVMe Shared Hosting Environment"
-            subtitle="All tiers feature PCIe Gen4 NVMe storage, LiteSpeed Enterprise web servers, cPanel control panel, and our lifetime flat-renewal price guarantee."
-          />
+      <PageSection id="plans" tone="alt" className="scroll-mt-24" border="y">
+        <SectionHeading
+          eyebrow="Tiered Plans"
+          title="Select Your NVMe Shared Hosting Environment"
+          subtitle="All tiers feature PCIe Gen4 NVMe storage, LiteSpeed Enterprise web servers, cPanel control panel, and our lifetime flat-renewal price guarantee."
+        />
 
-          <SharedHostingPricingSection />
+        <SharedHostingPricingSection />
+      </PageSection>
+
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Server Architecture"
+          title="Why LiteSpeed + NVMe Outperforms Standard Hosting"
+          subtitle="Engineered from the ground up to eliminate bottlenecks and accelerate WordPress, dynamic CMSs, and PHP scripts."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 pt-6">
+          <PillarCard
+            accent="cyan"
+            icon={<Zap className="w-6 h-6" />}
+            title="Event-Driven LiteSpeed Web Server"
+            footer={
+              <span className="text-xs text-[#06B6D4] font-semibold">Integrated LSCache Engine</span>
+            }
+          >
+            Unlike Apache, LiteSpeed processes thousands of concurrent HTTP requests with minimal memory overhead, cutting TTFB by up to 80% with native HTTP/3 QUIC support.
+          </PillarCard>
+          <PillarCard
+            accent="indigo"
+            icon={<HardDrive className="w-6 h-6" />}
+            title="PCIe Gen4 NVMe Direct Storage"
+            footer={
+              <span className="text-xs text-[#818CF8] font-semibold">12x Faster than SATA SSDs</span>
+            }
+          >
+            Throughput in excess of 6,000 MB/s ensures instantaneous MySQL database queries, rapid static asset delivery, and effortless execution of complex PHP scripts.
+          </PillarCard>
+          <PillarCard
+            accent="emerald"
+            icon={<Lock className="w-6 h-6" />}
+            title="CloudLinux CageFS Isolation"
+            footer={
+              <span className="text-xs text-[#10B981] font-semibold">Zero Noisy-Neighbor Impact</span>
+            }
+          >
+            Each cPanel account runs inside an isolated Lightweight Virtual Environment (LVE). Spikes on neighbor accounts can never degrade your dedicated CPU or RAM allocation.
+          </PillarCard>
         </div>
-      </section>
+      </PageSection>
 
-      {/* 3. ARCHITECTURE DEEP DIVE: 3 ELEVATED CARDS WITH FLOATING CIRCLE BADGES */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Server Architecture"
-            title="Why LiteSpeed + NVMe Outperforms Standard Hosting"
-            subtitle="Engineered from the ground up to eliminate bottlenecks and accelerate WordPress, dynamic CMSs, and PHP scripts."
-          />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 pt-6">
-            {/* Card 1: LiteSpeed */}
-            <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 pt-12 text-center relative hover:border-[#06B6D4]/50 hover:bg-[#1F2937]/30 transition-all shadow-xl group">
-              <div className="w-14 h-14 -top-7 left-1/2 -translate-x-1/2 absolute rounded-2xl bg-[#0B0F19] border border-white/15 flex items-center justify-center text-[#06B6D4] shadow-xl group-hover:scale-110 transition-transform">
-                <Zap className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                Event-Driven LiteSpeed Web Server
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Unlike Apache, LiteSpeed processes thousands of concurrent HTTP requests with minimal memory overhead, cutting TTFB by up to 80% with native HTTP/3 QUIC support.
-              </p>
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-1.5 text-xs text-[#06B6D4] font-semibold">
-                <span>Integrated LSCache Engine</span>
-              </div>
-            </div>
-
-            {/* Card 2: Pure NVMe */}
-            <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 pt-12 text-center relative hover:border-[#4F46E5]/50 hover:bg-[#1F2937]/30 transition-all shadow-xl group">
-              <div className="w-14 h-14 -top-7 left-1/2 -translate-x-1/2 absolute rounded-2xl bg-[#0B0F19] border border-white/15 flex items-center justify-center text-[#818CF8] shadow-xl group-hover:scale-110 transition-transform">
-                <HardDrive className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                PCIe Gen4 NVMe Direct Storage
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Throughput in excess of 6,000 MB/s ensures instantaneous MySQL database queries, rapid static asset delivery, and effortless execution of complex PHP scripts.
-              </p>
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-1.5 text-xs text-[#818CF8] font-semibold">
-                <span>12x Faster than SATA SSDs</span>
-              </div>
-            </div>
-
-            {/* Card 3: CloudLinux */}
-            <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 pt-12 text-center relative hover:border-emerald-500/50 hover:bg-[#1F2937]/30 transition-all shadow-xl group">
-              <div className="w-14 h-14 -top-7 left-1/2 -translate-x-1/2 absolute rounded-2xl bg-[#0B0F19] border border-white/15 flex items-center justify-center text-[#10B981] shadow-xl group-hover:scale-110 transition-transform">
-                <Lock className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                CloudLinux CageFS Isolation
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Each cPanel account runs inside an isolated Lightweight Virtual Environment (LVE). Spikes on neighbor accounts can never degrade your dedicated CPU or RAM allocation.
-              </p>
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-1.5 text-xs text-[#10B981] font-semibold">
-                <span>Zero Noisy-Neighbor Impact</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 4. FREE WEBSITE MIGRATION SUITE */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto bg-[#111827] rounded-3xl p-8 sm:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+      <PageSection tone="alt" border="y">
+        <div className="bg-[#111827] rounded-3xl p-8 sm:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
           <div className="space-y-3 text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-[#06B6D4]">
               Zero Downtime Transition
@@ -346,11 +324,9 @@ export default function SharedHostingPage() {
             Start Free Migration
           </Button>
         </div>
-      </section>
+      </PageSection>
 
-      {/* 5. SPLIT 2-COLUMN NUMBERED FAQ */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
+      <PageSection tone="base" border="y">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Editorial Header */}
             <div className="lg:col-span-5 text-left space-y-4 lg:sticky lg:top-28">
@@ -389,8 +365,7 @@ export default function SharedHostingPage() {
               <FAQAccordion items={SHARED_HOSTING_FAQS} />
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
       {/* 6. RELATED HOSTING PRODUCTS */}
       <RelatedHostingProducts currentSlug="shared-hosting" />

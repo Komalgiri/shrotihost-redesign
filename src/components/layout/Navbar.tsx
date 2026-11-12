@@ -181,9 +181,15 @@ export const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Desktop Right CTA: Theme Toggle + Client Portal Pill Button */}
+          {/* Desktop Right CTA: Theme Toggle + Login + Client Portal Pill Button */}
           <div className="hidden lg:flex items-center gap-3">
             <ThemeToggle />
+            <Link
+              href="/login"
+              className="text-sm font-semibold text-[#9CA3AF] hover:text-[#F9FAFB] px-3 py-2 rounded-lg hover:bg-white/5 transition-colors"
+            >
+              Login
+            </Link>
             <a
               href="https://portal.shrotihost.in"
               target="_blank"

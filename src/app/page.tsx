@@ -9,11 +9,7 @@ import {
   Lock,
   ArrowRight,
   CheckCircle,
-  Globe,
-  Smartphone,
-  ShoppingBag,
   Cpu,
-  Puzzle,
   Star,
   Sparkles,
   Layers,
@@ -28,20 +24,21 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { FeatureCard } from "@/components/ui/FeatureCard";
 import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CTASection } from "@/components/ui/CTASection";
+import { PageSection } from "@/components/ui/PageSection";
 import { DomainSearchBar } from "@/components/home/DomainSearchBar";
 import { HostingTabs } from "@/components/home/HostingTabs";
 import { InfrastructureVisualizer } from "@/components/home/InfrastructureVisualizer";
 import { HeroShowcase } from "@/components/home/HeroShowcase";
 import { HostingCategoryShowcase } from "@/components/home/HostingCategoryShowcase";
+import { ServicesEngineeringShowcase } from "@/components/home/ServicesEngineeringShowcase";
 import { HOMEPAGE_FAQS } from "@/data/faqs";
 import { INFRASTRUCTURE_PILLARS } from "@/data/hosting-features";
-import { SERVICES_LIST } from "@/data/services";
 
 export default function HomePage() {
   return (
-    <div className="space-y-0 bg-[#0B0F19] text-[#F9FAFB]">
+    <div className="space-y-0 section-surface-base text-[#F9FAFB]">
       {/* 1. DISTINCTIVE HERO SECTION MATCHING SCREENSHOT */}
-      <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-white/5 bg-[#0B0F19] overflow-hidden">
+      <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-white/5 section-surface-base overflow-hidden">
         {/* Subtle background technical grid */}
         <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
 
@@ -140,38 +137,37 @@ export default function HomePage() {
       </section>
 
       {/* 2. INTEGRATED DOMAIN DISCOVERY SUITE */}
-      <section className="relative py-12 sm:py-16 bg-[#0B0F19] border-b border-white/10">
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+      <PageSection tone="alt" size="compact" border="y">
+        <SectionHeading
+          centered={false}
+          className="mb-8 max-w-2xl"
+          eyebrow="Domain discovery"
+          title="Find your domain with transparent renewal pricing"
+          subtitle="Search .in, .com, and popular TLDs—first-year and renewal rates shown before you leave this site."
+        />
+        <div className="rounded-2xl border border-white/10 bg-[#111827] p-6 sm:p-8 shadow-card">
           <DomainSearchBar />
         </div>
-      </section>
+      </PageSection>
 
       {/* 3. HOSTING CATEGORY SHOWCASE (Architectural Feature Grid) */}
-      <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-          <SectionHeading
-            eyebrow="Comprehensive Cloud Portfolio"
-            title="Engineered for Raw Speed, Priced for Long-Term Growth"
-            subtitle="Whether launching a single portfolio or managing a multi-tenant client cluster, deploy on purpose-built NVMe hardware with transparent, predictable pricing."
-          />
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Comprehensive Cloud Portfolio"
+          title="Engineered for Raw Speed, Priced for Long-Term Growth"
+          subtitle="Whether launching a single portfolio or managing a multi-tenant client cluster, deploy on purpose-built NVMe hardware with transparent, predictable pricing."
+        />
 
-          <HostingCategoryShowcase />
-        </div>
-      </section>
+        <HostingCategoryShowcase />
+      </PageSection>
 
       {/* 4. FEATURED HOSTING PLANS & INTERACTIVE MATRIX */}
-      <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-          <HostingTabs />
-        </div>
-      </section>
+      <PageSection tone="alt" border="y">
+        <HostingTabs />
+      </PageSection>
 
       {/* 5. SELECTIVE DARK SECTION: INFRASTRUCTURE & HARDWARE BLUEPRINT */}
-      <section className="relative py-20 sm:py-28 bg-[#0B0F19] text-white border-b border-white/10 overflow-hidden">
-        {/* Subtle dark technical grid */}
-        <div className="absolute inset-0 bg-tech-grid-dark opacity-35 pointer-events-none" />
-
-        <div className="relative w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+      <PageSection tone="base" border="y" withGrid className="py-20 sm:py-28 text-white">
           <SectionHeading
             isDark={true}
             eyebrow="Under The Hood"
@@ -218,111 +214,14 @@ export default function HomePage() {
               Request Free Migration
             </Button>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 6. SOFTWARE & DIGITAL ENGINEERING SERVICES (Editorial Showcase) */}
-      <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
-            <div>
-              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider bg-cyan-950 text-cyan-400 border border-cyan-800 mb-3">
-                Full-Stack Engineering
-              </span>
-              <h2 className="text-3xl sm:text-4xl font-extrabold text-[#F9FAFB] tracking-tight">
-                Software & Web Development Services
-              </h2>
-              <p className="mt-2 text-base text-[#9CA3AF] max-w-2xl">
-                We build modern digital products deployed straight onto our cloud hosting network — a single technical partner from domain registration to production deployment.
-              </p>
-            </div>
-
-            <Link
-              href="/services"
-              className="mt-4 md:mt-0 inline-flex items-center gap-1.5 text-sm font-bold text-[#06B6D4] hover:text-cyan-300 transition-colors"
-            >
-              <span>Explore All Engineering Services</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-
-          {/* 3 Primary Services Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {SERVICES_LIST.slice(0, 3).map((service) => (
-              <div
-                key={service.id}
-                className="bg-[#111827] rounded-2xl border border-white/10 p-7 shadow-card hover:bg-[#1F2937] hover:border-white/20 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="w-12 h-12 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-[#4F46E5] mb-5">
-                    {service.slug === "web-development" && <Globe className="w-6 h-6 text-[#06B6D4]" />}
-                    {service.slug === "app-development" && <Smartphone className="w-6 h-6 text-[#4F46E5]" />}
-                    {service.slug === "ecommerce-development" && <ShoppingBag className="w-6 h-6 text-[#10B981]" />}
-                  </div>
-                  <h3 className="text-xl font-bold text-[#F9FAFB] mb-1">{service.title}</h3>
-                  <p className="text-xs font-semibold text-[#06B6D4] mb-3">{service.tagline}</p>
-                  <p className="text-sm text-[#9CA3AF] leading-relaxed mb-6">
-                    {service.description}
-                  </p>
-
-                  <ul className="space-y-2 mb-6">
-                    {service.benefits.slice(0, 3).map((benefit, bIdx) => (
-                      <li key={bIdx} className="flex items-start gap-2 text-xs text-[#9CA3AF]">
-                        <CheckCircle className="w-3.5 h-3.5 text-[#10B981] shrink-0 mt-0.5" />
-                        <span>{benefit}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-                  <span className="text-xs text-[#9CA3AF]">Timeline: {service.turnaroundTime}</span>
-                  <Link
-                    href={`/${service.slug}`}
-                    className="text-xs font-bold text-[#06B6D4] hover:text-cyan-300 inline-flex items-center gap-1"
-                  >
-                    <span>Learn More</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </Link>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Proprietary WHMCS Modules Highlight */}
-          <div className="mt-8 rounded-2xl p-6 sm:p-8 bg-[#111827] border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-card">
-            <div className="flex items-start gap-4">
-              <div className="w-12 h-12 rounded-xl bg-amber-500/10 border border-amber-500/30 flex items-center justify-center text-amber-400 shrink-0">
-                <Puzzle className="w-6 h-6" />
-              </div>
-              <div>
-                <span className="text-[11px] font-bold uppercase tracking-wider text-amber-400">
-                  Specialized WHMCS Modules
-                </span>
-                <h4 className="text-lg font-bold text-[#F9FAFB]">
-                  WHMCS WhatsApp Notification Module (WaShroti) & Smart Payment Surcharge
-                </h4>
-                <p className="text-sm text-[#9CA3AF] mt-1 max-w-2xl">
-                  Automate invoice reminders, OTPs, and ticket updates directly to clients via WhatsApp API. Used by web hosts across India and globally.
-                </p>
-              </div>
-            </div>
-
-            <Button
-              variant="secondary"
-              size="md"
-              href="/whmcs-modules"
-              className="shrink-0 font-semibold bg-[#1F2937] text-[#F9FAFB] border border-white/10 hover:bg-[#374151]"
-            >
-              Explore WHMCS Modules
-            </Button>
-          </div>
-        </div>
-      </section>
+      <PageSection tone="alt" size="compact" border="y">
+        <ServicesEngineeringShowcase />
+      </PageSection>
 
       {/* 7. RADICAL TRANSPARENCY & WHY SHROTIHOST */}
-      <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+      <PageSection tone="base" border="y">
           <SectionHeading
             eyebrow="Radical Transparency"
             title="Independent Reviews & Verified Business Credentials"
@@ -404,12 +303,10 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
       {/* 8. FREQUENTLY ASKED QUESTIONS - MATCHING REFERENCE SCREENSHOT */}
-      <section className="relative py-20 lg:py-28 bg-[#0B0F19] border-b border-white/5">
-        <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
+      <PageSection tone="alt" className="py-20 lg:py-28" border="y">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Editorial Header & Support Anchor */}
             <div className="lg:col-span-5 text-left space-y-4 lg:sticky lg:top-28">
@@ -460,8 +357,7 @@ export default function HomePage() {
               <FAQAccordion items={HOMEPAGE_FAQS} />
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
       {/* 9. BOTTOM CONVERSION CTA BANNER - MATCHING EXACT REFERENCE SCREENSHOT */}
       <CTASection

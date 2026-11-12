@@ -1,7 +1,7 @@
 # ShrotiHost – Content & Data Verification Register
 
 **Document Version:** 1.0.0  
-**Audit Date:** November 2026  
+**Audit Date:** 12 November 2026 (Grow plan storage 50 GB NVMe re-verified on live homepage)  
 **Auditor:** Senior Frontend Engineer & Technical Architect  
 **Source of Truth:** Official Public Website (`https://shrotihost.in/`) & Public Store Catalog (`https://portal.shrotihost.in/`)
 
@@ -22,7 +22,7 @@ The following items have been directly verified against public pages, official p
 ### 1.2 Web Hosting Pricing & Inclusions
 * **NVMe Shared Hosting:**
   * Launch Plan: ₹49.00 / month (1 Website, 10 GB NVMe, 1.5 GB RAM, 1 Core CPU, 5 Mailboxes, Unmetered Bandwidth)
-  * Grow Plan: ₹79.00 / month (5 Websites, 25 GB NVMe, 2 GB RAM, 1.5 Cores CPU, 20 Mailboxes, Unmetered Bandwidth)
+  * Grow Plan: ₹79.00 / month (5 Websites, 50 GB NVMe, 2 GB RAM, 1.5 Cores CPU, 25 Mailboxes, Unmetered Bandwidth)
   * Turbo Plan: ₹149.00 / month (10 Websites, 100 GB NVMe, 3 GB RAM, 2 Cores CPU, 50 Mailboxes, Unmetered Bandwidth)
   * Infinity Plan: ₹249.00 / month (25 Websites, 250 GB NVMe, 4 GB RAM, 3 Cores CPU, Unlimited Mailboxes, Unmetered Bandwidth)
   * *Policy:* Same renewal price guarantee (renewal rate equals initial monthly signup rate).

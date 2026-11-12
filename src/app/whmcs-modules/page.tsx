@@ -260,7 +260,8 @@ export default function WhmcsModulesPage() {
             {modules.map((mod) => (
               <div
                 key={mod.id}
-                className="bg-[#111827] rounded-2xl p-6 sm:p-10 border border-white/10 shadow-card hover:bg-[#1F2937]/50 hover:border-[#4F46E5]/40 transition-all duration-200 flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start"
+                id={mod.id}
+                className="scroll-mt-28 bg-[#111827] rounded-2xl p-6 sm:p-10 border border-white/10 shadow-card hover:bg-[#1F2937]/50 hover:border-[#4F46E5]/40 transition-all duration-200 flex flex-col lg:flex-row gap-8 lg:gap-12 justify-between items-start"
               >
                 <div className="space-y-6 flex-1">
                   <div className="flex flex-wrap items-center gap-3">

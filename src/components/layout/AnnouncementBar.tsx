@@ -8,7 +8,7 @@ export const AnnouncementBar: React.FC = () => {
         {/* Left: Value Proposition Strip */}
         <div className="flex items-center gap-2.5 overflow-hidden truncate text-[11px] sm:text-xs">
           <span className="w-2 h-2 rounded-full bg-[#10B981] shrink-0" />
-          <span className="text-[#F9FAFB] font-medium">Tier-IV Noida Datacenter</span>
+          <span className="text-[#F9FAFB] font-medium">LiteSpeed + NVMe hosting</span>
           <span className="text-white/20">/</span>
           <span className="text-[#9CA3AF]">LiteSpeed Enterprise</span>
           <span className="text-white/20 hidden md:inline">/</span>

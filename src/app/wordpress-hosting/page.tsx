@@ -26,6 +26,8 @@ import { CTASection } from "@/components/ui/CTASection";
 import { Button } from "@/components/ui/Button";
 import { RelatedHostingProducts } from "@/components/hosting/RelatedHostingProducts";
 import { WORDPRESS_HOSTING_PLANS } from "@/data/hosting-plans";
+import { PageSection } from "@/components/ui/PageSection";
+import { PillarCard } from "@/components/ui/PillarCard";
 
 export const metadata: Metadata = {
   title: "Managed WordPress Hosting from ₹69/mo | LiteSpeed + LSCache | ShrotiHost",
@@ -64,7 +66,7 @@ export default function WordPressHostingPage() {
   ];
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16 bg-[#0B0F19] text-[#F9FAFB]">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. ASYMMETRIC SPLIT HERO WITH WORDPRESS SPEED TELEMETRY */}
       <section className="relative pt-6 sm:pt-10 pb-16 sm:pb-24 bg-[#0B0F19] border-b border-white/5 overflow-hidden">
         {/* Subtle background tech grid */}
@@ -268,87 +270,57 @@ export default function WordPressHostingPage() {
         </div>
       </section>
 
-      {/* 2. PRICING GRID */}
-      <section id="plans" className="relative px-4 sm:px-6 lg:px-10 xl:px-12 scroll-mt-24">
-        <div className="w-full max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="WordPress Plans"
-            title="Managed WordPress Hosting Tiers"
-            subtitle="Choose the capacity you need. All plans include LiteSpeed Enterprise, free SSL certificates, and daily JetBackup snapshots."
-          />
+      <PageSection id="plans" tone="alt" className="scroll-mt-24" border="y">
+        <SectionHeading
+          eyebrow="WordPress Plans"
+          title="Managed WordPress Hosting Tiers"
+          subtitle="Choose the capacity you need. All plans include LiteSpeed Enterprise, free SSL certificates, and daily JetBackup snapshots."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
-            {WORDPRESS_HOSTING_PLANS.map((plan) => (
-              <PricingCard key={plan.id} plan={plan} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+          {WORDPRESS_HOSTING_PLANS.map((plan) => (
+            <PricingCard key={plan.id} plan={plan} />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 3. WORDPRESS SPEED & ARCHITECTURE (3 Elevated Cards with Floating Top Badges) */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Platform Features"
-            title="Built Exclusively for Modern WordPress & WooCommerce"
-            subtitle="Eliminate slow plugins and database bottlenecks with our pre-tuned WordPress infrastructure stack."
-          />
+      <PageSection tone="base" border="y">
+        <SectionHeading
+          eyebrow="Platform Features"
+          title="Built Exclusively for Modern WordPress & WooCommerce"
+          subtitle="Eliminate slow plugins and database bottlenecks with our pre-tuned WordPress infrastructure stack."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 pt-6">
-            {/* Card 1: LSCache */}
-            <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 pt-12 text-center relative hover:border-amber-400/50 hover:bg-[#1F2937]/30 transition-all shadow-xl group">
-              <div className="w-14 h-14 -top-7 left-1/2 -translate-x-1/2 absolute rounded-2xl bg-[#0B0F19] border border-white/15 flex items-center justify-center text-amber-400 shadow-xl group-hover:scale-110 transition-transform">
-                <Flame className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                LiteSpeed Cache (LSCache)
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Direct server-level caching that stores dynamic WordPress pages in server RAM and serves them in under 50ms, completely bypassing slow PHP compilation.
-              </p>
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-1.5 text-xs text-amber-400 font-semibold">
-                <span>Integrated LSCache Plugin</span>
-              </div>
-            </div>
-
-            {/* Card 2: Redis Object Cache */}
-            <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 pt-12 text-center relative hover:border-[#06B6D4]/50 hover:bg-[#1F2937]/30 transition-all shadow-xl group">
-              <div className="w-14 h-14 -top-7 left-1/2 -translate-x-1/2 absolute rounded-2xl bg-[#0B0F19] border border-white/15 flex items-center justify-center text-[#06B6D4] shadow-xl group-hover:scale-110 transition-transform">
-                <Database className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                Redis Object Cache
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Dedicated in-memory Redis instances eliminate repetitive database queries for WooCommerce carts, product inventories, and dynamic customer sessions.
-              </p>
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-1.5 text-xs text-[#06B6D4] font-semibold">
-                <span>Accelerated WooCommerce Speed</span>
-              </div>
-            </div>
-
-            {/* Card 3: 1-Click Staging & WAF */}
-            <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 pt-12 text-center relative hover:border-emerald-500/50 hover:bg-[#1F2937]/30 transition-all shadow-xl group">
-              <div className="w-14 h-14 -top-7 left-1/2 -translate-x-1/2 absolute rounded-2xl bg-[#0B0F19] border border-white/15 flex items-center justify-center text-[#10B981] shadow-xl group-hover:scale-110 transition-transform">
-                <Layers className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-[#F9FAFB] tracking-tight">
-                1-Click Staging & Defense
-              </h3>
-              <p className="mt-3 text-xs sm:text-sm text-[#9CA3AF] leading-relaxed">
-                Test new plugins and themes in an isolated staging sandbox before pushing changes live. Real-time Imunify360 WAF stops brute-force exploits automatically.
-              </p>
-              <div className="mt-6 pt-4 border-t border-white/5 flex items-center justify-center gap-1.5 text-xs text-[#10B981] font-semibold">
-                <span>Zero Live Site Risk</span>
-              </div>
-            </div>
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 pt-6">
+          <PillarCard
+            accent="cyan"
+            icon={<Flame className="w-6 h-6 text-amber-400" />}
+            title="LiteSpeed Cache (LSCache)"
+            footer={<span className="text-xs text-amber-400 font-semibold">Integrated LSCache Plugin</span>}
+          >
+            Direct server-level caching that stores dynamic WordPress pages in server RAM and serves them in under 50ms, completely bypassing slow PHP compilation.
+          </PillarCard>
+          <PillarCard
+            accent="cyan"
+            icon={<Database className="w-6 h-6" />}
+            title="Redis Object Cache"
+            footer={<span className="text-xs text-[#06B6D4] font-semibold">Accelerated WooCommerce Speed</span>}
+          >
+            Dedicated in-memory Redis instances eliminate repetitive database queries for WooCommerce carts, product inventories, and dynamic customer sessions.
+          </PillarCard>
+          <PillarCard
+            accent="emerald"
+            icon={<Layers className="w-6 h-6" />}
+            title="1-Click Staging & Defense"
+            footer={<span className="text-xs text-[#10B981] font-semibold">Zero Live Site Risk</span>}
+          >
+            Test new plugins and themes in an isolated staging sandbox before pushing changes live. Real-time Imunify360 WAF stops brute-force exploits automatically.
+          </PillarCard>
         </div>
-      </section>
+      </PageSection>
 
-      {/* 4. FREE WORDPRESS MIGRATION SUITE */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto bg-[#111827] rounded-3xl p-8 sm:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
+      <PageSection tone="alt" border="y">
+        <div className="bg-[#111827] rounded-3xl p-8 sm:p-12 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-8 shadow-2xl relative overflow-hidden">
           <div className="space-y-3 text-left">
             <span className="text-xs font-bold uppercase tracking-wider text-amber-400">
               Zero Downtime Transition
@@ -371,11 +343,9 @@ export default function WordPressHostingPage() {
             Request Free WP Migration
           </Button>
         </div>
-      </section>
+      </PageSection>
 
-      {/* 5. SPLIT 2-COLUMN NUMBERED FAQ */}
-      <section className="relative px-4 sm:px-6 lg:px-10 xl:px-12">
-        <div className="w-full max-w-[1720px] mx-auto">
+      <PageSection tone="base" border="y">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
             {/* Left Column: Editorial Header */}
             <div className="lg:col-span-5 text-left space-y-4 lg:sticky lg:top-28">
@@ -414,8 +384,7 @@ export default function WordPressHostingPage() {
               <FAQAccordion items={wpFaqs} />
             </div>
           </div>
-        </div>
-      </section>
+      </PageSection>
 
       {/* 6. RELATED HOSTING PRODUCTS */}
       <RelatedHostingProducts currentSlug="wordpress-hosting" />

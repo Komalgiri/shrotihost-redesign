@@ -65,8 +65,8 @@ export const RelatedHostingProducts: React.FC<RelatedHostingProductsProps> = ({ 
   const related = allProducts.filter((p) => p.slug !== activeIdentifier).slice(0, 3);
 
   return (
-    <section className="relative px-4 sm:px-6 lg:px-8 py-16 border-t border-white/10 bg-[#0B0F19]">
-      <div className="max-w-[1720px] mx-auto">
+    <section className="relative section-surface-alt py-16 border-y border-white/10">
+      <div className="max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
           <div>
             <span className="text-xs font-bold uppercase tracking-wider text-[#06B6D4]">

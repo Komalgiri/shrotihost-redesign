@@ -13,7 +13,7 @@ interface FAQAccordionProps {
 export const FAQAccordion: React.FC<FAQAccordionProps> = ({
   items,
   className = "",
-  defaultOpenIndex = 0,
+  defaultOpenIndex = null,
 }) => {
   const [openIndex, setOpenIndex] = useState<number | null>(defaultOpenIndex);
 

@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, CheckCircle2, FileText, Star, Plus, Link as LinkIcon, MapPin } from "lucide-react";
+import { Check, FileText, Star, Plus, Link as LinkIcon, MapPin } from "lucide-react";
 import Link from "next/link";
 
 interface HeroShowcaseProps {
@@ -17,7 +17,10 @@ export const HeroShowcase: React.FC<HeroShowcaseProps> = ({
   });
 
   return (
-    <div className="relative w-full max-w-[700px] mx-auto lg:ml-auto select-none pt-2 pb-6">
+    <div
+      suppressHydrationWarning
+      className="relative w-full max-w-[700px] mx-auto lg:ml-auto select-none pt-2 pb-6"
+    >
       {/* 1. AMBIENT GLOW BACKDROP */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-gradient-to-tr from-indigo-600/25 via-cyan-500/20 to-transparent blur-[130px] pointer-events-none" />
 
@@ -130,25 +133,31 @@ export const HeroShowcase: React.FC<HeroShowcaseProps> = ({
         {/* CARD 2: DATACENTER NODE PILL (Top Right overlapping the right hump) */}
         <div className="absolute right-2 sm:right-6 md:right-8 top-[10%] sm:top-[12%] z-20 bg-white/95 dark:bg-[#111827]/95 border border-slate-100 dark:border-white/15 rounded-2xl px-4 py-3 shadow-[0_15px_35px_rgba(0,0,0,0.12)] dark:shadow-2xl backdrop-blur-xl transition-all duration-300 hover:-translate-y-1">
           {/* Black Rating Badge attached to top right corner */}
-          <div className="absolute -top-3 -right-2 bg-slate-950 dark:bg-black text-white text-[11px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-md border border-white/20">
-            <span>4.9</span>
+          <a
+            href="https://www.trustpilot.com/review/shrotihost.in"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="absolute -top-3 -right-2 bg-slate-950 dark:bg-black text-white text-[11px] font-black px-2.5 py-0.5 rounded-full flex items-center gap-1 shadow-md border border-white/20 hover:bg-slate-900 transition-colors"
+            aria-label="4.1 out of 5 on Trustpilot — read reviews"
+          >
+            <span>4.1</span>
             <Star className="w-3 h-3 fill-amber-400 text-amber-400" />
-          </div>
+          </a>
 
-          {/* Node & Location Row */}
+          {/* Stack row — illustrative UI demo, not live telemetry */}
           <div className="flex items-center gap-1.5 text-[11px] text-slate-500 dark:text-[#9CA3AF] font-medium">
             <span className="px-2 py-0.5 rounded-md bg-emerald-50 dark:bg-emerald-500/15 text-emerald-700 dark:text-emerald-400 font-bold text-[10px]">
-              Tier-4
+              LiteSpeed
             </span>
             <span className="text-slate-300 dark:text-white/20">•</span>
             <MapPin className="w-3 h-3 text-slate-400" />
-            <span>Noida, Delhi-NCR</span>
+            <span>India · MSME verified</span>
           </div>
 
           {/* Title & Blue Verified Badge Row */}
           <div className="flex items-center gap-2 mt-1">
             <h4 className="text-sm sm:text-base font-extrabold text-slate-900 dark:text-[#F9FAFB] tracking-tight">
-              LiteSpeed NVMe Node
+              NVMe hosting stack
             </h4>
             <span className="w-4 h-4 rounded-full bg-[#1D9BF0] flex items-center justify-center text-white shrink-0 shadow-sm">
               <Check className="w-2.5 h-2.5 stroke-[3]" />

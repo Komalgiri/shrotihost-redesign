@@ -28,6 +28,7 @@ import { CTASection } from "@/components/ui/CTASection";
 import { ContactForm } from "@/components/ui/ContactForm";
 import { Button } from "@/components/ui/Button";
 import { SERVICES_LIST } from "@/data/services";
+import { PageSection } from "@/components/ui/PageSection";
 
 export const metadata: Metadata = {
   title: "Digital & Software Development Services | ShrotiHost Engineering",
@@ -118,7 +119,7 @@ export default function ServicesPage() {
   };
 
   return (
-    <div className="space-y-20 sm:space-y-28 pb-16">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. HERO SECTION */}
       <section className="relative pt-6 sm:pt-10 pb-8 overflow-hidden bg-tech-grid">
         <div className="relative max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-8">
@@ -164,9 +165,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      {/* 2. COMPLETE SERVICES CATALOG */}
-      <section id="catalog" className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
+      <PageSection id="catalog" tone="alt" className="scroll-mt-24" border="y">
           <SectionHeading
             eyebrow="Our Capabilities"
             title="Complete Engineering Service Suite"
@@ -234,56 +233,36 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 3. SELECTIVE DARK SECTION: INFRASTRUCTURE-TUNED SOFTWARE DEPLOYMENT */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-16 bg-[#0B0F19] text-white border-y border-slate-800">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            isDark={true}
-            eyebrow="The ShrotiHost Advantage"
-            title="Unified Engineering & Cloud Infrastructure"
-            subtitle="Why building with a cloud host beats traditional agencies: zero configuration friction, instant deployment, and end-to-end accountability."
+      <PageSection tone="base" border="y" withGrid>
+        <SectionHeading
+          isDark={true}
+          eyebrow="The ShrotiHost Advantage"
+          title="Unified Engineering & Cloud Infrastructure"
+          subtitle="Why building with a cloud host beats traditional agencies: zero configuration friction, instant deployment, and end-to-end accountability."
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-4">
+          <FeatureCard
+            icon={<Server className="w-5 h-5 text-[#818CF8]" />}
+            title="Native Server Optimization"
+            description="Code tuned specifically for LiteSpeed Enterprise, HTTP/3 QUIC, and NVMe block storage. No generic shared host bottlenecks or unoptimized PHP limits."
           />
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 mt-10">
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8">
-              <div className="w-12 h-12 rounded-xl bg-indigo-500/10 border border-indigo-500/20 text-indigo-400 flex items-center justify-center mb-5">
-                <Server className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Native Server Optimization</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Code tuned specifically for LiteSpeed Enterprise, HTTP/3 QUIC, and NVMe block storage. No generic shared host bottlenecks or unoptimized PHP limits.
-              </p>
-            </div>
-
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8">
-              <div className="w-12 h-12 rounded-xl bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 flex items-center justify-center mb-5">
-                <Terminal className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Git-Driven CI/CD Pipelines</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                Automated continuous integration and deployment. Push to your Git repository triggers automated linting, test suites, and zero-downtime deployment.
-              </p>
-            </div>
-
-            <div className="bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8">
-              <div className="w-12 h-12 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 flex items-center justify-center mb-5">
-                <ShieldCheck className="w-6 h-6" />
-              </div>
-              <h3 className="text-lg font-bold text-white mb-2">Single Point of Contact</h3>
-              <p className="text-sm text-slate-400 leading-relaxed">
-                No finger-pointing between agency developers and third-party hosting tech support. One engineering team takes full ownership of both code and servers.
-              </p>
-            </div>
-          </div>
+          <FeatureCard
+            icon={<Terminal className="w-5 h-5 text-[#06B6D4]" />}
+            title="Git-Driven CI/CD Pipelines"
+            description="Automated continuous integration and deployment. Push to your Git repository triggers automated linting, test suites, and zero-downtime deployment."
+          />
+          <FeatureCard
+            icon={<ShieldCheck className="w-5 h-5 text-[#10B981]" />}
+            title="Single Point of Contact"
+            description="No finger-pointing between agency developers and third-party hosting tech support. One engineering team takes full ownership of both code and servers."
+          />
         </div>
-      </section>
+      </PageSection>
 
-      {/* 4. ENGAGEMENT MODELS */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-12">
-        <div className="max-w-[1720px] mx-auto">
+      <PageSection tone="alt" border="y">
           <SectionHeading
             eyebrow="Collaboration Options"
             title="Flexible Client Engagement Models"
@@ -334,34 +313,27 @@ export default function ServicesPage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+      </PageSection>
 
-      {/* 5. INTERACTIVE PROJECT INQUIRY FORM */}
-      <section id="inquiry-form" className="relative px-4 sm:px-6 lg:px-8 py-12 bg-[#0B0F19] border-y border-white/10">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Start Your Project"
-            title="Tell Us About Your Vision"
-            subtitle="Submit your project details for an architectural review and transparent quote from our engineering leads."
-          />
+      <PageSection id="inquiry-form" tone="base" size="compact" className="scroll-mt-24" border="y">
+        <SectionHeading
+          eyebrow="Start Your Project"
+          title="Tell Us About Your Vision"
+          subtitle="Submit your project details for an architectural review and transparent quote from our engineering leads."
+        />
 
-          <ContactForm initialService="Custom Software Solutions" />
-        </div>
-      </section>
+        <ContactForm initialService="Custom Software Solutions" />
+      </PageSection>
 
-      {/* 6. SERVICES FAQS */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Common Questions"
-            title="Services & Engagement FAQs"
-            subtitle="Straightforward answers regarding contracts, code ownership, NDAs, and payment structures."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="Common Questions"
+          title="Services & Engagement FAQs"
+          subtitle="Straightforward answers regarding contracts, code ownership, NDAs, and payment structures."
+        />
 
-          <FAQAccordion items={servicesFaqs} />
-        </div>
-      </section>
+        <FAQAccordion items={servicesFaqs} />
+      </PageSection>
 
       {/* 7. BOTTOM CTA */}
       <CTASection

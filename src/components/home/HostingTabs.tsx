@@ -24,10 +24,12 @@ type CategoryId =
   | "whmcs-modules";
 
 type Currency = "USD" | "INR";
+type BillingCycle = "monthly" | "semiAnnual" | "annual";
 
 export const HostingTabs: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<CategoryId>("reseller");
-  const [currency, setCurrency] = useState<Currency>("USD");
+  const [activeTab, setActiveTab] = useState<CategoryId>("shared");
+  const [billingCycle, setBillingCycle] = useState<BillingCycle>("monthly");
+  const [currency, setCurrency] = useState<Currency>("INR");
   const [currencyDropdownOpen, setCurrencyDropdownOpen] = useState(false);
 
   // Conversion rate: 1 USD ≈ 80 INR
@@ -52,6 +54,16 @@ export const HostingTabs: React.FC = () => {
     if (priceInInr <= 1500) return "18.99";
     if (priceInInr <= 1700) return "21.99";
     return (priceInInr / 80).toFixed(2);
+  };
+
+  const getDisplayPrice = (plan: HostingPlan): string => {
+    let priceInr = plan.priceMonthly;
+    if (billingCycle === "annual" && plan.priceAnnual) {
+      priceInr = Math.round(plan.priceAnnual / 12);
+    } else if (billingCycle === "semiAnnual" && plan.priceSemiAnnual) {
+      priceInr = Math.round(plan.priceSemiAnnual / 6);
+    }
+    return convertPrice(priceInr);
   };
 
   const currencySymbol = currency === "USD" ? "$" : "₹";
@@ -134,9 +146,9 @@ export const HostingTabs: React.FC = () => {
     {
       id: "shared" as const,
       label: "Shared Hosting",
-      title: "High-speed cPanel cloud hosting",
-      subtitle: "Pure PCIe Gen4 NVMe, LiteSpeed Enterprise web servers, and same price on renewal.",
-      plans: SHARED_HOSTING_PLANS.slice(0, 3),
+      title: "Simple, honest pricing",
+      subtitle: "Every plan renews at the price listed here, on every billing cycle. No increase later.",
+      plans: SHARED_HOSTING_PLANS,
       viewAllHref: "/shared-hosting",
     },
     {
@@ -189,26 +201,65 @@ export const HostingTabs: React.FC = () => {
     },
   ];
 
-  const currentCategory = categories.find((c) => c.id === activeTab) || categories[3];
+  const currentCategory = categories.find((c) => c.id === activeTab) || categories[0];
 
   return (
     <div className="space-y-8 select-none text-left">
-      {/* 1. TOP EDITORIAL HEADING MATCHING SCREENSHOT EXACTLY */}
-      <div className="space-y-1.5">
-        <span className="text-xs sm:text-sm font-medium text-[#9CA3AF] tracking-wide">
-          Store
-        </span>
-        <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
-          {currentCategory.title}
-        </h2>
-        <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-3xl leading-relaxed pt-0.5">
-          {currentCategory.subtitle}
-        </p>
+      {/* 1. TOP EDITORIAL HEADING MATCHING USER REQUEST */}
+      <div className="flex flex-col md:flex-row md:items-end justify-between gap-6">
+        <div className="space-y-2">
+          <span className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-[#06B6D4]">
+            Store • {currentCategory.label}
+          </span>
+          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            {currentCategory.title}
+          </h2>
+          <p className="text-xs sm:text-sm text-[#9CA3AF] max-w-3xl leading-relaxed pt-0.5">
+            {currentCategory.subtitle}
+          </p>
+        </div>
+
+        {/* Billing Cycle Pill Selector (Monthly / 6 Months / Yearly) */}
+        <div className="inline-flex items-center p-1 rounded-2xl bg-[#111827] border border-white/10 shrink-0 shadow-sm">
+          <button
+            type="button"
+            onClick={() => setBillingCycle("monthly")}
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              billingCycle === "monthly"
+                ? "bg-[#4F46E5] text-white shadow-sm font-bold"
+                : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
+            }`}
+          >
+            Monthly
+          </button>
+          <button
+            type="button"
+            onClick={() => setBillingCycle("semiAnnual")}
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              billingCycle === "semiAnnual"
+                ? "bg-[#4F46E5] text-white shadow-sm font-bold"
+                : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
+            }`}
+          >
+            6 Months
+          </button>
+          <button
+            type="button"
+            onClick={() => setBillingCycle("annual")}
+            className={`px-3.5 py-1.5 rounded-xl text-xs font-semibold transition-all ${
+              billingCycle === "annual"
+                ? "bg-[#4F46E5] text-white shadow-sm font-bold"
+                : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
+            }`}
+          >
+            Yearly
+          </button>
+        </div>
       </div>
 
-      {/* 2. CATEGORY PILL TABS + CURRENCY DROPDOWN ROW MATCHING SCREENSHOT */}
+      {/* 2. CATEGORY PILL TABS + CURRENCY DROPDOWN ROW */}
       <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-2">
-        {/* Horizontal Scrollable Tabs */}
+        {/* Horizontal Scrollable Category Tabs */}
         <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 min-w-0 flex-1">
           {categories.map((cat) => {
             const isActive = activeTab === cat.id;
@@ -229,7 +280,7 @@ export const HostingTabs: React.FC = () => {
           })}
         </div>
 
-        {/* Currency Selector on Right anchored to tabs row */}
+        {/* Currency Selector on Right (USD / INR) */}
         <div className="relative shrink-0 self-end md:self-auto">
           <button
             type="button"
@@ -290,14 +341,21 @@ export const HostingTabs: React.FC = () => {
         </div>
       </div>
 
-      {/* 3. THREE PRICING OPTIONS (3 CARDS PER CATEGORY) */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 pt-4">
+      {/* 3. PRICING CARDS (4 COLUMNS FOR 4 PLANS, 3 COLUMNS FOR 3 PLANS) */}
+      <div
+        className={`grid grid-cols-1 ${
+          currentCategory.plans.length >= 4
+            ? "sm:grid-cols-2 lg:grid-cols-4 gap-5"
+            : "md:grid-cols-3 gap-6 sm:gap-8"
+        } pt-2`}
+      >
         {currentCategory.plans.map((plan) => (
           <PricingCard
             key={plan.id}
             plan={plan}
+            billingCycle={billingCycle}
             currencySymbol={currencySymbol}
-            customPrice={convertPrice(plan.priceMonthly)}
+            customPrice={getDisplayPrice(plan)}
           />
         ))}
       </div>

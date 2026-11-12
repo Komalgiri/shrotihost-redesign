@@ -193,12 +193,11 @@ export const MobileDrawer: React.FC<MobileDrawerProps> = ({ isOpen, onClose }) =
           <Button
             variant="secondary"
             size="md"
-            href="https://portal.shrotihost.in"
-            isExternal={true}
+            href="/login"
+            onClick={onClose}
             className="w-full bg-[#111827] text-[#F9FAFB] border border-white/10 hover:bg-[#1F2937]"
           >
             <span>Client Login</span>
-            <ExternalLink className="w-3.5 h-3.5 ml-1 text-[#9CA3AF]" />
           </Button>
 
           <a

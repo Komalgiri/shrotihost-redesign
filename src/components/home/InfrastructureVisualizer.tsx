@@ -15,7 +15,7 @@ export const InfrastructureVisualizer: React.FC = () => {
   const profileSpecs = {
     shared: {
       node: "node-in-del01.shrotihost.net",
-      location: "Delhi-NCR latency",
+      location: "Illustrative demo · India routing",
       cpuLoad: "18.4%",
       cpuFill: 18.4,
       cpuStatus: "Balanced",
@@ -25,7 +25,7 @@ export const InfrastructureVisualizer: React.FC = () => {
     },
     vps: {
       node: "kvm-in-del02.shrotihost.net",
-      location: "Delhi-NCR latency",
+      location: "Illustrative demo · India routing",
       cpuLoad: "32.1%",
       cpuFill: 32.1,
       cpuStatus: "Dedicated Core",
@@ -35,7 +35,7 @@ export const InfrastructureVisualizer: React.FC = () => {
     },
     reseller: {
       node: "whm-in-del01.shrotihost.net",
-      location: "Delhi-NCR latency",
+      location: "Illustrative demo · India routing",
       cpuLoad: "24.6%",
       cpuFill: 24.6,
       cpuStatus: "Multi-Tenant Balanced",

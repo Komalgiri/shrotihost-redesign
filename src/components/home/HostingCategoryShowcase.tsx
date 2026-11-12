@@ -275,7 +275,7 @@ export const HostingCategoryShowcase: React.FC = () => {
           </div>
 
           <div className="pt-4 border-t border-white/5 flex items-center justify-between">
-            <span className="text-xs text-[#9CA3AF]">India Tier-IV Datacenter</span>
+            <span className="text-xs text-[#9CA3AF]">KVM · root access</span>
             <Button
               variant="secondary"
               size="sm"

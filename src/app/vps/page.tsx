@@ -20,6 +20,7 @@ import { FAQAccordion } from "@/components/ui/FAQAccordion";
 import { CTASection } from "@/components/ui/CTASection";
 import { PricingCard } from "@/components/ui/PricingCard";
 import { RelatedHostingProducts } from "@/components/hosting/RelatedHostingProducts";
+import { PageSection } from "@/components/ui/PageSection";
 import { VPS_HOSTING_PLANS } from "@/data/hosting-plans";
 
 export const metadata: Metadata = {
@@ -88,7 +89,7 @@ export default function VPSHostingPage() {
   ];
 
   return (
-    <div className="space-y-16 sm:space-y-24 pb-16">
+    <div className="pb-16 section-surface-base text-[#F9FAFB]">
       {/* 1. HERO SECTION */}
       <section className="relative pt-6 sm:pt-10 pb-8 bg-[#0B0F19] border-b border-white/10 overflow-hidden">
         <div className="absolute inset-0 bg-tech-grid opacity-30 pointer-events-none" />
@@ -137,59 +138,50 @@ export default function VPSHostingPage() {
         </div>
       </section>
 
-      {/* 2. PRICING GRID */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="VPS Configurations"
-            title="KVM Cloud Compute Tiers"
-            subtitle="Transparent pricing from 1 vCPU / 2GB RAM up to 16 vCPU / 64GB RAM. Select the ideal capacity for your workload."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="VPS Configurations"
+          title="KVM Cloud Compute Tiers"
+          subtitle="Transparent pricing from 1 vCPU / 2GB RAM up to 16 vCPU / 64GB RAM. Select the ideal capacity for your workload."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
-            {VPS_HOSTING_PLANS.map((plan) => (
-              <PricingCard key={plan.id} plan={plan} />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 items-stretch">
+          {VPS_HOSTING_PLANS.map((plan) => (
+            <PricingCard key={plan.id} plan={plan} />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 3. HARDWARE & VIRTUALIZATION BLUEPRINT (Selective Dark Section) */}
-      <section className="relative px-4 sm:px-6 lg:px-8 py-20 bg-[#0B0F19] text-white border-y border-slate-800">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            isDark={true}
-            eyebrow="Virtualization Engine"
-            title="Dedicated Hardware Isolation & Full Linux Sovereignty"
-            subtitle="No CPU throttling or memory ballooning. Experience reliable bare-metal-like compute for critical applications."
-          />
+      <PageSection tone="base" border="y" withGrid className="py-20 text-white">
+        <SectionHeading
+          isDark={true}
+          eyebrow="Virtualization Engine"
+          title="Dedicated Hardware Isolation & Full Linux Sovereignty"
+          subtitle="No CPU throttling or memory ballooning. Experience reliable bare-metal-like compute for critical applications."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-            {vpsFeatures.map((feat, idx) => (
-              <FeatureCard
-                key={idx}
-                isDark={true}
-                iconName={feat.iconName}
-                title={feat.title}
-                description={feat.description}
-              />
-            ))}
-          </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+          {vpsFeatures.map((feat, idx) => (
+            <FeatureCard
+              key={idx}
+              isDark={true}
+              iconName={feat.iconName}
+              title={feat.title}
+              description={feat.description}
+            />
+          ))}
         </div>
-      </section>
+      </PageSection>
 
-      {/* 4. VPS FAQS */}
-      <section className="relative px-4 sm:px-6 lg:px-8">
-        <div className="max-w-[1720px] mx-auto">
-          <SectionHeading
-            eyebrow="Got Questions?"
-            title="Cloud VPS Hosting FAQs"
-            subtitle="Technical specifics regarding root access, operating system choices, and setup fees."
-          />
+      <PageSection tone="alt" border="y">
+        <SectionHeading
+          eyebrow="Got Questions?"
+          title="Cloud VPS Hosting FAQs"
+          subtitle="Technical specifics regarding root access, operating system choices, and setup fees."
+        />
 
-          <FAQAccordion items={vpsFaqs} />
-        </div>
-      </section>
+        <FAQAccordion items={vpsFaqs} />
+      </PageSection>
 
       {/* 5. RELATED HOSTING PRODUCTS */}
       <RelatedHostingProducts currentSlug="vps" />

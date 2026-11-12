@@ -89,7 +89,7 @@ export default async function BlogPostPage({ params }: PageProps) {
       ? {
           title: "High-Performance Cloud VPS",
           price: "₹499/mo",
-          features: ["Dedicated KVM Compute", "Full Root SSH Access", "Tier-III Datacenter"],
+          features: ["Dedicated KVM Compute", "Full Root SSH Access", "Weekly offsite backups"],
           href: "/vps",
           cta: "Deploy Cloud VPS",
         }
