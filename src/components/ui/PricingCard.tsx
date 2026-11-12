@@ -7,6 +7,7 @@ interface PricingCardProps {
   plan: HostingPlan;
   billingCycle?: "monthly" | "semiAnnual" | "annual";
   currencySymbol?: string;
+  customPrice?: string | number;
   className?: string;
 }
 
@@ -14,9 +15,13 @@ export const PricingCard: React.FC<PricingCardProps> = ({
   plan,
   billingCycle = "monthly",
   currencySymbol = "₹",
+  customPrice,
   className = "",
 }) => {
   const getPrice = () => {
+    if (customPrice !== undefined) {
+      return customPrice;
+    }
     if (billingCycle === "annual" && plan.priceAnnual) {
       return Math.round(plan.priceAnnual / 12);
     }

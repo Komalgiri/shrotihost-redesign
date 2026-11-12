@@ -8,6 +8,7 @@ import {
   ArrowUpRight,
 } from "lucide-react";
 import { MobileDrawer } from "./MobileDrawer";
+import { ThemeToggle } from "./ThemeToggle";
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -180,8 +181,9 @@ export const Navbar: React.FC = () => {
             </Link>
           </nav>
 
-          {/* Desktop Right CTA: Client Portal Pill Button */}
-          <div className="hidden lg:flex items-center">
+          {/* Desktop Right CTA: Theme Toggle + Client Portal Pill Button */}
+          <div className="hidden lg:flex items-center gap-3">
+            <ThemeToggle />
             <a
               href="https://portal.shrotihost.in"
               target="_blank"
@@ -193,11 +195,12 @@ export const Navbar: React.FC = () => {
             </a>
           </div>
 
-          {/* Mobile Hamburger Trigger */}
+          {/* Mobile Hamburger Trigger & Theme Toggle */}
           <div className="flex items-center gap-2 lg:hidden">
+            <ThemeToggle />
             <button
               onClick={() => setMobileMenuOpen(true)}
-              className="p-2.5 rounded-lg text-[#F9FAFB] hover:bg-[#1F2937] transition-colors border border-white/10"
+              className="p-2 rounded-lg text-[#F9FAFB] hover:bg-[#1F2937] transition-colors border border-white/10"
               aria-label="Open mobile menu"
             >
               <Menu className="w-5 h-5" />

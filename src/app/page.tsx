@@ -151,12 +151,6 @@ export default function HomePage() {
       {/* 4. FEATURED HOSTING PLANS & INTERACTIVE MATRIX */}
       <section className="relative py-16 sm:py-24 bg-[#0B0F19] border-b border-white/10">
         <div className="w-full max-w-[1720px] mx-auto px-4 sm:px-6 lg:px-10 xl:px-12">
-          <SectionHeading
-            eyebrow="Transparent Tiered Plans"
-            title="Compare Plans & Select Your Cloud Environment"
-            subtitle="Explore our most popular hosting tiers across Shared, WordPress, Unlimited, Reseller, and VPS configurations with real-time billing toggles."
-          />
-
           <HostingTabs />
         </div>
       </section>
