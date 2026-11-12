@@ -1,5 +1,5 @@
 import React from "react";
-import { Check, ShieldCheck, Sparkles } from "lucide-react";
+import { Check, ArrowRight } from "lucide-react";
 import { HostingPlan } from "@/data/hosting-plans";
 import { Button } from "./Button";
 
@@ -28,111 +28,143 @@ export const PricingCard: React.FC<PricingCardProps> = ({
 
   const currentPrice = getPrice();
 
+  // Structured Title + Description pairs matching the clean reference format
+  const getStructuredFeatures = () => {
+    const items: { title: string; description: string }[] = [];
+
+    // 1. Websites / Account Scope
+    if (plan.id.includes("reseller")) {
+      items.push({
+        title: plan.websites,
+        description: "Independent cPanel accounts with overselling & WHM control",
+      });
+    } else if (plan.id.includes("vps")) {
+      items.push({
+        title: "Full Root SSH Access",
+        description: "Dedicated KVM instance with custom OS choice & dedicated IPv4",
+      });
+    } else {
+      items.push({
+        title: plan.websites,
+        description: "Isolated cPanel account with Softaculous 1-click WordPress install",
+      });
+    }
+
+    // 2. Storage
+    items.push({
+      title: plan.storage,
+      description: "Pure PCIe Gen4 direct NVMe storage for sub-second page loads",
+    });
+
+    // 3. Compute (RAM & CPU)
+    items.push({
+      title: `${plan.ram} • ${plan.cpu}`,
+      description: "Guaranteed container compute resources with CloudLinux CageFS",
+    });
+
+    // 4. Server & Caching Speed
+    if (plan.id.includes("wordpress")) {
+      items.push({
+        title: "LiteSpeed Enterprise + Redis",
+        description: "Pre-configured LSCache and Redis Object Cache for WooCommerce",
+      });
+    } else if (plan.id.includes("vps")) {
+      items.push({
+        title: "1 Gbps Dedicated Port",
+        description: "Unmetered high-throughput bandwidth with Tier-1 Anti-DDoS",
+      });
+    } else {
+      items.push({
+        title: "LiteSpeed Web Server",
+        description: "High-concurrency HTTP/3 web server with automated LSCache",
+      });
+    }
+
+    // 5. Renewal & Guarantee
+    items.push({
+      title: "Flat Renewal Guarantee",
+      description: "Renew at the same rate forever with free daily JetBackups",
+    });
+
+    return items;
+  };
+
+  const structuredFeatures = getStructuredFeatures();
+
   return (
     <div
-      className={`relative flex flex-col rounded-2xl transition-all duration-200 bg-[#111827] ${
+      className={`relative flex flex-col justify-between rounded-2xl bg-[#111827] transition-all duration-200 ${
         plan.popular
-          ? "border-2 border-[#4F46E5] shadow-2xl shadow-indigo-950/40 lg:-translate-y-2 z-10"
-          : "border border-white/10 hover:border-white/20 shadow-card hover:shadow-card-hover"
-      } p-6 sm:p-8 ${className}`}
+          ? "border-2 border-[#4F46E5] shadow-xl shadow-indigo-950/40"
+          : "border border-white/10 hover:border-white/20 shadow-card hover:bg-[#1F2937]/30"
+      } p-6 sm:p-7 ${className}`}
     >
-      {/* Featured / Popular Badge */}
-      {plan.popular && (
-        <div className="absolute -top-3.5 left-1/2 -translate-x-1/2 inline-flex items-center gap-1.5 px-3.5 py-1 rounded-full text-xs font-bold uppercase tracking-wider bg-[#4F46E5] text-white shadow-md">
-          <Sparkles className="w-3.5 h-3.5 text-[#06B6D4]" />
-          <span>{plan.featuredBadge || "Most Popular"}</span>
+      <div>
+        {/* Top Header Row matching the reference image */}
+        <div className="flex items-center justify-between gap-3">
+          <h3 className="text-xl font-bold text-[#F9FAFB] tracking-tight">
+            {plan.name}
+          </h3>
+          {plan.popular && (
+            <span className="px-2.5 py-1 rounded-full text-[10px] font-bold tracking-wider uppercase bg-[#1F2937] text-[#F9FAFB] border border-white/15 shadow-sm">
+              {plan.featuredBadge || "POPULAR"}
+            </span>
+          )}
         </div>
-      )}
 
-      {/* Plan Header */}
-      <div className="mb-6">
-        <h3 className="text-xl font-bold text-[#F9FAFB]">{plan.name}</h3>
-        {plan.tierSubtitle && (
-          <p className="mt-1.5 text-xs sm:text-sm text-[#9CA3AF] min-h-[38px] leading-relaxed">
-            {plan.tierSubtitle}
-          </p>
-        )}
-      </div>
-
-      {/* Pricing Landmark */}
-      <div className="mb-6 pb-6 border-b border-white/10">
-        <div className="flex items-baseline gap-1">
-          <span className="text-2xl font-bold text-[#9CA3AF]">{currencySymbol}</span>
+        {/* Price Row */}
+        <div className="mt-4 flex items-baseline gap-1.5">
           <span className="text-4xl sm:text-5xl font-extrabold text-[#F9FAFB] tracking-tight">
-            {currentPrice}
+            {currencySymbol}{currentPrice}
           </span>
-          <span className="text-sm text-[#9CA3AF] font-medium">/month</span>
+          <span className="text-sm text-[#9CA3AF] font-medium">/ month</span>
         </div>
 
-        {/* Renewal Guarantee */}
-        {plan.renewalPriceSame ? (
-          <div className="mt-2.5 inline-flex items-center gap-1.5 text-xs font-semibold text-[#10B981] bg-[#10B981]/10 px-2.5 py-1 rounded-md border border-[#10B981]/20">
-            <ShieldCheck className="w-3.5 h-3.5 shrink-0 text-[#10B981]" />
-            <span>Same price on renewal • Zero price hike</span>
-          </div>
-        ) : (
-          <p className="mt-2 text-xs text-[#9CA3AF]">Standard renewal rates apply</p>
-        )}
-
-        {plan.setupFee !== undefined && plan.setupFee > 0 && (
-          <p className="mt-1.5 text-xs text-[#9CA3AF]">
-            + {currencySymbol}{plan.setupFee} one-time setup fee
-          </p>
-        )}
-      </div>
-
-      {/* Core Resources Highlights */}
-      <div className="grid grid-cols-2 gap-2.5 mb-6 text-xs bg-[#0B0F19] p-3 rounded-xl border border-white/10">
-        <div>
-          <span className="text-[#9CA3AF] block text-[11px]">Websites</span>
-          <span className="text-[#F9FAFB] font-bold text-xs">{plan.websites}</span>
-        </div>
-        <div>
-          <span className="text-[#9CA3AF] block text-[11px]">Storage</span>
-          <span className="text-[#F9FAFB] font-bold text-xs">{plan.storage}</span>
-        </div>
-        <div>
-          <span className="text-[#9CA3AF] block text-[11px]">RAM</span>
-          <span className="text-[#F9FAFB] font-bold text-xs">{plan.ram}</span>
-        </div>
-        <div>
-          <span className="text-[#9CA3AF] block text-[11px]">CPU Core</span>
-          <span className="text-[#F9FAFB] font-bold text-xs">{plan.cpu}</span>
-        </div>
-      </div>
-
-      {/* Feature Bullet List */}
-      <div className="flex-1 mb-8">
-        <p className="text-xs font-bold uppercase tracking-wider text-[#9CA3AF] mb-3">
-          Included Specifications:
+        {/* Subtitle / Tagline */}
+        <p className="mt-2 text-xs sm:text-sm text-[#9CA3AF] font-normal leading-relaxed min-h-[38px]">
+          {plan.tierSubtitle || "All-in-one cloud hosting solution for your business"}
         </p>
-        <ul className="space-y-2.5">
-          {plan.features.map((feature, idx) => (
-            <li key={idx} className="flex items-start gap-2.5 text-xs sm:text-sm text-[#9CA3AF]">
-              <Check className="w-4 h-4 text-[#06B6D4] shrink-0 mt-0.5" />
-              <span>{feature}</span>
-            </li>
+
+        {/* Clean Divider Line */}
+        <div className="my-6 border-b border-white/10" />
+
+        {/* Feature List: Title + Sub-description matching reference image */}
+        <div className="space-y-4 sm:space-y-5">
+          {structuredFeatures.map((item, idx) => (
+            <div key={idx} className="flex items-start gap-3">
+              <div className="w-4 h-4 rounded-full flex items-center justify-center shrink-0 mt-0.5 text-[#06B6D4]">
+                <Check className="w-4 h-4 stroke-[2.5]" />
+              </div>
+              <div className="text-left">
+                <p className="text-sm font-semibold text-[#F9FAFB] leading-snug">
+                  {item.title}
+                </p>
+                <p className="text-xs text-[#9CA3AF] leading-relaxed mt-0.5">
+                  {item.description}
+                </p>
+              </div>
+            </div>
           ))}
-        </ul>
+        </div>
       </div>
 
-      {/* Direct Order CTA */}
-      <div className="mt-auto pt-2">
+      {/* Direct Order CTA at Bottom */}
+      <div className="mt-8 pt-4 border-t border-white/5">
         <Button
           variant={plan.popular ? "primary" : "secondary"}
           size="lg"
           href={plan.orderUrl}
           isExternal={true}
-          className={`w-full font-bold ${
+          className={`w-full font-semibold rounded-xl py-3 shadow-md ${
             plan.popular
-              ? "bg-[#4F46E5] hover:bg-[#4338CA] text-white shadow-lg shadow-indigo-600/20"
+              ? "bg-[#4F46E5] hover:bg-indigo-500 text-white shadow-indigo-600/25"
               : "bg-[#1F2937] hover:bg-[#374151] text-[#F9FAFB] border border-white/10"
           }`}
         >
           {plan.ctaText || "Deploy Plan Now"}
         </Button>
-        <p className="text-center text-[11px] text-[#9CA3AF] mt-2">
-          Instant cPanel setup • 7-day money-back guarantee
+        <p className="text-center text-[11px] text-[#9CA3AF] mt-2.5 font-medium">
+          Instant setup • 7-day money-back guarantee
         </p>
       </div>
     </div>
