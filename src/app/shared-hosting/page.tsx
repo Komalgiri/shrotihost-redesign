@@ -54,11 +54,11 @@ export default function SharedHostingPage() {
               <span>NVMe SSDs • LiteSpeed Enterprise • cPanel Latest</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               High-Performance NVMe Shared Hosting with Flat Renewal Pricing
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Deploy your website on enterprise LiteSpeed web servers and PCIe NVMe storage. Enjoy predictable billing with our <strong className="text-[#F9FAFB] font-bold">same-price-on-renewal guarantee</strong>.
             </p>
 

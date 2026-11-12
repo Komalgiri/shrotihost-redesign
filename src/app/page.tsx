@@ -55,7 +55,7 @@ export default function HomePage() {
               </div>
 
               {/* Exact Headline from screenshot */}
-              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.08]">
+              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.15]">
                 Infrastructure that{" "}
                 <br className="hidden sm:inline" />
                 moves you{" "}
@@ -66,10 +66,10 @@ export default function HomePage() {
 
               {/* Subtitle Copy matching screenshot */}
               <div className="space-y-2">
-                <p className="text-base sm:text-lg text-[#F9FAFB] font-normal leading-relaxed">
+                <p className="text-sm sm:text-base text-[#F9FAFB] font-normal leading-relaxed">
                   High-speed cloud hosting and custom software engineering, built for businesses that expect more.
                 </p>
-                <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed max-w-xl">
+                <p className="text-xs sm:text-sm text-[#9CA3AF] leading-relaxed max-w-xl">
                   Enterprise LiteSpeed NVMe servers. Flat-rate renewals, always. Sub-second performance backed by senior engineering support.
                 </p>
               </div>
@@ -415,7 +415,7 @@ export default function HomePage() {
               </div>
 
               {/* Exact Headline from screenshot */}
-              <h2 className="text-4xl sm:text-5xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.18]">
                 Nothing hidden.{" "}
                 <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] via-[#6366F1] to-[#A5B4FC]">
@@ -424,7 +424,7 @@ export default function HomePage() {
               </h2>
 
               {/* Subtitle */}
-              <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed max-w-sm pt-2">
+              <p className="text-sm text-[#9CA3AF] leading-relaxed max-w-sm pt-2">
                 Still wondering about something? Talk to a real person who knows the answer.
               </p>
 

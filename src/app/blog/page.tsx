@@ -37,7 +37,7 @@ export default function BlogIndexPage() {
               <span>Engineering & Knowledge Hub</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-slate-900 tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-900 tracking-tight leading-tight">
               Hosting Tutorials, Architecture & Insights
             </h1>
 

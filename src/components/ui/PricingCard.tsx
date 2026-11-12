@@ -114,7 +114,7 @@ export const PricingCard: React.FC<PricingCardProps> = ({
 
         {/* Price Row */}
         <div className="mt-4 flex items-baseline gap-1.5">
-          <span className="text-4xl sm:text-5xl font-extrabold text-[#F9FAFB] tracking-tight">
+          <span className="text-3xl sm:text-4xl font-extrabold text-[#F9FAFB] tracking-tight">
             {currencySymbol}{currentPrice}
           </span>
           <span className="text-sm text-[#9CA3AF] font-medium">/ month</span>

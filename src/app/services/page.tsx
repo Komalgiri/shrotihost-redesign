@@ -135,11 +135,11 @@ export default function ServicesPage() {
               <span>Full-Stack Engineering • Cloud Integration • Dedicated Support</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Software & Digital Engineering Services
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               From bespoke responsive websites and mobile apps to scalable SaaS platforms and WHMCS automation tools. We design, build, and deploy digital products engineered for raw speed.
             </p>
 

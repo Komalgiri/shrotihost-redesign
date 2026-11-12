@@ -119,11 +119,11 @@ export default function EcommerceDevelopmentPage() {
               <span>WooCommerce • UPI Gateways • Automated GST Invoicing • Fast Checkout</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               High-Converting E-Commerce Store Engineering
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Build an online storefront tuned for Indian shoppers. Seamless UPI and card checkouts, automated GST compliance, courier integration, and sub-second catalog speeds on LiteSpeed NVMe cloud.
             </p>
 

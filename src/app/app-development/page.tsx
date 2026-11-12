@@ -147,11 +147,11 @@ export default function AppDevelopmentPage() {
               <span>React Native • Flutter • iOS & Android • Cloud APIs</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Cross-Platform Mobile App Engineering
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               We design and build intuitive, fluid mobile applications that delight users on smartphones and tablets. Backed by scalable cloud infrastructure and guaranteed store approval.
             </p>
 

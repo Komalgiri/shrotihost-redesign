@@ -120,11 +120,11 @@ export default function DomainsPage() {
               <span>Instant Registration • Free DNS Tools • Transparent Pricing</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Find and Secure Your Ideal Domain Name
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Register .in, .com, .org, and modern extensions with upfront renewal rates, zero hidden transfer penalties, and free DNS management.
             </p>
           </div>

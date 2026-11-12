@@ -91,11 +91,11 @@ export default function UnlimitedHostingPage() {
               <span>Unmetered NVMe SSD • Unmetered Bandwidth • Transparent FUP</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               Unlimited NVMe Hosting with Transparent Policies
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Grow your web presence without worrying about disk quota overages. Powered by LiteSpeed Enterprise and protected by our <strong className="text-[#F9FAFB] font-bold">same renewal price guarantee</strong>.
             </p>
 

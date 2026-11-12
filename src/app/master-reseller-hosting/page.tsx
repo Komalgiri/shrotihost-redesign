@@ -170,7 +170,7 @@ export default function MasterResellerHostingPage() {
                 Two-Tier Agency Hosting Infrastructure
               </div>
 
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
+              <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold tracking-tight text-slate-900 leading-[1.15]">
                 Sell cPanel accounts{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-600">
                   and WHM Reseller accounts.

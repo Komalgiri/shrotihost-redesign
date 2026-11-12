@@ -45,7 +45,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
               </div>
             )}
 
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.12]">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.18]">
               <span>{title}</span>
               {highlightText && (
                 <span className="block text-[#818CF8]">
@@ -55,7 +55,7 @@ export const CTASection: React.FC<CTASectionProps> = ({
             </h2>
 
             {subtitle && (
-              <p className="text-sm sm:text-base text-[#9CA3AF] font-normal leading-relaxed pt-1">
+              <p className="text-sm text-[#9CA3AF] font-normal leading-relaxed pt-1">
                 {subtitle}
               </p>
             )}

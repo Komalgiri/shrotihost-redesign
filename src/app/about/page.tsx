@@ -108,11 +108,11 @@ export default function AboutPage() {
               <span>Registered Indian MSME • UDYAM-UP-36-0017127</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Architecting Developer-First Cloud Infrastructure & Software
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
               Founded in 2023 by Priyanshu Shroti, ShrotiHost combines high-performance NVMe cloud infrastructure with honest, predictable pricing and dedicated engineer support.
             </p>
 

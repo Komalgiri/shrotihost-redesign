@@ -107,11 +107,11 @@ export default function VPSHostingPage() {
               <span>Full Root Access • KVM Virtualization • 1 Gbps Port Speed</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               High-Compute Cloud VPS Virtual Private Servers
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Deploy isolated KVM instances with dedicated compute power, NVMe storage, and uncompromised Linux control. Engineered for developers, high-traffic portals, and agency fleets.
             </p>
 

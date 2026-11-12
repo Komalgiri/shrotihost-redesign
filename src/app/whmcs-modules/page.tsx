@@ -169,11 +169,11 @@ export default function WhmcsModulesPage() {
               <span>WHMCS v8.x & PHP 8.2 Compatible Addons</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               WHMCS Modules & Hosting Automation Built by Hosters
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
               Streamline customer billing, automate instant WhatsApp transaction notifications, and recover payment gateway processing surcharges legally with production-tested WHMCS addons.
             </p>
 

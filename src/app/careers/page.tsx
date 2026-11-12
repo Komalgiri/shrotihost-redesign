@@ -178,11 +178,11 @@ export default function CareersPage() {
               <span>We&apos;re Hiring • 100% Remote in India</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-[#F9FAFB] tracking-tight leading-tight">
               Build India&apos;s Most Transparent Cloud Platform
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-3xl mx-auto leading-relaxed">
               Join an engineering-led team that values craftsmanship, autonomy, and honesty. We are building the next generation of cloud hosting and digital engineering tools.
             </p>
 

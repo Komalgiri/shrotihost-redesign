@@ -108,11 +108,11 @@ export default function ResellerHostingPage() {
               <span>White-Label WHM • Free WHMCS on Annual • Overselling Enabled</span>
             </div>
 
-            <h1 className="text-3xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-tight">
+            <h1 className="text-2xl sm:text-3xl lg:text-4xl font-black text-[#F9FAFB] tracking-tight leading-tight">
               White-Label Linux Reseller Hosting Powered by WHM & NVMe
             </h1>
 
-            <p className="mt-4 sm:mt-6 text-base sm:text-lg text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
+            <p className="mt-4 sm:mt-6 text-sm sm:text-base text-[#9CA3AF] max-w-2xl mx-auto leading-relaxed">
               Launch your own profitable hosting brand or manage client accounts under one master control panel. Includes LiteSpeed servers, 100% white-label nameservers, and guaranteed <strong className="text-[#F9FAFB] font-bold">flat renewal rates</strong>.
             </p>
 
