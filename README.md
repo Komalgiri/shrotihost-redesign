@@ -15,7 +15,7 @@
 | :--- | :--- |
 | **GitHub Repository** | [`https://github.com/Komalgiri/shrotihost-redesign`](https://github.com/Komalgiri/shrotihost-redesign) |
 | **Deployment Branch** | `main` |
-| **Commit Reference** | `8a15624` (and continuous syncs) |
+| **Commit Reference** | `3e2f26b` (Latest production commit) |
 | **Live Website** | Continuous Git-based Vercel Deployment |
 | **Hosting Provider** | Vercel (Auto-deploys on push to `main`) |
 | **Deployment Evidence** | Next.js production build (`36/36 static pages prerendered`), 0 errors, auto-triggered on Git push |
