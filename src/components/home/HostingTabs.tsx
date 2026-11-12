@@ -207,9 +207,9 @@ export const HostingTabs: React.FC = () => {
       </div>
 
       {/* 2. CATEGORY PILL TABS + CURRENCY DROPDOWN ROW MATCHING SCREENSHOT */}
-      <div className="flex flex-col xl:flex-row xl:items-center justify-between gap-4 pt-2">
+      <div className="flex flex-col md:flex-row md:items-center justify-between gap-3 pt-2">
         {/* Horizontal Scrollable Tabs */}
-        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1">
+        <div className="flex items-center gap-2 overflow-x-auto no-scrollbar pb-1 min-w-0 flex-1">
           {categories.map((cat) => {
             const isActive = activeTab === cat.id;
             return (
@@ -229,50 +229,63 @@ export const HostingTabs: React.FC = () => {
           })}
         </div>
 
-        {/* Currency Selector on Right matching screenshot */}
-        <div className="relative shrink-0 self-end xl:self-center">
+        {/* Currency Selector on Right anchored to tabs row */}
+        <div className="relative shrink-0 self-end md:self-auto">
           <button
             type="button"
             onClick={() => setCurrencyDropdownOpen(!currencyDropdownOpen)}
-            className="flex items-center gap-1.5 bg-[#111827] border border-white/10 hover:border-white/20 px-3.5 py-1.5 rounded-xl text-xs font-bold text-[#F9FAFB] shadow-sm transition-colors focus:outline-none"
+            className="flex items-center gap-1.5 bg-[#111827] border border-white/10 hover:border-white/20 px-3.5 py-2 rounded-xl text-xs font-bold text-[#F9FAFB] shadow-sm transition-colors focus:outline-none"
+            aria-label="Select Currency"
+            aria-expanded={currencyDropdownOpen}
           >
             <span>{currency === "USD" ? "$ USD" : "₹ INR"}</span>
-            <ChevronDown className="w-3.5 h-3.5 text-[#9CA3AF]" />
+            <ChevronDown
+              className={`w-3.5 h-3.5 text-[#9CA3AF] transition-transform duration-200 ${
+                currencyDropdownOpen ? "rotate-180" : ""
+              }`}
+            />
           </button>
 
           {currencyDropdownOpen && (
-            <div className="absolute right-0 top-full mt-1.5 w-32 bg-[#111827] border border-white/15 rounded-xl shadow-2xl p-1 z-30">
-              <button
-                type="button"
-                onClick={() => {
-                  setCurrency("USD");
-                  setCurrencyDropdownOpen(false);
-                }}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
-                  currency === "USD"
-                    ? "bg-[#4F46E5] text-white"
-                    : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
-                }`}
-              >
-                <span>$ USD</span>
-                {currency === "USD" && <Check className="w-3.5 h-3.5" />}
-              </button>
-              <button
-                type="button"
-                onClick={() => {
-                  setCurrency("INR");
-                  setCurrencyDropdownOpen(false);
-                }}
-                className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
-                  currency === "INR"
-                    ? "bg-[#4F46E5] text-white"
-                    : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
-                }`}
-              >
-                <span>₹ INR</span>
-                {currency === "INR" && <Check className="w-3.5 h-3.5" />}
-              </button>
-            </div>
+            <>
+              {/* Invisible Click Outside Backdrop */}
+              <div
+                className="fixed inset-0 z-40"
+                onClick={() => setCurrencyDropdownOpen(false)}
+              />
+              <div className="absolute right-0 top-full mt-1.5 w-32 bg-[#111827] border border-white/15 rounded-xl shadow-2xl p-1 z-50">
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCurrency("USD");
+                    setCurrencyDropdownOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                    currency === "USD"
+                      ? "bg-[#4F46E5] text-white"
+                      : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
+                  }`}
+                >
+                  <span>$ USD</span>
+                  {currency === "USD" && <Check className="w-3.5 h-3.5" />}
+                </button>
+                <button
+                  type="button"
+                  onClick={() => {
+                    setCurrency("INR");
+                    setCurrencyDropdownOpen(false);
+                  }}
+                  className={`w-full flex items-center justify-between px-3 py-2 rounded-lg text-xs font-semibold transition-colors ${
+                    currency === "INR"
+                      ? "bg-[#4F46E5] text-white"
+                      : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-white/5"
+                  }`}
+                >
+                  <span>₹ INR</span>
+                  {currency === "INR" && <Check className="w-3.5 h-3.5" />}
+                </button>
+              </div>
+            </>
           )}
         </div>
       </div>

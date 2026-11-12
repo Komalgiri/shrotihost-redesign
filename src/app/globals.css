@@ -97,88 +97,108 @@ html.light {
   color-scheme: light;
 }
 
+html.light,
 html.light body {
   background-color: #F8FAFC !important;
   color: #0F172A !important;
 }
 
-/* Light mode overrides for core container backgrounds */
-html.light .bg-\[\#0B0F19\] {
+/* Background containers */
+html.light [class*="bg-[#0B0F19]"],
+html.light [class*="bg-obsidian"],
+html.light [class*="bg-[#060910]"] {
   background-color: #F8FAFC !important;
 }
 
-html.light .bg-\[\#0F172A\] {
+html.light [class*="bg-[#0F172A]"] {
   background-color: #F1F5F9 !important;
 }
 
-html.light .bg-\[\#111827\] {
+html.light [class*="bg-[#111827]"],
+html.light [class*="bg-surface-card"],
+html.light .surface-card {
   background-color: #FFFFFF !important;
   box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05), 0 2px 6px -1px rgba(0, 0, 0, 0.03) !important;
 }
 
-html.light .bg-\[\#111827\]\/90,
-html.light .bg-\[\#111827\]\/80,
-html.light .bg-\[\#111827\]\/70,
-html.light .bg-\[\#111827\]\/50,
-html.light .bg-\[\#111827\]\/40 {
+html.light [class*="bg-[#1F2937]"],
+html.light [class*="bg-surface-hover"] {
+  background-color: #F1F5F9 !important;
+}
+
+/* Semi-transparent surfaces */
+html.light [class*="bg-[#111827]/"] {
   background-color: rgba(255, 255, 255, 0.95) !important;
 }
 
-html.light .bg-\[\#0B0F19\]\/90,
-html.light .bg-\[\#0B0F19\]\/80 {
+html.light [class*="bg-[#0B0F19]/"] {
   background-color: #F1F5F9 !important;
-}
-
-html.light .bg-\[\#1F2937\] {
-  background-color: #F1F5F9 !important;
-}
-
-/* Light mode text typography */
-html.light .text-\[\#F9FAFB\] {
-  color: #0F172A !important;
-}
-
-html.light .text-\[\#9CA3AF\] {
-  color: #64748B !important;
-}
-
-html.light .text-white {
-  color: #0F172A;
-}
-
-html.light .bg-\[\#4F46E5\] .text-white,
-html.light .bg-indigo-600 .text-white,
-html.light button.bg-\[\#4F46E5\],
-html.light a.bg-\[\#4F46E5\],
-html.light .bg-emerald-500 .text-white,
-html.light .bg-\[\#10B981\] .text-white {
-  color: #FFFFFF !important;
-}
-
-/* Light mode borders */
-html.light .border-white\/5,
-html.light .border-white\/10,
-html.light .border-white\/15,
-html.light .border-white\/20 {
-  border-color: #E2E8F0 !important;
 }
 
 /* Header in light mode */
 html.light header {
-  background-color: rgba(255, 255, 255, 0.92) !important;
+  background-color: rgba(255, 255, 255, 0.95) !important;
   border-bottom-color: #E2E8F0 !important;
 }
 
-html.light header .text-\[\#F9FAFB\] {
+/* Typography overrides */
+html.light [class*="text-[#F9FAFB]"],
+html.light [class*="text-text-primary"] {
   color: #0F172A !important;
+}
+
+html.light [class*="text-[#9CA3AF]"],
+html.light [class*="text-text-muted"] {
+  color: #64748B !important;
+}
+
+html.light [class*="text-slate-300"],
+html.light [class*="text-slate-400"] {
+  color: #64748B !important;
+}
+
+/* Standalone text-white overrides, but preserving white text in buttons and badges */
+html.light h1.text-white,
+html.light h2.text-white,
+html.light h3.text-white,
+html.light h4.text-white,
+html.light p.text-white,
+html.light span.text-white {
+  color: #0F172A !important;
+}
+
+/* Keep button and badge text white */
+html.light [class*="bg-[#4F46E5]"],
+html.light [class*="bg-[#4F46E5]"] *,
+html.light [class*="bg-indigo-600"],
+html.light [class*="bg-indigo-600"] *,
+html.light [class*="bg-[#10B981]"],
+html.light [class*="bg-[#10B981]"] * {
+  color: #FFFFFF !important;
+}
+
+/* Active purple pill tab */
+html.light [class*="bg-[#3B1F54]"] {
+  background-color: #EDE9FE !important;
+  border-color: #A855F7 !important;
+  color: #6B21A8 !important;
+}
+
+/* Borders */
+html.light [class*="border-white/5"],
+html.light [class*="border-white/10"],
+html.light [class*="border-white/15"],
+html.light [class*="border-white/20"],
+html.light [class*="border-white/25"] {
+  border-color: #E2E8F0 !important;
 }
 
 /* Light mode tech grid */
 html.light .bg-tech-grid-dark,
 html.light .bg-tech-grid {
   background-image: 
-    linear-gradient(to right, rgba(15, 23, 42, 0.04) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.04) 1px, transparent 1px) !important;
+    linear-gradient(to right, rgba(15, 23, 42, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.05) 1px, transparent 1px) !important;
 }
 
 html.light ::-webkit-scrollbar-track {
