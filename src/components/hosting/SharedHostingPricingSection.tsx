@@ -1,10 +1,37 @@
 "use client";
 
 import React, { useState } from "react";
-import { Check, ShieldCheck, Zap, Info, ChevronDown } from "lucide-react";
+import { Check, Info, Table2 } from "lucide-react";
 import { SHARED_HOSTING_PLANS } from "@/data/hosting-plans";
 import { SHARED_HOSTING_SPECS } from "@/data/hosting-features";
 import { PricingCard } from "@/components/ui/PricingCard";
+
+const PLAN_COLUMNS = [
+  { key: "launch" as const, label: "Launch", price: "₹49/mo", featured: false },
+  { key: "grow" as const, label: "Grow", price: "₹79/mo", featured: true },
+  { key: "turbo" as const, label: "Turbo", price: "₹149/mo", featured: false },
+  { key: "infinity" as const, label: "Infinity", price: "₹249/mo", featured: false },
+];
+
+function SpecCellValue({ value }: { value: string }) {
+  const normalized = value.toLowerCase();
+  const isAffirmative =
+    normalized === "yes" ||
+    normalized.startsWith("yes ") ||
+    normalized === "included" ||
+    normalized.startsWith("included");
+
+  if (isAffirmative) {
+    return (
+      <span className="inline-flex items-center justify-center gap-1.5 text-[#10B981] font-semibold">
+        <Check className="w-3.5 h-3.5 shrink-0" aria-hidden />
+        <span className="text-[#F9FAFB] font-medium">{value}</span>
+      </span>
+    );
+  }
+
+  return <span className="text-[#9CA3AF] font-medium">{value}</span>;
+}
 
 export const SharedHostingPricingSection: React.FC = () => {
   const [billingCycle, setBillingCycle] = useState<"monthly" | "semiAnnual" | "annual">("monthly");
@@ -65,79 +92,113 @@ export const SharedHostingPricingSection: React.FC = () => {
         ))}
       </div>
 
-      {/* SIDE-BY-SIDE TECHNICAL SPECIFICATION COMPARISON TABLE */}
-      <div className="pt-12 border-t border-slate-200/90">
-        <div className="text-center max-w-3xl mx-auto mb-10">
-          <h3 className="text-2xl sm:text-3xl font-bold text-slate-950 tracking-tight">
-            Detailed Technical Specification Comparison
-          </h3>
-          <p className="mt-2 text-sm sm:text-base text-slate-500">
-            Transparent resource allocations and software configurations across every shared hosting tier.
+      {/* Technical specification matrix — theme tokens (dark + html.light overrides) */}
+      <div className="pt-12 border-t border-white/10">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-8 max-w-4xl">
+          <div className="space-y-2">
+            <div className="inline-flex items-center gap-2 text-[11px] font-bold uppercase tracking-[0.18em] text-[#06B6D4]">
+              <Table2 className="w-3.5 h-3.5" />
+              <span>Full spec matrix</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-extrabold text-[#F9FAFB] tracking-tight">
+              Detailed Technical Specification Comparison
+            </h3>
+            <p className="text-sm text-[#9CA3AF] leading-relaxed max-w-2xl">
+              Transparent resource allocations and software configurations across every shared hosting tier.
+            </p>
+          </div>
+          <p className="text-[11px] text-[#9CA3AF] sm:text-right shrink-0">
+            Swipe horizontally on mobile · Grow column highlighted
           </p>
         </div>
 
-        {/* Responsive Table Wrapper with Horizontal Scroll */}
-        <div className="overflow-x-auto rounded-2xl border border-slate-200/90 bg-white shadow-sm">
-          <table className="w-full text-left border-collapse min-w-[700px]">
-            {/* Table Header */}
-            <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-slate-900 text-xs sm:text-sm">
-                <th className="py-4 px-6 font-bold w-1/3">Feature / Specification</th>
-                <th className="py-4 px-4 font-bold text-center">
-                  Launch
-                  <span className="block text-xs font-normal text-slate-500">₹49/mo</span>
-                </th>
-                <th className="py-4 px-4 font-bold text-center bg-indigo-50/50 text-indigo-900">
-                  Grow (Popular)
-                  <span className="block text-xs font-normal text-indigo-700">₹79/mo</span>
-                </th>
-                <th className="py-4 px-4 font-bold text-center">
-                  Turbo
-                  <span className="block text-xs font-normal text-slate-500">₹149/mo</span>
-                </th>
-                <th className="py-4 px-4 font-bold text-center">
-                  Infinity
-                  <span className="block text-xs font-normal text-slate-500">₹249/mo</span>
-                </th>
-              </tr>
-            </thead>
-
-            {/* Table Body Categories */}
-            <tbody>
-              {SHARED_HOSTING_SPECS.map((category, cIdx) => (
-                <React.Fragment key={cIdx}>
-                  <tr className="bg-slate-50/80 border-y border-slate-200/80">
-                    <td
-                      colSpan={5}
-                      className="py-3 px-6 text-xs font-bold uppercase tracking-wider text-indigo-700"
+        <div className="rounded-2xl border border-white/10 bg-[#111827] shadow-card overflow-hidden">
+          <div className="h-1 w-full bg-gradient-to-r from-[#4F46E5] via-[#06B6D4] to-[#10B981] opacity-80" />
+          <div className="overflow-x-auto">
+            <table className="w-full min-w-[768px] border-collapse text-xs sm:text-sm">
+              <thead>
+                <tr className="border-b border-white/10 bg-[#0B0F19]/90 text-left">
+                  <th
+                    scope="col"
+                    className="sticky left-0 z-20 min-w-[200px] sm:min-w-[240px] py-4 pl-5 pr-4 font-bold text-[#F9FAFB] bg-[#0B0F19]/95 backdrop-blur-sm border-r border-white/10"
+                  >
+                    Feature / specification
+                  </th>
+                  {PLAN_COLUMNS.map((plan) => (
+                    <th
+                      key={plan.key}
+                      scope="col"
+                      className={`py-4 px-3 sm:px-4 text-center font-bold text-[#F9FAFB] ${
+                        plan.featured
+                          ? "bg-[#4F46E5]/15 border-x border-[#4F46E5]/25 relative"
+                          : ""
+                      }`}
                     >
-                      {category.title}
-                    </td>
-                  </tr>
-
-                  {category.rows.map((row, rIdx) => (
-                    <tr
-                      key={rIdx}
-                      className="border-b border-slate-100 hover:bg-slate-50/60 transition-colors text-xs sm:text-sm text-slate-700"
-                    >
-                      <td className="py-3.5 px-6 font-medium text-slate-900 flex items-center gap-1.5">
-                        <span>{row.name}</span>
-                        {row.tooltip && (
-                          <Info className="w-3.5 h-3.5 text-slate-400 shrink-0" />
-                        )}
-                      </td>
-                      <td className="py-3.5 px-4 text-center">{row.launch}</td>
-                      <td className="py-3.5 px-4 text-center bg-indigo-50/30 font-semibold text-slate-950">
-                        {row.grow}
-                      </td>
-                      <td className="py-3.5 px-4 text-center">{row.turbo}</td>
-                      <td className="py-3.5 px-4 text-center">{row.infinity}</td>
-                    </tr>
+                      {plan.featured && (
+                        <span className="absolute top-2 left-1/2 -translate-x-1/2 text-[9px] font-bold uppercase tracking-wider text-[#818CF8] px-2 py-0.5 rounded-full bg-[#4F46E5]/20 border border-[#4F46E5]/30">
+                          Popular
+                        </span>
+                      )}
+                      <span className={plan.featured ? "block mt-5" : "block"}>{plan.label}</span>
+                      <span className="block text-[11px] font-semibold text-[#06B6D4] mt-0.5">
+                        {plan.price}
+                      </span>
+                      <span className="block text-[10px] font-medium text-[#9CA3AF] mt-1">
+                        Same on renewal
+                      </span>
+                    </th>
                   ))}
-                </React.Fragment>
-              ))}
-            </tbody>
-          </table>
+                </tr>
+              </thead>
+              <tbody>
+                {SHARED_HOSTING_SPECS.map((category, cIdx) => (
+                  <React.Fragment key={cIdx}>
+                    <tr className="border-y border-white/10 bg-[#1F2937]/35">
+                      <td
+                        colSpan={5}
+                        className="py-2.5 pl-5 pr-4 text-[11px] font-bold uppercase tracking-wider text-[#818CF8]"
+                      >
+                        {category.title}
+                      </td>
+                    </tr>
+                    {category.rows.map((row, rIdx) => (
+                      <tr
+                        key={rIdx}
+                        className={`border-b border-white/[0.06] transition-colors hover:bg-[#1F2937]/25 ${
+                          rIdx % 2 === 1 ? "bg-[#0B0F19]/25" : ""
+                        }`}
+                      >
+                        <th
+                          scope="row"
+                          className="sticky left-0 z-10 py-3.5 pl-5 pr-4 font-medium text-left text-[#F9FAFB] bg-[#111827] border-r border-white/10"
+                        >
+                          <div className="flex items-start gap-2">
+                            <span className="leading-snug">{row.name}</span>
+                            {row.tooltip && (
+                              <Info
+                                className="w-3.5 h-3.5 text-[#9CA3AF] shrink-0 mt-0.5"
+                                aria-label="More information available"
+                              />
+                            )}
+                          </div>
+                        </th>
+                        {PLAN_COLUMNS.map((plan) => (
+                          <td
+                            key={plan.key}
+                            className={`py-3.5 px-3 sm:px-4 text-center align-middle ${
+                              plan.featured ? "bg-[#4F46E5]/10 border-x border-[#4F46E5]/15" : ""
+                            }`}
+                          >
+                            <SpecCellValue value={row[plan.key]} />
+                          </td>
+                        ))}
+                      </tr>
+                    ))}
+                  </React.Fragment>
+                ))}
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
