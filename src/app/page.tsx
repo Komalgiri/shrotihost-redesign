@@ -15,6 +15,7 @@ import {
   Cpu,
   Puzzle,
   Star,
+  Sparkles,
   Layers,
   MessageSquare,
   ExternalLink,
@@ -38,97 +39,83 @@ import { SERVICES_LIST } from "@/data/services";
 export default function HomePage() {
   return (
     <div className="space-y-0 bg-[#0B0F19] text-[#F9FAFB]">
-      {/* 1. DISTINCTIVE SPLIT-LAYOUT HERO */}
-      <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-white/10 bg-[#0B0F19] overflow-hidden">
+      {/* 1. DISTINCTIVE HERO SECTION MATCHING SCREENSHOT */}
+      <section className="relative pt-12 sm:pt-20 pb-16 sm:pb-24 border-b border-white/5 bg-[#0B0F19] overflow-hidden">
         {/* Subtle background technical grid */}
-        <div className="absolute inset-0 bg-tech-grid-dark opacity-40 pointer-events-none" />
+        <div className="absolute inset-0 bg-tech-grid-dark opacity-30 pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             {/* LEFT COLUMN: Editorial Presentation & Copy */}
             <div className="lg:col-span-6 xl:col-span-7 space-y-6 text-left">
-              {/* Refined Announcement Pill */}
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-semibold bg-[#4F46E5]/15 text-indigo-300 border border-[#4F46E5]/30 shadow-sm">
-                <span className="w-2 h-2 rounded-full bg-[#10B981] animate-pulse" />
-                <span>Next-Gen NVMe Cloud Infrastructure • India Datacenter</span>
+              {/* Eyebrow Tag matching screenshot */}
+              <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-[0.2em] text-[#06B6D4]">
+                <Sparkles className="w-4 h-4 text-[#06B6D4]" />
+                <span>INDIAN CLOUD. ENGINEERED WITH PURPOSE.</span>
               </div>
 
-              {/* Editorial Headline with controlled line breaks */}
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#F9FAFB] tracking-tight leading-[1.12]">
-                Cloud hosting and software engineering,{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#4F46E5] to-[#06B6D4]">
-                  built with purpose.
+              {/* Exact Headline from screenshot */}
+              <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-[#F9FAFB] tracking-tight leading-[1.08]">
+                Infrastructure that{" "}
+                <br className="hidden sm:inline" />
+                moves you{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#818CF8] via-[#6366F1] to-[#A5B4FC]">
+                  forward.
                 </span>
               </h1>
 
-              {/* Convincing Subtitle */}
-              <p className="text-base sm:text-lg text-[#9CA3AF] max-w-2xl leading-relaxed">
-                Enterprise-grade LiteSpeed NVMe servers engineered for sub-second load times with flat-rate renewals — zero predatory price hikes. Backed by verified Indian MSME credentials and hands-on senior engineering.
-              </p>
+              {/* Subtitle Copy matching screenshot */}
+              <div className="space-y-2">
+                <p className="text-base sm:text-lg text-[#F9FAFB] font-normal leading-relaxed">
+                  High-speed cloud hosting and custom software engineering, built for businesses that expect more.
+                </p>
+                <p className="text-sm sm:text-base text-[#9CA3AF] leading-relaxed max-w-xl">
+                  Enterprise LiteSpeed NVMe servers. Flat-rate renewals, always. Sub-second performance backed by senior engineering support.
+                </p>
+              </div>
 
               {/* Action CTAs */}
               <div className="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
-                <Button
-                  variant="primary"
-                  size="lg"
+                <Link
                   href="/shared-hosting"
-                  rightIcon={<ArrowRight className="w-4 h-4" />}
-                  className="font-bold shadow-lg shadow-indigo-600/25 bg-[#4F46E5] hover:bg-[#4338CA] text-white"
+                  className="bg-[#4F46E5] hover:bg-indigo-500 text-white font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl shadow-lg shadow-indigo-600/25 inline-flex items-center justify-center gap-2 transition-all"
                 >
-                  Explore Hosting from ₹49/mo
-                </Button>
+                  <span>Explore hosting from ₹49/mo</span>
+                  <ArrowRight className="w-4 h-4" />
+                </Link>
 
-                <Button
-                  variant="secondary"
-                  size="lg"
+                <Link
                   href="/services"
-                  leftIcon={<Layers className="w-4 h-4 text-[#06B6D4]" />}
-                  className="font-semibold bg-[#111827] text-[#F9FAFB] border border-white/10 hover:bg-[#1F2937]"
+                  className="bg-[#111827] hover:bg-[#1F2937] text-white border border-white/10 font-semibold text-sm sm:text-base px-6 py-3.5 rounded-xl inline-flex items-center justify-center gap-2 transition-all"
                 >
-                  Explore Software Solutions
-                </Button>
+                  <span>Explore software</span>
+                  <ExternalLink className="w-3.5 h-3.5 text-[#9CA3AF]" />
+                </Link>
               </div>
 
-              {/* Clean Trust Indicators Strip */}
-              <div className="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-2xl">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#111827] border border-white/10 flex items-center justify-center text-[#4F46E5] shrink-0">
-                    <Zap className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-base font-extrabold text-[#F9FAFB] leading-none">₹49/mo</p>
-                    <p className="text-[11px] text-[#9CA3AF] mt-0.5">Flat Renewal Rate</p>
-                  </div>
+              {/* Clean Trust Indicators Strip matching screenshot */}
+              <div className="pt-8 border-t border-white/10 grid grid-cols-2 sm:grid-cols-4 gap-6 max-w-2xl">
+                <div>
+                  <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">₹49<span className="text-xs font-normal text-[#9CA3AF]">/mo</span></p>
+                  <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Flat renewal rate</p>
                 </div>
 
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#111827] border border-white/10 flex items-center justify-center text-[#10B981] shrink-0">
-                    <Activity className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-base font-extrabold text-[#F9FAFB] leading-none">99.9%</p>
-                    <p className="text-[11px] text-[#9CA3AF] mt-0.5">High Uptime Target</p>
-                  </div>
+                <div>
+                  <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">99.9%</p>
+                  <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Uptime target</p>
                 </div>
 
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#111827] border border-white/10 flex items-center justify-center text-[#06B6D4] shrink-0">
-                    <RotateCcw className="w-4 h-4" />
-                  </div>
-                  <div>
-                    <p className="text-base font-extrabold text-[#F9FAFB] leading-none">7 Days</p>
-                    <p className="text-[11px] text-[#9CA3AF] mt-0.5">Money-Back Guarantee</p>
-                  </div>
+                <div>
+                  <p className="text-xl sm:text-2xl font-black text-[#F9FAFB] leading-none">7 days</p>
+                  <p className="text-xs text-[#9CA3AF] mt-1.5 font-medium">Money-back promise</p>
                 </div>
 
-                <div className="flex items-center gap-2.5">
-                  <div className="w-8 h-8 rounded-lg bg-[#111827] border border-white/10 flex items-center justify-center text-purple-400 shrink-0">
-                    <Award className="w-4 h-4" />
+                <div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle className="w-4 h-4 text-[#10B981]" />
+                    <span className="text-xs font-semibold text-[#10B981]">Govt. verified</span>
                   </div>
-                  <div>
-                    <p className="text-base font-extrabold text-[#F9FAFB] leading-none">MSME</p>
-                    <p className="text-[11px] text-[#9CA3AF] mt-0.5">Govt. Verified</p>
-                  </div>
+                  <p className="text-xs text-[#9CA3AF] mt-1 font-medium">MSME registered</p>
                 </div>
               </div>
             </div>

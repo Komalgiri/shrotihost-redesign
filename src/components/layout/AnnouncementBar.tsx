@@ -1,43 +1,40 @@
 import React from "react";
-import { Zap, MessageSquare, ExternalLink } from "lucide-react";
+import { MessageSquare, ArrowUpRight } from "lucide-react";
 
 export const AnnouncementBar: React.FC = () => {
   return (
-    <div className="bg-slate-950 border-b border-slate-800/80 text-slate-300 text-xs py-2 px-4 select-none">
+    <div className="bg-[#0B0F19] border-b border-white/5 text-[#9CA3AF] text-xs py-2 px-4 sm:px-6 lg:px-8 select-none">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
-        {/* Left: Value Proposition Ticker */}
-        <div className="flex items-center gap-2 overflow-hidden truncate">
-          <span className="inline-flex items-center gap-1 font-semibold text-blue-400 bg-blue-500/10 px-2 py-0.5 rounded text-[11px] shrink-0 border border-blue-500/20">
-            <Zap className="w-3 h-3 text-blue-400" />
-            <span>NVMe CLOUD</span>
-          </span>
-          <span className="truncate text-slate-300 font-medium">
-            India Datacenter • LiteSpeed Enterprise • Same Price on Renewal Guarantee
-          </span>
-        </div>
-
-        {/* Right: Quick Channels */}
-        <div className="flex items-center gap-4 shrink-0 text-slate-400">
+        {/* Left: Value Proposition Strip */}
+        <div className="flex items-center gap-2.5 overflow-hidden truncate text-[11px] sm:text-xs">
+          <span className="w-2 h-2 rounded-full bg-[#10B981] shrink-0" />
+          <span className="text-[#F9FAFB] font-medium">Tier-IV Noida Datacenter</span>
+          <span className="text-white/20">/</span>
+          <span className="text-[#9CA3AF]">LiteSpeed Enterprise</span>
+          <span className="text-white/20 hidden md:inline">/</span>
+          <span className="text-[#9CA3AF] hidden md:inline">Flat renewal. No surprises.</span>
+          <span className="text-white/20 hidden lg:inline">/</span>
           <a
             href="https://wa.me/919582129099"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 hover:text-emerald-400 transition-colors hidden sm:inline-flex text-xs font-medium"
+            className="hidden lg:inline-flex items-center gap-1.5 text-[#9CA3AF] hover:text-[#10B981] transition-colors"
           >
-            <MessageSquare className="w-3.5 h-3.5 text-emerald-400" />
-            <span>WhatsApp: +91 95821 29099</span>
+            <MessageSquare className="w-3.5 h-3.5 text-[#10B981]" />
+            <span>+91 95821 29099</span>
           </a>
+        </div>
 
-          <span className="hidden sm:inline text-slate-700">|</span>
-
+        {/* Right: Client Portal Link */}
+        <div className="flex items-center gap-3 shrink-0 text-xs">
           <a
             href="https://portal.shrotihost.in"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1 text-slate-300 hover:text-white font-medium transition-colors text-xs"
+            className="inline-flex items-center gap-1 text-[#9CA3AF] hover:text-[#F9FAFB] font-medium transition-colors text-[11px] sm:text-xs"
           >
-            <span>Client Portal</span>
-            <ExternalLink className="w-3 h-3 text-slate-500" />
+            <span>Client portal</span>
+            <ArrowUpRight className="w-3.5 h-3.5" />
           </a>
         </div>
       </div>

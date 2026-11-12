@@ -5,271 +5,192 @@ import Link from "next/link";
 import {
   Menu,
   ChevronDown,
-  Server,
-  Flame,
-  Infinity,
-  Users,
-  Terminal,
-  Globe,
-  Smartphone,
-  ShoppingBag,
-  Cpu,
-  Puzzle,
-  Building2,
-  Mail,
-  Briefcase,
-  Layers,
-  ArrowRight,
-  ShieldCheck,
-  Zap,
+  ArrowUpRight,
 } from "lucide-react";
-import { MAIN_NAV_LINKS } from "@/data/navigation";
-import { Button } from "../ui/Button";
 import { MobileDrawer } from "./MobileDrawer";
 
 export const Navbar: React.FC = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
-  const [currency, setCurrency] = useState<"INR" | "USD" | "EUR">("INR");
 
-  const getIcon = (name?: string) => {
-    const iconClass = "w-4 h-4 text-indigo-600";
-    switch (name) {
-      case "Server":
-        return <Server className={iconClass} />;
-      case "Flame":
-        return <Flame className="w-4 h-4 text-amber-500" />;
-      case "Infinity":
-        return <Infinity className="w-4 h-4 text-cyan-500" />;
-      case "Users":
-        return <Users className="w-4 h-4 text-emerald-600" />;
-      case "Terminal":
-        return <Terminal className="w-4 h-4 text-indigo-600" />;
-      case "Globe":
-        return <Globe className={iconClass} />;
-      case "Smartphone":
-        return <Smartphone className="w-4 h-4 text-cyan-600" />;
-      case "ShoppingBag":
-        return <ShoppingBag className="w-4 h-4 text-emerald-600" />;
-      case "Cpu":
-        return <Cpu className="w-4 h-4 text-purple-600" />;
-      case "Puzzle":
-        return <Puzzle className="w-4 h-4 text-amber-500" />;
-      case "Layers":
-        return <Layers className={iconClass} />;
-      case "Building2":
-        return <Building2 className={iconClass} />;
-      case "Mail":
-        return <Mail className="w-4 h-4 text-cyan-600" />;
-      case "Briefcase":
-        return <Briefcase className="w-4 h-4 text-emerald-600" />;
-      default:
-        return <Server className={iconClass} />;
-    }
-  };
+  const hostingItems = [
+    { label: "Shared NVMe", href: "/shared-hosting" },
+    { label: "WordPress", href: "/wordpress-hosting" },
+    { label: "Unlimited", href: "/unlimited-hosting" },
+    { label: "Reseller", href: "/reseller-hosting" },
+    { label: "Master Reseller", href: "/master-reseller-hosting" },
+    { label: "Cloud VPS", href: "/vps" },
+  ];
+
+  const softwareItems = [
+    { label: "Web Development", href: "/web-development" },
+    { label: "App Development", href: "/app-development" },
+    { label: "E-Commerce", href: "/ecommerce-development" },
+    { label: "SaaS Engineering", href: "/saas-development" },
+    { label: "WHMCS Modules", href: "/whmcs-modules" },
+  ];
 
   return (
     <>
-      <header className="sticky top-0 z-40 w-full bg-[#0B0F19]/90 backdrop-blur-md border-b border-white/10 shadow-[0_4px_20px_rgba(0,0,0,0.5)]">
+      <header className="sticky top-0 z-40 w-full bg-[#0B0F19]/90 backdrop-blur-md border-b border-white/5">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-18 sm:h-20 flex items-center justify-between">
-          {/* Brand Logo with Official Indigo + Cyan Palette */}
-          <Link href="/" className="flex items-center gap-3 shrink-0 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-[#4F46E5] via-indigo-500 to-[#06B6D4] p-0.5 shadow-sm group-hover:scale-105 transition-transform">
-              <div className="w-full h-full bg-[#0B0F19] rounded-[10px] flex items-center justify-center p-1.5">
-                <svg
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="w-full h-full text-indigo-400"
-                >
-                  <rect
-                    x="3"
-                    y="7"
-                    width="18"
-                    height="5"
-                    rx="1.5"
-                    stroke="#818CF8"
-                    strokeWidth="2"
-                    fill="#1E1B4B"
-                  />
-                  <circle cx="6" cy="9.5" r="1" fill="#06B6D4" />
-                  <circle cx="9" cy="9.5" r="1" fill="#10B981" />
-                  <rect
-                    x="3"
-                    y="14"
-                    width="18"
-                    height="5"
-                    rx="1.5"
-                    stroke="#6366F1"
-                    strokeWidth="2"
-                    fill="#1E1B4B"
-                  />
-                  <circle cx="6" cy="16.5" r="1" fill="#06B6D4" />
-                  <circle cx="9" cy="16.5" r="1" fill="#10B981" />
-                </svg>
+          {/* Brand Logo matching the screenshot */}
+          <Link href="/" className="flex items-center gap-2.5 shrink-0 group">
+            <div className="w-9 h-9 rounded-xl bg-[#111827] border border-white/15 flex items-center justify-center p-2 group-hover:border-[#4F46E5]/60 transition-colors shadow-sm">
+              <div className="flex items-end gap-1 h-5">
+                <span className="w-1 h-2 rounded-full bg-[#818CF8]" />
+                <span className="w-1 h-3 rounded-full bg-[#6366F1]" />
+                <span className="w-1 h-5 rounded-full bg-[#4F46E5]" />
+                <span className="w-1 h-3.5 rounded-full bg-[#06B6D4]" />
               </div>
             </div>
-            <div className="flex flex-col">
-              <span className="font-extrabold text-xl sm:text-2xl text-[#F9FAFB] tracking-tight leading-none">
-                Shroti<span className="text-[#4F46E5]">Host</span>
+            <div className="flex items-baseline">
+              <span className="font-bold text-xl text-[#F9FAFB] tracking-tight">
+                shrotihost
               </span>
-              <span className="text-[10px] text-[#9CA3AF] font-semibold tracking-wider uppercase mt-1">
-                Cloud & Engineering
+              <span className="font-semibold text-xl text-[#06B6D4]">
+                .in
               </span>
             </div>
           </Link>
 
-          {/* Desktop Navigation Links with MegaMenu */}
+          {/* Desktop Navigation Links */}
           <nav className="hidden lg:flex items-center gap-1 xl:gap-2">
-            {MAIN_NAV_LINKS.map((navItem) => {
-              if (navItem.hasMegaMenu && navItem.groups) {
-                const isOpen = activeDropdown === navItem.label;
-                return (
-                  <div
-                    key={navItem.label}
-                    className="relative"
-                    onMouseEnter={() => setActiveDropdown(navItem.label)}
-                    onMouseLeave={() => setActiveDropdown(null)}
-                  >
-                    <button
-                      type="button"
-                      aria-expanded={isOpen}
-                      className={`inline-flex items-center gap-1 px-3 py-2 rounded-lg text-sm font-semibold transition-colors ${
-                        isOpen
-                          ? "text-[#F9FAFB] bg-[#1F2937]"
-                          : "text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937]/70"
-                      }`}
-                    >
-                      <span>{navItem.label}</span>
-                      <ChevronDown
-                        className={`w-3.5 h-3.5 transition-transform duration-200 ${
-                          isOpen ? "rotate-180 text-[#06B6D4]" : "text-[#9CA3AF]"
-                        }`}
-                      />
-                    </button>
-
-                    {/* MegaMenu Dropdown Surface */}
-                    {isOpen && (
-                      <div className="absolute top-full left-0 pt-2 w-[620px] -ml-8 animate-in fade-in duration-150 z-50">
-                        <div className="bg-[#111827] border border-white/10 rounded-2xl shadow-2xl p-5 overflow-hidden">
-                          <div className="grid grid-cols-2 gap-6">
-                            {navItem.groups.map((group, idx) => (
-                              <div key={idx} className="space-y-3">
-                                <h4 className="text-[11px] font-bold uppercase tracking-wider text-[#9CA3AF] border-b border-white/5 pb-2">
-                                  {group.title}
-                                </h4>
-                                <div className="space-y-1">
-                                  {group.items.map((item) => (
-                                    <Link
-                                      key={item.href}
-                                      href={item.href}
-                                      onClick={() => setActiveDropdown(null)}
-                                      className="flex items-start gap-3 p-2.5 rounded-xl hover:bg-[#1F2937] transition-colors group"
-                                    >
-                                      <div className="w-8 h-8 rounded-lg bg-[#0B0F19] border border-white/10 flex items-center justify-center shrink-0 group-hover:border-[#4F46E5]/40 transition-colors">
-                                        {getIcon(item.iconName)}
-                                      </div>
-                                      <div className="flex-1 min-w-0">
-                                        <div className="flex items-center justify-between">
-                                          <span className="text-sm font-semibold text-[#F9FAFB] group-hover:text-[#06B6D4] transition-colors">
-                                            {item.label}
-                                          </span>
-                                          {item.badge && (
-                                            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-[#4F46E5]/20 text-indigo-300 border border-[#4F46E5]/40">
-                                              {item.badge}
-                                            </span>
-                                          )}
-                                        </div>
-                                        {item.description && (
-                                          <p className="text-xs text-[#9CA3AF] line-clamp-1 mt-0.5">
-                                            {item.description}
-                                          </p>
-                                        )}
-                                      </div>
-                                    </Link>
-                                  ))}
-                                </div>
-                              </div>
-                            ))}
-                          </div>
-
-                          {/* Dropdown Banner Footnote */}
-                          <div className="mt-4 pt-3 border-t border-white/5 flex items-center justify-between text-xs text-[#9CA3AF] bg-[#0B0F19] -mx-5 -mb-5 px-5 py-3">
-                            <span className="inline-flex items-center gap-1.5 text-[#10B981] font-medium">
-                              <ShieldCheck className="w-3.5 h-3.5 text-[#10B981]" />
-                              <span>Flat renewal price on all shared hosting plans</span>
-                            </span>
-                            <Link
-                              href="/shared-hosting"
-                              onClick={() => setActiveDropdown(null)}
-                              className="text-[#06B6D4] hover:text-cyan-300 font-semibold inline-flex items-center gap-1"
-                            >
-                              <span>View All Plans</span>
-                              <ArrowRight className="w-3 h-3" />
-                            </Link>
-                          </div>
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                );
-              }
-
-              return (
-                <Link
-                  key={navItem.href}
-                  href={navItem.href}
-                  className="px-3 py-2 rounded-lg text-sm font-semibold text-[#9CA3AF] hover:text-[#F9FAFB] hover:bg-[#1F2937]/70 transition-colors inline-flex items-center gap-1.5"
-                >
-                  <span>{navItem.label}</span>
-                  {navItem.badge && (
-                    <span className="text-[10px] font-bold px-1.5 py-0.5 rounded bg-cyan-950 text-cyan-400 border border-cyan-800">
-                      {navItem.badge}
-                    </span>
-                  )}
-                </Link>
-              );
-            })}
-          </nav>
-
-          {/* Desktop Right Actions (Currency + Client Portal + CTA) */}
-          <div className="hidden lg:flex items-center gap-3">
-            {/* Currency Selector */}
-            <div className="flex items-center bg-[#111827] border border-white/10 rounded-lg p-0.5 text-xs text-[#9CA3AF]">
-              {(["INR", "USD", "EUR"] as const).map((curr) => (
-                <button
-                  key={curr}
-                  onClick={() => setCurrency(curr)}
-                  className={`px-2 py-1 rounded font-semibold transition-all ${
-                    currency === curr
-                      ? "bg-[#1F2937] text-[#F9FAFB] shadow-sm"
-                      : "hover:text-[#F9FAFB]"
+            {/* 1. Hosting Dropdown matching screenshot */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("hosting")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                type="button"
+                aria-expanded={activeDropdown === "hosting"}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeDropdown === "hosting"
+                    ? "text-[#F9FAFB] bg-white/5"
+                    : "text-[#9CA3AF] hover:text-[#F9FAFB]"
+                }`}
+              >
+                <span>Hosting</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    activeDropdown === "hosting" ? "rotate-180 text-[#06B6D4]" : "text-[#9CA3AF]"
                   }`}
-                >
-                  {curr === "INR" ? "₹ INR" : curr === "USD" ? "$ USD" : "€ EUR"}
-                </button>
-              ))}
+                />
+              </button>
+
+              {/* Exact Floating Dropdown Menu from Screenshot */}
+              {activeDropdown === "hosting" && (
+                <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
+                  <div className="bg-[#111827] border border-white/10 rounded-2xl shadow-2xl p-2 backdrop-blur-xl">
+                    <div className="space-y-1">
+                      {hostingItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setActiveDropdown(null)}
+                          className="flex items-center justify-between px-4 py-2.5 rounded-xl hover:bg-white/5 text-[#F9FAFB] text-sm font-medium transition-colors group"
+                        >
+                          <span className="group-hover:text-white transition-colors">{item.label}</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#9CA3AF] group-hover:text-white transition-colors" />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              )}
             </div>
 
-            <Button
-              variant="secondary"
-              size="sm"
-              href="https://portal.shrotihost.in"
-              isExternal={true}
-              className="text-[#F9FAFB] hover:bg-[#1F2937] border border-white/10 bg-[#111827] font-semibold"
+            {/* 2. Domains */}
+            <Link
+              href="/domains"
+              className="px-3.5 py-2 rounded-lg text-sm font-medium text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
             >
-              Client Login
-            </Button>
+              Domains
+            </Link>
 
-            <Button
-              variant="primary"
-              size="sm"
-              href="/shared-hosting"
-              rightIcon={<Zap className="w-3.5 h-3.5" />}
-              className="bg-[#4F46E5] hover:bg-[#4338CA] text-white shadow-lg shadow-indigo-600/20"
+            {/* 3. Software Services Dropdown */}
+            <div
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("software")}
+              onMouseLeave={() => setActiveDropdown(null)}
             >
-              Explore Hosting
-            </Button>
+              <button
+                type="button"
+                aria-expanded={activeDropdown === "software"}
+                className={`inline-flex items-center gap-1.5 px-3.5 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  activeDropdown === "software"
+                    ? "text-[#F9FAFB] bg-white/5"
+                    : "text-[#9CA3AF] hover:text-[#F9FAFB]"
+                }`}
+              >
+                <span>Software services</span>
+                <ChevronDown
+                  className={`w-3.5 h-3.5 transition-transform duration-200 ${
+                    activeDropdown === "software" ? "rotate-180 text-[#06B6D4]" : "text-[#9CA3AF]"
+                  }`}
+                />
+              </button>
+
+              {activeDropdown === "software" && (
+                <div className="absolute top-full left-0 pt-2 w-64 animate-in fade-in duration-150 z-50">
+                  <div className="bg-[#111827] border border-white/10 rounded-2xl shadow-2xl p-2 backdrop-blur-xl">
+                    <div className="space-y-1">
+                      {softwareItems.map((item) => (
+                        <Link
+                          key={item.href}
+                          href={item.href}
+                          onClick={() => setActiveDropdown(null)}
+                          className="flex items-center justify-between px-4 py-2.5 rounded-xl hover:bg-white/5 text-[#F9FAFB] text-sm font-medium transition-colors group"
+                        >
+                          <span className="group-hover:text-white transition-colors">{item.label}</span>
+                          <ArrowUpRight className="w-3.5 h-3.5 text-[#9CA3AF] group-hover:text-white transition-colors" />
+                        </Link>
+                      ))}
+                      <div className="pt-1.5 mt-1 border-t border-white/10">
+                        <Link
+                          href="/services"
+                          onClick={() => setActiveDropdown(null)}
+                          className="flex items-center justify-between px-4 py-2 rounded-xl hover:bg-[#4F46E5]/15 text-[#06B6D4] text-xs font-semibold"
+                        >
+                          <span>All Software Services</span>
+                          <ArrowUpRight className="w-3.5 h-3.5" />
+                        </Link>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              )}
+            </div>
+
+            {/* 4. About */}
+            <Link
+              href="/about"
+              className="px-3.5 py-2 rounded-lg text-sm font-medium text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+            >
+              About
+            </Link>
+
+            {/* 5. Contact */}
+            <Link
+              href="/contact"
+              className="px-3.5 py-2 rounded-lg text-sm font-medium text-[#9CA3AF] hover:text-[#F9FAFB] transition-colors"
+            >
+              Contact
+            </Link>
+          </nav>
+
+          {/* Desktop Right CTA: Client Portal Pill Button */}
+          <div className="hidden lg:flex items-center">
+            <a
+              href="https://portal.shrotihost.in"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-[#4F46E5] hover:bg-indigo-500 text-white font-semibold text-sm px-4 sm:px-5 py-2.5 rounded-xl flex items-center gap-1.5 shadow-md shadow-indigo-600/25 transition-all"
+            >
+              <span>Client portal</span>
+              <ArrowUpRight className="w-4 h-4" />
+            </a>
           </div>
 
           {/* Mobile Hamburger Trigger */}
