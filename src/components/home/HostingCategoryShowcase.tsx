@@ -22,7 +22,17 @@ export const HostingCategoryShowcase: React.FC = () => {
       {/* Top Asymmetric Row */}
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
         {/* Large Flagship Showcase: NVMe Shared Hosting (lg:col-span-7) */}
-        <div className="lg:col-span-7 bg-[#111827] rounded-2xl border border-white/10 p-7 sm:p-9 shadow-card flex flex-col justify-between relative overflow-hidden group hover:border-white/20 transition-all">
+        <div className="lg:col-span-7 bg-[#111827] rounded-3xl border border-white/10 p-7 sm:p-9 shadow-card flex flex-col justify-between relative overflow-hidden group hover:border-white/20 transition-all">
+          {/* High-Resolution 3D NVMe Hardware Visual Backdrop */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/images/nvme-speed-card.jpg"
+              alt="PCIe Gen4 NVMe Server Hardware"
+              className="w-full h-full object-cover object-center opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/85 to-[#111827]/40" />
+          </div>
+
           <div className="relative z-10">
             <div className="flex flex-wrap items-center justify-between gap-3 mb-6">
               <div className="flex items-center gap-2.5">
@@ -49,7 +59,7 @@ export const HostingCategoryShowcase: React.FC = () => {
             </p>
 
             {/* Micro spec matrix */}
-            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 p-4 rounded-xl bg-[#0B0F19] border border-white/10 text-xs">
+            <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 mb-6 p-4 rounded-xl bg-[#0B0F19]/80 backdrop-blur-md border border-white/10 text-xs">
               <div>
                 <span className="text-[#9CA3AF] block text-[11px]">Storage Engine</span>
                 <strong className="text-[#F9FAFB] font-semibold">PCIe Gen4 NVMe</strong>
@@ -211,8 +221,18 @@ export const HostingCategoryShowcase: React.FC = () => {
         </div>
 
         {/* Dedicated KVM Cloud VPS */}
-        <div className="bg-[#111827] rounded-2xl border border-white/10 p-7 sm:p-8 shadow-card flex flex-col justify-between group hover:border-white/20 transition-all">
-          <div>
+        <div className="bg-[#111827] rounded-3xl border border-white/10 p-7 sm:p-8 shadow-card flex flex-col justify-between group hover:border-white/20 transition-all relative overflow-hidden">
+          {/* High-Resolution 3D VPS Compute Hardware Backdrop */}
+          <div className="absolute inset-0 z-0">
+            <img
+              src="/images/vps-compute-card.jpg"
+              alt="Dedicated KVM Compute Node"
+              className="w-full h-full object-cover object-center opacity-20 group-hover:opacity-30 group-hover:scale-105 transition-all duration-700"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#111827] via-[#111827]/85 to-[#111827]/40" />
+          </div>
+
+          <div className="relative z-10">
             <div className="flex items-center justify-between mb-4">
               <div className="flex items-center gap-2.5">
                 <div className="w-10 h-10 rounded-xl bg-[#0B0F19] border border-white/10 flex items-center justify-center text-purple-400">
@@ -234,7 +254,7 @@ export const HostingCategoryShowcase: React.FC = () => {
               High-performance KVM virtual machines with guaranteed dedicated CPU cores, RAM, and NVMe disk. Full root SSH access, automated snapshots, and 1 Gbps unmetered uplink.
             </p>
 
-            <div className="grid grid-cols-2 gap-2 text-xs text-[#9CA3AF] mb-6 bg-[#0B0F19] p-3 rounded-xl border border-white/10">
+            <div className="grid grid-cols-2 gap-2 text-xs text-[#9CA3AF] mb-6 bg-[#0B0F19]/80 backdrop-blur-md p-3 rounded-xl border border-white/10">
               <div>
                 <span className="text-[#9CA3AF] block text-[11px]">Virtualization</span>
                 <strong className="text-[#F9FAFB]">Hardware KVM</strong>
