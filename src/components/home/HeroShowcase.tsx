@@ -21,53 +21,33 @@ export const HeroShowcase: React.FC<HeroShowcaseProps> = ({
       {/* 1. AMBIENT GLOW BACKDROP */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[540px] h-[540px] bg-gradient-to-tr from-indigo-600/25 via-cyan-500/20 to-transparent blur-[130px] pointer-events-none" />
 
-      {/* 2. DUAL ARCHED CURSIVE 'n' PORTAL MATCHING REFERENCE MOCKUP */}
+      {/* 2. DUAL ARCHED CURSIVE 'n' PORTAL (100% CONNECTED AT BOTTOM) */}
       <div className="relative w-full h-[520px] sm:h-[600px] md:h-[640px] overflow-visible">
         <svg
-          viewBox="0 0 720 680"
+          viewBox="0 0 720 660"
           className="w-full h-full drop-shadow-2xl overflow-visible select-none"
         >
           <defs>
-            {/* Shape 1: Left Hump of cursive 'n' (Rounded top arch & smooth base bowl) */}
-            <clipPath id="hero-left-hump">
-              <path d="M 270,35 C 190,35 110,85 70,190 C 30,300 40,430 90,530 C 140,620 220,650 280,620 C 335,590 355,505 355,400 C 355,275 345,155 315,75 C 305,45 290,35 270,35 Z" />
-            </clipPath>
-
-            {/* Shape 2: Right Hump of cursive 'n' (Inner valley, rounded top crest, & upward flick cut) */}
-            <clipPath id="hero-right-hump">
-              <path d="M 440,75 C 415,160 405,270 425,390 C 445,500 465,585 430,640 L 720,640 C 695,620 670,595 650,560 C 625,515 645,475 720,445 L 720,160 C 720,65 640,25 540,25 C 490,25 455,45 440,75 Z" />
+            {/* Unified Cursive 'n' Shape: Left arch + central swooping notch + right arch, connected solidly at bottom */}
+            <clipPath id="hero-cursive-n">
+              <path d="M 140,640 C 60,640 30,520 30,400 C 30,260 70,140 140,65 C 190,20 270,25 330,65 C 375,95 390,170 395,260 C 400,340 400,410 420,440 C 435,460 455,450 465,410 C 480,350 485,240 510,140 C 535,45 615,20 670,60 C 715,95 720,160 720,240 L 720,460 C 670,490 645,540 665,585 C 680,620 700,630 720,640 C 560,645 320,645 140,640 Z" />
             </clipPath>
           </defs>
 
-          {/* Continuous Photographic Image mapped across both humps */}
+          {/* Single continuous photographic scene across the entire connected cursive 'n' shape */}
           <image
             href={imageSrc}
             x="0"
             y="0"
             width="720"
-            height="680"
+            height="660"
             preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#hero-left-hump)"
-          />
-          <image
-            href={imageSrc}
-            x="0"
-            y="0"
-            width="720"
-            height="680"
-            preserveAspectRatio="xMidYMid slice"
-            clipPath="url(#hero-right-hump)"
+            clipPath="url(#hero-cursive-n)"
           />
 
-          {/* Architectural Glass Highlights / Contours along the cursive 'n' curves */}
+          {/* Architectural Glass Highlights / Contours tracing the cursive 'n' perimeter */}
           <path
-            d="M 270,35 C 190,35 110,85 70,190 C 30,300 40,430 90,530 C 140,620 220,650 280,620 C 335,590 355,505 355,400 C 355,275 345,155 315,75 C 305,45 290,35 270,35 Z"
-            fill="none"
-            className="stroke-slate-300/40 dark:stroke-white/20"
-            strokeWidth="1.5"
-          />
-          <path
-            d="M 440,75 C 415,160 405,270 425,390 C 445,500 465,585 430,640 L 720,640 C 695,620 670,595 650,560 C 625,515 645,475 720,445 L 720,160 C 720,65 640,25 540,25 C 490,25 455,45 440,75 Z"
+            d="M 140,640 C 60,640 30,520 30,400 C 30,260 70,140 140,65 C 190,20 270,25 330,65 C 375,95 390,170 395,260 C 400,340 400,410 420,440 C 435,460 455,450 465,410 C 480,350 485,240 510,140 C 535,45 615,20 670,60 C 715,95 720,160 720,240 L 720,460 C 670,490 645,540 665,585 C 680,620 700,630 720,640 C 560,645 320,645 140,640 Z"
             fill="none"
             className="stroke-slate-300/40 dark:stroke-white/20"
             strokeWidth="1.5"
