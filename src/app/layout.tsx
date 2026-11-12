@@ -53,13 +53,6 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" className="dark" suppressHydrationWarning>
-      <head>
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `(function(){try{var t=localStorage.getItem("shroti-theme");if(t==="light"){document.documentElement.classList.remove("dark");document.documentElement.classList.add("light");}}catch(e){}})();`,
-          }}
-        />
-      </head>
       <body
         suppressHydrationWarning
         className="min-h-screen bg-[#0B0F19] text-[#F9FAFB] antialiased flex flex-col justify-between selection:bg-indigo-600/30 selection:text-white"
